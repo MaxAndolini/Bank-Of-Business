@@ -431,7 +431,7 @@ public class TransferMoney extends javax.swing.JPanel {
     }//GEN-LAST:event_sixtybtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
-        frame.ChangeJPanel("Transfer");
+        frame.ChangeJPanel("TransferCustomer");
     }//GEN-LAST:event_backbtnActionPerformed
 
     private void eightybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightybtnActionPerformed

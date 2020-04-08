@@ -24,19 +24,23 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         DynamicPanel.add(new MainSelect(this), "MainSelect");
         
+        // Banker
+        DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
+        DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
+        DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
         
         // Customer
-        DynamicPanel.add(new swing.customer.Balance(this), "Balance");
-        DynamicPanel.add(new swing.customer.Deposit(this), "Deposit");
+        DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
+        DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
         DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
         DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
-        DynamicPanel.add(new swing.customer.Receipt(this), "Receipt");
-        DynamicPanel.add(new swing.customer.Settings(this), "Settings");
-        DynamicPanel.add(new swing.customer.Transactions(this), "Transactions");
-        DynamicPanel.add(new swing.customer.Transfer(this), "Transfer");
-        DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoney");
-        DynamicPanel.add(new swing.customer.Warning(this), "Warning");
-        DynamicPanel.add(new swing.customer.Withdrawal(this), "Withdrawal");
+        DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
+        DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
+        DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
+        DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
+        DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
+        DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
+        DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
 
         setLayout(new BorderLayout());
         add(DynamicPanel);

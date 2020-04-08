@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swing.customer;
+package swing.banker;
 
 /**
  *
@@ -49,7 +49,7 @@ public class Login extends javax.swing.JPanel {
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Customer - Login");
+        mainlabel.setText("Banker - Login");
 
         loginbtn.setBackground(new java.awt.Color(23, 35, 51));
         loginbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -88,7 +88,7 @@ public class Login extends javax.swing.JPanel {
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
         infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Enter User ID or Card Number");
+        infolabel2.setText("Enter Username");
 
         infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         infolabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,7 +166,7 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
-        frame.ChangeJPanel("HomeCustomer");
+        frame.ChangeJPanel("HomeBanker");
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed

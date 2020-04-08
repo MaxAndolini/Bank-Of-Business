@@ -241,27 +241,27 @@ public class Home extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void withdrawalbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawalbtnActionPerformed
-        frame.ChangeJPanel("Withdrawal");
+        frame.ChangeJPanel("WithdrawalCustomer");
     }//GEN-LAST:event_withdrawalbtnActionPerformed
 
     private void depositbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositbtnActionPerformed
-        frame.ChangeJPanel("Deposit");
+        frame.ChangeJPanel("DepositCustomer");
     }//GEN-LAST:event_depositbtnActionPerformed
 
     private void transactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionsbtnActionPerformed
-        frame.ChangeJPanel("Transactions");
+        frame.ChangeJPanel("TransactionsCustomer");
     }//GEN-LAST:event_transactionsbtnActionPerformed
 
     private void transferbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transferbtnActionPerformed
-        frame.ChangeJPanel("Transfer");
+        frame.ChangeJPanel("TransferCustomer");
     }//GEN-LAST:event_transferbtnActionPerformed
 
     private void settingsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtnActionPerformed
-        frame.ChangeJPanel("Settings");
+        frame.ChangeJPanel("SettingsCustomer");
     }//GEN-LAST:event_settingsbtnActionPerformed
 
     private void balancebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balancebtnActionPerformed
-        frame.ChangeJPanel("Balance");
+        frame.ChangeJPanel("BalanceCustomer");
     }//GEN-LAST:event_balancebtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
