@@ -38,6 +38,9 @@ public class Transfer extends javax.swing.JPanel {
         okbtn = new java.awt.Button();
 
         setBackground(new java.awt.Color(71, 120, 197));
+        setMaximumSize(new java.awt.Dimension(1070, 590));
+        setMinimumSize(new java.awt.Dimension(1070, 590));
+        setPreferredSize(new java.awt.Dimension(1070, 590));
 
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -61,7 +64,6 @@ public class Transfer extends javax.swing.JPanel {
         uidcnumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         uidcnumbertext.setForeground(new java.awt.Color(255, 255, 255));
         uidcnumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        uidcnumbertext.setText("1111222233334444");
         uidcnumbertext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uidcnumbertextActionPerformed(evt);

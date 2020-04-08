@@ -62,6 +62,9 @@ public class TransferMoney extends javax.swing.JPanel {
         moneytype = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(71, 120, 197));
+        setMaximumSize(new java.awt.Dimension(1070, 590));
+        setMinimumSize(new java.awt.Dimension(1070, 590));
+        setPreferredSize(new java.awt.Dimension(1070, 590));
 
         onehbtn.setBackground(new java.awt.Color(23, 35, 51));
         onehbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -169,7 +172,6 @@ public class TransferMoney extends javax.swing.JPanel {
         moneytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         moneytext.setForeground(new java.awt.Color(255, 255, 255));
         moneytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        moneytext.setText("1.000.000.000");
         moneytext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moneytextActionPerformed(evt);

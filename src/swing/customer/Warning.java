@@ -44,6 +44,9 @@ public class Warning extends javax.swing.JPanel {
         infolabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
+        setMaximumSize(new java.awt.Dimension(1070, 590));
+        setMinimumSize(new java.awt.Dimension(1070, 590));
+        setPreferredSize(new java.awt.Dimension(1070, 590));
 
         yesbtn.setBackground(new java.awt.Color(23, 35, 51));
         yesbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N

@@ -37,6 +37,9 @@ public class Transactions extends javax.swing.JPanel {
         transactionstable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(71, 120, 197));
+        setMaximumSize(new java.awt.Dimension(1070, 590));
+        setMinimumSize(new java.awt.Dimension(1070, 590));
+        setPreferredSize(new java.awt.Dimension(1070, 590));
 
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));

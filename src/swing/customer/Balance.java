@@ -59,6 +59,9 @@ public class Balance extends javax.swing.JPanel {
         thirdalabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
+        setMaximumSize(new java.awt.Dimension(1070, 590));
+        setMinimumSize(new java.awt.Dimension(1070, 590));
+        setPreferredSize(new java.awt.Dimension(1070, 590));
 
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,7 +85,6 @@ public class Balance extends javax.swing.JPanel {
         moneytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         moneytext.setForeground(new java.awt.Color(255, 255, 255));
         moneytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        moneytext.setText("1.000.000.000");
         moneytext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moneytextActionPerformed(evt);
@@ -208,7 +210,7 @@ public class Balance extends javax.swing.JPanel {
         resultlabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         resultlabel.setForeground(new java.awt.Color(255, 255, 255));
         resultlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        resultlabel.setText("Result: $500.000.000.000");
+        resultlabel.setText("Result: ");
 
         typelabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         typelabel.setForeground(new java.awt.Color(133, 187, 101));

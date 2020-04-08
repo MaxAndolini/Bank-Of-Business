@@ -39,6 +39,9 @@ public class MainSelect extends javax.swing.JPanel {
         datelabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
+        setMaximumSize(new java.awt.Dimension(1070, 590));
+        setMinimumSize(new java.awt.Dimension(1070, 590));
+        setPreferredSize(new java.awt.Dimension(1070, 590));
 
         customerbtn.setBackground(new java.awt.Color(23, 35, 51));
         customerbtn.setFont(new java.awt.Font("Segoe UI", 0, 40)); // NOI18N
@@ -109,7 +112,7 @@ public class MainSelect extends javax.swing.JPanel {
                     .addComponent(customerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

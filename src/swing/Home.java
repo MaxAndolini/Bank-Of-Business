@@ -71,6 +71,7 @@ public class Home extends javax.swing.JFrame {
         setTitle("Bank Of Business");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(1070, 590));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
