@@ -125,20 +125,20 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="4">
                 <Column editable="false" title="" type="java.lang.String">
-                  <Data value="Dollar ($)"/>
-                  <Data value="Euro (&#x20ac;)"/>
-                  <Data value="Pound (&#xa3;)"/>
-                  <Data value="Turkish Lira (&#x20ba;)"/>
+                  <Data value="Dollar"/>
+                  <Data value="Euro"/>
+                  <Data value="Pound"/>
+                  <Data value="Turkish Lira"/>
                 </Column>
-                <Column editable="true" title="Dollar ($)" type="java.lang.String">
+                <Column editable="true" title="Dollar" type="java.lang.String">
                   <Data value=""/>
                   <Data value=""/>
                   <Data value="null"/>
                   <Data value="null"/>
                 </Column>
-                <Column editable="true" title="Euro (&#x20ac;)" type="java.lang.String"/>
-                <Column editable="true" title="Pound (&#xa3;)" type="java.lang.String"/>
-                <Column editable="true" title="Turkish Lira (&#x20ba;)" type="java.lang.String"/>
+                <Column editable="true" title="Euro" type="java.lang.String"/>
+                <Column editable="true" title="Pound" type="java.lang.String"/>
+                <Column editable="true" title="Turkish Lira" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

@@ -65,13 +65,13 @@ public class CurrencyRate extends javax.swing.JPanel {
         currencyratetable.setForeground(new java.awt.Color(23, 35, 51));
         currencyratetable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dollar ($)", "", null, null, null},
-                {"Euro (€)", "", null, null, null},
-                {"Pound (£)", null, null, null, null},
-                {"Turkish Lira (₺)", null, null, null, null}
+                {"Dollar", "", null, null, null},
+                {"Euro", "", null, null, null},
+                {"Pound", null, null, null, null},
+                {"Turkish Lira", null, null, null, null}
             },
             new String [] {
-                "", "Dollar ($)", "Euro (€)", "Pound (£)", "Turkish Lira (₺)"
+                "", "Dollar", "Euro", "Pound", "Turkish Lira"
             }
         ) {
             Class[] types = new Class [] {
