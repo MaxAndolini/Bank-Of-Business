@@ -179,7 +179,7 @@ public class Transactions extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
-        frame.ChangeJPanel("HomeCustomer");
+        frame.ChangeJPanel("HomeBanker");
     }//GEN-LAST:event_cancelbtnActionPerformed
 
     private void searchfullnametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchfullnametextActionPerformed
