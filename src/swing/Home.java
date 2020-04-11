@@ -25,9 +25,14 @@ public class Home extends javax.swing.JFrame {
         DynamicPanel.add(new MainSelect(this), "MainSelect");
         
         // Banker
+        DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
+        DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
+        DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
+        DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
         DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
         DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
         DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
+        DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
         
         // Customer
         DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");

@@ -31,14 +31,18 @@ public class Home extends javax.swing.JPanel {
     private void initComponents() {
 
         addcustomerbtn = new java.awt.Button();
-        deletecustomerbtn = new java.awt.Button();
+        editcustomerbtn = new java.awt.Button();
+        transactionsbtn = new java.awt.Button();
+        balancebtn = new java.awt.Button();
         settingsbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
         addcustomericon = new javax.swing.JLabel();
-        deletecustomericon = new javax.swing.JLabel();
-        settingsicon = new javax.swing.JLabel();
-        balancebtn = new java.awt.Button();
+        editcustomericon = new javax.swing.JLabel();
         balanceicon = new javax.swing.JLabel();
+        transactionsicon = new javax.swing.JLabel();
+        settingsicon = new javax.swing.JLabel();
+        deletecustomerbtn = new java.awt.Button();
+        deletecustomericon = new javax.swing.JLabel();
         logoutbtn = new java.awt.Button();
         logouticon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
@@ -58,13 +62,33 @@ public class Home extends javax.swing.JPanel {
             }
         });
 
-        deletecustomerbtn.setBackground(new java.awt.Color(23, 35, 51));
-        deletecustomerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        deletecustomerbtn.setForeground(new java.awt.Color(255, 255, 255));
-        deletecustomerbtn.setLabel("Del. Customer");
-        deletecustomerbtn.addActionListener(new java.awt.event.ActionListener() {
+        editcustomerbtn.setBackground(new java.awt.Color(23, 35, 51));
+        editcustomerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        editcustomerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        editcustomerbtn.setLabel("Edit Customer");
+        editcustomerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletecustomerbtnActionPerformed(evt);
+                editcustomerbtnActionPerformed(evt);
+            }
+        });
+
+        transactionsbtn.setBackground(new java.awt.Color(23, 35, 51));
+        transactionsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        transactionsbtn.setForeground(new java.awt.Color(255, 255, 255));
+        transactionsbtn.setLabel("Transactions");
+        transactionsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transactionsbtnActionPerformed(evt);
+            }
+        });
+
+        balancebtn.setBackground(new java.awt.Color(23, 35, 51));
+        balancebtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        balancebtn.setForeground(new java.awt.Color(255, 255, 255));
+        balancebtn.setLabel("Balance");
+        balancebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                balancebtnActionPerformed(evt);
             }
         });
 
@@ -81,26 +105,30 @@ public class Home extends javax.swing.JPanel {
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Welcome Banker");
+        mainlabel.setText("Welcome User");
 
         addcustomericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_add_property_48px.png"))); // NOI18N
 
-        deletecustomericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px_1.png"))); // NOI18N
+        editcustomericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_edit_property_48px.png"))); // NOI18N
+
+        balanceicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_refund_48px.png"))); // NOI18N
+
+        transactionsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_transaction_list_48px.png"))); // NOI18N
 
         settingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
 
-        balancebtn.setBackground(new java.awt.Color(23, 35, 51));
-        balancebtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        balancebtn.setForeground(new java.awt.Color(255, 255, 255));
-        balancebtn.setLabel("Edit Customer");
-        balancebtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        balancebtn.addActionListener(new java.awt.event.ActionListener() {
+        deletecustomerbtn.setBackground(new java.awt.Color(23, 35, 51));
+        deletecustomerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        deletecustomerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        deletecustomerbtn.setLabel("Del. Customer");
+        deletecustomerbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        deletecustomerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                balancebtnActionPerformed(evt);
+                deletecustomerbtnActionPerformed(evt);
             }
         });
 
-        balanceicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_edit_property_48px.png"))); // NOI18N
+        deletecustomericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px_1.png"))); // NOI18N
 
         logoutbtn.setBackground(new java.awt.Color(23, 35, 51));
         logoutbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -142,14 +170,24 @@ public class Home extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(addcustomericon)
                                 .addGap(538, 538, 538)
-                                .addComponent(deletecustomericon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(deletecustomerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(transactionsicon)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(transactionsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(balanceicon)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(balancebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(balancebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(editcustomerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(balanceicon)
+                                .addComponent(editcustomericon))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(deletecustomerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deletecustomericon)
                                 .addGap(170, 170, 170)
                                 .addComponent(settingsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(170, 170, 170)
@@ -167,19 +205,28 @@ public class Home extends javax.swing.JPanel {
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(deletecustomerbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(balancebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(deletecustomericon))
+                        .addComponent(balanceicon))
                     .addComponent(addcustomerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addcustomericon))
-                .addGap(190, 190, 190)
+                .addGap(99, 99, 99)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(editcustomerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(editcustomericon)
+                        .addComponent(transactionsicon))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(transactionsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)))
+                .addGap(41, 41, 41)
                 .addComponent(settingsicon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(settingsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(balancebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(balanceicon)
+                    .addComponent(deletecustomerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deletecustomericon)
                     .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logouticon, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -190,20 +237,28 @@ public class Home extends javax.swing.JPanel {
         frame.ChangeJPanel("AddCustomerBanker");
     }//GEN-LAST:event_addcustomerbtnActionPerformed
 
-    private void deletecustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletecustomerbtnActionPerformed
-        frame.ChangeJPanel("DeleteCustomerBanker");
-    }//GEN-LAST:event_deletecustomerbtnActionPerformed
+    private void editcustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editcustomerbtnActionPerformed
+        frame.ChangeJPanel("EditCustomerBanker");
+    }//GEN-LAST:event_editcustomerbtnActionPerformed
+
+    private void transactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionsbtnActionPerformed
+        frame.ChangeJPanel("TransactionsBanker");
+    }//GEN-LAST:event_transactionsbtnActionPerformed
+
+    private void balancebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balancebtnActionPerformed
+        frame.ChangeJPanel("BalanceBanker");
+    }//GEN-LAST:event_balancebtnActionPerformed
 
     private void settingsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtnActionPerformed
         frame.ChangeJPanel("SettingsBanker");
     }//GEN-LAST:event_settingsbtnActionPerformed
 
-    private void balancebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balancebtnActionPerformed
-        frame.ChangeJPanel("EditCustomerBanker");
-    }//GEN-LAST:event_balancebtnActionPerformed
+    private void deletecustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletecustomerbtnActionPerformed
+        frame.ChangeJPanel("DeleteCustomerBanker");
+    }//GEN-LAST:event_deletecustomerbtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
-        frame.ChangeJPanel("LoginCustomer");
+        frame.ChangeJPanel("LoginBanker");
     }//GEN-LAST:event_logoutbtnActionPerformed
 
 
@@ -214,11 +269,15 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel balanceicon;
     private java.awt.Button deletecustomerbtn;
     private javax.swing.JLabel deletecustomericon;
+    private java.awt.Button editcustomerbtn;
+    private javax.swing.JLabel editcustomericon;
     private javax.swing.JLabel infolabel;
     private java.awt.Button logoutbtn;
     private javax.swing.JLabel logouticon;
     private javax.swing.JLabel mainlabel;
     private java.awt.Button settingsbtn;
     private javax.swing.JLabel settingsicon;
+    private java.awt.Button transactionsbtn;
+    private javax.swing.JLabel transactionsicon;
     // End of variables declaration//GEN-END:variables
 }

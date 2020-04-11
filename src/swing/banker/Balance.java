@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swing.customer;
+package swing.banker;
 
 /**
  *
@@ -34,12 +34,9 @@ public class Balance extends javax.swing.JPanel {
         cancelbtn = new java.awt.Button();
         cancelicon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
-        moneytext = new javax.swing.JTextField();
-        okbtn = new java.awt.Button();
-        moneytype = new javax.swing.JComboBox<>();
-        moneyctype = new javax.swing.JComboBox<>();
         infolabel2 = new javax.swing.JLabel();
-        resultlabel = new javax.swing.JLabel();
+        fullnametext = new javax.swing.JTextField();
+        okbtn = new java.awt.Button();
         jPanel1 = new javax.swing.JPanel();
         dolarlabel = new javax.swing.JLabel();
         eurolabel = new javax.swing.JLabel();
@@ -84,15 +81,19 @@ public class Balance extends javax.swing.JPanel {
         infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel.setForeground(new java.awt.Color(255, 255, 255));
         infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Enter amount you want to convert and press OK.");
 
-        moneytext.setBackground(new java.awt.Color(23, 35, 51));
-        moneytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        moneytext.setForeground(new java.awt.Color(255, 255, 255));
-        moneytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        moneytext.addActionListener(new java.awt.event.ActionListener() {
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel2.setText("Full Name:");
+
+        fullnametext.setBackground(new java.awt.Color(23, 35, 51));
+        fullnametext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        fullnametext.setForeground(new java.awt.Color(255, 255, 255));
+        fullnametext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fullnametext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moneytextActionPerformed(evt);
+                fullnametextActionPerformed(evt);
             }
         });
 
@@ -105,26 +106,6 @@ public class Balance extends javax.swing.JPanel {
                 okbtnActionPerformed(evt);
             }
         });
-
-        moneytype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        moneytype.setForeground(new java.awt.Color(23, 35, 51));
-        moneytype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
-        moneytype.setToolTipText("");
-
-        moneyctype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        moneyctype.setForeground(new java.awt.Color(23, 35, 51));
-        moneyctype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
-        moneyctype.setToolTipText("");
-
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Currency you want to convert.");
-
-        resultlabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        resultlabel.setForeground(new java.awt.Color(255, 255, 255));
-        resultlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        resultlabel.setText("Result: ");
 
         dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -304,22 +285,18 @@ public class Balance extends javax.swing.JPanel {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(moneyctype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(149, 149, 149))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(resultlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(67, 67, 67)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(84, 84, 84)
+                                        .addComponent(fullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(180, 180, 180)))
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,10 +304,8 @@ public class Balance extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cancelicon)
-                                .addGap(221, 221, 221)
-                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 475, Short.MAX_VALUE)))
+                                .addComponent(cancelicon)))
+                        .addGap(0, 562, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -342,39 +317,33 @@ public class Balance extends javax.swing.JPanel {
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(moneyctype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(resultlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(117, 117, 117)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon)
-                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cancelicon))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
-        frame.ChangeJPanel("HomeCustomer");
+        frame.ChangeJPanel("HomeBanker");
     }//GEN-LAST:event_cancelbtnActionPerformed
-
-    private void moneytextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneytextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moneytextActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_okbtnActionPerformed
+
+    private void fullnametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullnametextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fullnametextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -386,18 +355,15 @@ public class Balance extends javax.swing.JPanel {
     private javax.swing.JLabel eurolabel;
     private javax.swing.JLabel firstalabel;
     private javax.swing.JLabel firstlabel;
+    private javax.swing.JTextField fullnametext;
     private javax.swing.JLabel infolabel;
     private javax.swing.JLabel infolabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel mainlabel;
-    private javax.swing.JComboBox<String> moneyctype;
-    private javax.swing.JTextField moneytext;
-    private javax.swing.JComboBox<String> moneytype;
     private java.awt.Button okbtn;
     private javax.swing.JLabel poundalabel;
     private javax.swing.JLabel poundlabel;
-    private javax.swing.JLabel resultlabel;
     private javax.swing.JLabel secondalabel;
     private javax.swing.JLabel secondlabel;
     private javax.swing.JLabel thirdalabel;

@@ -53,15 +53,29 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="addcustomericon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="538" max="-2" attributes="0"/>
-                              <Component id="deletecustomericon" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="deletecustomerbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="transactionsbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="balancebtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Component id="mainlabel" min="-2" pref="488" max="-2" attributes="0"/>
+                          <Component id="mainlabel" alignment="0" min="-2" pref="488" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="balancebtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="editcustomerbtn" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="editcustomericon" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="deletecustomerbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="deletecustomericon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
                               <Component id="settingsbtn" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
@@ -85,21 +99,33 @@
               <Component id="infolabel" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="deletecustomerbtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="balancebtn" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                      <Component id="deletecustomericon" min="-2" max="-2" attributes="0"/>
+                      <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="addcustomerbtn" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="addcustomericon" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Component id="editcustomerbtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="editcustomericon" min="-2" max="-2" attributes="0"/>
+                      <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="transactionsbtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="settingsicon" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="settingsbtn" min="-2" max="-2" attributes="0"/>
-                  <Component id="balancebtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="balanceicon" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="deletecustomerbtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="deletecustomericon" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="logoutbtn" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="logouticon" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -126,7 +152,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addcustomerbtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.Button" name="deletecustomerbtn">
+    <Component class="java.awt.Button" name="editcustomerbtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -137,10 +163,44 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="label" type="java.lang.String" value="Del. Customer"/>
+        <Property name="label" type="java.lang.String" value="Edit Customer"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletecustomerbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editcustomerbtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="java.awt.Button" name="transactionsbtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="23" red="17" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="30" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="label" type="java.lang.String" value="Transactions"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transactionsbtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="java.awt.Button" name="balancebtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="23" red="17" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="30" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="label" type="java.lang.String" value="Balance"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="balancebtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="java.awt.Button" name="settingsbtn">
@@ -169,7 +229,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="Welcome Banker"/>
+        <Property name="text" type="java.lang.String" value="Welcome User"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="addcustomericon">
@@ -179,10 +239,24 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="deletecustomericon">
+    <Component class="javax.swing.JLabel" name="editcustomericon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/swing/images/icons8_remove_property_48px_1.png"/>
+          <Image iconType="3" name="/swing/images/icons8_edit_property_48px.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="balanceicon">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/swing/images/icons8_refund_48px.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="transactionsicon">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/swing/images/icons8_transaction_list_48px.png"/>
         </Property>
       </Properties>
     </Component>
@@ -193,7 +267,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="balancebtn">
+    <Component class="java.awt.Button" name="deletecustomerbtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -204,19 +278,19 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="label" type="java.lang.String" value="Edit Customer"/>
+        <Property name="label" type="java.lang.String" value="Del. Customer"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[80, 49]"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="balancebtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletecustomerbtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="balanceicon">
+    <Component class="javax.swing.JLabel" name="deletecustomericon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/swing/images/icons8_edit_property_48px.png"/>
+          <Image iconType="3" name="/swing/images/icons8_remove_property_48px_1.png"/>
         </Property>
       </Properties>
     </Component>
