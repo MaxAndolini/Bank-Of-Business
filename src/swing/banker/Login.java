@@ -32,7 +32,7 @@ public class Login extends javax.swing.JPanel {
 
         mainlabel = new javax.swing.JLabel();
         loginbtn = new java.awt.Button();
-        uidcnumbertext = new javax.swing.JTextField();
+        uidtext = new javax.swing.JTextField();
         infolabel = new javax.swing.JLabel();
         exitbtn = new java.awt.Button();
         infolabel2 = new javax.swing.JLabel();
@@ -62,11 +62,11 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
-        uidcnumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        uidcnumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        uidcnumbertext.addActionListener(new java.awt.event.ActionListener() {
+        uidtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        uidtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        uidtext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                uidcnumbertextActionPerformed(evt);
+                uidtextActionPerformed(evt);
             }
         });
 
@@ -88,7 +88,7 @@ public class Login extends javax.swing.JPanel {
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
         infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Enter Username");
+        infolabel2.setText("Enter User ID");
 
         infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         infolabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,7 +124,7 @@ public class Login extends javax.swing.JPanel {
                                 .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(390, 390, 390)
-                        .addComponent(uidcnumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(uidtext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -148,7 +148,7 @@ public class Login extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(uidcnumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(uidtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -169,9 +169,9 @@ public class Login extends javax.swing.JPanel {
         frame.ChangeJPanel("HomeBanker");
     }//GEN-LAST:event_loginbtnActionPerformed
 
-    private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed
+    private void uidtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidtextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_uidcnumbertextActionPerformed
+    }//GEN-LAST:event_uidtextActionPerformed
 
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         frame.ChangeJPanel("MainSelect");
@@ -188,6 +188,6 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JLabel loginicon;
     private javax.swing.JLabel mainlabel;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField uidcnumbertext;
+    private javax.swing.JTextField uidtext;
     // End of variables declaration//GEN-END:variables
 }

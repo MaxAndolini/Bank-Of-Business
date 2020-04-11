@@ -25,12 +25,24 @@ public class Home extends javax.swing.JFrame {
         DynamicPanel.add(new MainSelect(this), "MainSelect");
         
         // Admin
+        DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
+        DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
+        DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
+        DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
+        DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
+        DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
+        DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
+        DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
+        DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
         DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
         DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
+        DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
         
         // Banker
         DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
         DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
+        DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
+        DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
         DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
         DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
         DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");

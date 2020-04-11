@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swing.customer;
+package swing.admin;
 
 /**
  *
  * @author ercan
  */
-public class Transactions extends javax.swing.JPanel {
+public class CurrencyRate extends javax.swing.JPanel {
 
     final private swing.Home frame;
     
     /**
-     * Creates new form Transactions
+     * Creates new form CurrencyRate
      */
-    public Transactions(swing.Home home) {
+    public CurrencyRate(swing.Home home) {
         initComponents();
         frame = home;
+        
+        currencyratetable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 32));
     }
 
     /**
@@ -34,7 +36,7 @@ public class Transactions extends javax.swing.JPanel {
         cancelbtn = new java.awt.Button();
         cancelicon = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        transactionstable = new javax.swing.JTable();
+        currencyratetable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -44,7 +46,7 @@ public class Transactions extends javax.swing.JPanel {
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Transactions");
+        mainlabel.setText("Currency Rate");
 
         cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
         cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -59,22 +61,24 @@ public class Transactions extends javax.swing.JPanel {
 
         cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
-        transactionstable.setModel(new javax.swing.table.DefaultTableModel(
+        currencyratetable.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
+        currencyratetable.setForeground(new java.awt.Color(23, 35, 51));
+        currencyratetable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"Dollar ($)", "", null, null, null},
+                {"Euro (€)", "", null, null, null},
+                {"Pound (£)", null, null, null, null},
+                {"Turkish Lira (₺)", null, null, null, null}
             },
             new String [] {
-                "ID", "Transaction", "Type", "Amount", "Transfer"
+                "", "Dollar ($)", "Euro (€)", "Pound (£)", "Turkish Lira (₺)"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -85,10 +89,17 @@ public class Transactions extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        transactionstable.setRowSelectionAllowed(false);
-        transactionstable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        transactionstable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(transactionstable);
+        currencyratetable.setRowHeight(71);
+        currencyratetable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        currencyratetable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(currencyratetable);
+        if (currencyratetable.getColumnModel().getColumnCount() > 0) {
+            currencyratetable.getColumnModel().getColumn(0).setResizable(false);
+            currencyratetable.getColumnModel().getColumn(1).setResizable(false);
+            currencyratetable.getColumnModel().getColumn(2).setResizable(false);
+            currencyratetable.getColumnModel().getColumn(3).setResizable(false);
+            currencyratetable.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -124,15 +135,15 @@ public class Transactions extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
-        frame.ChangeJPanel("HomeCustomer");
+        frame.ChangeJPanel("HomeAdmin");
     }//GEN-LAST:event_cancelbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button cancelbtn;
     private javax.swing.JLabel cancelicon;
+    private javax.swing.JTable currencyratetable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mainlabel;
-    private javax.swing.JTable transactionstable;
     // End of variables declaration//GEN-END:variables
 }

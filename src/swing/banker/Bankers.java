@@ -14,7 +14,7 @@ public class Bankers extends javax.swing.JPanel {
     final private swing.Home frame;
     
     /**
-     * Creates new form Transactions
+     * Creates new form Bankers
      */
     public Bankers(swing.Home home) {
         initComponents();
@@ -38,7 +38,7 @@ public class Bankers extends javax.swing.JPanel {
         infolabel8 = new javax.swing.JLabel();
         okbtn = new java.awt.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
-        transactionstable = new javax.swing.JTable();
+        bankerstable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -92,22 +92,22 @@ public class Bankers extends javax.swing.JPanel {
             }
         });
 
-        transactionstable.setModel(new javax.swing.table.DefaultTableModel(
+        bankerstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Card Number", "Full Name", "Date of Birth", "Job", "Phone Number", "Home Address", "Salary", "Password"
+                "ID", "Card Number", "Full Name", "Date of Birth", "Phone Number", "Home Address", "Salary", "Password"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -118,9 +118,10 @@ public class Bankers extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        transactionstable.setRowSelectionAllowed(false);
-        transactionstable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(transactionstable);
+        bankerstable.setRowSelectionAllowed(false);
+        bankerstable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        bankerstable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(bankerstable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -192,6 +193,7 @@ public class Bankers extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable bankerstable;
     private java.awt.Button cancelbtn;
     private javax.swing.JLabel cancelicon;
     private javax.swing.JLabel infolabel;
@@ -200,6 +202,5 @@ public class Bankers extends javax.swing.JPanel {
     private javax.swing.JLabel mainlabel;
     private java.awt.Button okbtn;
     private javax.swing.JTextField searchfullnametext;
-    private javax.swing.JTable transactionstable;
     // End of variables declaration//GEN-END:variables
 }
