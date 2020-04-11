@@ -98,36 +98,39 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="infolabel" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="transferbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                      <Component id="transfericon" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="transferbtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="withdrawalbtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="withdrawalicon" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Component id="depositbtn" min="-2" max="-2" attributes="0"/>
+                                  <Component id="depositicon" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="transactionsbtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="settingsicon" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="settingsbtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="balancebtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="balanceicon" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="logoutbtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="logouticon" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="withdrawalbtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="withdrawalicon" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="depositbtn" min="-2" max="-2" attributes="0"/>
-                      <Component id="depositicon" min="-2" max="-2" attributes="0"/>
-                      <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="transactionsbtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Component id="settingsicon" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="settingsbtn" min="-2" max="-2" attributes="0"/>
-                  <Component id="balancebtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="balanceicon" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="logoutbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="logouticon" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="transfericon" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>

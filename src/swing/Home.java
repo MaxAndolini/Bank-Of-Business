@@ -24,6 +24,10 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         DynamicPanel.add(new MainSelect(this), "MainSelect");
         
+        // Admin
+        DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
+        DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
+        
         // Banker
         DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
         DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
