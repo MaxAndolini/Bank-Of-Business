@@ -10,6 +10,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import library.*;
 
 /**
  *
@@ -68,9 +69,22 @@ public class Home extends javax.swing.JFrame {
         ChangeJPanel("MainSelect");
         setLocationRelativeTo(null);
         setVisible(true);
+        
+        boolean create = Database.fcreate("Test");
+        if(create == true) System.out.println("Yeyyy");
+        Database.createColumn("Test", 0, 2);
+        /*Database.setColumn("Test", 0, "ID");
+        Database.setColumn("Test", 4, "Avni");*/
+        
+        //Database.create("Test", 555);
+        /*Database.set("Test", "ID", "555", "Denedme", "kaDGFDGssr");
+        Database.delete("Test", "ID", "685");
+        Database.create("Test");*/
+        //Database.get("Test", "ID", 555, "Mehmet");
+        //Database.deleteColumn("Test", 4);
     }
     
-    public void ChangeJPanel(String cName) {
+    public final void ChangeJPanel(String cName) {
         CardLayout cl = (CardLayout) DynamicPanel.getLayout();
         cl.show(DynamicPanel, cName);
         pack();
