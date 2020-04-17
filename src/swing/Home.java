@@ -71,8 +71,16 @@ public class Home extends javax.swing.JFrame {
         setVisible(true);
         
         boolean create = Database.fcreate("Test");
-        if(create == true) System.out.println("Yeyyy");
-        Database.createColumn("Test", 0, 2);
+        if(create == true) {
+            int column = Database.columnExists("Test");
+            if(column != 8) Database.createColumn("Test", 0, 8);
+            Database.setColumn("Test", 0, "ID");
+        }
+        
+        
+        int id = Database.create("Test");
+        System.out.println("Gelsin id " + id);
+        //Database.delete("Test", "ID", 3);
         /*Database.setColumn("Test", 0, "ID");
         Database.setColumn("Test", 4, "Avni");*/
         

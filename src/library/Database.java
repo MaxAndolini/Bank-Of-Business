@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 public class Database {
     
     public static boolean fexists(String filename) {
+        if(filename.length() == 0) return false;
         try {
             return Files.exists(Paths.get(filename + ".txt"));
         } catch (Exception ex) {
@@ -30,6 +31,7 @@ public class Database {
     }
     
     public static boolean fempty(String filename) {
+        if(filename.length() == 0) return false;
         try {
             if(Files.size(Paths.get(filename + ".txt")) > 0) return false;
         } catch (IOException ex) {
@@ -40,6 +42,7 @@ public class Database {
     }
     
     public static boolean fremove(String filename) {
+        if(filename.length() == 0) return false;
         try {
             Files.delete(Paths.get(filename + ".txt"));
         } catch (IOException ex) {
@@ -72,7 +75,7 @@ public class Database {
             for(String line : Files.readAllLines(Paths.get(filename + ".txt"), StandardCharsets.UTF_8)) {
                 if(linecount != 0) {
                     String[] tmpline = line.split("[|]");
-                    numbers.add(Integer.valueOf(tmpline[0]));
+                    numbers.add(Integer.parseInt(tmpline[0]));
                 } else linecount++;
             }
         } catch (IOException ex) {
@@ -145,6 +148,7 @@ public class Database {
         int columnexists = columnExists(filename);
         if(columnexists == 0) return false;
         if(column < 0 || column >= columnexists) return false;
+        if(name.length() == 0) return false;
         int count = 0;
         ArrayList<String> newlines = new ArrayList<>();
         try {
@@ -217,29 +221,74 @@ public class Database {
             return 0;
         }
         return -1;
-    }   
-    
-    public static boolean create(String filename) {
-        if(!fexists(filename)) return false;
-        if(fempty(filename)) return false;
-        int columnexists = columnExists(filename);
-        if(columnexists == 0) return false;
-        try {
-            String line = generateID(filename) + "|";
-            for(int i = 0; i < columnexists-1; i++) line += "-|";
-            Files.writeString(Paths.get(filename + ".txt"), line, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-        return true;
     }
     
-    public static boolean set(String filename, String column, String columnvalue, String data, String name) {
+    private static boolean existsprivate(String filename, String column, String columnvalue) {
         if(!fexists(filename)) return false;
         if(fempty(filename)) return false;
         int columnid = columnNametoID(filename, column);
         if(columnid == -1) return false;
+        if(columnvalue.length() == 0) return false;
+        try {
+            for(String line : Files.readAllLines(Paths.get(filename + ".txt"), StandardCharsets.UTF_8)) {
+                String[] tmpline = line.split("[|]");
+                if(tmpline[columnid].equals(columnvalue)) return true;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return false;
+    }
+    
+    public static boolean exists(String filename, String column, double columnvalue) {
+        return exists(filename, column, Double.toString(columnvalue));
+    }
+    
+    public static boolean exists(String filename, String column, float columnvalue) {
+        return exists(filename, column, Float.toString(columnvalue));
+    }
+    
+    public static boolean exists(String filename, String column, int columnvalue) {
+        return existsprivate(filename, column, Integer.toString(columnvalue));
+    }
+    
+    public static boolean exists(String filename, String column, String columnvalue) {
+        return existsprivate(filename, column, columnvalue);
+    }
+    
+    public static boolean exists(String filename, String column, long columnvalue) {
+        return existsprivate(filename, column, Long.toString(columnvalue));
+    }
+    
+    public static boolean exists(String filename, String column, short columnvalue) {
+        return existsprivate(filename, column, Short.toString(columnvalue));
+    }
+    
+    public static int create(String filename) {
+        if(!fexists(filename)) return -1;
+        if(fempty(filename)) return -1;
+        int columnexists = columnExists(filename);
+        if(columnexists == 0) return -1;
+        int gID = generateID(filename);
+        if(gID == -1) return -1;
+        try {
+            String line = gID + "|";
+            for(int i = 0; i < columnexists-1; i++) line += "-|";
+            Files.writeString(Paths.get(filename + ".txt"), (line + System.lineSeparator()), StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+        } catch (IOException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return -1;
+        }
+        return gID;
+    }
+    
+    private static boolean setprivate(String filename, String column, String columnvalue, String data, String name) {
+        if(!fexists(filename)) return false;
+        if(fempty(filename)) return false;
+        int columnid = columnNametoID(filename, column);
+        if(columnid == -1) return false;
+        if(columnvalue.length() == 0) return false;
         int dataid = columnNametoID(filename, data);
         if(dataid == -1) return false;
         ArrayList<String> newlines = new ArrayList<>();
@@ -266,11 +315,156 @@ public class Database {
         return true;
     }
     
-    public static String get(String filename, String column, String columnvalue, String data) {
+    public static boolean set(String filename, String column, double columnvalue, String data, double name) {
+        return setprivate(filename, column, Double.toString(columnvalue), data, Double.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, double columnvalue, String data, float name) {
+        return setprivate(filename, column, Double.toString(columnvalue), data, Float.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, double columnvalue, String data, int name) {
+        return setprivate(filename, column, Double.toString(columnvalue), data, Integer.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, double columnvalue, String data, String name) {
+        return setprivate(filename, column, Double.toString(columnvalue), data, name);
+    }
+    
+    public static boolean set(String filename, String column, double columnvalue, String data, long name) {
+        return setprivate(filename, column, Double.toString(columnvalue), data, Long.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, double columnvalue, String data, short name) {
+        return setprivate(filename, column, Double.toString(columnvalue), data, Short.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, float columnvalue, String data, double name) {
+        return setprivate(filename, column, Float.toString(columnvalue), data, Double.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, float columnvalue, String data, float name) {
+        return setprivate(filename, column, Float.toString(columnvalue), data, Float.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, float columnvalue, String data, int name) {
+        return setprivate(filename, column, Float.toString(columnvalue), data, Integer.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, float columnvalue, String data, String name) {
+        return setprivate(filename, column, Float.toString(columnvalue), data, name);
+    }
+    
+    public static boolean set(String filename, String column, float columnvalue, String data, long name) {
+        return setprivate(filename, column, Float.toString(columnvalue), data, Long.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, float columnvalue, String data, short name) {
+        return setprivate(filename, column, Float.toString(columnvalue), data, Short.toString(name));
+    }
+
+    public static boolean set(String filename, String column, int columnvalue, String data, double name) {
+        return setprivate(filename, column, Integer.toString(columnvalue), data, Double.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, int columnvalue, String data, float name) {
+        return setprivate(filename, column, Integer.toString(columnvalue), data, Float.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, int columnvalue, String data, int name) {
+        return setprivate(filename, column, Integer.toString(columnvalue), data, Integer.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, int columnvalue, String data, String name) {
+        return setprivate(filename, column, Integer.toString(columnvalue), data, name);
+    }
+    
+    public static boolean set(String filename, String column, int columnvalue, String data, long name) {
+        return setprivate(filename, column, Integer.toString(columnvalue), data, Long.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, int columnvalue, String data, short name) {
+        return setprivate(filename, column, Integer.toString(columnvalue), data, Short.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, String columnvalue, String data, double name) {
+        return setprivate(filename, column, columnvalue, data, Double.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, String columnvalue, String data, float name) {
+        return setprivate(filename, column, columnvalue, data, Float.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, String columnvalue, String data, int name) {
+        return setprivate(filename, column, columnvalue, data, Integer.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, String columnvalue, String data, String name) {
+        return setprivate(filename, column, columnvalue, data, name);
+    }
+    
+    public static boolean set(String filename, String column, String columnvalue, String data, long name) {
+        return setprivate(filename, column, columnvalue, data, Long.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, String columnvalue, String data, short name) {
+        return setprivate(filename, column, columnvalue, data, Short.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, long columnvalue, String data, double name) {
+        return setprivate(filename, column, Long.toString(columnvalue), data, Double.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, long columnvalue, String data, float name) {
+        return setprivate(filename, column, Long.toString(columnvalue), data, Float.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, long columnvalue, String data, int name) {
+        return setprivate(filename, column, Long.toString(columnvalue), data, Integer.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, long columnvalue, String data, String name) {
+        return setprivate(filename, column, Long.toString(columnvalue), data, name);
+    }
+    
+    public static boolean set(String filename, String column, long columnvalue, String data, long name) {
+        return setprivate(filename, column, Long.toString(columnvalue), data, Long.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, long columnvalue, String data, short name) {
+        return setprivate(filename, column, Long.toString(columnvalue), data, Short.toString(name));
+    }
+
+    public static boolean set(String filename, String column, short columnvalue, String data, double name) {
+        return setprivate(filename, column, Short.toString(columnvalue), data, Double.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, short columnvalue, String data, float name) {
+        return setprivate(filename, column, Short.toString(columnvalue), data, Float.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, short columnvalue, String data, int name) {
+        return setprivate(filename, column, Short.toString(columnvalue), data, Integer.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, short columnvalue, String data, String name) {
+        return setprivate(filename, column, Short.toString(columnvalue), data, name);
+    }
+    
+    public static boolean set(String filename, String column, short columnvalue, String data, long name) {
+        return setprivate(filename, column, Short.toString(columnvalue), data, Long.toString(name));
+    }
+    
+    public static boolean set(String filename, String column, short columnvalue, String data, short name) {
+        return setprivate(filename, column, Short.toString(columnvalue), data, Short.toString(name));
+    }
+    
+    private static String get(String filename, String column, String columnvalue, String data) {
         if(!fexists(filename)) return null;
         if(fempty(filename)) return null;
         int columnid = columnNametoID(filename, column);
         if(columnid == -1) return null;
+        if(columnvalue.length() == 0) return null;
         int dataid = columnNametoID(filename, data);
         if(dataid == -1) return null;
         try {
@@ -288,11 +482,211 @@ public class Database {
         return null;
     }
     
-    public static String[] getArray(String filename, String column, String columnvalue, String data) {
+    public static double getDouble(String filename, String column, double columnvalue, String data) {
+        return isDouble(get(filename, column, Double.toString(columnvalue), data));
+    }
+    
+    public static double getDouble(String filename, String column, float columnvalue, String data) {
+        return isDouble(get(filename, column, Float.toString(columnvalue), data));
+    }
+    
+    public static double getDouble(String filename, String column, int columnvalue, String data) {
+        return isDouble(get(filename, column, Integer.toString(columnvalue), data));
+    }
+    
+    public static double getDouble(String filename, String column, String columnvalue, String data) {
+        return isDouble(get(filename, column, columnvalue, data));
+    }
+    
+    public static double getDouble(String filename, String column, long columnvalue, String data) {
+        return isDouble(get(filename, column, Long.toString(columnvalue), data));
+    }
+    
+    public static double getDouble(String filename, String column, short columnvalue, String data) {
+        return isDouble(get(filename, column, Short.toString(columnvalue), data));
+    }
+
+    public static float getFloat(String filename, String column, double columnvalue, String data) {
+        return isFloat(get(filename, column, Double.toString(columnvalue), data));
+    }
+    
+    public static float getFloat(String filename, String column, float columnvalue, String data) {
+        return isFloat(get(filename, column, Float.toString(columnvalue), data));
+    }
+    
+    public static float getFloat(String filename, String column, int columnvalue, String data) {
+        return isFloat(get(filename, column, Integer.toString(columnvalue), data));
+    }
+    
+    public static float getFloat(String filename, String column, String columnvalue, String data) {
+        return isFloat(get(filename, column, columnvalue, data));
+    }
+    
+    public static float getFloat(String filename, String column, long columnvalue, String data) {
+        return isFloat(get(filename, column, Long.toString(columnvalue), data));
+    }
+    
+    public static float getFloat(String filename, String column, short columnvalue, String data) {
+        return isFloat(get(filename, column, Short.toString(columnvalue), data));
+    }
+    
+    public static int getInt(String filename, String column, double columnvalue, String data) {
+        return isInteger(get(filename, column, Double.toString(columnvalue), data));
+    }
+    
+    public static int getInt(String filename, String column, float columnvalue, String data) {
+        return isInteger(get(filename, column, Float.toString(columnvalue), data));
+    }
+    
+    public static int getInt(String filename, String column, int columnvalue, String data) {
+        return isInteger(get(filename, column, Integer.toString(columnvalue), data));
+    }
+    
+    public static int getInt(String filename, String column, String columnvalue, String data) {
+        return isInteger(get(filename, column, columnvalue, data));
+    }
+    
+    public static int getInt(String filename, String column, long columnvalue, String data) {
+        return isInteger(get(filename, column, Long.toString(columnvalue), data));
+    }
+    
+    public static int getInt(String filename, String column, short columnvalue, String data) {
+        return isInteger(get(filename, column, Short.toString(columnvalue), data));
+    }
+   
+    public static String getString(String filename, String column, double columnvalue, String data) {
+        return get(filename, column, Double.toString(columnvalue), data);
+    }
+    
+    public static String getString(String filename, String column, float columnvalue, String data) {
+        return get(filename, column, Float.toString(columnvalue), data);
+    }
+    
+    public static String getString(String filename, String column, int columnvalue, String data) {
+        return get(filename, column, Integer.toString(columnvalue), data);
+    }
+    
+    public static String getString(String filename, String column, String columnvalue, String data) {
+        return get(filename, column, columnvalue, data);
+    }
+    
+    public static String getString(String filename, String column, long columnvalue, String data) {
+        return get(filename, column, Long.toString(columnvalue), data);
+    }
+    
+    public static String getString(String filename, String column, short columnvalue, String data) {
+        return get(filename, column, Short.toString(columnvalue), data);
+    }
+    
+    public static long getLong(String filename, String column, double columnvalue, String data) {
+        return isLong(get(filename, column, Double.toString(columnvalue), data));
+    }
+    
+    public static long getLong(String filename, String column, float columnvalue, String data) {
+        return isLong(get(filename, column, Float.toString(columnvalue), data));
+    }
+    
+    public static long getLong(String filename, String column, int columnvalue, String data) {
+        return isLong(get(filename, column, Integer.toString(columnvalue), data));
+    }
+    
+    public static long getLong(String filename, String column, String columnvalue, String data) {
+        return isLong(get(filename, column, columnvalue, data));
+    }
+    
+    public static long getLong(String filename, String column, long columnvalue, String data) {
+        return isLong(get(filename, column, Long.toString(columnvalue), data));
+    }
+    
+    public static long getLong(String filename, String column, short columnvalue, String data) {
+        return isLong(get(filename, column, Short.toString(columnvalue), data));
+    }
+
+    public static short getShort(String filename, String column, double columnvalue, String data) {
+        return isShort(get(filename, column, Double.toString(columnvalue), data));
+    }
+    
+    public static short getShort(String filename, String column, float columnvalue, String data) {
+        return isShort(get(filename, column, Float.toString(columnvalue), data));
+    }
+    
+    public static short getShort(String filename, String column, int columnvalue, String data) {
+        return isShort(get(filename, column, Integer.toString(columnvalue), data));
+    }
+    
+    public static short getShort(String filename, String column, String columnvalue, String data) {
+        return isShort(get(filename, column, columnvalue, data));
+    }
+    
+    public static short getShort(String filename, String column, long columnvalue, String data) {
+        return isShort(get(filename, column, Long.toString(columnvalue), data));
+    }
+    
+    public static short getShort(String filename, String column, short columnvalue, String data) {
+        return isShort(get(filename, column, Short.toString(columnvalue), data));
+    }
+    
+    public static double isDouble(String s) {
+        if(s == null) return -1;
+        try { 
+            Double.parseDouble(s);
+        } catch(NumberFormatException | NullPointerException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return -1; 
+        }
+        return Double.parseDouble(s);
+    }
+    
+    public static float isFloat(String s) {
+        if(s == null) return -1;
+        try { 
+            Float.parseFloat(s);
+        } catch(NumberFormatException | NullPointerException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return -1; 
+        }
+        return Float.parseFloat(s);
+    }
+
+    public static int isInteger(String s) {
+        if(s == null) return -1;
+        try { 
+            Integer.parseInt(s);
+        } catch(NumberFormatException | NullPointerException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return -1; 
+        }
+        return Integer.parseInt(s);
+    }
+    
+    public static long isLong(String s) {
+        if(s == null) return -1;
+        try { 
+            Long.parseLong(s);
+        } catch(NumberFormatException | NullPointerException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return -1; 
+        }
+        return Long.parseLong(s);
+    }
+    
+    public static short isShort(String s) {
+        if(s == null) return -1;
+        try { 
+            Short.parseShort(s);
+        } catch(NumberFormatException | NullPointerException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return -1; 
+        }
+        return Short.parseShort(s);
+    }
+
+    private static String[] getArrayprivate(String filename, String column, String columnvalue, String data) {
         if(!fexists(filename)) return null;
         if(fempty(filename)) return null;
         int columnid = columnNametoID(filename, column);
         if(columnid == -1) return null;
+        if(columnvalue.length() == 0) return null;
         int dataid = columnNametoID(filename, data);
         if(dataid == -1) return null;
         try {
@@ -307,17 +701,41 @@ public class Database {
         return null;
     }
     
-    public static boolean delete(String filename, String column, String columnvalue) {
+    public static String[] getArray(String filename, String column, double columnvalue, String data) {
+        return getArrayprivate(filename, column, Double.toString(columnvalue), data);
+    }
+    
+    public static String[] getArray(String filename, String column, float columnvalue, String data) {
+        return getArrayprivate(filename, column, Float.toString(columnvalue), data);
+    }
+    
+    public static String[] getArray(String filename, String column, int columnvalue, String data) {
+        return getArrayprivate(filename, column, Integer.toString(columnvalue), data);
+    }
+    
+    public static String[] getArray(String filename, String column, String columnvalue, String data) {
+        return getArrayprivate(filename, column, columnvalue, data);
+    }
+    
+    public static String[] getArray(String filename, String column, long columnvalue, String data) {
+        return getArrayprivate(filename, column, Long.toString(columnvalue), data);
+    }
+    
+    public static String[] getArray(String filename, String column, short columnvalue, String data) {
+        return getArrayprivate(filename, column, Short.toString(columnvalue), data);
+    }
+    
+    private static boolean deleteprivate(String filename, String column, String columnvalue) {
         if(!fexists(filename)) return false;
         if(fempty(filename)) return false;
         int columnid = columnNametoID(filename, column);
         if(columnid == -1) return false;
+        if(columnvalue.length() == 0) return false;
         ArrayList<String> newlines = new ArrayList<>();
         try {
             for(String line : Files.readAllLines(Paths.get(filename + ".txt"), StandardCharsets.UTF_8)) {
                 String[] tmpline = line.split("[|]");
-                if(tmpline[columnid].equals(columnvalue)) continue;
-                else newlines.add(line);       
+                if(!tmpline[columnid].equals(columnvalue)) newlines.add(line);       
             }
         } catch (IOException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
@@ -330,5 +748,29 @@ public class Database {
             return false;
         }
         return true;
+    }
+    
+    public static boolean delete(String filename, String column, double columnvalue) {
+        return deleteprivate(filename, column, Double.toString(columnvalue));
+    }
+    
+    public static boolean delete(String filename, String column, float columnvalue) {
+        return deleteprivate(filename, column, Float.toString(columnvalue));
+    }
+    
+    public static boolean delete(String filename, String column, int columnvalue) {
+        return deleteprivate(filename, column, Integer.toString(columnvalue));
+    }
+    
+    public static boolean delete(String filename, String column, String columnvalue) {
+        return deleteprivate(filename, column, columnvalue);
+    }
+    
+    public static boolean delete(String filename, String column, long columnvalue) {
+        return deleteprivate(filename, column, Long.toString(columnvalue));
+    }
+    
+    public static boolean delete(String filename, String column, short columnvalue) {
+        return deleteprivate(filename, column, Short.toString(columnvalue));
     }
 }
