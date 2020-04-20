@@ -80,7 +80,7 @@ public class Home extends javax.swing.JFrame {
         
         int id = Database.create("Test");
         System.out.println("Gelsin id " + id);
-        //Database.delete("Test", "ID", 3);
+        //Database.delete("Test", "ID", 1);
         /*Database.setColumn("Test", 0, "ID");
         Database.setColumn("Test", 4, "Avni");*/
         
