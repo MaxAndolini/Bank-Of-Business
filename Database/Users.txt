@@ -1,5 +1,5 @@
 ID|CardNumber|FullName|DateofBirth|Job|PhoneNumber|Dollar|Euro|Pound|TurkishLira|HomeAddress|Password|Salary|
-0|-|-|-|-|95555|-|-|-|-|-|-|-|
+0|-|-|-|-|-|-|-|-|-|-|-|-|
 1|-|-|-|-|-|-|-|-|-|-|-|-|
 2|-|-|-|-|-|-|-|-|-|-|-|-|
 3|-|-|-|-|-|-|-|-|-|-|-|-|
