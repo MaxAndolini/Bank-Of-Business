@@ -562,8 +562,8 @@ public class Database {
             for(String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
                 String[] tmpline = line.split("[|]");
                 if(tmpline[columnid].equals(columnvalue)) {
-                    if(tmpline[columnid].equals("-")) return null;
-                    else return tmpline[columnid];
+                    if(tmpline[dataid].equals("-")) return null;
+                    else return tmpline[dataid];
                 }
             }
         } catch (IOException ex) {
