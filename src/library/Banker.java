@@ -12,9 +12,14 @@ package library;
 public class Banker extends User {
     
     private int bankerSalary;
-  
-    public Banker(String ID, String name, String dateOfBirth, String password, String homeAddress, int bankerSalary) {
-        super(ID, name, dateOfBirth, password, homeAddress);
+
+    public Banker() {
+        super();
+        this.bankerSalary = 0;
+    }
+    
+    public Banker(int bankerSalary, String ID, String name, String dateOfBirth, String homeAddress, String password) {
+        super(ID, name, dateOfBirth, homeAddress, password);
         this.bankerSalary = bankerSalary;
     }
 

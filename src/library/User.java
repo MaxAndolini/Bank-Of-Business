@@ -12,19 +12,19 @@ package library;
 public class User {
     
     private ID id;
-    private String password;
     private String homeAddress;
+    private String password;
     
     public User() {
         this.id = new ID();
-        this.password = "0000";
         this.homeAddress = "----";
+        this.password = "0000";
     }
     
-    public User(String ID, String name, String dateOfBirth, String password, String homeAddress) {
+    public User(String ID, String name, String dateOfBirth, String homeAddress, String password) {
         this.id = new ID(ID, name, dateOfBirth);
-        this.password = password;
         this.homeAddress = homeAddress;
+        this.password = password;
     }
 
     public ID getId() {
@@ -35,20 +35,20 @@ public class User {
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getHomeAddress() {
         return homeAddress;
     }
 
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

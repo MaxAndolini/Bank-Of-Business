@@ -1,0 +1,2 @@
+ID|CardNumber|FullName|DateofBirth|Job|PhoneNumber|Dollar|Euro|Pound|TurkishLira|HomeAddress|Password|Salary|
+0|-|-|-|-|-|-|-|-|-|-|-|-|

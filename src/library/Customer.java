@@ -5,36 +5,39 @@
  */
 package library;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author ercan
  */
 public class Customer extends User {
     
-    private String phoneNumber;
     private String job;
-    private double moneyAmount;
+    private String phoneNumber;
+    private BigDecimal dollar;
+    private BigDecimal euro;
+    private BigDecimal pound;
+    private BigDecimal turkishLira;
     
     public Customer() {
         super();
-        this.phoneNumber = "0000";
         this.job = "----";
-        this.moneyAmount = 0;
+        this.phoneNumber = "0000";
+        this.dollar = BigDecimal.valueOf(0);
+        this.euro = BigDecimal.valueOf(0);
+        this.pound = BigDecimal.valueOf(0);
+        this.turkishLira = BigDecimal.valueOf(0);
     }
 
-    public Customer(String ID, String name, String dateOfBirth, String password, String homeAddress, String phoneNumber, String job, double moneyAmount) {
-        super(ID, name, dateOfBirth, password, homeAddress);
-        this.phoneNumber = phoneNumber;
+    public Customer(String job, String phoneNumber, BigDecimal dollar, BigDecimal euro, BigDecimal pound, BigDecimal turkishLira, String ID, String name, String dateOfBirth, String homeAddress, String password) {
+        super(ID, name, dateOfBirth, homeAddress, password);
         this.job = job;
-        this.moneyAmount = moneyAmount;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        this.dollar = dollar;
+        this.euro = euro;
+        this.pound = pound;
+        this.turkishLira = turkishLira;
     }
 
     public String getJob() {
@@ -45,12 +48,44 @@ public class Customer extends User {
         this.job = job;
     }
 
-    public double getMoneyAmount() {
-        return moneyAmount;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setMoneyAmount(double moneyAmount) {
-        this.moneyAmount = moneyAmount;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public BigDecimal getDollar() {
+        return dollar;
+    }
+
+    public void setDollar(BigDecimal dollar) {
+        this.dollar = dollar;
+    }
+
+    public BigDecimal getEuro() {
+        return euro;
+    }
+
+    public void setEuro(BigDecimal euro) {
+        this.euro = euro;
+    }
+
+    public BigDecimal getPound() {
+        return pound;
+    }
+
+    public void setPound(BigDecimal pound) {
+        this.pound = pound;
+    }
+
+    public BigDecimal getTurkishLira() {
+        return turkishLira;
+    }
+
+    public void setTurkishLira(BigDecimal turkishLira) {
+        this.turkishLira = turkishLira;
     }
 
     @Override
@@ -59,15 +94,18 @@ public class Customer extends User {
         System.out.println(toString() + "'s telephone number: " + getPhoneNumber());
         System.out.println(toString() + "'s home adress: " + getHomeAddress());
         System.out.println(toString() + "'s job: " + getJob());
-        System.out.println(toString() + "'s money amount in the account: " + getMoneyAmount());
+        System.out.println(toString() + "'s dollar amount: " + getDollar());
+        System.out.println(toString() + "'s euro amount: " + getEuro());
+        System.out.println(toString() + "'s pound amount: " + getPound());
+        System.out.println(toString() + "'s turkish lira amount: " + getTurkishLira());
     }
     
     public void deposit(int money) {
-        setMoneyAmount(moneyAmount + money);
+        //setMoneyAmount(moneyAmount + money);
     }
     
     public void withdraw(int money) {
-        setMoneyAmount(moneyAmount - money);
+        //setMoneyAmount(moneyAmount - money);
     }
     
     public void transferID(String ID) {

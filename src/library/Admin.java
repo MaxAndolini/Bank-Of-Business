@@ -17,9 +17,9 @@ public class Admin extends User {
         super();
         this.adminSalary = 0;
     }
-    
-    public Admin(String ID, String name, String dateOfBirth, String password, String homeAddress, int adminSalary) {
-        super(ID, name, dateOfBirth, password, homeAddress);
+
+    public Admin(int adminSalary, String ID, String name, String dateOfBirth, String homeAddress, String password) {
+        super(ID, name, dateOfBirth, homeAddress, password);
         this.adminSalary = adminSalary;
     }
 
@@ -30,7 +30,7 @@ public class Admin extends User {
     public void setAdminSalary(int adminSalary) {
         this.adminSalary = adminSalary;
     }
-   
+    
     @Override
     public void displayInfo() {
         super.displayInfo();

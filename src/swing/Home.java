@@ -70,21 +70,33 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         
-        boolean create = Database.fcreate("Test");
-        if(create == true) {
-            int column = Database.columnExists("Test");
-            if(column != 8) Database.createColumn("Test", 0, 8);
-            Database.setColumn("Test", 0, "ID");
+        boolean created = Database.fcreate("Users");
+        if(created == true) {
+            int column = Database.columnExists("Users");
+            if(column != 13) Database.createColumn("Users", 0, 13);
+            Database.setColumn("Users", 0, "ID");
+            Database.setColumn("Users", 1, "CardNumber");
+            Database.setColumn("Users", 2, "FullName");
+            Database.setColumn("Users", 3, "DateofBirth");
+            Database.setColumn("Users", 4, "Job");
+            Database.setColumn("Users", 5, "PhoneNumber");
+            Database.setColumn("Users", 6, "Dollar");
+            Database.setColumn("Users", 7, "Euro");
+            Database.setColumn("Users", 8, "Pound");
+            Database.setColumn("Users", 9, "TurkishLira");
+            Database.setColumn("Users", 10, "HomeAddress");
+            Database.setColumn("Users", 11, "Password");
+            Database.setColumn("Users", 12, "Salary");
         }
         
         
-        int id = Database.create("Test");
-        System.out.println("Gelsin id " + id);
+        /*int id = Database.create("Test");
+        System.out.println("Gelsin id " + id);*/
         //Database.delete("Test", "ID", 1);
         /*Database.setColumn("Test", 0, "ID");
         Database.setColumn("Test", 4, "Avni");*/
         
-        //Database.create("Test", 555);
+        Database.create("Users");
         /*Database.set("Test", "ID", "555", "Denedme", "kaDGFDGssr");
         Database.delete("Test", "ID", "685");
         Database.create("Test");*/
