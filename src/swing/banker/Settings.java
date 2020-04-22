@@ -15,6 +15,7 @@ public class Settings extends javax.swing.JPanel {
     
     /**
      * Creates new form Settings
+     * @param home
      */
     public Settings(swing.Home home) {
         initComponents();

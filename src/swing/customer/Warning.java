@@ -15,6 +15,7 @@ public class Warning extends javax.swing.JPanel {
     
     /**
      * Creates new form Warning
+     * @param home
      */
     public Warning(swing.Home home) {
         initComponents();

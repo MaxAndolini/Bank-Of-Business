@@ -352,7 +352,7 @@
               <Color blue="65" green="bb" red="85" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="500&#x20ba;"/>
+            <Property name="text" type="java.lang.String" value="&#x20ba;500"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -489,7 +489,7 @@
               <Color blue="65" green="bb" red="85" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="5.42&#x20ba;"/>
+            <Property name="text" type="java.lang.String" value="&#x20ba;5.42"/>
           </Properties>
         </Component>
       </SubComponents>

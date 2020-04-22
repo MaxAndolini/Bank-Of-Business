@@ -7,9 +7,7 @@ package swing;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.Color;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import library.*;
 
 /**
@@ -64,11 +62,11 @@ public class Home extends javax.swing.JFrame {
         DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
         DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
 
-        setLayout(new BorderLayout());
-        add(DynamicPanel);
+        Home.this.setLayout(new BorderLayout());
+        Home.this.add(DynamicPanel);
         ChangeJPanel("MainSelect");
-        setLocationRelativeTo(null);
-        setVisible(true);
+        Home.this.setLocationRelativeTo(null);
+        Home.this.setVisible(true);
         
         boolean created = Database.fcreate("Users");
         if(created == true) {
@@ -98,7 +96,9 @@ public class Home extends javax.swing.JFrame {
         
         
         System.out.println("Card id " + Customer.generateCardNumber());
-        System.out.println("Card id " + Customer.generateCardNumber());
+        
+        //System.out.println("Para id " + Customer.currencyFormat(3, new BigDecimal("123456789")));
+        //System.out.println("Card id " + Database.isShort("6564454545548"));
         
         /*Database.create("Users", "FullName", 55);
         Database.create("Users", "FullName", "Ekmek");
@@ -139,6 +139,7 @@ public class Home extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(23, 35, 51));
@@ -240,7 +241,7 @@ public class Home extends javax.swing.JFrame {
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xx,y-xy);
+        this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
@@ -251,7 +252,7 @@ public class Home extends javax.swing.JFrame {
         setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_minimizebtnActionPerformed
 
-    int xx,xy;
+    int xx, xy;
     /**
      * @param args the command line arguments
      */
@@ -268,49 +269,16 @@ public class Home extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Home().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Home().setVisible(true);
         });
     }
-   
-    
-    private void setColor(JPanel pane)
-    {
-        pane.setBackground(new Color(41,57,80));
-    }
-    
-    private void resetColor(JPanel [] pane, JPanel [] indicators)
-    {
-        for(int i=0;i<pane.length;i++){
-           pane[i].setBackground(new Color(23,35,51));
-           
-        } for(int i=0;i<indicators.length;i++){
-           indicators[i].setOpaque(false);           
-        }
-        
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;

@@ -15,6 +15,7 @@ public class EditBanker extends javax.swing.JPanel {
     
     /**
      * Creates new form EditBanker
+     * @param home
      */
     public EditBanker(swing.Home home) {
         initComponents();

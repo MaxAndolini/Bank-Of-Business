@@ -15,6 +15,7 @@ public class Balance extends javax.swing.JPanel {
     
     /**
      * Creates new form Balance
+     * @param home
      */
     public Balance(swing.Home home) {
         initComponents();
@@ -141,7 +142,7 @@ public class Balance extends javax.swing.JPanel {
         turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
         turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        turkishliraalabel.setText("500₺");
+        turkishliraalabel.setText("₺500");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -223,7 +224,7 @@ public class Balance extends javax.swing.JPanel {
         thirdalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         thirdalabel.setForeground(new java.awt.Color(133, 187, 101));
         thirdalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        thirdalabel.setText("5.42₺");
+        thirdalabel.setText("₺5.42");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

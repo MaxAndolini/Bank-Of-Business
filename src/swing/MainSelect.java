@@ -6,8 +6,6 @@
 package swing;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
@@ -22,16 +20,14 @@ public class MainSelect extends javax.swing.JPanel {
     
     /**
      * Creates new form MainSelect
+     * @param home
      */
     public MainSelect(swing.Home home) {
         initComponents();
         frame = home;
         
-        Timer t = new Timer(500, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                mainlabel2.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
-            }
+        Timer t = new Timer(500, (ActionEvent e) -> {
+            mainlabel2.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         });
         t.start();
     }

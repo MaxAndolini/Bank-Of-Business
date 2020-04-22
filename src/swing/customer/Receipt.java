@@ -15,6 +15,7 @@ public class Receipt extends javax.swing.JPanel {
     
     /**
      * Creates new form Receipt
+     * @param home
      */
     public Receipt(swing.Home home) {
         initComponents();

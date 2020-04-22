@@ -15,6 +15,7 @@ public class CurrencyRate extends javax.swing.JPanel {
     
     /**
      * Creates new form CurrencyRate
+     * @param home
      */
     public CurrencyRate(swing.Home home) {
         initComponents();

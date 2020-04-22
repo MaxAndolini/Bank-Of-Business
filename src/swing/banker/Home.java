@@ -15,6 +15,7 @@ public class Home extends javax.swing.JPanel {
     
     /**
      * Creates new form Home
+     * @param home
      */
     public Home(swing.Home home) {
         initComponents();

@@ -31,6 +31,7 @@ public class Banker extends User {
         this.bankerSalary = bankerSalary;
     }
 
+    @Override
     public void displayInfo() {
         super.displayInfo();
         System.out.println(toString() + "'s salary: " + getBankerSalary());

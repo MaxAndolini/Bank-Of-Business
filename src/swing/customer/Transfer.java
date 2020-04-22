@@ -15,6 +15,7 @@ public class Transfer extends javax.swing.JPanel {
     
     /**
      * Creates new form Transfer
+     * @param home
      */
     public Transfer(swing.Home home) {
         initComponents();

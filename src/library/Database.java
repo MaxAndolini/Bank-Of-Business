@@ -12,8 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -25,8 +23,8 @@ public class Database {
         if(directoryname.length() == 0) return false;
         try {
             return Files.exists(Paths.get(directoryname));
-        } catch (Exception ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(Exception ex) {
+            System.out.println(ex.toString());
             return false;
         }
     }
@@ -35,8 +33,8 @@ public class Database {
         if(directoryname.length() == 0) return false;
         try {
             Files.delete(Paths.get(directoryname));
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -47,8 +45,8 @@ public class Database {
         try {
             Files.createDirectory(Paths.get(directoryname));
             if(!dexists(directoryname)) return false;
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -58,8 +56,8 @@ public class Database {
         if(filename.length() == 0) return false;
         try {
             return Files.exists(Paths.get("Database/" + filename + ".txt"));
-        } catch (Exception ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(Exception ex) {
+            System.out.println(ex.toString());
             return false;
         }
     }
@@ -68,8 +66,8 @@ public class Database {
         if(filename.length() == 0) return false;
         try {
             if(Files.size(Paths.get("Database/" + filename + ".txt")) > 0) return false;
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -79,8 +77,8 @@ public class Database {
         if(filename.length() == 0) return false;
         try {
             Files.delete(Paths.get("Database/" + filename + ".txt"));
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -92,8 +90,8 @@ public class Database {
             if(!dexists("Database")) dcreate("Database");
             Files.createFile(Paths.get("Database/" + filename + ".txt"));
             if(!fexists(filename)) return false;
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -116,8 +114,8 @@ public class Database {
                     }
                 } else linecount++;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return -1;
         }
         return getMissingNumber(numbers.stream().mapToInt(i -> i).toArray());
@@ -140,8 +138,8 @@ public class Database {
             for(int i = 0; i < line.length(); i++) {
                 if(line.charAt(i) == '|') count++;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return 0;
         }
         return count;
@@ -166,15 +164,15 @@ public class Database {
                     for(String tmpline2 : tmpline) newline += (!tmpline2.equals("") ? (tmpline2 + "|") : "");
                     newlines.add(newline);
                 }
-            } catch (IOException ex) {
-                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            } catch(IOException ex) {
+                System.out.println(ex.toString());
                 return false;
             }
         }
         try {
             Files.write(Paths.get("Database/" + filename + ".txt"), newlines, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -200,14 +198,14 @@ public class Database {
                     newlines.add(newline);
                 } else newlines.add(line);       
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         try {
             Files.write(Paths.get("Database/" + filename + ".txt"), newlines, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -228,14 +226,14 @@ public class Database {
                 for(String tmpline2 : tmpline) newline += (!tmpline2.equals("") ? (tmpline2 + "|") : "");
                 newlines.add(newline);
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         try {
             Files.write(Paths.get("Database/" + filename + ".txt"), newlines, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -254,8 +252,8 @@ public class Database {
                 if(tmpline2.equals(name)) return count;
                 else count++;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return 0;
         }
         return -1;
@@ -272,8 +270,8 @@ public class Database {
                 String[] tmpline = line.split("[|]");
                 if(tmpline[columnid].equals(columnvalue)) return true;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return false;
@@ -322,8 +320,8 @@ public class Database {
                 else line += "-|";
             }
             Files.writeString(Paths.get("Database/" + filename + ".txt"), (line + System.lineSeparator()), StandardCharsets.UTF_8, StandardOpenOption.APPEND);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return null;
         }
         return columnvalue;
@@ -382,14 +380,14 @@ public class Database {
                     newlines.add(newline);
                 } else newlines.add(line);       
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         try {
             Files.write(Paths.get("Database/" + filename + ".txt"), newlines, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;
@@ -607,8 +605,8 @@ public class Database {
                     else return tmpline[dataid];
                 }
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return null;
         }
         return null;
@@ -812,68 +810,74 @@ public class Database {
     
     public static double isDouble(String s) {
         if(s == null) return -1;
+        double num;
         try { 
-            Double.parseDouble(s);
+            num = Double.parseDouble(s);
         } catch(NumberFormatException | NullPointerException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return -1; 
+            System.out.println(ex.toString());
+            return -1;
         }
-        return Double.parseDouble(s);
+        return num;
     }
     
     public static float isFloat(String s) {
         if(s == null) return -1;
+        float num;
         try { 
-            Float.parseFloat(s);
+            num = Float.parseFloat(s);
         } catch(NumberFormatException | NullPointerException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return -1; 
+            System.out.println(ex.toString());
+            return -1;
         }
-        return Float.parseFloat(s);
+        return num;
     }
 
     public static int isInteger(String s) {
         if(s == null) return -1;
+        int num;
         try { 
-            Integer.parseInt(s);
+            num = Integer.parseInt(s);
         } catch(NumberFormatException | NullPointerException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return -1; 
+            System.out.println(ex.toString());
+            return -1;
         }
-        return Integer.parseInt(s);
+        return num;
     }
     
     public static long isLong(String s) {
         if(s == null) return -1;
+        long num;
         try { 
-            Long.parseLong(s);
+            num = Long.parseLong(s);
         } catch(NumberFormatException | NullPointerException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return -1; 
+            System.out.println(ex.toString());
+            return -1;
         }
-        return Long.parseLong(s);
+        return num;
     }
     
     public static short isShort(String s) {
         if(s == null) return -1;
+        short num;
         try { 
-            Short.parseShort(s);
+            num = Short.parseShort(s);
         } catch(NumberFormatException | NullPointerException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return -1; 
+            System.out.println(ex.toString());
+            return -1;
         }
-        return Short.parseShort(s);
+        return num;
     }
     
     public static BigDecimal isBigDecimal(String s) {
         if(s == null) return BigDecimal.valueOf(-1);
+        BigDecimal num;
         try { 
-            new BigDecimal(s);
+            num = new BigDecimal(s);
         } catch(NumberFormatException | NullPointerException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.toString());
             return BigDecimal.valueOf(-1);
         }
-        return new BigDecimal(s);
+        return num;
     }
 
     private static String[] getArrayPrivate(String filename, String column, String columnvalue, String data) {
@@ -889,8 +893,8 @@ public class Database {
                 String[] tmpline = line.split("[|]");
                 if(tmpline[columnid].equals(columnvalue)) return tmpline;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return null;
         }
         return null;
@@ -936,14 +940,14 @@ public class Database {
                 String[] tmpline = line.split("[|]");
                 if(!tmpline[columnid].equals(columnvalue)) newlines.add(line);       
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         try {
             Files.write(Paths.get("Database/" + filename + ".txt"), newlines, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(IOException ex) {
+            System.out.println(ex.toString());
             return false;
         }
         return true;

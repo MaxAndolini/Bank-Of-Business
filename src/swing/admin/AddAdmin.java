@@ -15,6 +15,7 @@ public class AddAdmin extends javax.swing.JPanel {
     
     /**
      * Creates new form AddAdmin
+     * @param home
      */
     public AddAdmin(swing.Home home) {
         initComponents();

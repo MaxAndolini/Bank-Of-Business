@@ -15,6 +15,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
     
     /**
      * Creates new form DeleteCustomer
+     * @param home
      */
     public DeleteCustomer(swing.Home home) {
         initComponents();

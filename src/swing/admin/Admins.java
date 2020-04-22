@@ -15,6 +15,7 @@ public class Admins extends javax.swing.JPanel {
     
     /**
      * Creates new form Admins
+     * @param home
      */
     public Admins(swing.Home home) {
         initComponents();

@@ -15,6 +15,7 @@ public class Customers extends javax.swing.JPanel {
     
     /**
      * Creates new form Customers
+     * @param home
      */
     public Customers(swing.Home home) {
         initComponents();
