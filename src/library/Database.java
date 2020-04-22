@@ -99,18 +99,21 @@ public class Database {
         return true;
     }
     
-    public static int generateID(String filename) {
+    public static int generateID(String filename, String column) {
         if(!fexists(filename)) return -1;
         if(fempty(filename)) return -1;
-        int columnexists = columnExists(filename);
-        if(columnexists == 0) return -1;
+        int columnid = columnNametoID(filename, column);
+        if(columnid == -1) return -1;
         int linecount = 0;
         ArrayList<Integer> numbers = new ArrayList<>();
         try {
             for(String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
                 if(linecount != 0) {
                     String[] tmpline = line.split("[|]");
-                    numbers.add(Integer.parseInt(tmpline[0]));
+                    if(!tmpline[columnid].equals("-")) {
+                        int id = isInteger(tmpline[columnid]);
+                        if(id != -1) numbers.add(id);
+                    }
                 } else linecount++;
             }
         } catch (IOException ex) {
@@ -304,22 +307,60 @@ public class Database {
         return existsPrivate(filename, column, columnvalue.toString());
     }
     
-    public static int create(String filename) {
-        if(!fexists(filename)) return -1;
-        if(fempty(filename)) return -1;
+    private static String createPrivate(String filename, String column, String columnvalue) {
+        if(!fexists(filename)) return null;
+        if(fempty(filename)) return null;
         int columnexists = columnExists(filename);
-        if(columnexists == 0) return -1;
-        int gID = generateID(filename);
-        if(gID == -1) return -1;
+        if(columnexists == 0) return null;
+        int columnid = columnNametoID(filename, column);
+        if(columnid == -1) return null;
+        if(columnvalue.length() == 0) return null;
         try {
-            String line = gID + "|";
-            for(int i = 0; i < columnexists-1; i++) line += "-|";
+            String line = "";
+            for(int i = 0; i < columnexists; i++) {
+                if(i == columnid)  line += columnvalue + "|";
+                else line += "-|";
+            }
             Files.writeString(Paths.get("Database/" + filename + ".txt"), (line + System.lineSeparator()), StandardCharsets.UTF_8, StandardOpenOption.APPEND);
         } catch (IOException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return -1;
+            return null;
         }
-        return gID;
+        return columnvalue;
+    }
+    
+    public static int create(String filename) {
+        int gID = generateID(filename, "ID");
+        if(gID == -1) return -1;
+        return isInteger(createPrivate(filename, "ID", Integer.toString(gID)));
+    }
+    
+    public static double create(String filename, String column, double columnvalue) {
+        return isDouble(createPrivate(filename, column, Double.toString(columnvalue)));
+    }
+    
+    public static float create(String filename, String column, float columnvalue) {
+        return isFloat(createPrivate(filename, column, Float.toString(columnvalue)));
+    }
+    
+    public static int create(String filename, String column, int columnvalue) {
+        return isInteger(createPrivate(filename, column, Integer.toString(columnvalue)));
+    }
+
+    public static String create(String filename, String column, String columnvalue) {
+        return createPrivate(filename, column, columnvalue);
+    }
+    
+    public static long create(String filename, String column, long columnvalue) {
+        return isLong(createPrivate(filename, column, Long.toString(columnvalue)));
+    }
+    
+    public static short create(String filename, String column, short columnvalue) {
+        return isShort(createPrivate(filename, column, Short.toString(columnvalue)));
+    }
+    
+    public static BigDecimal create(String filename, String column, BigDecimal columnvalue) {
+        return isBigDecimal(createPrivate(filename, column, columnvalue.toString()));
     }
     
     private static boolean setPrivate(String filename, String column, String columnvalue, String data, String name) {
@@ -740,10 +781,6 @@ public class Database {
     public static short getShort(String filename, String column, BigDecimal columnvalue, String data) {
         return isShort(get(filename, column, columnvalue.toString(), data));
     }
-    
-    
-    
-    
     
     public static BigDecimal getBigDecimal(String filename, String column, double columnvalue, String data) {
         return isBigDecimal(get(filename, column, Double.toString(columnvalue), data));
