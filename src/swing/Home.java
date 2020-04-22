@@ -96,10 +96,14 @@ public class Home extends javax.swing.JFrame {
         /*Database.setColumn("Test", 0, "ID");
         Database.setColumn("Test", 4, "Avni");*/
         
-        Database.create("Users", "FullName", 55);
+        
+        System.out.println("Card id " + Customer.generateCardNumber());
+        System.out.println("Card id " + Customer.generateCardNumber());
+        
+        /*Database.create("Users", "FullName", 55);
         Database.create("Users", "FullName", "Ekmek");
         Database.create("Users");
-        Database.create("Users");
+        Database.create("Users");*/
         /*Database.set("Test", "ID", "555", "Denedme", "kaDGFDGssr");
         Database.delete("Test", "ID", "685");
         Database.create("Test");*/

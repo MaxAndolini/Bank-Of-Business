@@ -6,6 +6,7 @@
 package library;
 
 import java.math.BigDecimal;
+import java.security.SecureRandom;
 
 /**
  *
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
  */
 public class Customer extends User {
     
+    private String cardNumber;
     private String job;
     private String phoneNumber;
     private BigDecimal dollar;
@@ -22,22 +24,32 @@ public class Customer extends User {
     
     public Customer() {
         super();
-        this.job = "----";
-        this.phoneNumber = "0000";
+        this.cardNumber = "-";
+        this.job = "-";
+        this.phoneNumber = "0";
         this.dollar = BigDecimal.valueOf(0);
         this.euro = BigDecimal.valueOf(0);
         this.pound = BigDecimal.valueOf(0);
         this.turkishLira = BigDecimal.valueOf(0);
     }
 
-    public Customer(String job, String phoneNumber, BigDecimal dollar, BigDecimal euro, BigDecimal pound, BigDecimal turkishLira, String ID, String name, String dateOfBirth, String homeAddress, String password) {
+    public Customer(String cardNumber, String job, String phoneNumber, BigDecimal dollar, BigDecimal euro, BigDecimal pound, BigDecimal turkishLira, String ID, String name, String dateOfBirth, String homeAddress, String password) {
         super(ID, name, dateOfBirth, homeAddress, password);
+        this.cardNumber = cardNumber;
         this.job = job;
         this.phoneNumber = phoneNumber;
         this.dollar = dollar;
         this.euro = euro;
         this.pound = pound;
         this.turkishLira = turkishLira;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
     public String getJob() {
@@ -87,7 +99,34 @@ public class Customer extends User {
     public void setTurkishLira(BigDecimal turkishLira) {
         this.turkishLira = turkishLira;
     }
-
+    
+    public String showCardNumber() {
+        return this.cardNumber.replaceAll(".{4}(?!$)", "$0-");
+    }
+    
+    public static String generateCardNumber() {
+        String result = "1";
+        SecureRandom rand = new SecureRandom();
+        for(int i = 0; i < 15; i++) result += rand.nextInt(10);
+        if(!checkLuhn(result)) return generateCardNumber();
+        if(!Database.exists("Users", "CardNumber", result)) return generateCardNumber();
+        return result;
+    }
+    
+    public static boolean checkLuhn(String cardNumber) { 
+        int nDigits = cardNumber.length(); 
+        int nSum = 0; 
+        boolean isSecond = false; 
+        for(int i = nDigits - 1; i >= 0; i--) { 
+            int d = cardNumber.charAt(i) - '0'; 
+            if(isSecond == true) d = d * 2; 
+            nSum += d / 10; 
+            nSum += d % 10;
+            isSecond = !isSecond; 
+        } 
+        return (nSum % 10 == 0); 
+    }
+    
     @Override
     public void displayInfo() {
         super.displayInfo();
