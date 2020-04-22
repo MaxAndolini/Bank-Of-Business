@@ -1,5 +1,0 @@
-ID|CardNumber|FullName|DateofBirth|Job|PhoneNumber|Dollar|Euro|Pound|TurkishLira|HomeAddress|Password|Salary|
--|-|55|-|-|-|-|-|-|-|-|-|-|
--|-|Ekmek|-|-|-|-|-|-|-|-|-|-|
-0|-|-|-|-|-|-|-|-|-|-|-|-|
-1|-|-|-|-|-|-|-|-|-|-|-|-|
