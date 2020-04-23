@@ -21,8 +21,8 @@ public class User {
         this.password = "0000";
     }
     
-    public User(String ID, String name, String dateOfBirth, String homeAddress, String password) {
-        this.id = new ID(ID, name, dateOfBirth);
+    public User(String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
+        this.id = new ID(ID, fullName, dateOfBirth);
         this.homeAddress = homeAddress;
         this.password = password;
     }
@@ -39,16 +39,18 @@ public class User {
         return homeAddress;
     }
 
-    public void setHomeAddress(String homeAddress) {
+    public void setHomeAddress(String homeAddress, int save) {
         this.homeAddress = homeAddress;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "HomeAddress", homeAddress);
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password, int save) {
         this.password = password;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Password", password);
     }
 
     @Override
@@ -58,7 +60,7 @@ public class User {
     
     public void displayInfo() {
         System.out.println(toString() + "'s ID: " + id.getID());
-        System.out.println(toString() + "'s Name: " + id.getName());
+        System.out.println(toString() + "'s Name: " + id.getFullName());
         System.out.println(toString() + "'s Birth Date: " + id.getDateOfBirth());
     }
 }

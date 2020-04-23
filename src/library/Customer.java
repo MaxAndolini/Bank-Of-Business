@@ -50,56 +50,63 @@ public class Customer extends User {
         return cardNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
+    public void setCardNumber(String cardNumber, int save) {
         this.cardNumber = cardNumber;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "CardNumber", cardNumber);
     }
 
     public String getJob() {
         return job;
     }
 
-    public void setJob(String job) {
+    public void setJob(String job, int save) {
         this.job = job;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Job", job);
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber, int save) {
         this.phoneNumber = phoneNumber;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "PhoneNumber", phoneNumber);
     }
 
     public BigDecimal getDollar() {
         return dollar;
     }
 
-    public void setDollar(BigDecimal dollar) {
+    public void setDollar(BigDecimal dollar, int save) {
         this.dollar = dollar;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Dollar", dollar);
     }
 
     public BigDecimal getEuro() {
         return euro;
     }
 
-    public void setEuro(BigDecimal euro) {
+    public void setEuro(BigDecimal euro, int save) {
         this.euro = euro;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Euro", euro);
     }
 
     public BigDecimal getPound() {
         return pound;
     }
 
-    public void setPound(BigDecimal pound) {
+    public void setPound(BigDecimal pound, int save) {
         this.pound = pound;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Pound", pound);
     }
 
     public BigDecimal getTurkishLira() {
         return turkishLira;
     }
 
-    public void setTurkishLira(BigDecimal turkishLira) {
+    public void setTurkishLira(BigDecimal turkishLira, int save) {
         this.turkishLira = turkishLira;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "TurkishLira", turkishLira);
     }
     
     public String showCardNumber() {

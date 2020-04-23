@@ -1,2 +1,2 @@
 ID|AccountType|CardNumber|FullName|DateofBirth|Job|PhoneNumber|Dollar|Euro|Pound|TurkishLira|HomeAddress|Password|Salary|
-0|0|1569786381879100|-|-|-|-|-|-|-|-|-|-|-|
+0|0|1569786381879100|Ercan Acar|04/05/1995|Meslek|9156255|354|54|500|999|Burhaniye|Ercan129@|-|

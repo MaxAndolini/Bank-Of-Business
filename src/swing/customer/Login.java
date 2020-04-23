@@ -5,6 +5,9 @@
  */
 package swing.customer;
 
+import java.math.BigDecimal;
+import library.*;
+
 /**
  *
  * @author ercan
@@ -20,6 +23,9 @@ public class Login extends javax.swing.JPanel {
     public Login(swing.Home home) {
         initComponents();
         frame = home;
+        
+        uidcnumbertext.setText("");
+        password.setText("");
     }
 
     /**
@@ -167,7 +173,53 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
-        frame.ChangeJPanel("HomeCustomer");
+
+        /*
+        1) ^ - start of the string
+        2) (?=.*[0-9]) - Positive look ahead expression for any number
+        3) (?=.*[a-z]) - Positive look ahead expression for lower case letter
+        4) (?=.*[A-Z]) - Positive look ahead expression for upper case letter
+        5) (?=.*[!@#$%^&*]) - Positive look ahead expression for any special character
+        6) (?=\\S+$) - Positive look ahead expression for \S (non-space character)
+        7) . – any character
+        8) {8,} - minimum 8 characters in length
+        9) $ - end of the string
+        */
+        
+        int type = 0;
+        if(uidcnumbertext.getText().length() == 16) type = 1;
+        
+        if(!uidcnumbertext.getText().isBlank() || !String.valueOf(password.getPassword()).isBlank()) {
+            if(Database.exists("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText())) {
+                if(Database.getInt("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "AccountType") == 0) {
+                    if(String.valueOf(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                        if(String.valueOf(password.getPassword()).equals(Database.getString("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "Password"))) {
+                            String[] load = Database.getArray("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText());
+                            Customer customer = new Customer();
+                            customer.getId().setID(load[0]);
+                            customer.setCardNumber(load[2], 0);
+                            customer.getId().setFullName(load[3], 0);
+                            customer.getId().setDateOfBirth(load[4], 0);
+                            customer.setJob(load[5], 0);
+                            customer.setPhoneNumber(load[6], 0);
+                            customer.setDollar(new BigDecimal(load[7]), 0);
+                            customer.setEuro(new BigDecimal(load[8]), 0);
+                            customer.setPound(new BigDecimal(load[9]), 0);
+                            customer.setTurkishLira(new BigDecimal(load[10]), 0);
+                            customer.setHomeAddress(load[11], 0);
+                            customer.setPassword(load[12], 0);
+                            Information.setCustomer(customer);
+                            frame.ChangeJPanel("HomeCustomer");
+                        }
+                        else infolabel.setText("The password doesn't match.");
+                    } 
+                    else infolabel.setText("The password doesn't follow the rules.");
+                }
+                else infolabel.setText("The account type is invalid.");
+            }
+            else infolabel.setText("The user ID or card number is invalid.");
+        }
+        else infolabel.setText("The user ID or card number cannot be left blank.");
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed

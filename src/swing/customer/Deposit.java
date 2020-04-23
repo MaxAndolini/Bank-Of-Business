@@ -5,6 +5,8 @@
  */
 package swing.customer;
 
+import library.*;
+
 /**
  *
  * @author ercan
@@ -20,6 +22,8 @@ public class Deposit extends javax.swing.JPanel {
     public Deposit(swing.Home home) {
         initComponents();
         frame = home;
+        
+        System.out.println("şimdi2 " + Information.getCustomer());
     }
 
     /**

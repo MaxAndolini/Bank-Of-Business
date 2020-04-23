@@ -21,46 +21,6 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
-        DynamicPanel.add(new MainSelect(this), "MainSelect");
-        
-        // Admin
-        DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
-        DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
-        DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
-        DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
-        DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
-        DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
-        DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
-        DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
-        DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
-        DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
-        DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
-        DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
-        
-        // Banker
-        DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
-        DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
-        DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
-        DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
-        DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
-        DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
-        DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
-        DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
-        DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
-        DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
-        
-        // Customer
-        DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
-        DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
-        DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
-        DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
-        DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
-        DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
-        DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
-        DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
-        DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
-        DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
-        DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
 
         Home.this.setLayout(new BorderLayout());
         Home.this.add(DynamicPanel);
@@ -130,28 +90,54 @@ public class Home extends javax.swing.JFrame {
             Database.set("Currencies", "Rate", "TurkishLira", "Pound", 1.0);
             Database.set("Currencies", "Rate", "TurkishLira", "TurkishLira", 1.0);
         }
-
-        int id = Database.create("Accounts");
-        if(id != -1) {
-            Database.set("Accounts", "ID", id, "AccountType", 0);
-            Database.set("Accounts", "ID", id, "CardNumber", Customer.generateCardNumber());
-        }
-        
-        //System.out.println("Para id " + Customer.currencyFormat(3, new BigDecimal("123456789")));
-        //System.out.println("Card id " + Database.isShort("6564454545548"));
-        
-        /*Database.create("Users", "FullName", 55);
-        Database.create("Users", "FullName", "Ekmek");
-        Database.create("Users");
-        Database.create("Users");*/
-        /*Database.set("Test", "ID", "555", "Denedme", "kaDGFDGssr");
-        Database.delete("Test", "ID", "685");
-        Database.create("Test");*/
-        //Database.get("Test", "ID", 555, "Mehmet");
-        //Database.deleteColumn("Test", 4);
     }
     
     public final void ChangeJPanel(String cName) {
+        
+        DynamicPanel.removeAll();
+        
+        // Main
+        if(cName.equals("MainSelect")) DynamicPanel.add(new MainSelect(this), "MainSelect");
+        
+        // Admin
+        else if(cName.equals("AddAdminAdmin")) DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
+        else if(cName.equals("AddBankerAdmin")) DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
+        else if(cName.equals("AdminsAdmin")) DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
+        else if(cName.equals("BankersAdmin")) DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
+        else if(cName.equals("CurrencyRateAdmin")) DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
+        else if(cName.equals("CustomersAdmin")) DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
+        else if(cName.equals("DeleteBankerAdmin")) DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
+        else if(cName.equals("EditBankerAdmin")) DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
+        else if(cName.equals("EditMoneyAdmin")) DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
+        else if(cName.equals("HomeAdmin")) DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
+        else if(cName.equals("LoginAdmin")) DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
+        else if(cName.equals("SettingsAdmin")) DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
+        
+        // Banker
+        else if(cName.equals("AddCustomerBanker")) DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
+        else if(cName.equals("BalanceBanker")) DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
+        else if(cName.equals("BankersBanker")) DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
+        else if(cName.equals("CustomersBanker")) DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
+        else if(cName.equals("DeleteCustomerBanker")) DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
+        else if(cName.equals("EditCustomerBanker")) DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
+        else if(cName.equals("HomeBanker")) DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
+        else if(cName.equals("LoginBanker")) DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
+        else if(cName.equals("SettingsBanker")) DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
+        else if(cName.equals("TransactionsBanker")) DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
+        
+        // Customer
+        else if(cName.equals("BalanceCustomer")) DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
+        else if(cName.equals("DepositCustomer")) DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
+        else if(cName.equals("HomeCustomer")) DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
+        else if(cName.equals("LoginCustomer")) DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
+        else if(cName.equals("ReceiptCustomer")) DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
+        else if(cName.equals("SettingsCustomer")) DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
+        else if(cName.equals("TransactionsCustomer")) DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
+        else if(cName.equals("TransferCustomer")) DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
+        else if(cName.equals("TransferMoneyCustomer")) DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
+        else if(cName.equals("WarningCustomer")) DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
+        else if(cName.equals("WithdrawalCustomer")) DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
+        
         CardLayout cl = (CardLayout) DynamicPanel.getLayout();
         cl.show(DynamicPanel, cName);
         pack();
@@ -177,7 +163,6 @@ public class Home extends javax.swing.JFrame {
         setTitle("Bank Of Business");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(1070, 590));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -312,6 +297,9 @@ public class Home extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>

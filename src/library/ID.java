@@ -12,18 +12,18 @@ package library;
 public class ID {
     
     private String ID;
-    private String name;
+    private String fullName;
     private String dateOfBirth;
     
     public ID(){
         this.ID = "-1";
-        this.name = "UNKNOWN";
+        this.fullName = "UNKNOWN";
         this.dateOfBirth = "00/00/0000";
     }
     
-    public ID(String ID, String name, String dateOfBirth) {
+    public ID(String ID, String fullName, String dateOfBirth) {
         this.ID = ID;
-        this.name = name;
+        this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -35,19 +35,21 @@ public class ID {
         this.ID = ID;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String name, int save) {
+        this.fullName = name;
+        if(save == 1) Database.set("Accounts", "ID", getID(), "FullName", name);
     }
 
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth, int save) {
         this.dateOfBirth = dateOfBirth;
+        if(save == 1) Database.set("Accounts", "ID", getID(), "DateofBirth", dateOfBirth);
     }
 }

@@ -27,8 +27,9 @@ public class Admin extends User {
         return adminSalary;
     }
 
-    public void setAdminSalary(int adminSalary) {
+    public void setAdminSalary(int adminSalary, int save) {
         this.adminSalary = adminSalary;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Salary", adminSalary);
     }
     
     @Override

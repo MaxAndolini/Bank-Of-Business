@@ -880,14 +880,12 @@ public class Database {
         return num;
     }
 
-    private static String[] getArrayPrivate(String filename, String column, String columnvalue, String data) {
+    private static String[] getArrayPrivate(String filename, String column, String columnvalue) {
         if(!fexists(filename)) return null;
         if(fempty(filename)) return null;
         int columnid = columnNametoID(filename, column);
         if(columnid == -1) return null;
         if(columnvalue.length() == 0) return null;
-        int dataid = columnNametoID(filename, data);
-        if(dataid == -1) return null;
         try {
             for(String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
                 String[] tmpline = line.split("[|]");
@@ -900,32 +898,32 @@ public class Database {
         return null;
     }
     
-    public static String[] getArray(String filename, String column, double columnvalue, String data) {
-        return getArrayPrivate(filename, column, Double.toString(columnvalue), data);
+    public static String[] getArray(String filename, String column, double columnvalue) {
+        return getArrayPrivate(filename, column, Double.toString(columnvalue));
     }
     
-    public static String[] getArray(String filename, String column, float columnvalue, String data) {
-        return getArrayPrivate(filename, column, Float.toString(columnvalue), data);
+    public static String[] getArray(String filename, String column, float columnvalue) {
+        return getArrayPrivate(filename, column, Float.toString(columnvalue));
     }
     
-    public static String[] getArray(String filename, String column, int columnvalue, String data) {
-        return getArrayPrivate(filename, column, Integer.toString(columnvalue), data);
+    public static String[] getArray(String filename, String column, int columnvalue) {
+        return getArrayPrivate(filename, column, Integer.toString(columnvalue));
     }
     
-    public static String[] getArray(String filename, String column, String columnvalue, String data) {
-        return getArrayPrivate(filename, column, columnvalue, data);
+    public static String[] getArray(String filename, String column, String columnvalue) {
+        return getArrayPrivate(filename, column, columnvalue);
     }
     
-    public static String[] getArray(String filename, String column, long columnvalue, String data) {
-        return getArrayPrivate(filename, column, Long.toString(columnvalue), data);
+    public static String[] getArray(String filename, String column, long columnvalue) {
+        return getArrayPrivate(filename, column, Long.toString(columnvalue));
     }
     
-    public static String[] getArray(String filename, String column, short columnvalue, String data) {
-        return getArrayPrivate(filename, column, Short.toString(columnvalue), data);
+    public static String[] getArray(String filename, String column, short columnvalue) {
+        return getArrayPrivate(filename, column, Short.toString(columnvalue));
     }
     
-    public static String[] getArray(String filename, String column, BigDecimal columnvalue, String data) {
-        return getArrayPrivate(filename, column, columnvalue.toString(), data);
+    public static String[] getArray(String filename, String column, BigDecimal columnvalue) {
+        return getArrayPrivate(filename, column, columnvalue.toString());
     }
     
     private static boolean deletePrivate(String filename, String column, String columnvalue) {

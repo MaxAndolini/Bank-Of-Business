@@ -27,8 +27,9 @@ public class Banker extends User {
         return bankerSalary;
     }
 
-    public void setBankerSalary(int bankerSalary) {
+    public void setBankerSalary(int bankerSalary, int save) {
         this.bankerSalary = bankerSalary;
+        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Salary", bankerSalary);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class Banker extends User {
     }
 
     public void changePassword(String newPassword) {
-        setPassword(newPassword);
+        setPassword(newPassword, 1);
     }
     
     public void addCustomer() {
