@@ -1,0 +1,5 @@
+Rate|Dollar|Euro|Pound|TurkishLira|
+Dollar|1.0|1.0|1.0|1.0|
+Euro|1.0|1.0|1.0|1.0|
+Pound|1.0|1.0|1.0|1.0|
+TurkishLira|1.0|1.0|1.0|1.0|

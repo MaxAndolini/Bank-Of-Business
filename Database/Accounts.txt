@@ -1,0 +1,2 @@
+ID|AccountType|CardNumber|FullName|DateofBirth|Job|PhoneNumber|Dollar|Euro|Pound|TurkishLira|HomeAddress|Password|Salary|
+0|0|1569786381879100|-|-|-|-|-|-|-|-|-|-|-|

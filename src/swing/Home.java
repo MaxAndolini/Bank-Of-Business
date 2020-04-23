@@ -68,34 +68,74 @@ public class Home extends javax.swing.JFrame {
         Home.this.setLocationRelativeTo(null);
         Home.this.setVisible(true);
         
-        boolean created = Database.fcreate("Users");
+        boolean created;
+        created = Database.fcreate("Accounts");
         if(created == true) {
-            int column = Database.columnExists("Users");
-            if(column != 13) Database.createColumn("Users", 0, 13);
-            Database.setColumn("Users", 0, "ID");
-            Database.setColumn("Users", 1, "CardNumber");
-            Database.setColumn("Users", 2, "FullName");
-            Database.setColumn("Users", 3, "DateofBirth");
-            Database.setColumn("Users", 4, "Job");
-            Database.setColumn("Users", 5, "PhoneNumber");
-            Database.setColumn("Users", 6, "Dollar");
-            Database.setColumn("Users", 7, "Euro");
-            Database.setColumn("Users", 8, "Pound");
-            Database.setColumn("Users", 9, "TurkishLira");
-            Database.setColumn("Users", 10, "HomeAddress");
-            Database.setColumn("Users", 11, "Password");
-            Database.setColumn("Users", 12, "Salary");
+            int column = Database.columnExists("Accounts");
+            if(column != 14) Database.createColumn("Accounts", 0, 14);
+            
+            Database.setColumn("Accounts", 0, "ID");
+            Database.setColumn("Accounts", 1, "AccountType");
+            Database.setColumn("Accounts", 2, "CardNumber");
+            Database.setColumn("Accounts", 3, "FullName");
+            Database.setColumn("Accounts", 4, "DateofBirth");
+            Database.setColumn("Accounts", 5, "Job");
+            Database.setColumn("Accounts", 6, "PhoneNumber");
+            Database.setColumn("Accounts", 7, "Dollar");
+            Database.setColumn("Accounts", 8, "Euro");
+            Database.setColumn("Accounts", 9, "Pound");
+            Database.setColumn("Accounts", 10, "TurkishLira");
+            Database.setColumn("Accounts", 11, "HomeAddress");
+            Database.setColumn("Accounts", 12, "Password");
+            Database.setColumn("Accounts", 13, "Salary");
         }
         
-        
-        /*int id = Database.create("Test");
-        System.out.println("Gelsin id " + id);*/
-        //Database.delete("Test", "ID", 1);
-        /*Database.setColumn("Test", 0, "ID");
-        Database.setColumn("Test", 4, "Avni");*/
-        
-        
-        System.out.println("Card id " + Customer.generateCardNumber());
+        created = Database.fcreate("Currencies");
+        if(created == true) {
+            int column = Database.columnExists("Currencies");
+            if(column != 5) Database.createColumn("Currencies", 0, 5);
+            
+            Database.setColumn("Currencies", 0, "Rate");
+            Database.setColumn("Currencies", 1, "Dollar");
+            Database.setColumn("Currencies", 2, "Euro");
+            Database.setColumn("Currencies", 3, "Pound");
+            Database.setColumn("Currencies", 4, "TurkishLira");
+            
+            Database.create("Currencies", "Rate", "Dollar");
+            Database.create("Currencies", "Rate", "Euro");
+            Database.create("Currencies", "Rate", "Pound");
+            Database.create("Currencies", "Rate", "TurkishLira");
+            
+            // Dollar
+            Database.set("Currencies", "Rate", "Dollar", "Dollar", 1.0);
+            Database.set("Currencies", "Rate", "Dollar", "Euro", 1.0);
+            Database.set("Currencies", "Rate", "Dollar", "Pound", 1.0);
+            Database.set("Currencies", "Rate", "Dollar", "TurkishLira", 1.0);
+            
+            // Euro
+            Database.set("Currencies", "Rate", "Euro", "Dollar", 1.0);
+            Database.set("Currencies", "Rate", "Euro", "Euro", 1.0);
+            Database.set("Currencies", "Rate", "Euro", "Pound", 1.0);
+            Database.set("Currencies", "Rate", "Euro", "TurkishLira", 1.0);
+            
+            // Pound
+            Database.set("Currencies", "Rate", "Pound", "Dollar", 1.0);
+            Database.set("Currencies", "Rate", "Pound", "Euro", 1.0);
+            Database.set("Currencies", "Rate", "Pound", "Pound", 1.0);
+            Database.set("Currencies", "Rate", "Pound", "TurkishLira", 1.0);
+            
+            // Turkish Lira
+            Database.set("Currencies", "Rate", "TurkishLira", "Dollar", 1.0);
+            Database.set("Currencies", "Rate", "TurkishLira", "Euro", 1.0);
+            Database.set("Currencies", "Rate", "TurkishLira", "Pound", 1.0);
+            Database.set("Currencies", "Rate", "TurkishLira", "TurkishLira", 1.0);
+        }
+
+        int id = Database.create("Accounts");
+        if(id != -1) {
+            Database.set("Accounts", "ID", id, "AccountType", 0);
+            Database.set("Accounts", "ID", id, "CardNumber", Customer.generateCardNumber());
+        }
         
         //System.out.println("Para id " + Customer.currencyFormat(3, new BigDecimal("123456789")));
         //System.out.println("Card id " + Database.isShort("6564454545548"));
@@ -272,6 +312,8 @@ public class Home extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
