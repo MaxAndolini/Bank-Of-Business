@@ -5,6 +5,8 @@
  */
 package swing.customer;
 
+import library.*;
+
 /**
  *
  * @author ercan

@@ -5,6 +5,8 @@
  */
 package swing.admin;
 
+import library.*;
+
 /**
  *
  * @author ercan
