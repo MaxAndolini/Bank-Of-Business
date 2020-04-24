@@ -5,6 +5,7 @@
  */
 package swing.customer;
 
+import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import library.*;
 
@@ -58,6 +59,9 @@ public class Login extends javax.swing.JPanel {
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mainlabel.setText("Customer - Login");
+        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
         loginbtn.setBackground(new java.awt.Color(23, 35, 51));
         loginbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -75,6 +79,11 @@ public class Login extends javax.swing.JPanel {
         uidcnumbertext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uidcnumbertextActionPerformed(evt);
+            }
+        });
+        uidcnumbertext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                uidcnumbertextKeyPressed(evt);
             }
         });
 
@@ -105,6 +114,11 @@ public class Login extends javax.swing.JPanel {
 
         password.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
+            }
+        });
 
         loginicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_enter_48px.png"))); // NOI18N
 
@@ -150,7 +164,7 @@ public class Login extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel)
+                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -173,7 +187,7 @@ public class Login extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
+    private void login() {
 
         /*
         1) ^ - start of the string
@@ -224,8 +238,13 @@ public class Login extends javax.swing.JPanel {
             } else {
                 infolabel.setText("The user ID or card number is invalid.");
             }
-        } else
+        } else {
             infolabel.setText("The user ID or card number cannot be left blank.");
+        }
+    }
+
+    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
+        login();
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed
@@ -235,6 +254,18 @@ public class Login extends javax.swing.JPanel {
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         frame.ChangeJPanel("MainSelect");
     }//GEN-LAST:event_exitbtnActionPerformed
+
+    private void uidcnumbertextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uidcnumbertextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            login();
+        }
+    }//GEN-LAST:event_uidcnumbertextKeyPressed
+
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            login();
+        }
+    }//GEN-LAST:event_passwordKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

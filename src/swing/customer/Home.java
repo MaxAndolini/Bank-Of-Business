@@ -156,9 +156,12 @@ public class Home extends javax.swing.JPanel {
         infolabel.setText("You can select the actions to do from below.");
 
         mainlabel2.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel2.setForeground(new java.awt.Color(204, 204, 255));
+        mainlabel2.setForeground(new java.awt.Color(133, 187, 101));
         mainlabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         mainlabel2.setText("Card Num: 1234567891234567");
+        mainlabel2.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -221,7 +224,7 @@ public class Home extends javax.swing.JPanel {
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mainlabel)
-                    .addComponent(mainlabel2))
+                    .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

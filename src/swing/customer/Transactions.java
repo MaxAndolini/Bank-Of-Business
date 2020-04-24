@@ -49,6 +49,9 @@ public class Transactions extends javax.swing.JPanel {
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mainlabel.setText("Transactions");
+        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
         cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
         cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -116,7 +119,7 @@ public class Transactions extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel)
+                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

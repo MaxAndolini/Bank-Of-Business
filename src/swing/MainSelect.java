@@ -93,6 +93,9 @@ public class MainSelect extends javax.swing.JPanel {
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mainlabel.setText("Welcome to Bank of Business");
+        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
         adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
 
@@ -109,6 +112,9 @@ public class MainSelect extends javax.swing.JPanel {
         mainlabel2.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         mainlabel2.setText("28 March 2020");
+        mainlabel2.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -128,12 +134,14 @@ public class MainSelect extends javax.swing.JPanel {
                         .addComponent(customerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
             .addGroup(layout.createSequentialGroup()
                 .addGap(85, 85, 85)
@@ -149,8 +157,8 @@ public class MainSelect extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mainlabel)
-                    .addComponent(mainlabel2))
+                    .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100)
