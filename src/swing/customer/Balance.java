@@ -5,6 +5,9 @@
  */
 package swing.customer;
 
+import java.math.BigDecimal;
+import java.util.Timer;
+import java.util.TimerTask;
 import library.*;
 
 /**
@@ -23,6 +26,71 @@ public class Balance extends javax.swing.JPanel {
     public Balance(swing.Home home) {
         initComponents();
         frame = home;
+
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            int type = 0;
+
+            @Override
+            public void run() {
+                switch (type) {
+                    case 0: {
+                        String[] load = Database.getArray("Currencies", "Rate", "Dollar");
+                        typelabel.setText("Dollar");
+                        firstlabel.setText("Euro:");
+                        secondlabel.setText("Pound:");
+                        thirdlabel.setText("Turkish Lira:");
+                        firstalabel.setText(Customer.currencyFormat(1, new BigDecimal(load[2])));
+                        secondalabel.setText(Customer.currencyFormat(2, new BigDecimal(load[3])));
+                        thirdalabel.setText(Customer.currencyFormat(3, new BigDecimal(load[4])));
+                        type++;
+                        break;
+                    }
+                    case 1: {
+                        String[] load = Database.getArray("Currencies", "Rate", "Euro");
+                        typelabel.setText("Euro");
+                        firstlabel.setText("Dollar:");
+                        secondlabel.setText("Pound:");
+                        thirdlabel.setText("Turkish Lira:");
+                        firstalabel.setText(Customer.currencyFormat(0, new BigDecimal(load[1])));
+                        secondalabel.setText(Customer.currencyFormat(2, new BigDecimal(load[3])));
+                        thirdalabel.setText(Customer.currencyFormat(3, new BigDecimal(load[4])));
+                        type++;
+                        break;
+                    }
+                    case 2: {
+                        String[] load = Database.getArray("Currencies", "Rate", "Pound");
+                        typelabel.setText("Pound");
+                        firstlabel.setText("Dollar:");
+                        secondlabel.setText("Euro:");
+                        thirdlabel.setText("Turkish Lira:");
+                        firstalabel.setText(Customer.currencyFormat(0, new BigDecimal(load[1])));
+                        secondalabel.setText(Customer.currencyFormat(1, new BigDecimal(load[2])));
+                        thirdalabel.setText(Customer.currencyFormat(3, new BigDecimal(load[4])));
+                        type++;
+                        break;
+                    }
+                    case 3: {
+                        String[] load = Database.getArray("Currencies", "Rate", "TurkishLira");
+                        typelabel.setText("Turkish Lira");
+                        firstlabel.setText("Dollar:");
+                        secondlabel.setText("Euro:");
+                        thirdlabel.setText("Pound:");
+                        firstalabel.setText(Customer.currencyFormat(0, new BigDecimal(load[1])));
+                        secondalabel.setText(Customer.currencyFormat(1, new BigDecimal(load[2])));
+                        thirdalabel.setText(Customer.currencyFormat(2, new BigDecimal(load[3])));
+                        type = 0;
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }
+        }, 0, 2000);
+
+        dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+        euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+        poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+        turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
     }
 
     /**
@@ -71,9 +139,6 @@ public class Balance extends javax.swing.JPanel {
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mainlabel.setText("Balance");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
         cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
         cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -157,7 +222,7 @@ public class Balance extends javax.swing.JPanel {
         euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         euroalabel.setForeground(new java.awt.Color(133, 187, 101));
         euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("€400");
+        euroalabel.setText("400 €");
 
         poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         poundalabel.setForeground(new java.awt.Color(133, 187, 101));
@@ -225,21 +290,21 @@ public class Balance extends javax.swing.JPanel {
         typelabel.setText("Dollar");
 
         firstlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        firstlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        firstlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         firstlabel.setText("Euro:");
 
         secondlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         secondlabel.setText("Pound:");
 
         thirdlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         thirdlabel.setText("Turkish Lira:");
 
         firstalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         firstalabel.setForeground(new java.awt.Color(133, 187, 101));
         firstalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        firstalabel.setText("€1.21");
+        firstalabel.setText("1.21 €");
 
         secondalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         secondalabel.setForeground(new java.awt.Color(133, 187, 101));
@@ -258,22 +323,18 @@ public class Balance extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(firstlabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(firstalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(thirdlabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(thirdalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(secondlabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(secondalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(thirdlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(secondlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(thirdalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(secondalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -344,7 +405,7 @@ public class Balance extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainlabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)

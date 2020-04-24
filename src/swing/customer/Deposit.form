@@ -305,7 +305,7 @@
               <Color blue="65" green="bb" red="85" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="&#x20ac;400"/>
+            <Property name="text" type="java.lang.String" value="400 &#x20ac;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="poundalabel">

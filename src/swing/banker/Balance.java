@@ -138,7 +138,7 @@ public class Balance extends javax.swing.JPanel {
         euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         euroalabel.setForeground(new java.awt.Color(133, 187, 101));
         euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("€400");
+        euroalabel.setText("400 €");
 
         poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         poundalabel.setForeground(new java.awt.Color(133, 187, 101));
@@ -206,21 +206,21 @@ public class Balance extends javax.swing.JPanel {
         typelabel.setText("Dollar");
 
         firstlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        firstlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        firstlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         firstlabel.setText("Euro:");
 
         secondlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         secondlabel.setText("Pound:");
 
         thirdlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         thirdlabel.setText("Turkish Lira:");
 
         firstalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         firstalabel.setForeground(new java.awt.Color(133, 187, 101));
         firstalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        firstalabel.setText("€1.21");
+        firstalabel.setText("1.21 €");
 
         secondalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         secondalabel.setForeground(new java.awt.Color(133, 187, 101));
@@ -239,22 +239,20 @@ public class Balance extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(firstlabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(firstalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(secondlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(thirdlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(thirdlabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(thirdalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(secondlabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(secondalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(secondalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(thirdalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(

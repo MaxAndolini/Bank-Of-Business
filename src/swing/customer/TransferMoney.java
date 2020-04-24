@@ -224,7 +224,7 @@ public class TransferMoney extends javax.swing.JPanel {
         euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         euroalabel.setForeground(new java.awt.Color(133, 187, 101));
         euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("€400");
+        euroalabel.setText("400 €");
 
         poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         poundalabel.setForeground(new java.awt.Color(133, 187, 101));
