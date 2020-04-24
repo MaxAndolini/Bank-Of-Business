@@ -17,9 +17,10 @@ import java.util.TimerTask;
 public class MainSelect extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form MainSelect
+     *
      * @param home
      */
     public MainSelect(swing.Home home) {
@@ -27,6 +28,7 @@ public class MainSelect extends javax.swing.JPanel {
         frame = home;
 
         new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
             public void run() {
                 mainlabel2.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
             }

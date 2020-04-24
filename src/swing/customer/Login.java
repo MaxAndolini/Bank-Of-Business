@@ -15,15 +15,16 @@ import library.*;
 public class Login extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Login
+     *
      * @param home
      */
     public Login(swing.Home home) {
         initComponents();
         frame = home;
-        
+
         uidcnumbertext.setText("");
         password.setText("");
     }
@@ -184,16 +185,17 @@ public class Login extends javax.swing.JPanel {
         7) . – any character
         8) {8,} - minimum 8 characters in length
         9) $ - end of the string
-        */
-        
+         */
         int type = 0;
-        if(uidcnumbertext.getText().length() == 16) type = 1;
-        
-        if(!uidcnumbertext.getText().isBlank() || !String.valueOf(password.getPassword()).isBlank()) {
-            if(Database.exists("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText())) {
-                if(Database.getInt("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "AccountType") == 0) {
-                    if(String.valueOf(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
-                        if(String.valueOf(password.getPassword()).equals(Database.getString("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "Password"))) {
+        if (uidcnumbertext.getText().length() == 16) {
+            type = 1;
+        }
+
+        if (!uidcnumbertext.getText().isBlank() || !String.valueOf(password.getPassword()).isBlank()) {
+            if (Database.exists("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText())) {
+                if (Database.getInt("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "AccountType") == 0) {
+                    if (String.valueOf(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                        if (String.valueOf(password.getPassword()).equals(Database.getString("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "Password"))) {
                             String[] load = Database.getArray("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText());
                             Customer customer = new Customer();
                             customer.getId().setID(load[0]);
@@ -210,16 +212,20 @@ public class Login extends javax.swing.JPanel {
                             customer.setPassword(load[12], 0);
                             Information.setCustomer(customer);
                             frame.ChangeJPanel("HomeCustomer");
+                        } else {
+                            infolabel.setText("The password doesn't match.");
                         }
-                        else infolabel.setText("The password doesn't match.");
-                    } 
-                    else infolabel.setText("The password doesn't follow the rules.");
+                    } else {
+                        infolabel.setText("The password doesn't follow the rules.");
+                    }
+                } else {
+                    infolabel.setText("The account type is invalid.");
                 }
-                else infolabel.setText("The account type is invalid.");
+            } else {
+                infolabel.setText("The user ID or card number is invalid.");
             }
-            else infolabel.setText("The user ID or card number is invalid.");
-        }
-        else infolabel.setText("The user ID or card number cannot be left blank.");
+        } else
+            infolabel.setText("The user ID or card number cannot be left blank.");
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed

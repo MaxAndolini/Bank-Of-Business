@@ -14,9 +14,10 @@ import library.*;
 public class Transfer extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Transfer
+     *
      * @param home
      */
     public Transfer(swing.Home home) {

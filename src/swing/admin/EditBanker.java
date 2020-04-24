@@ -14,9 +14,10 @@ import library.*;
 public class EditBanker extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form EditBanker
+     *
      * @param home
      */
     public EditBanker(swing.Home home) {

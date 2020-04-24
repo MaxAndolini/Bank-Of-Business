@@ -14,9 +14,10 @@ import library.*;
 public class DeleteBanker extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form DeleteBanker
+     *
      * @param home
      */
     public DeleteBanker(swing.Home home) {

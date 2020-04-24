@@ -14,9 +14,10 @@ import library.*;
 public class Login extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Login
+     *
      * @param home
      */
     public Login(swing.Home home) {

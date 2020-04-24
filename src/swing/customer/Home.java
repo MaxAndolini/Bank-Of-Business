@@ -14,15 +14,16 @@ import library.*;
 public class Home extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Home
+     *
      * @param home
      */
     public Home(swing.Home home) {
         initComponents();
         frame = home;
-        
+
         mainlabel.setText("Welcome " + Information.getCustomer().getId().getFullName());
         mainlabel2.setText("Card Num: " + Information.getCustomer().getCardNumber());
     }

@@ -27,13 +27,15 @@ public class Home extends javax.swing.JFrame {
         ChangeJPanel("MainSelect");
         Home.this.setLocationRelativeTo(null);
         Home.this.setVisible(true);
-        
+
         boolean created;
         created = Database.fcreate("Accounts");
-        if(created == true) {
+        if (created == true) {
             int column = Database.columnExists("Accounts");
-            if(column != 14) Database.createColumn("Accounts", 0, 14);
-            
+            if (column != 14) {
+                Database.createColumn("Accounts", 0, 14);
+            }
+
             Database.setColumn("Accounts", 0, "ID");
             Database.setColumn("Accounts", 1, "AccountType");
             Database.setColumn("Accounts", 2, "CardNumber");
@@ -49,41 +51,43 @@ public class Home extends javax.swing.JFrame {
             Database.setColumn("Accounts", 12, "Password");
             Database.setColumn("Accounts", 13, "Salary");
         }
-        
+
         created = Database.fcreate("Currencies");
-        if(created == true) {
+        if (created == true) {
             int column = Database.columnExists("Currencies");
-            if(column != 5) Database.createColumn("Currencies", 0, 5);
-            
+            if (column != 5) {
+                Database.createColumn("Currencies", 0, 5);
+            }
+
             Database.setColumn("Currencies", 0, "Rate");
             Database.setColumn("Currencies", 1, "Dollar");
             Database.setColumn("Currencies", 2, "Euro");
             Database.setColumn("Currencies", 3, "Pound");
             Database.setColumn("Currencies", 4, "TurkishLira");
-            
+
             Database.create("Currencies", "Rate", "Dollar");
             Database.create("Currencies", "Rate", "Euro");
             Database.create("Currencies", "Rate", "Pound");
             Database.create("Currencies", "Rate", "TurkishLira");
-            
+
             // Dollar
             Database.set("Currencies", "Rate", "Dollar", "Dollar", 1.0);
             Database.set("Currencies", "Rate", "Dollar", "Euro", 1.0);
             Database.set("Currencies", "Rate", "Dollar", "Pound", 1.0);
             Database.set("Currencies", "Rate", "Dollar", "TurkishLira", 1.0);
-            
+
             // Euro
             Database.set("Currencies", "Rate", "Euro", "Dollar", 1.0);
             Database.set("Currencies", "Rate", "Euro", "Euro", 1.0);
             Database.set("Currencies", "Rate", "Euro", "Pound", 1.0);
             Database.set("Currencies", "Rate", "Euro", "TurkishLira", 1.0);
-            
+
             // Pound
             Database.set("Currencies", "Rate", "Pound", "Dollar", 1.0);
             Database.set("Currencies", "Rate", "Pound", "Euro", 1.0);
             Database.set("Currencies", "Rate", "Pound", "Pound", 1.0);
             Database.set("Currencies", "Rate", "Pound", "TurkishLira", 1.0);
-            
+
             // Turkish Lira
             Database.set("Currencies", "Rate", "TurkishLira", "Dollar", 1.0);
             Database.set("Currencies", "Rate", "TurkishLira", "Euro", 1.0);
@@ -91,53 +95,85 @@ public class Home extends javax.swing.JFrame {
             Database.set("Currencies", "Rate", "TurkishLira", "TurkishLira", 1.0);
         }
     }
-    
+
     public final void ChangeJPanel(String cName) {
-        
+
         DynamicPanel.removeAll();
-        
+
         // Main
-        if(cName.equals("MainSelect")) DynamicPanel.add(new MainSelect(this), "MainSelect");
-        
-        // Admin
-        else if(cName.equals("AddAdminAdmin")) DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
-        else if(cName.equals("AddBankerAdmin")) DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
-        else if(cName.equals("AdminsAdmin")) DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
-        else if(cName.equals("BankersAdmin")) DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
-        else if(cName.equals("CurrencyRateAdmin")) DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
-        else if(cName.equals("CustomersAdmin")) DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
-        else if(cName.equals("DeleteBankerAdmin")) DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
-        else if(cName.equals("EditBankerAdmin")) DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
-        else if(cName.equals("EditMoneyAdmin")) DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
-        else if(cName.equals("HomeAdmin")) DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
-        else if(cName.equals("LoginAdmin")) DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
-        else if(cName.equals("SettingsAdmin")) DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
-        
-        // Banker
-        else if(cName.equals("AddCustomerBanker")) DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
-        else if(cName.equals("BalanceBanker")) DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
-        else if(cName.equals("BankersBanker")) DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
-        else if(cName.equals("CustomersBanker")) DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
-        else if(cName.equals("DeleteCustomerBanker")) DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
-        else if(cName.equals("EditCustomerBanker")) DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
-        else if(cName.equals("HomeBanker")) DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
-        else if(cName.equals("LoginBanker")) DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
-        else if(cName.equals("SettingsBanker")) DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
-        else if(cName.equals("TransactionsBanker")) DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
-        
-        // Customer
-        else if(cName.equals("BalanceCustomer")) DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
-        else if(cName.equals("DepositCustomer")) DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
-        else if(cName.equals("HomeCustomer")) DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
-        else if(cName.equals("LoginCustomer")) DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
-        else if(cName.equals("ReceiptCustomer")) DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
-        else if(cName.equals("SettingsCustomer")) DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
-        else if(cName.equals("TransactionsCustomer")) DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
-        else if(cName.equals("TransferCustomer")) DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
-        else if(cName.equals("TransferMoneyCustomer")) DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
-        else if(cName.equals("WarningCustomer")) DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
-        else if(cName.equals("WithdrawalCustomer")) DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
-        
+        if (cName.equals("MainSelect")) {
+            DynamicPanel.add(new MainSelect(this), "MainSelect");
+        } // Admin
+        else if (cName.equals("AddAdminAdmin")) {
+            DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
+        } else if (cName.equals("AddBankerAdmin")) {
+            DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
+        } else if (cName.equals("AdminsAdmin")) {
+            DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
+        } else if (cName.equals("BankersAdmin")) {
+            DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
+        } else if (cName.equals("CurrencyRateAdmin")) {
+            DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
+        } else if (cName.equals("CustomersAdmin")) {
+            DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
+        } else if (cName.equals("DeleteBankerAdmin")) {
+            DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
+        } else if (cName.equals("EditBankerAdmin")) {
+            DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
+        } else if (cName.equals("EditMoneyAdmin")) {
+            DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
+        } else if (cName.equals("HomeAdmin")) {
+            DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
+        } else if (cName.equals("LoginAdmin")) {
+            DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
+        } else if (cName.equals("SettingsAdmin")) {
+            DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
+        } // Banker
+        else if (cName.equals("AddCustomerBanker")) {
+            DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
+        } else if (cName.equals("BalanceBanker")) {
+            DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
+        } else if (cName.equals("BankersBanker")) {
+            DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
+        } else if (cName.equals("CustomersBanker")) {
+            DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
+        } else if (cName.equals("DeleteCustomerBanker")) {
+            DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
+        } else if (cName.equals("EditCustomerBanker")) {
+            DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
+        } else if (cName.equals("HomeBanker")) {
+            DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
+        } else if (cName.equals("LoginBanker")) {
+            DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
+        } else if (cName.equals("SettingsBanker")) {
+            DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
+        } else if (cName.equals("TransactionsBanker")) {
+            DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
+        } // Customer
+        else if (cName.equals("BalanceCustomer")) {
+            DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
+        } else if (cName.equals("DepositCustomer")) {
+            DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
+        } else if (cName.equals("HomeCustomer")) {
+            DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
+        } else if (cName.equals("LoginCustomer")) {
+            DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
+        } else if (cName.equals("ReceiptCustomer")) {
+            DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
+        } else if (cName.equals("SettingsCustomer")) {
+            DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
+        } else if (cName.equals("TransactionsCustomer")) {
+            DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
+        } else if (cName.equals("TransferCustomer")) {
+            DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
+        } else if (cName.equals("TransferMoneyCustomer")) {
+            DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
+        } else if (cName.equals("WarningCustomer")) {
+            DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
+        } else if (cName.equals("WithdrawalCustomer")) {
+            DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
+        }
+
         CardLayout cl = (CardLayout) DynamicPanel.getLayout();
         cl.show(DynamicPanel, cName);
         pack();
@@ -278,6 +314,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_minimizebtnActionPerformed
 
     int xx, xy;
+
     /**
      * @param args the command line arguments
      */
@@ -301,7 +338,7 @@ public class Home extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */

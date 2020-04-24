@@ -10,14 +10,14 @@ package library;
  * @author ercan
  */
 public class Banker extends User {
-    
+
     private int bankerSalary;
 
     public Banker() {
         super();
         this.bankerSalary = 0;
     }
-    
+
     public Banker(int bankerSalary, String ID, String name, String dateOfBirth, String homeAddress, String password) {
         super(ID, name, dateOfBirth, homeAddress, password);
         this.bankerSalary = bankerSalary;
@@ -29,7 +29,9 @@ public class Banker extends User {
 
     public void setBankerSalary(int bankerSalary, int save) {
         this.bankerSalary = bankerSalary;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Salary", bankerSalary);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Salary", bankerSalary);
+        }
     }
 
     @Override
@@ -41,10 +43,10 @@ public class Banker extends User {
     public void changePassword(String newPassword) {
         setPassword(newPassword, 1);
     }
-    
+
     public void addCustomer() {
     }
-    
+
     public void deleteCustomer(Customer customer) {
     }
 }

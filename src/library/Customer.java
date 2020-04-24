@@ -15,7 +15,7 @@ import java.util.Locale;
  * @author ercan
  */
 public class Customer extends User {
-    
+
     private String cardNumber;
     private String job;
     private String phoneNumber;
@@ -23,7 +23,7 @@ public class Customer extends User {
     private BigDecimal euro;
     private BigDecimal pound;
     private BigDecimal turkishLira;
-    
+
     public Customer() {
         super();
         this.cardNumber = "-";
@@ -52,7 +52,9 @@ public class Customer extends User {
 
     public void setCardNumber(String cardNumber, int save) {
         this.cardNumber = cardNumber;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "CardNumber", cardNumber);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "CardNumber", cardNumber);
+        }
     }
 
     public String getJob() {
@@ -61,7 +63,9 @@ public class Customer extends User {
 
     public void setJob(String job, int save) {
         this.job = job;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Job", job);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Job", job);
+        }
     }
 
     public String getPhoneNumber() {
@@ -70,7 +74,9 @@ public class Customer extends User {
 
     public void setPhoneNumber(String phoneNumber, int save) {
         this.phoneNumber = phoneNumber;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "PhoneNumber", phoneNumber);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "PhoneNumber", phoneNumber);
+        }
     }
 
     public BigDecimal getDollar() {
@@ -79,7 +85,9 @@ public class Customer extends User {
 
     public void setDollar(BigDecimal dollar, int save) {
         this.dollar = dollar;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Dollar", dollar);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Dollar", dollar);
+        }
     }
 
     public BigDecimal getEuro() {
@@ -88,7 +96,9 @@ public class Customer extends User {
 
     public void setEuro(BigDecimal euro, int save) {
         this.euro = euro;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Euro", euro);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Euro", euro);
+        }
     }
 
     public BigDecimal getPound() {
@@ -97,7 +107,9 @@ public class Customer extends User {
 
     public void setPound(BigDecimal pound, int save) {
         this.pound = pound;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Pound", pound);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Pound", pound);
+        }
     }
 
     public BigDecimal getTurkishLira() {
@@ -106,46 +118,60 @@ public class Customer extends User {
 
     public void setTurkishLira(BigDecimal turkishLira, int save) {
         this.turkishLira = turkishLira;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "TurkishLira", turkishLira);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "TurkishLira", turkishLira);
+        }
     }
-    
+
     public String showCardNumber() {
         return this.cardNumber.replaceAll(".{4}(?!$)", "$0-");
     }
-    
+
     public static String generateCardNumber() {
         String result = "1";
         SecureRandom rand = new SecureRandom();
-        for(int i = 0; i < 15; i++) result += rand.nextInt(10);
-        if(!checkLuhn(result)) return generateCardNumber();
-        if(Database.exists("Users", "CardNumber", result)) return generateCardNumber();
+        for (int i = 0; i < 15; i++) {
+            result += rand.nextInt(10);
+        }
+        if (!checkLuhn(result)) {
+            return generateCardNumber();
+        }
+        if (Database.exists("Users", "CardNumber", result)) {
+            return generateCardNumber();
+        }
         return result;
     }
-    
-    public static boolean checkLuhn(String cardNumber) { 
-        int nDigits = cardNumber.length(); 
-        int nSum = 0; 
-        boolean isSecond = false; 
-        for(int i = nDigits - 1; i >= 0; i--) { 
-            int d = cardNumber.charAt(i) - '0'; 
-            if(isSecond == true) d = d * 2; 
-            nSum += d / 10; 
+
+    public static boolean checkLuhn(String cardNumber) {
+        int nDigits = cardNumber.length();
+        int nSum = 0;
+        boolean isSecond = false;
+        for (int i = nDigits - 1; i >= 0; i--) {
+            int d = cardNumber.charAt(i) - '0';
+            if (isSecond == true) {
+                d = d * 2;
+            }
+            nSum += d / 10;
             nSum += d % 10;
-            isSecond = !isSecond; 
-        } 
-        return (nSum % 10 == 0); 
+            isSecond = !isSecond;
+        }
+        return (nSum % 10 == 0);
     }
-    
+
     public static String currencyFormat(int type, BigDecimal n) {
         switch (type) {
-            case 0: return NumberFormat.getCurrencyInstance(Locale.US).format(n);
-            case 1: return NumberFormat.getCurrencyInstance(Locale.GERMANY).format(n);
-            case 2: return NumberFormat.getCurrencyInstance(Locale.UK).format(n);
-            case 3: return NumberFormat.getCurrencyInstance(new Locale("tr", "TR")).format(n);
+            case 0:
+                return NumberFormat.getCurrencyInstance(Locale.US).format(n);
+            case 1:
+                return NumberFormat.getCurrencyInstance(Locale.GERMANY).format(n);
+            case 2:
+                return NumberFormat.getCurrencyInstance(Locale.UK).format(n);
+            case 3:
+                return NumberFormat.getCurrencyInstance(new Locale("tr", "TR")).format(n);
         }
         return null;
     }
-    
+
     @Override
     public void displayInfo() {
         super.displayInfo();
@@ -157,20 +183,20 @@ public class Customer extends User {
         System.out.println(toString() + "'s pound amount: " + getPound());
         System.out.println(toString() + "'s turkish lira amount: " + getTurkishLira());
     }
-    
+
     public void deposit(int money) {
         //setMoneyAmount(moneyAmount + money);
     }
-    
+
     public void withdraw(int money) {
         //setMoneyAmount(moneyAmount - money);
     }
-    
+
     public void transferID(String ID) {
-        
+
     }
-    
-    public void transferPhoneNumber(String telNo){
-        
-    } 
+
+    public void transferPhoneNumber(String telNo) {
+
+    }
 }

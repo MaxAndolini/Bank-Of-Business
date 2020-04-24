@@ -14,9 +14,10 @@ import library.*;
 public class Admins extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Admins
+     *
      * @param home
      */
     public Admins(swing.Home home) {

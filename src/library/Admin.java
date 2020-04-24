@@ -10,9 +10,9 @@ package library;
  * @author ercan
  */
 public class Admin extends User {
-    
+
     private int adminSalary;
-   
+
     public Admin() {
         super();
         this.adminSalary = 0;
@@ -29,9 +29,11 @@ public class Admin extends User {
 
     public void setAdminSalary(int adminSalary, int save) {
         this.adminSalary = adminSalary;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Salary", adminSalary);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Salary", adminSalary);
+        }
     }
-    
+
     @Override
     public void displayInfo() {
         super.displayInfo();
@@ -44,10 +46,9 @@ public class Admin extends User {
     public void giveCredence(Banker banker, int amount) {
         banker.setBankerSalary(banker.getBankerSalary() + amount);
     }*/
-    
     public void addBanker(Banker banker) {
     }
-    
+
     public void deleteBanker() {
     }
 }

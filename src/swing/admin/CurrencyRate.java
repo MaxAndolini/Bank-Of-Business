@@ -14,15 +14,16 @@ import library.*;
 public class CurrencyRate extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form CurrencyRate
+     *
      * @param home
      */
     public CurrencyRate(swing.Home home) {
         initComponents();
         frame = home;
-        
+
         currencyratetable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 32));
     }
 

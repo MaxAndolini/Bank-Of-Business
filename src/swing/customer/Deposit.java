@@ -14,15 +14,16 @@ import library.*;
 public class Deposit extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Deposit
+     *
      * @param home
      */
     public Deposit(swing.Home home) {
         initComponents();
         frame = home;
-        
+
         System.out.println("şimdi2 " + Information.getCustomer());
     }
 

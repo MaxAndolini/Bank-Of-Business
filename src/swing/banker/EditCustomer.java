@@ -14,9 +14,10 @@ import library.*;
 public class EditCustomer extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form EditCustomer
+     *
      * @param home
      */
     public EditCustomer(swing.Home home) {

@@ -14,9 +14,10 @@ import library.*;
 public class Balance extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Balance
+     *
      * @param home
      */
     public Balance(swing.Home home) {

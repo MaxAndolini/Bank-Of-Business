@@ -10,17 +10,17 @@ package library;
  * @author ercan
  */
 public class User {
-    
+
     private ID id;
     private String homeAddress;
     private String password;
-    
+
     public User() {
         this.id = new ID();
         this.homeAddress = "----";
         this.password = "0000";
     }
-    
+
     public User(String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
         this.id = new ID(ID, fullName, dateOfBirth);
         this.homeAddress = homeAddress;
@@ -41,7 +41,9 @@ public class User {
 
     public void setHomeAddress(String homeAddress, int save) {
         this.homeAddress = homeAddress;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "HomeAddress", homeAddress);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "HomeAddress", homeAddress);
+        }
     }
 
     public String getPassword() {
@@ -50,14 +52,16 @@ public class User {
 
     public void setPassword(String password, int save) {
         this.password = password;
-        if(save == 1) Database.set("Accounts", "ID", getId().getID(), "Password", password);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Password", password);
+        }
     }
 
     @Override
     public String toString() {
         return this.getClass().getSimpleName();
     }
-    
+
     public void displayInfo() {
         System.out.println(toString() + "'s ID: " + id.getID());
         System.out.println(toString() + "'s Name: " + id.getFullName());

@@ -14,9 +14,10 @@ import library.*;
 public class Withdrawal extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Withdrawal
+     *
      * @param home
      */
     public Withdrawal(swing.Home home) {

@@ -14,9 +14,10 @@ import library.*;
 public class Home extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form Home
+     *
      * @param home
      */
     public Home(swing.Home home) {

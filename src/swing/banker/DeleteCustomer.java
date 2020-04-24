@@ -14,9 +14,10 @@ import library.*;
 public class DeleteCustomer extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    
+
     /**
      * Creates new form DeleteCustomer
+     *
      * @param home
      */
     public DeleteCustomer(swing.Home home) {

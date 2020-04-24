@@ -10,7 +10,7 @@ package library;
  * @author ercan
  */
 public class Information {
-    
+
     private static Admin admin;
     private static Banker banker;
     private static Customer customer;
