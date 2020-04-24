@@ -5,10 +5,12 @@
  */
 package swing.customer;
 
+import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.text.AbstractDocument;
+import javax.swing.text.BadLocationException;
 import library.*;
 
 /**
@@ -28,7 +30,7 @@ public class Balance extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 5));
 
         new Timer().scheduleAtFixedRate(new TimerTask() {
             int type = 0;
@@ -89,11 +91,145 @@ public class Balance extends javax.swing.JPanel {
                 }
             }
         }, 0, 2000);
-        
+
         dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
         euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
         poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
         turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+    }
+
+    public void balance() {
+        String[] typename = {"Dollar", "Euro", "Pound", "TurkishLira"};
+        if (moneytype.getSelectedIndex() != moneyctype.getSelectedIndex()) {
+            BigDecimal money = Database.isBigDecimal(moneytext.getText());
+            if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0) {
+                BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename[moneyctype.getSelectedIndex()]);
+                BigDecimal result = money.multiply(rate);
+                if (moneytype.getSelectedIndex() == 0 && Information.getCustomer().getDollar().compareTo(money) >= 0) {
+                    Information.getCustomer().subtractDollar(money, 1);
+                    dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                    switch (moneyctype.getSelectedIndex()) {
+                        case 1:
+                            Information.getCustomer().addEuro(result, 1);
+                            euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                            break;
+                        case 2:
+                            Information.getCustomer().addPound(result, 1);
+                            poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                            break;
+                        case 3:
+                            Information.getCustomer().addTurkishLira(result, 1);
+                            turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                            break;
+                        default:
+                            break;
+                    }
+                    try {
+                        moneytext.getDocument().remove(0, moneytext.getText().length());
+                    } catch (BadLocationException ex) {
+                        System.out.println(ex.toString());
+                    }
+                    infolabel3.setText("The money was successfully converted.");
+                } else if (moneytype.getSelectedIndex() == 1 && Information.getCustomer().getEuro().compareTo(money) >= 0) {
+                    Information.getCustomer().subtractEuro(money, 1);
+                    euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                    switch (moneyctype.getSelectedIndex()) {
+                        case 0:
+                            Information.getCustomer().addDollar(result, 1);
+                            dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                            break;
+                        case 2:
+                            Information.getCustomer().addPound(result, 1);
+                            poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                            break;
+                        case 3:
+                            Information.getCustomer().addTurkishLira(result, 1);
+                            turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                            break;
+                        default:
+                            break;
+                    }
+                    try {
+                        moneytext.getDocument().remove(0, moneytext.getText().length());
+                    } catch (BadLocationException ex) {
+                        System.out.println(ex.toString());
+                    }
+                    infolabel3.setText("The money was successfully converted.");
+                } else if (moneytype.getSelectedIndex() == 2 && Information.getCustomer().getPound().compareTo(money) >= 0) {
+                    Information.getCustomer().subtractPound(money, 1);
+                    poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                    switch (moneyctype.getSelectedIndex()) {
+                        case 0:
+                            Information.getCustomer().addDollar(result, 1);
+                            dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                            break;
+                        case 1:
+                            Information.getCustomer().addEuro(result, 1);
+                            euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                            break;
+                        case 3:
+                            Information.getCustomer().addTurkishLira(result, 1);
+                            turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                            break;
+                        default:
+                            break;
+                    }
+                    try {
+                        moneytext.getDocument().remove(0, moneytext.getText().length());
+                    } catch (BadLocationException ex) {
+                        System.out.println(ex.toString());
+                    }
+                    infolabel3.setText("The money was successfully converted.");
+                } else if (moneytype.getSelectedIndex() == 3 && Information.getCustomer().getTurkishLira().compareTo(money) >= 0) {
+                    Information.getCustomer().subtractTurkishLira(money, 1);
+                    turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                    switch (moneyctype.getSelectedIndex()) {
+                        case 0:
+                            Information.getCustomer().addDollar(result, 1);
+                            dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                            break;
+                        case 1:
+                            Information.getCustomer().addEuro(result, 1);
+                            euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                            break;
+                        case 2:
+                            Information.getCustomer().addPound(result, 1);
+                            poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                            break;
+                        default:
+                            break;
+                    }
+                    try {
+                        moneytext.getDocument().remove(0, moneytext.getText().length());
+                    } catch (BadLocationException ex) {
+                        System.out.println(ex.toString());
+                    }
+                    infolabel3.setText("The money was successfully converted.");
+                } else {
+                    infolabel3.setText("You don't have the amount you write down.");
+                }
+            } else {
+                infolabel3.setText("The number you enter must be between 1 and 10000.");
+            }
+        } else {
+            infolabel3.setText("You can't convert it to the same type.");
+        }
+    }
+
+    public void result() {
+        String[] typename = {"Dollar", "Euro", "Pound", "TurkishLira"};
+        if (moneytype.getSelectedIndex() != moneyctype.getSelectedIndex()) {
+            BigDecimal money = Database.isBigDecimal(moneytext.getText());
+            if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0) {
+                BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename[moneyctype.getSelectedIndex()]);
+                BigDecimal result = money.multiply(rate);
+                infolabel3.setText("Result: " + money.toString() + " * " + rate.toString() + " = " + result);
+            } else {
+                infolabel3.setText("The number you enter must be between 1 and 10000.");
+            }
+        } else {
+            infolabel3.setText("You can't convert it to the same type.");
+        }
     }
 
     /**
@@ -114,7 +250,7 @@ public class Balance extends javax.swing.JPanel {
         moneytype = new javax.swing.JComboBox<>();
         moneyctype = new javax.swing.JComboBox<>();
         infolabel2 = new javax.swing.JLabel();
-        resultlabel = new javax.swing.JLabel();
+        infolabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         dolarlabel = new javax.swing.JLabel();
         eurolabel = new javax.swing.JLabel();
@@ -173,6 +309,14 @@ public class Balance extends javax.swing.JPanel {
                 moneytextActionPerformed(evt);
             }
         });
+        moneytext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                moneytextKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                moneytextKeyReleased(evt);
+            }
+        });
 
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -188,21 +332,31 @@ public class Balance extends javax.swing.JPanel {
         moneytype.setForeground(new java.awt.Color(23, 35, 51));
         moneytype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
         moneytype.setToolTipText("");
+        moneytype.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                moneytypeİtemStateChanged(evt);
+            }
+        });
 
         moneyctype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         moneyctype.setForeground(new java.awt.Color(23, 35, 51));
         moneyctype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
+        moneyctype.setSelectedIndex(1);
         moneyctype.setToolTipText("");
+        moneyctype.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                moneyctypeİtemStateChanged(evt);
+            }
+        });
 
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
         infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infolabel2.setText("Currency you want to convert.");
 
-        resultlabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        resultlabel.setForeground(new java.awt.Color(255, 255, 255));
-        resultlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        resultlabel.setText("Result: ");
+        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -392,9 +546,7 @@ public class Balance extends javax.swing.JPanel {
                                         .addComponent(moneyctype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(146, 146, 146))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(resultlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(77, 77, 77)))))
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -408,6 +560,10 @@ public class Balance extends javax.swing.JPanel {
                                 .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(300, 300, 300))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,7 +586,7 @@ public class Balance extends javax.swing.JPanel {
                             .addComponent(moneyctype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(resultlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,8 +608,26 @@ public class Balance extends javax.swing.JPanel {
     }//GEN-LAST:event_moneytextActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
-        // TODO add your handling code here:
+        balance();
     }//GEN-LAST:event_okbtnActionPerformed
+
+    private void moneytextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneytextKeyReleased
+        result();
+    }//GEN-LAST:event_moneytextKeyReleased
+
+    private void moneytypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_moneytypeİtemStateChanged
+        result();
+    }//GEN-LAST:event_moneytypeİtemStateChanged
+
+    private void moneyctypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_moneyctypeİtemStateChanged
+        result();
+    }//GEN-LAST:event_moneyctypeİtemStateChanged
+
+    private void moneytextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneytextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            balance();
+        }
+    }//GEN-LAST:event_moneytextKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -467,6 +641,7 @@ public class Balance extends javax.swing.JPanel {
     private javax.swing.JLabel firstlabel;
     private javax.swing.JLabel infolabel;
     private javax.swing.JLabel infolabel2;
+    private javax.swing.JLabel infolabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel mainlabel;
@@ -476,7 +651,6 @@ public class Balance extends javax.swing.JPanel {
     private java.awt.Button okbtn;
     private javax.swing.JLabel poundalabel;
     private javax.swing.JLabel poundlabel;
-    private javax.swing.JLabel resultlabel;
     private javax.swing.JLabel secondalabel;
     private javax.swing.JLabel secondlabel;
     private javax.swing.JLabel thirdalabel;

@@ -43,10 +43,10 @@ public class ID {
         return fullName;
     }
 
-    public void setFullName(String name, int save) {
-        this.fullName = name;
+    public void setFullName(String fullName, int save) {
+        this.fullName = fullName;
         if (save == 1) {
-            Database.set("Accounts", "ID", getID(), "FullName", name);
+            Database.set("Accounts", "ID", getID(), "FullName", this.fullName);
         }
     }
 
@@ -57,7 +57,7 @@ public class ID {
     public void setDateOfBirth(String dateOfBirth, int save) {
         this.dateOfBirth = dateOfBirth;
         if (save == 1) {
-            Database.set("Accounts", "ID", getID(), "DateofBirth", dateOfBirth);
+            Database.set("Accounts", "ID", getID(), "DateofBirth", this.dateOfBirth);
         }
     }
 

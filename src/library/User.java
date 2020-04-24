@@ -42,7 +42,7 @@ public class User {
     public void setHomeAddress(String homeAddress, int save) {
         this.homeAddress = homeAddress;
         if (save == 1) {
-            Database.set("Accounts", "ID", getId().getID(), "HomeAddress", homeAddress);
+            Database.set("Accounts", "ID", getId().getID(), "HomeAddress", this.homeAddress);
         }
     }
 
@@ -53,7 +53,7 @@ public class User {
     public void setPassword(String password, int save) {
         this.password = password;
         if (save == 1) {
-            Database.set("Accounts", "ID", getId().getID(), "Password", password);
+            Database.set("Accounts", "ID", getId().getID(), "Password", this.password);
         }
     }
 

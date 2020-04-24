@@ -58,6 +58,11 @@ public class Filter extends DocumentFilter {
         }
     }
 
+    @Override
+    public void remove(FilterBypass fb, int i, int i1) throws BadLocationException {
+        super.remove(fb, i, i1);
+    }
+
     /**
      * This method tests whether given text can be represented as number. This
      * method can be enhanced further for specific needs.

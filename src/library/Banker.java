@@ -30,7 +30,7 @@ public class Banker extends User {
     public void setBankerSalary(int bankerSalary, int save) {
         this.bankerSalary = bankerSalary;
         if (save == 1) {
-            Database.set("Accounts", "ID", getId().getID(), "Salary", bankerSalary);
+            Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
         }
     }
 

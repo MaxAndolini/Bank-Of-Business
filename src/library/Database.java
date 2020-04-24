@@ -1021,14 +1021,14 @@ public class Database {
 
     public static BigDecimal isBigDecimal(String s) {
         if (s == null) {
-            return BigDecimal.valueOf(-1);
+            return new BigDecimal("-1");
         }
         BigDecimal num;
         try {
             num = new BigDecimal(s);
         } catch (NumberFormatException | NullPointerException ex) {
             System.out.println(ex.toString());
-            return BigDecimal.valueOf(-1);
+            return new BigDecimal("-1");
         }
         return num;
     }

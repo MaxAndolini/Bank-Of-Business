@@ -30,7 +30,7 @@ public class Admin extends User {
     public void setAdminSalary(int adminSalary, int save) {
         this.adminSalary = adminSalary;
         if (save == 1) {
-            Database.set("Accounts", "ID", getId().getID(), "Salary", adminSalary);
+            Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
         }
     }
 
