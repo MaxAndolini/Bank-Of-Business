@@ -18,7 +18,7 @@ public class Bankers extends javax.swing.JPanel {
     /**
      * Creates new form Bankers
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public Bankers(swing.Home home) {
         initComponents();

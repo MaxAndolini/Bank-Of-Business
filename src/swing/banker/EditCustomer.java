@@ -18,7 +18,7 @@ public class EditCustomer extends javax.swing.JPanel {
     /**
      * Creates new form EditCustomer
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public EditCustomer(swing.Home home) {
         initComponents();

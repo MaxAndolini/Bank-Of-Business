@@ -18,7 +18,7 @@ public class Transactions extends javax.swing.JPanel {
     /**
      * Creates new form Transactions
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public Transactions(swing.Home home) {
         initComponents();

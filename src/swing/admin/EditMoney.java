@@ -18,7 +18,7 @@ public class EditMoney extends javax.swing.JPanel {
     /**
      * Creates new form EditMoney
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public EditMoney(swing.Home home) {
         initComponents();

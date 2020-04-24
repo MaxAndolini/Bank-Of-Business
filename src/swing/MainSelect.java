@@ -21,7 +21,7 @@ public class MainSelect extends javax.swing.JPanel {
     /**
      * Creates new form MainSelect
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public MainSelect(swing.Home home) {
         initComponents();

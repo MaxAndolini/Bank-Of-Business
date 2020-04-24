@@ -22,7 +22,7 @@ public class Balance extends javax.swing.JPanel {
     /**
      * Creates new form Balance
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public Balance(swing.Home home) {
         initComponents();

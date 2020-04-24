@@ -18,7 +18,7 @@ public class Withdrawal extends javax.swing.JPanel {
     /**
      * Creates new form Withdrawal
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public Withdrawal(swing.Home home) {
         initComponents();

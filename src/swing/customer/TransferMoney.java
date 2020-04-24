@@ -18,7 +18,7 @@ public class TransferMoney extends javax.swing.JPanel {
     /**
      * Creates new form TransferMoney
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public TransferMoney(swing.Home home) {
         initComponents();

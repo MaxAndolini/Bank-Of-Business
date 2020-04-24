@@ -18,7 +18,7 @@ public class Deposit extends javax.swing.JPanel {
     /**
      * Creates new form Deposit
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public Deposit(swing.Home home) {
         initComponents();

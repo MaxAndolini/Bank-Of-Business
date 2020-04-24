@@ -18,7 +18,7 @@ public class AddCustomer extends javax.swing.JPanel {
     /**
      * Creates new form AddCustomer
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public AddCustomer(swing.Home home) {
         initComponents();

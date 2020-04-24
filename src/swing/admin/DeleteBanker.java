@@ -18,7 +18,7 @@ public class DeleteBanker extends javax.swing.JPanel {
     /**
      * Creates new form DeleteBanker
      *
-     * @param home
+     * @param home Dynamic panel.
      */
     public DeleteBanker(swing.Home home) {
         initComponents();

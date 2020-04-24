@@ -24,7 +24,7 @@ public class Filter extends DocumentFilter {
     /**
      * Restricts the number of characters can be entered by given length.
      *
-     * @param type String
+     * @param type Type of text.
      * @param length Number of characters allowed.
      */
     public Filter(int type, int length) {
