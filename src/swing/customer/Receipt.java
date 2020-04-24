@@ -143,7 +143,7 @@ public class Receipt extends javax.swing.JPanel {
 
         rboblabel2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         rboblabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rboblabel2.setText("Bank Of Business");
+        rboblabel2.setText("Bank of Business");
 
         rtotalbalancelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         rtotalbalancelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -8,6 +8,7 @@ package swing.customer;
 import java.math.BigDecimal;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.text.AbstractDocument;
 import library.*;
 
 /**
@@ -26,6 +27,8 @@ public class Balance extends javax.swing.JPanel {
     public Balance(swing.Home home) {
         initComponents();
         frame = home;
+
+        ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 16));
 
         new Timer().scheduleAtFixedRate(new TimerTask() {
             int type = 0;
@@ -86,7 +89,7 @@ public class Balance extends javax.swing.JPanel {
                 }
             }
         }, 0, 2000);
-
+        
         dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
         euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
         poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));

@@ -196,7 +196,7 @@ public class Home extends javax.swing.JFrame {
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Bank Of Business");
+        setTitle("Bank of Business");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setUndecorated(true);

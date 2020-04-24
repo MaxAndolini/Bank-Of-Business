@@ -1,1 +1,1 @@
-# Bank Of Business
+# Bank of Business

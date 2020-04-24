@@ -7,6 +7,7 @@ package swing.customer;
 
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
+import javax.swing.text.AbstractDocument;
 import library.*;
 
 /**
@@ -26,8 +27,8 @@ public class Login extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        uidcnumbertext.setText("");
-        password.setText("");
+        ((AbstractDocument) uidcnumbertext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) password.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
     /**
