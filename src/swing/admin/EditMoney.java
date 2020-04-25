@@ -42,14 +42,14 @@ public class EditMoney extends javax.swing.JPanel {
         infolabel2 = new javax.swing.JLabel();
         editicon = new javax.swing.JLabel();
         cancelicon = new javax.swing.JLabel();
+        infolabel3 = new javax.swing.JLabel();
         infolabel4 = new javax.swing.JLabel();
-        infolabel5 = new javax.swing.JLabel();
         eurotext = new javax.swing.JTextField();
         turkishliratext = new javax.swing.JTextField();
         poundtext = new javax.swing.JTextField();
-        infolabel6 = new javax.swing.JLabel();
+        infolabel5 = new javax.swing.JLabel();
         searchfullnametext = new javax.swing.JTextField();
-        infolabel8 = new javax.swing.JLabel();
+        infolabel6 = new javax.swing.JLabel();
         okbtn = new java.awt.Button();
 
         setBackground(new java.awt.Color(71, 120, 197));
@@ -78,6 +78,7 @@ public class EditMoney extends javax.swing.JPanel {
 
         dollartext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         dollartext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dollartext.setMaximumSize(new java.awt.Dimension(7, 39));
         dollartext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dollartextActionPerformed(evt);
@@ -108,18 +109,19 @@ public class EditMoney extends javax.swing.JPanel {
 
         cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
+        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel3.setText("Euro");
+
         infolabel4.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         infolabel4.setForeground(new java.awt.Color(255, 255, 255));
         infolabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel4.setText("Euro");
-
-        infolabel5.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel5.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel5.setText("Pound");
+        infolabel4.setText("Pound");
 
         eurotext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         eurotext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        eurotext.setMaximumSize(new java.awt.Dimension(7, 39));
         eurotext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eurotextActionPerformed(evt);
@@ -128,6 +130,7 @@ public class EditMoney extends javax.swing.JPanel {
 
         turkishliratext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         turkishliratext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        turkishliratext.setMaximumSize(new java.awt.Dimension(7, 39));
         turkishliratext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 turkishliratextActionPerformed(evt);
@@ -136,31 +139,33 @@ public class EditMoney extends javax.swing.JPanel {
 
         poundtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         poundtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        poundtext.setMaximumSize(new java.awt.Dimension(7, 39));
         poundtext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 poundtextActionPerformed(evt);
             }
         });
 
-        infolabel6.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel6.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel6.setText("Turkish Lira");
+        infolabel5.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel5.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel5.setText("Turkish Lira");
 
         searchfullnametext.setBackground(new java.awt.Color(23, 35, 51));
         searchfullnametext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         searchfullnametext.setForeground(new java.awt.Color(255, 255, 255));
         searchfullnametext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        searchfullnametext.setMaximumSize(new java.awt.Dimension(7, 39));
         searchfullnametext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchfullnametextActionPerformed(evt);
             }
         });
 
-        infolabel8.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel8.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        infolabel8.setText("Search Full Name:");
+        infolabel6.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel6.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        infolabel6.setText("Search Full Name:");
 
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -209,11 +214,11 @@ public class EditMoney extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(infolabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -223,7 +228,7 @@ public class EditMoney extends javax.swing.JPanel {
                         .addComponent(turkishliratext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(infolabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infolabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(searchfullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -242,19 +247,19 @@ public class EditMoney extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(searchfullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infolabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infolabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(poundtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(eurotext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dollartext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(infolabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(turkishliratext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17)
@@ -312,10 +317,10 @@ public class EditMoney extends javax.swing.JPanel {
     private javax.swing.JTextField eurotext;
     private javax.swing.JLabel infolabel;
     private javax.swing.JLabel infolabel2;
+    private javax.swing.JLabel infolabel3;
     private javax.swing.JLabel infolabel4;
     private javax.swing.JLabel infolabel5;
     private javax.swing.JLabel infolabel6;
-    private javax.swing.JLabel infolabel8;
     private javax.swing.JLabel mainlabel;
     private java.awt.Button okbtn;
     private javax.swing.JTextField poundtext;

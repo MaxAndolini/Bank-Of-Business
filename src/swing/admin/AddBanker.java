@@ -79,6 +79,7 @@ public class AddBanker extends javax.swing.JPanel {
 
         fullnametext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         fullnametext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fullnametext.setMaximumSize(new java.awt.Dimension(7, 39));
         fullnametext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fullnametextActionPerformed(evt);
@@ -116,6 +117,7 @@ public class AddBanker extends javax.swing.JPanel {
 
         phonenumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         phonenumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        phonenumbertext.setMaximumSize(new java.awt.Dimension(7, 39));
         phonenumbertext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phonenumbertextActionPerformed(evt);
@@ -134,6 +136,7 @@ public class AddBanker extends javax.swing.JPanel {
 
         dateofbirthtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         dateofbirthtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dateofbirthtext.setMaximumSize(new java.awt.Dimension(7, 39));
         dateofbirthtext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateofbirthtextActionPerformed(evt);
@@ -142,6 +145,7 @@ public class AddBanker extends javax.swing.JPanel {
 
         homeaddresstext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         homeaddresstext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        homeaddresstext.setMaximumSize(new java.awt.Dimension(7, 39));
         homeaddresstext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeaddresstextActionPerformed(evt);
@@ -150,6 +154,7 @@ public class AddBanker extends javax.swing.JPanel {
 
         salarytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         salarytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        salarytext.setMaximumSize(new java.awt.Dimension(7, 39));
         salarytext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salarytextActionPerformed(evt);
@@ -158,6 +163,7 @@ public class AddBanker extends javax.swing.JPanel {
 
         passwordtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         passwordtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordtext.setMaximumSize(new java.awt.Dimension(7, 39));
         passwordtext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordtextActionPerformed(evt);

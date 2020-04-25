@@ -39,7 +39,7 @@ public class Bankers extends javax.swing.JPanel {
         cancelicon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
         searchfullnametext = new javax.swing.JTextField();
-        infolabel8 = new javax.swing.JLabel();
+        infolabel2 = new javax.swing.JLabel();
         okbtn = new java.awt.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         bankerstable = new javax.swing.JTable();
@@ -78,16 +78,17 @@ public class Bankers extends javax.swing.JPanel {
         searchfullnametext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         searchfullnametext.setForeground(new java.awt.Color(255, 255, 255));
         searchfullnametext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        searchfullnametext.setMaximumSize(new java.awt.Dimension(7, 39));
         searchfullnametext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchfullnametextActionPerformed(evt);
             }
         });
 
-        infolabel8.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel8.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        infolabel8.setText("Search Full Name:");
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        infolabel2.setText("Search Full Name:");
 
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -155,7 +156,7 @@ public class Bankers extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(infolabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(searchfullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -174,7 +175,7 @@ public class Bankers extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(searchfullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infolabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,7 +205,7 @@ public class Bankers extends javax.swing.JPanel {
     private java.awt.Button cancelbtn;
     private javax.swing.JLabel cancelicon;
     private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel8;
+    private javax.swing.JLabel infolabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mainlabel;
     private java.awt.Button okbtn;

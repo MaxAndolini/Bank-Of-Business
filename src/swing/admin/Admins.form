@@ -59,7 +59,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Component id="infolabel8" min="-2" pref="330" max="-2" attributes="0"/>
+              <Component id="infolabel2" min="-2" pref="330" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="searchfullnametext" min="-2" pref="290" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -80,7 +80,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="searchfullnametext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="infolabel8" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="infolabel2" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="okbtn" min="-2" max="-2" attributes="0"/>
@@ -169,12 +169,15 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[7, 39]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchfullnametextActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel8">
+    <Component class="javax.swing.JLabel" name="infolabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>

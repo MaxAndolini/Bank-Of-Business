@@ -41,7 +41,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
         deleteicon = new javax.swing.JLabel();
         cancelicon = new javax.swing.JLabel();
         fullnametext = new javax.swing.JTextField();
-        infolabel8 = new javax.swing.JLabel();
+        infolabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -90,16 +90,17 @@ public class DeleteCustomer extends javax.swing.JPanel {
         fullnametext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         fullnametext.setForeground(new java.awt.Color(255, 255, 255));
         fullnametext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fullnametext.setMaximumSize(new java.awt.Dimension(7, 39));
         fullnametext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fullnametextActionPerformed(evt);
             }
         });
 
-        infolabel8.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel8.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel8.setText("Full Name:");
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel2.setText("Full Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -128,7 +129,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(370, 370, 370)
-                        .addComponent(infolabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(390, 390, 390)
                         .addComponent(fullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -142,7 +143,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(infolabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(fullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(192, 192, 192)
@@ -177,7 +178,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
     private javax.swing.JLabel deleteicon;
     private javax.swing.JTextField fullnametext;
     private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel8;
+    private javax.swing.JLabel infolabel2;
     private javax.swing.JLabel mainlabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -71,6 +71,7 @@ public class Login extends javax.swing.JPanel {
 
         uidtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         uidtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        uidtext.setMaximumSize(new java.awt.Dimension(7, 39));
         uidtext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uidtextActionPerformed(evt);
@@ -104,6 +105,7 @@ public class Login extends javax.swing.JPanel {
 
         password.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password.setMaximumSize(new java.awt.Dimension(7, 39));
 
         loginicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_enter_48px.png"))); // NOI18N
 

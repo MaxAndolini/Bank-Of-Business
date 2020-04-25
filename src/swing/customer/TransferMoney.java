@@ -47,22 +47,22 @@ public class TransferMoney extends javax.swing.JPanel {
         threehicon = new javax.swing.JLabel();
         sixtybtn = new java.awt.Button();
         sixtyicon = new javax.swing.JLabel();
-        backbtn = new java.awt.Button();
-        backicon = new javax.swing.JLabel();
+        cancelbtn = new java.awt.Button();
+        cancelicon = new javax.swing.JLabel();
         eightybtn = new java.awt.Button();
         eightyicon = new javax.swing.JLabel();
         moneytext = new javax.swing.JTextField();
         infolabel = new javax.swing.JLabel();
         okbtn = new java.awt.Button();
         jPanel1 = new javax.swing.JPanel();
-        dolarlabel = new javax.swing.JLabel();
-        eurolabel = new javax.swing.JLabel();
-        poundlabel = new javax.swing.JLabel();
-        turkishliralabel = new javax.swing.JLabel();
-        dolaralabel = new javax.swing.JLabel();
-        euroalabel = new javax.swing.JLabel();
-        poundalabel = new javax.swing.JLabel();
-        turkishliraalabel = new javax.swing.JLabel();
+        dolarlabel1 = new javax.swing.JLabel();
+        eurolabel1 = new javax.swing.JLabel();
+        poundlabel1 = new javax.swing.JLabel();
+        turkishliralabel1 = new javax.swing.JLabel();
+        dolaralabel1 = new javax.swing.JLabel();
+        euroalabel1 = new javax.swing.JLabel();
+        poundalabel1 = new javax.swing.JLabel();
+        turkishliraalabel1 = new javax.swing.JLabel();
         moneytype = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(71, 120, 197));
@@ -150,18 +150,18 @@ public class TransferMoney extends javax.swing.JPanel {
 
         sixtyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
-        backbtn.setBackground(new java.awt.Color(23, 35, 51));
-        backbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        backbtn.setForeground(new java.awt.Color(255, 255, 255));
-        backbtn.setLabel("Back");
-        backbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        backbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
+        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelbtn.setLabel("Cancel");
+        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backbtnActionPerformed(evt);
+                cancelbtnActionPerformed(evt);
             }
         });
 
-        backicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         eightybtn.setBackground(new java.awt.Color(23, 35, 51));
         eightybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -179,6 +179,7 @@ public class TransferMoney extends javax.swing.JPanel {
         moneytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         moneytext.setForeground(new java.awt.Color(255, 255, 255));
         moneytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        moneytext.setMaximumSize(new java.awt.Dimension(7, 39));
         moneytext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moneytextActionPerformed(evt);
@@ -200,41 +201,44 @@ public class TransferMoney extends javax.swing.JPanel {
             }
         });
 
-        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dolarlabel.setText("Dollar:");
+        jPanel1.setMaximumSize(new java.awt.Dimension(296, 179));
+        jPanel1.setMinimumSize(new java.awt.Dimension(296, 179));
 
-        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eurolabel.setText("Euro:");
+        dolarlabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarlabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dolarlabel1.setText("Dollar:");
 
-        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        poundlabel.setText("Pound:");
+        eurolabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        eurolabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eurolabel1.setText("Euro:");
 
-        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turkishliralabel.setText("Turkish Lira:");
+        poundlabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundlabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        poundlabel1.setText("Pound:");
 
-        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
-        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        dolaralabel.setText("$500");
+        turkishliralabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishliralabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        turkishliralabel1.setText("Turkish Lira:");
 
-        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
-        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("400 €");
+        dolaralabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolaralabel1.setForeground(new java.awt.Color(133, 187, 101));
+        dolaralabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        dolaralabel1.setText("$500");
 
-        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
-        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poundalabel.setText("£200");
+        euroalabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroalabel1.setForeground(new java.awt.Color(133, 187, 101));
+        euroalabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        euroalabel1.setText("400 €");
 
-        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
-        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        turkishliraalabel.setText("₺500");
+        poundalabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundalabel1.setForeground(new java.awt.Color(133, 187, 101));
+        poundalabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        poundalabel1.setText("£200");
+
+        turkishliraalabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishliraalabel1.setForeground(new java.awt.Color(133, 187, 101));
+        turkishliraalabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        turkishliraalabel1.setText("₺500");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -244,45 +248,43 @@ public class TransferMoney extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(dolarlabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dolaralabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(eurolabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(euroalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(turkishliralabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(turkishliraalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(poundlabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(dolarlabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dolaralabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(turkishliralabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(turkishliraalabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(poundlabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(poundalabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(eurolabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(euroalabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dolarlabel)
-                    .addComponent(dolaralabel))
+                    .addComponent(dolarlabel1)
+                    .addComponent(dolaralabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eurolabel)
-                    .addComponent(euroalabel))
+                    .addComponent(eurolabel1)
+                    .addComponent(euroalabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(poundlabel)
-                    .addComponent(poundalabel))
+                    .addComponent(poundlabel1)
+                    .addComponent(poundalabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(turkishliralabel)
-                    .addComponent(turkishliraalabel))
+                    .addComponent(turkishliralabel1)
+                    .addComponent(turkishliraalabel1))
                 .addContainerGap())
         );
 
@@ -302,9 +304,9 @@ public class TransferMoney extends javax.swing.JPanel {
                         .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(backicon)
+                        .addComponent(cancelicon)
                         .addGap(220, 220, 220)
                         .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -325,9 +327,18 @@ public class TransferMoney extends javax.swing.JPanel {
                                 .addComponent(onehbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(onehicon)))
+                        .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(121, 121, 121)
+                                .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(sixtyicon)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sixtybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -338,18 +349,8 @@ public class TransferMoney extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(121, 121, 121)
                                         .addComponent(twentyicon)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(twentybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(sixtyicon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sixtybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(twentybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(300, 300, 300)
@@ -401,8 +402,8 @@ public class TransferMoney extends javax.swing.JPanel {
                             .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backicon)
+                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelicon)
                     .addComponent(eightybtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eightyicon)
                     .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -434,9 +435,9 @@ public class TransferMoney extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_sixtybtnActionPerformed
 
-    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
-        frame.ChangeJPanel("TransferCustomer");
-    }//GEN-LAST:event_backbtnActionPerformed
+    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+        frame.ChangeJPanel("HomeCustomer");
+    }//GEN-LAST:event_cancelbtnActionPerformed
 
     private void eightybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightybtnActionPerformed
         // TODO add your handling code here:
@@ -452,14 +453,14 @@ public class TransferMoney extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button backbtn;
-    private javax.swing.JLabel backicon;
-    private javax.swing.JLabel dolaralabel;
-    private javax.swing.JLabel dolarlabel;
+    private java.awt.Button cancelbtn;
+    private javax.swing.JLabel cancelicon;
+    private javax.swing.JLabel dolaralabel1;
+    private javax.swing.JLabel dolarlabel1;
     private java.awt.Button eightybtn;
     private javax.swing.JLabel eightyicon;
-    private javax.swing.JLabel euroalabel;
-    private javax.swing.JLabel eurolabel;
+    private javax.swing.JLabel euroalabel1;
+    private javax.swing.JLabel eurolabel1;
     private java.awt.Button fourtybtn;
     private javax.swing.JLabel fourtyicon;
     private javax.swing.JLabel infolabel;
@@ -470,14 +471,14 @@ public class TransferMoney extends javax.swing.JPanel {
     private java.awt.Button okbtn;
     private java.awt.Button onehbtn;
     private javax.swing.JLabel onehicon;
-    private javax.swing.JLabel poundalabel;
-    private javax.swing.JLabel poundlabel;
+    private javax.swing.JLabel poundalabel1;
+    private javax.swing.JLabel poundlabel1;
     private java.awt.Button sixtybtn;
     private javax.swing.JLabel sixtyicon;
     private java.awt.Button threehbtn;
     private javax.swing.JLabel threehicon;
-    private javax.swing.JLabel turkishliraalabel;
-    private javax.swing.JLabel turkishliralabel;
+    private javax.swing.JLabel turkishliraalabel1;
+    private javax.swing.JLabel turkishliralabel1;
     private java.awt.Button twentybtn;
     private javax.swing.JLabel twentyicon;
     private java.awt.Button twohbtn;

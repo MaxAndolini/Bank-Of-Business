@@ -77,6 +77,7 @@ public class Login extends javax.swing.JPanel {
 
         uidcnumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         uidcnumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        uidcnumbertext.setMaximumSize(new java.awt.Dimension(7, 39));
         uidcnumbertext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uidcnumbertextActionPerformed(evt);
@@ -115,6 +116,7 @@ public class Login extends javax.swing.JPanel {
 
         password.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password.setMaximumSize(new java.awt.Dimension(7, 39));
         password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 passwordKeyPressed(evt);

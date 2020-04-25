@@ -90,6 +90,7 @@ public class Settings extends javax.swing.JPanel {
         oldpassword.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         oldpassword.setForeground(new java.awt.Color(255, 255, 255));
         oldpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        oldpassword.setMaximumSize(new java.awt.Dimension(7, 39));
 
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,6 +101,7 @@ public class Settings extends javax.swing.JPanel {
         newpassword.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         newpassword.setForeground(new java.awt.Color(255, 255, 255));
         newpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        newpassword.setMaximumSize(new java.awt.Dimension(7, 39));
 
         infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,6 +112,7 @@ public class Settings extends javax.swing.JPanel {
         newpassword2.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         newpassword2.setForeground(new java.awt.Color(255, 255, 255));
         newpassword2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        newpassword2.setMaximumSize(new java.awt.Dimension(7, 39));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
