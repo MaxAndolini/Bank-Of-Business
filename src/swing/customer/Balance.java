@@ -95,7 +95,7 @@ public class Balance extends javax.swing.JPanel {
         dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
         euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
         poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
-        turkishliraalabel.setText(Customer.currencyFormat(3, new BigDecimal("454394593495345334")));
+        turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
     }
 
     public void balance() {
