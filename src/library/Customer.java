@@ -47,6 +47,8 @@ public class Customer extends User {
     }
 
     public String getCardNumber() {
+        String getCardNumber = Database.getString("Accounts", "ID", getId().getID(), "CardNumber");
+        if(!getCardNumber.equals(this.cardNumber)) setCardNumber(getCardNumber, 0);
         return cardNumber;
     }
 
@@ -58,6 +60,8 @@ public class Customer extends User {
     }
 
     public String getJob() {
+        String getJob = Database.getString("Accounts", "ID", getId().getID(), "Job");
+        if(!getJob.equals(this.job)) setJob(getJob, 0);
         return job;
     }
 
@@ -69,6 +73,8 @@ public class Customer extends User {
     }
 
     public String getPhoneNumber() {
+        String getPhoneNumber = Database.getString("Accounts", "ID", getId().getID(), "PhoneNumber");
+        if(!getPhoneNumber.equals(this.phoneNumber)) setPhoneNumber(getPhoneNumber, 0);
         return phoneNumber;
     }
 
@@ -80,6 +86,8 @@ public class Customer extends User {
     }
 
     public BigDecimal getDollar() {
+        BigDecimal getDollar = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Dollar");
+        if(getDollar.compareTo(this.dollar) != 0) setDollar(getDollar, 0);
         return dollar;
     }
 
@@ -105,6 +113,8 @@ public class Customer extends User {
     }
 
     public BigDecimal getEuro() {
+        BigDecimal getEuro = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Euro");
+        if(getEuro.compareTo(this.euro) != 0) setEuro(getEuro, 0);
         return euro;
     }
 
@@ -130,6 +140,8 @@ public class Customer extends User {
     }
 
     public BigDecimal getPound() {
+        BigDecimal getPound = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Pound");
+        if(getPound.compareTo(this.pound) != 0) setPound(getPound, 0);
         return pound;
     }
 
@@ -155,6 +167,8 @@ public class Customer extends User {
     }
 
     public BigDecimal getTurkishLira() {
+        BigDecimal getTurkishLira = Database.getBigDecimal("Accounts", "ID", getId().getID(), "TurkishLira");
+        if(getTurkishLira.compareTo(this.turkishLira) != 0) setTurkishLira(getTurkishLira, 0);
         return turkishLira;
     }
 

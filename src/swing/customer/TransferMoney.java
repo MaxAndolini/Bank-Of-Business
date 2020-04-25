@@ -47,8 +47,8 @@ public class TransferMoney extends javax.swing.JPanel {
         threehicon = new javax.swing.JLabel();
         sixtybtn = new java.awt.Button();
         sixtyicon = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        backbtn = new java.awt.Button();
+        backicon = new javax.swing.JLabel();
         eightybtn = new java.awt.Button();
         eightyicon = new javax.swing.JLabel();
         moneytext = new javax.swing.JTextField();
@@ -150,18 +150,18 @@ public class TransferMoney extends javax.swing.JPanel {
 
         sixtyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        backbtn.setBackground(new java.awt.Color(23, 35, 51));
+        backbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        backbtn.setForeground(new java.awt.Color(255, 255, 255));
+        backbtn.setLabel("Back");
+        backbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        backbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                backbtnActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        backicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         eightybtn.setBackground(new java.awt.Color(23, 35, 51));
         eightybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -304,9 +304,9 @@ public class TransferMoney extends javax.swing.JPanel {
                         .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelicon)
+                        .addComponent(backicon)
                         .addGap(220, 220, 220)
                         .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -402,8 +402,8 @@ public class TransferMoney extends javax.swing.JPanel {
                             .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon)
+                    .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backicon)
                     .addComponent(eightybtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eightyicon)
                     .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -435,9 +435,9 @@ public class TransferMoney extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_sixtybtnActionPerformed
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         frame.ChangeJPanel("HomeCustomer");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_backbtnActionPerformed
 
     private void eightybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightybtnActionPerformed
         // TODO add your handling code here:
@@ -453,8 +453,8 @@ public class TransferMoney extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
+    private java.awt.Button backbtn;
+    private javax.swing.JLabel backicon;
     private javax.swing.JLabel dolaralabel1;
     private javax.swing.JLabel dolarlabel1;
     private java.awt.Button eightybtn;

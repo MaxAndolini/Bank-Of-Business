@@ -36,6 +36,8 @@ public class User {
     }
 
     public String getHomeAddress() {
+        String getHomeAddress = Database.getString("Accounts", "ID", getId().getID(), "HomeAddress");
+        if(!getHomeAddress.equals(this.homeAddress)) setHomeAddress(getHomeAddress, 0);
         return homeAddress;
     }
 
@@ -47,6 +49,8 @@ public class User {
     }
 
     public String getPassword() {
+        String getPassword = Database.getString("Accounts", "ID", getId().getID(), "Password");
+        if(!getPassword.equals(this.password)) setPassword(getPassword, 0);
         return password;
     }
 

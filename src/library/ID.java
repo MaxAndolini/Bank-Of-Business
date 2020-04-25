@@ -40,6 +40,8 @@ public class ID {
     }
 
     public String getFullName() {
+        String getFullName = Database.getString("Accounts", "ID", getID(), "FullName");
+        if(!getFullName.equals(this.fullName)) setFullName(getFullName, 0);
         return fullName;
     }
 
@@ -51,6 +53,8 @@ public class ID {
     }
 
     public String getDateOfBirth() {
+        String getDateOfBirth = Database.getString("Accounts", "ID", getID(), "DateOfBirth");
+        if(!getDateOfBirth.equals(this.dateOfBirth)) setDateOfBirth(getDateOfBirth, 0);
         return dateOfBirth;
     }
 

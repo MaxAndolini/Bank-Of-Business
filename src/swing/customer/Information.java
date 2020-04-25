@@ -5,24 +5,29 @@
  */
 package swing.customer;
 
+import java.math.BigDecimal;
 import library.*;
 
 /**
  *
  * @author ercan
  */
-public class Warning extends javax.swing.JPanel {
+public class Information extends javax.swing.JPanel {
 
     final private swing.Home frame;
 
     /**
-     * Creates new form Warning
+     * Creates new form Information
      *
      * @param home Dynamic panel.
      */
-    public Warning(swing.Home home) {
+    public Information(swing.Home home) {
         initComponents();
         frame = home;
+
+        if (Data.getPage2().equals("DepositCustomer")) {
+            infolabel.setText("The amount you want to deposit is " + Customer.currencyFormat(Data.getMoneyType(), Data.getMoney()));
+        }
     }
 
     /**
@@ -34,27 +39,54 @@ public class Warning extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        yesbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
+        yesicon = new javax.swing.JLabel();
+        nobtn = new java.awt.Button();
+        noicon = new javax.swing.JLabel();
         backbtn = new java.awt.Button();
         backicon = new javax.swing.JLabel();
         mainmenubtn = new java.awt.Button();
         mainmenuicon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
         infolabel2 = new javax.swing.JLabel();
-        infolabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
+        yesbtn.setBackground(new java.awt.Color(23, 35, 51));
+        yesbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        yesbtn.setForeground(new java.awt.Color(133, 187, 101));
+        yesbtn.setLabel("Yes");
+        yesbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yesbtnActionPerformed(evt);
+            }
+        });
+
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Warning");
+        mainlabel.setText("Information");
         mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+
+        yesicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_ok_48px.png"))); // NOI18N
+
+        nobtn.setBackground(new java.awt.Color(23, 35, 51));
+        nobtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        nobtn.setForeground(new java.awt.Color(133, 187, 101));
+        nobtn.setLabel("No");
+        nobtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nobtnActionPerformed(evt);
+            }
+        });
+
+        noicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_delete_48px.png"))); // NOI18N
 
         backbtn.setBackground(new java.awt.Color(23, 35, 51));
         backbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -84,17 +116,12 @@ public class Warning extends javax.swing.JPanel {
         infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         infolabel.setForeground(new java.awt.Color(255, 255, 255));
         infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Amount entered is unacceptable.");
+        infolabel.setText("The amount you want to deposit is $10,000");
 
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
         infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Please enter amount in multiple of 10/50/100 only.");
-
-        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel3.setText("Do you wish to go back?");
+        infolabel2.setText("Do you wish to continue?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,6 +130,14 @@ public class Warning extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(yesbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(yesicon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(noicon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -117,9 +152,7 @@ public class Warning extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(277, 277, 277)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(214, 214, 214)
@@ -135,9 +168,13 @@ public class Warning extends javax.swing.JPanel {
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(197, 197, 197)
+                .addGap(153, 153, 153)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(yesbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nobtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noicon)
+                    .addComponent(yesicon, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(backicon)
@@ -146,6 +183,14 @@ public class Warning extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void yesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesbtnActionPerformed
+        frame.ChangeJPanel("ReceiptCustomer");
+    }//GEN-LAST:event_yesbtnActionPerformed
+
+    private void nobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nobtnActionPerformed
+        frame.ChangeJPanel(Data.getPage2());
+    }//GEN-LAST:event_nobtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         frame.ChangeJPanel(Data.getPage2());
@@ -161,9 +206,12 @@ public class Warning extends javax.swing.JPanel {
     private javax.swing.JLabel backicon;
     private javax.swing.JLabel infolabel;
     private javax.swing.JLabel infolabel2;
-    private javax.swing.JLabel infolabel3;
     private javax.swing.JLabel mainlabel;
     private java.awt.Button mainmenubtn;
     private javax.swing.JLabel mainmenuicon;
+    private java.awt.Button nobtn;
+    private javax.swing.JLabel noicon;
+    private java.awt.Button yesbtn;
+    private javax.swing.JLabel yesicon;
     // End of variables declaration//GEN-END:variables
 }

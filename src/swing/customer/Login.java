@@ -227,7 +227,7 @@ public class Login extends javax.swing.JPanel {
                             customer.setTurkishLira(new BigDecimal(load[10]), 0);
                             customer.setHomeAddress(load[11], 0);
                             customer.setPassword(load[12], 0);
-                            Information.setCustomer(customer);
+                            Data.setCustomer(customer);
                             frame.ChangeJPanel("HomeCustomer");
                         } else {
                             infolabel.setText("The password doesn't match.");

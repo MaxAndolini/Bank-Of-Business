@@ -5,30 +5,48 @@
  */
 package library;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author ercan
  */
 public class Admin extends User {
 
-    private int adminSalary;
+    private BigDecimal adminSalary;
 
     public Admin() {
         super();
-        this.adminSalary = 0;
+        this.adminSalary = BigDecimal.ZERO;
     }
 
-    public Admin(int adminSalary, String ID, String name, String dateOfBirth, String homeAddress, String password) {
-        super(ID, name, dateOfBirth, homeAddress, password);
+    public Admin(BigDecimal adminSalary, String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
+        super(ID, fullName, dateOfBirth, homeAddress, password);
         this.adminSalary = adminSalary;
     }
 
-    public int getAdminSalary() {
+    public BigDecimal getAdminSalary() {
+        BigDecimal getAdminSalary = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Salary");
+        if(getAdminSalary.compareTo(this.adminSalary) != 0) setAdminSalary(getAdminSalary, 0);
         return adminSalary;
     }
 
-    public void setAdminSalary(int adminSalary, int save) {
+    public void setAdminSalary(BigDecimal adminSalary, int save) {
         this.adminSalary = adminSalary;
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
+        }
+    }
+
+    public void addAdminSalary(BigDecimal adminSalary, int save) {
+        this.adminSalary = this.adminSalary.add(adminSalary);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
+        }
+    }
+
+    public void subtractAdminSalary(BigDecimal adminSalary, int save) {
+        this.adminSalary = this.adminSalary.subtract(adminSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
         }

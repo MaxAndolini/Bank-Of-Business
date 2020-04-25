@@ -5,6 +5,8 @@
  */
 package swing.customer;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import library.*;
 
 /**
@@ -23,6 +25,89 @@ public class Receipt extends javax.swing.JPanel {
     public Receipt(swing.Home home) {
         initComponents();
         frame = home;
+
+        String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
+        Date date = new Date();
+        int ID = Database.create("Transactions");
+        Database.set("Transactions", "ID", ID, "Account", Data.getCustomer().getId().getID());
+        if (Data.getPage2().equals("DepositCustomer")) {
+            Database.set("Transactions", "ID", ID, "Transaction", "Deposit");
+        } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+            Database.set("Transactions", "ID", ID, "Transaction", "Withdrawal");
+        } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+            Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+        }
+        Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
+        Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
+        if (Data.getPage2().equals("TransferMoneyCustomer")) {
+            Database.set("Transactions", "ID", ID, "Transfer", Data.getTransfer());
+        }
+        Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
+
+        if (Data.getPage2().equals("DepositCustomer")) {
+            infolabel.setText("The money has been deposited to your account.");
+        } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+            infolabel.setText("The money has been withdrawn from your account.");
+        } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+            infolabel.setText("The money has been transferred to the account.");
+        }
+        rdatetlabel.setText(new SimpleDateFormat("dd/MM/yyyy").format(date));
+        rtimetlabel.setText(new SimpleDateFormat("HH:mm:ss").format(date));
+        rcnumbertlabel.setText(Data.getCustomer().getCardNumber());
+        if (Data.getPage2().equals("DepositCustomer")) {
+            rtransactiontlabel.setText("Deposit");
+        } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+            rtransactiontlabel.setText("Withdrawal");
+        } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+            rtransactiontlabel.setText("Transfer - " + Data.getTransfer());
+        }
+        rtypetlabel.setText(typename[Data.getMoneyType()]);
+        ramounttlabel.setText(Data.getMoney().toString());
+        rtotalbalancelabel.setText("Total " + typename[Data.getMoneyType()] + " Balance:");
+        switch (Data.getMoneyType()) {
+            case 0:
+                if (Data.getPage2().equals("DepositCustomer")) {
+                    Data.getCustomer().addDollar(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+                    Data.getCustomer().subtractDollar(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                    
+                }
+                rtotalbalancetlabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
+                break;
+            case 1:
+                if (Data.getPage2().equals("DepositCustomer")) {
+                    Data.getCustomer().addEuro(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+                    Data.getCustomer().subtractEuro(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                    
+                }
+                rtotalbalancetlabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
+                break;
+            case 2:
+                if (Data.getPage2().equals("DepositCustomer")) {
+                    Data.getCustomer().addPound(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+                    Data.getCustomer().subtractPound(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                    
+                }
+                rtotalbalancetlabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
+                break;
+            case 3:
+                if (Data.getPage2().equals("DepositCustomer")) {
+                    Data.getCustomer().addTurkishLira(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
+                    Data.getCustomer().subtractTurkishLira(Data.getMoney(), 1);
+                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                    
+                }
+                rtotalbalancetlabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+                break;
+            default:
+                break;
+        }
     }
 
     /**
@@ -103,6 +188,10 @@ public class Receipt extends javax.swing.JPanel {
         infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         infolabel.setText("The money has been withdrawn from your account.");
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(364, 349));
+        jPanel1.setMinimumSize(new java.awt.Dimension(364, 349));
+        jPanel1.setRequestFocusEnabled(false);
+
         rbankicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_bank_48px.png"))); // NOI18N
 
         rboblabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -110,23 +199,23 @@ public class Receipt extends javax.swing.JPanel {
         rboblabel.setText("Bank of Business");
 
         rdatelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rdatelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rdatelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rdatelabel.setText("Date:");
 
         rtimelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtimelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rtimelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rtimelabel.setText("Time:");
 
         rdatetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         rdatetlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rdatetlabel.setText("02.04.2020");
+        rdatetlabel.setText("02/04/2020");
 
         rtimetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         rtimetlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rtimetlabel.setText("10:04 PM");
+        rtimetlabel.setText("10:10:10");
 
         rcnumberlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rcnumberlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rcnumberlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rcnumberlabel.setText("Card Number:");
 
         rcnumbertlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -134,7 +223,7 @@ public class Receipt extends javax.swing.JPanel {
         rcnumbertlabel.setText("1111222233334444");
 
         rtypelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtypelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rtypelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rtypelabel.setText("Type:");
 
         rtypetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -142,11 +231,11 @@ public class Receipt extends javax.swing.JPanel {
         rtypetlabel.setText("Dollar");
 
         rboblabel2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rboblabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rboblabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rboblabel2.setText("Bank of Business");
 
         rtotalbalancelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtotalbalancelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rtotalbalancelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rtotalbalancelabel.setText("Total Balance:");
 
         rtotalbalancetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -154,7 +243,7 @@ public class Receipt extends javax.swing.JPanel {
         rtotalbalancetlabel.setText("$945.456");
 
         rtransactionlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtransactionlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rtransactionlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rtransactionlabel.setText("Transaction:");
 
         rtransactiontlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -162,11 +251,11 @@ public class Receipt extends javax.swing.JPanel {
         rtransactiontlabel.setText("Withdrawal");
 
         rhaveanicedaylabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rhaveanicedaylabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rhaveanicedaylabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rhaveanicedaylabel.setText("HAVE A NICE DAY!");
 
         ramountlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        ramountlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ramountlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ramountlabel.setText("Amount:");
 
         ramounttlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -178,7 +267,7 @@ public class Receipt extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rbankicon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rboblabel)
@@ -199,23 +288,23 @@ public class Receipt extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(rcnumbertlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rtotalbalancelabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rtotalbalancetlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(rtransactionlabel)
                             .addComponent(ramountlabel, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rtypelabel, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rtransactiontlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rtypetlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ramounttlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ramounttlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rtransactiontlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rtypetlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rhaveanicedaylabel)
-                            .addComponent(rboblabel2))
+                            .addComponent(rboblabel2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(rtotalbalancelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rtotalbalancetlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -314,6 +403,7 @@ public class Receipt extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+        Data.setCustomer(null);
         frame.ChangeJPanel("LoginCustomer");
     }//GEN-LAST:event_exitbtnActionPerformed
 

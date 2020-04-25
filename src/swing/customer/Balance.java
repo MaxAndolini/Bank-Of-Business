@@ -92,10 +92,10 @@ public class Balance extends javax.swing.JPanel {
             }
         }, 0, 2000);
 
-        dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
-        euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
-        poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
-        turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+        dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
+        euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
+        poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
+        turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
     }
 
     public void balance() {
@@ -105,21 +105,21 @@ public class Balance extends javax.swing.JPanel {
             if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0) {
                 BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename[moneyctype.getSelectedIndex()]);
                 BigDecimal result = money.multiply(rate);
-                if (moneytype.getSelectedIndex() == 0 && Information.getCustomer().getDollar().compareTo(money) >= 0) {
-                    Information.getCustomer().subtractDollar(money, 1);
-                    dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                if (moneytype.getSelectedIndex() == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) {
+                    Data.getCustomer().subtractDollar(money, 1);
+                    dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
                     switch (moneyctype.getSelectedIndex()) {
                         case 1:
-                            Information.getCustomer().addEuro(result, 1);
-                            euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                            Data.getCustomer().addEuro(result, 1);
+                            euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
                             break;
                         case 2:
-                            Information.getCustomer().addPound(result, 1);
-                            poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                            Data.getCustomer().addPound(result, 1);
+                            poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
                             break;
                         case 3:
-                            Information.getCustomer().addTurkishLira(result, 1);
-                            turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                            Data.getCustomer().addTurkishLira(result, 1);
+                            turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                             break;
                         default:
                             break;
@@ -130,21 +130,21 @@ public class Balance extends javax.swing.JPanel {
                         System.out.println(ex.toString());
                     }
                     infolabel3.setText("The money was successfully converted.");
-                } else if (moneytype.getSelectedIndex() == 1 && Information.getCustomer().getEuro().compareTo(money) >= 0) {
-                    Information.getCustomer().subtractEuro(money, 1);
-                    euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                } else if (moneytype.getSelectedIndex() == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) {
+                    Data.getCustomer().subtractEuro(money, 1);
+                    euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
                     switch (moneyctype.getSelectedIndex()) {
                         case 0:
-                            Information.getCustomer().addDollar(result, 1);
-                            dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                            Data.getCustomer().addDollar(result, 1);
+                            dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
                             break;
                         case 2:
-                            Information.getCustomer().addPound(result, 1);
-                            poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                            Data.getCustomer().addPound(result, 1);
+                            poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
                             break;
                         case 3:
-                            Information.getCustomer().addTurkishLira(result, 1);
-                            turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                            Data.getCustomer().addTurkishLira(result, 1);
+                            turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                             break;
                         default:
                             break;
@@ -155,21 +155,21 @@ public class Balance extends javax.swing.JPanel {
                         System.out.println(ex.toString());
                     }
                     infolabel3.setText("The money was successfully converted.");
-                } else if (moneytype.getSelectedIndex() == 2 && Information.getCustomer().getPound().compareTo(money) >= 0) {
-                    Information.getCustomer().subtractPound(money, 1);
-                    poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                } else if (moneytype.getSelectedIndex() == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) {
+                    Data.getCustomer().subtractPound(money, 1);
+                    poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
                     switch (moneyctype.getSelectedIndex()) {
                         case 0:
-                            Information.getCustomer().addDollar(result, 1);
-                            dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                            Data.getCustomer().addDollar(result, 1);
+                            dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
                             break;
                         case 1:
-                            Information.getCustomer().addEuro(result, 1);
-                            euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                            Data.getCustomer().addEuro(result, 1);
+                            euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
                             break;
                         case 3:
-                            Information.getCustomer().addTurkishLira(result, 1);
-                            turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                            Data.getCustomer().addTurkishLira(result, 1);
+                            turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                             break;
                         default:
                             break;
@@ -180,21 +180,21 @@ public class Balance extends javax.swing.JPanel {
                         System.out.println(ex.toString());
                     }
                     infolabel3.setText("The money was successfully converted.");
-                } else if (moneytype.getSelectedIndex() == 3 && Information.getCustomer().getTurkishLira().compareTo(money) >= 0) {
-                    Information.getCustomer().subtractTurkishLira(money, 1);
-                    turkishliraalabel.setText(Customer.currencyFormat(3, Information.getCustomer().getTurkishLira()));
+                } else if (moneytype.getSelectedIndex() == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0) {
+                    Data.getCustomer().subtractTurkishLira(money, 1);
+                    turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                     switch (moneyctype.getSelectedIndex()) {
                         case 0:
-                            Information.getCustomer().addDollar(result, 1);
-                            dolaralabel.setText(Customer.currencyFormat(0, Information.getCustomer().getDollar()));
+                            Data.getCustomer().addDollar(result, 1);
+                            dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
                             break;
                         case 1:
-                            Information.getCustomer().addEuro(result, 1);
-                            euroalabel.setText(Customer.currencyFormat(1, Information.getCustomer().getEuro()));
+                            Data.getCustomer().addEuro(result, 1);
+                            euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
                             break;
                         case 2:
-                            Information.getCustomer().addPound(result, 1);
-                            poundalabel.setText(Customer.currencyFormat(2, Information.getCustomer().getPound()));
+                            Data.getCustomer().addPound(result, 1);
+                            poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
                             break;
                         default:
                             break;

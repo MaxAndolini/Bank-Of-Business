@@ -24,8 +24,8 @@ public class Home extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        mainlabel.setText("Welcome " + Information.getCustomer().getId().getFullName());
-        mainlabel2.setText("Card Num: " + Information.getCustomer().getCardNumber());
+        mainlabel.setText("Welcome " + Data.getCustomer().getId().getFullName());
+        mainlabel2.setText("Card Num: " + Data.getCustomer().getCardNumber());
     }
 
     /**
@@ -283,7 +283,7 @@ public class Home extends javax.swing.JPanel {
     }//GEN-LAST:event_balancebtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
-        Information.setCustomer(null);
+        Data.setCustomer(null);
         frame.ChangeJPanel("LoginCustomer");
     }//GEN-LAST:event_logoutbtnActionPerformed
 

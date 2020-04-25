@@ -319,6 +319,7 @@ public class Home extends javax.swing.JPanel {
     }//GEN-LAST:event_deletecustomerbtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
+        Data.setBanker(null);
         frame.ChangeJPanel("LoginBanker");
     }//GEN-LAST:event_logoutbtnActionPerformed
 

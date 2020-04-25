@@ -5,6 +5,9 @@
  */
 package swing.customer;
 
+import java.awt.event.KeyEvent;
+import java.math.BigDecimal;
+import javax.swing.text.AbstractDocument;
 import library.*;
 
 /**
@@ -24,7 +27,25 @@ public class Deposit extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        System.out.println("şimdi2 " + Information.getCustomer());
+        ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 5));
+
+        dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
+        euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
+        poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
+        turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+    }
+
+    public void deposit() {
+        String[] typename = {"Dollar", "Euro", "Pound", "TurkishLira"};
+        BigDecimal money = Database.isBigDecimal(moneytext.getText());
+        Data.setPage2("DepositCustomer");
+        if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(new BigDecimal(10)).compareTo(BigDecimal.ZERO) == 0 || money.remainder(new BigDecimal(50)).compareTo(BigDecimal.ZERO) == 0 || money.remainder(new BigDecimal(100)).compareTo(BigDecimal.ZERO) == 0)) {
+            Data.setMoney(money);
+            Data.setMoneyType(moneytype.getSelectedIndex());
+            frame.ChangeJPanel("InformationCustomer");
+        } else {
+            frame.ChangeJPanel("WarningCustomer");
+        }
     }
 
     /**
@@ -87,6 +108,11 @@ public class Deposit extends javax.swing.JPanel {
         moneytext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moneytextActionPerformed(evt);
+            }
+        });
+        moneytext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                moneytextKeyPressed(evt);
             }
         });
 
@@ -259,8 +285,14 @@ public class Deposit extends javax.swing.JPanel {
     }//GEN-LAST:event_moneytextActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
-        // TODO add your handling code here:
+        deposit();
     }//GEN-LAST:event_okbtnActionPerformed
+
+    private void moneytextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneytextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            deposit();
+        }
+    }//GEN-LAST:event_moneytextKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,30 +5,48 @@
  */
 package library;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author ercan
  */
 public class Banker extends User {
 
-    private int bankerSalary;
+    private BigDecimal bankerSalary;
 
     public Banker() {
         super();
-        this.bankerSalary = 0;
+        this.bankerSalary = BigDecimal.ZERO;
     }
 
-    public Banker(int bankerSalary, String ID, String name, String dateOfBirth, String homeAddress, String password) {
-        super(ID, name, dateOfBirth, homeAddress, password);
+    public Banker(BigDecimal bankerSalary, String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
+        super(ID, fullName, dateOfBirth, homeAddress, password);
         this.bankerSalary = bankerSalary;
     }
 
-    public int getBankerSalary() {
+    public BigDecimal getBankerSalary() {
+        BigDecimal getBankerSalary = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Salary");
+        if(getBankerSalary.compareTo(this.bankerSalary) != 0) setBankerSalary(getBankerSalary, 0);
         return bankerSalary;
     }
 
-    public void setBankerSalary(int bankerSalary, int save) {
+    public void setBankerSalary(BigDecimal bankerSalary, int save) {
         this.bankerSalary = bankerSalary;
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
+        }
+    }
+
+    public void addBankerSalary(BigDecimal bankerSalary, int save) {
+        this.bankerSalary = this.bankerSalary.add(bankerSalary);
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
+        }
+    }
+
+    public void subtractBankerSalary(BigDecimal bankerSalary, int save) {
+        this.bankerSalary = this.bankerSalary.subtract(bankerSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
         }

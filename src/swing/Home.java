@@ -29,29 +29,6 @@ public class Home extends javax.swing.JFrame {
         Home.this.setVisible(true);
 
         boolean created;
-        created = Database.fcreate("Accounts");
-        if (created == true) {
-            int column = Database.columnExists("Accounts");
-            if (column != 14) {
-                Database.createColumn("Accounts", 0, 14);
-            }
-
-            Database.setColumn("Accounts", 0, "ID");
-            Database.setColumn("Accounts", 1, "AccountType");
-            Database.setColumn("Accounts", 2, "CardNumber");
-            Database.setColumn("Accounts", 3, "FullName");
-            Database.setColumn("Accounts", 4, "DateofBirth");
-            Database.setColumn("Accounts", 5, "Job");
-            Database.setColumn("Accounts", 6, "PhoneNumber");
-            Database.setColumn("Accounts", 7, "Dollar");
-            Database.setColumn("Accounts", 8, "Euro");
-            Database.setColumn("Accounts", 9, "Pound");
-            Database.setColumn("Accounts", 10, "TurkishLira");
-            Database.setColumn("Accounts", 11, "HomeAddress");
-            Database.setColumn("Accounts", 12, "Password");
-            Database.setColumn("Accounts", 13, "Salary");
-        }
-
         created = Database.fcreate("Currencies");
         if (created == true) {
             int column = Database.columnExists("Currencies");
@@ -93,6 +70,45 @@ public class Home extends javax.swing.JFrame {
             Database.set("Currencies", "Rate", "TurkishLira", "Euro", 1.0);
             Database.set("Currencies", "Rate", "TurkishLira", "Pound", 1.0);
             Database.set("Currencies", "Rate", "TurkishLira", "TurkishLira", 1.0);
+        }
+        
+        created = Database.fcreate("Accounts");
+        if (created == true) {
+            int column = Database.columnExists("Accounts");
+            if (column != 14) {
+                Database.createColumn("Accounts", 0, 14);
+            }
+
+            Database.setColumn("Accounts", 0, "ID");
+            Database.setColumn("Accounts", 1, "AccountType");
+            Database.setColumn("Accounts", 2, "CardNumber");
+            Database.setColumn("Accounts", 3, "FullName");
+            Database.setColumn("Accounts", 4, "DateofBirth");
+            Database.setColumn("Accounts", 5, "Job");
+            Database.setColumn("Accounts", 6, "PhoneNumber");
+            Database.setColumn("Accounts", 7, "Dollar");
+            Database.setColumn("Accounts", 8, "Euro");
+            Database.setColumn("Accounts", 9, "Pound");
+            Database.setColumn("Accounts", 10, "TurkishLira");
+            Database.setColumn("Accounts", 11, "HomeAddress");
+            Database.setColumn("Accounts", 12, "Password");
+            Database.setColumn("Accounts", 13, "Salary");
+        }
+        
+        created = Database.fcreate("Transactions");
+        if (created == true) {
+            int column = Database.columnExists("Transactions");
+            if (column != 7) {
+                Database.createColumn("Transactions", 0, 7);
+            }
+
+            Database.setColumn("Transactions", 0, "ID");
+            Database.setColumn("Transactions", 1, "Account");
+            Database.setColumn("Transactions", 2, "Transaction");
+            Database.setColumn("Transactions", 3, "Type");
+            Database.setColumn("Transactions", 4, "Amount");
+            Database.setColumn("Transactions", 5, "Transfer");
+            Database.setColumn("Transactions", 6, "DateTime");
         }
     }
 
@@ -156,6 +172,8 @@ public class Home extends javax.swing.JFrame {
             DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
         } else if (cName.equals("HomeCustomer")) {
             DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
+        } else if (cName.equals("InformationCustomer")) {
+            DynamicPanel.add(new swing.customer.Information(this), "InformationCustomer");
         } else if (cName.equals("LoginCustomer")) {
             DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
         } else if (cName.equals("ReceiptCustomer")) {
