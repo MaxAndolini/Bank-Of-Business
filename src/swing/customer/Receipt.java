@@ -30,12 +30,18 @@ public class Receipt extends javax.swing.JPanel {
         Date date = new Date();
         int ID = Database.create("Transactions");
         Database.set("Transactions", "ID", ID, "Account", Data.getCustomer().getId().getID());
-        if (Data.getPage2().equals("DepositCustomer")) {
-            Database.set("Transactions", "ID", ID, "Transaction", "Deposit");
-        } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-            Database.set("Transactions", "ID", ID, "Transaction", "Withdrawal");
-        } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+        switch (Data.getPage2()) {
+            case "DepositCustomer":
+                Database.set("Transactions", "ID", ID, "Transaction", "Deposit");
+                break;
+            case "WithdrawalCustomer":
+                Database.set("Transactions", "ID", ID, "Transaction", "Withdrawal");
+                break;
+            case "TransferMoneyCustomer":
+                Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+                break;
+            default:
+                break;
         }
         Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
         Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
@@ -43,68 +49,104 @@ public class Receipt extends javax.swing.JPanel {
             Database.set("Transactions", "ID", ID, "Transfer", Data.getTransfer());
         }
         Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
-
-        if (Data.getPage2().equals("DepositCustomer")) {
-            infolabel.setText("The money has been deposited to your account.");
-        } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-            infolabel.setText("The money has been withdrawn from your account.");
-        } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            infolabel.setText("The money has been transferred to the account.");
+        
+        switch (Data.getPage2()) {
+            case "DepositCustomer":
+                infolabel.setText("The money has been deposited to your account.");
+                break;
+            case "WithdrawalCustomer":
+                infolabel.setText("The money has been withdrawn from your account.");
+                break;
+            case "TransferMoneyCustomer":
+                infolabel.setText("The money has been transferred to the account.");
+                break;
+            default:
+                break;
         }
         rdatetlabel.setText(new SimpleDateFormat("dd/MM/yyyy").format(date));
         rtimetlabel.setText(new SimpleDateFormat("HH:mm:ss").format(date));
         rcnumbertlabel.setText(Data.getCustomer().getCardNumber());
-        if (Data.getPage2().equals("DepositCustomer")) {
-            rtransactiontlabel.setText("Deposit");
-        } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-            rtransactiontlabel.setText("Withdrawal");
-        } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            rtransactiontlabel.setText("Transfer - " + Data.getTransfer());
+        switch (Data.getPage2()) {
+            case "DepositCustomer":
+                rtransactiontlabel.setText("Deposit");
+                break;
+            case "WithdrawalCustomer":
+                rtransactiontlabel.setText("Withdrawal");
+                break;
+            case "TransferMoneyCustomer":
+                rtransactiontlabel.setText("Transfer - " + Data.getTransfer());
+                break;
+            default:
+                break;
         }
         rtypetlabel.setText(typename[Data.getMoneyType()]);
         ramounttlabel.setText(Data.getMoney().toString());
         rtotalbalancelabel.setText("Total " + typename[Data.getMoneyType()] + " Balance:");
         switch (Data.getMoneyType()) {
             case 0:
-                if (Data.getPage2().equals("DepositCustomer")) {
-                    Data.getCustomer().addDollar(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-                    Data.getCustomer().subtractDollar(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-                    
+                switch (Data.getPage2()) {
+                    case "DepositCustomer":
+                        Data.getCustomer().addDollar(Data.getMoney(), 1);
+                        break;
+                    case "WithdrawalCustomer":
+                        Data.getCustomer().subtractDollar(Data.getMoney(), 1);
+                        break;
+                    case "TransferMoneyCustomer":
+                        break;
+                    default:
+                        break;
                 }
                 rtotalbalancetlabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
                 break;
+
             case 1:
-                if (Data.getPage2().equals("DepositCustomer")) {
-                    Data.getCustomer().addEuro(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-                    Data.getCustomer().subtractEuro(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-                    
+                switch (Data.getPage2()) {
+                    case "DepositCustomer":
+                        Data.getCustomer().addEuro(Data.getMoney(), 1);
+                        break;
+                    case "WithdrawalCustomer":
+                        Data.getCustomer().subtractEuro(Data.getMoney(), 1);
+                        break;
+                    case "TransferMoneyCustomer":
+                        break;
+                    default:
+                        break;
                 }
                 rtotalbalancetlabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
                 break;
+
             case 2:
-                if (Data.getPage2().equals("DepositCustomer")) {
-                    Data.getCustomer().addPound(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-                    Data.getCustomer().subtractPound(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-                    
+                switch (Data.getPage2()) {
+                    case "DepositCustomer":
+                        Data.getCustomer().addPound(Data.getMoney(), 1);
+                        break;
+                    case "WithdrawalCustomer":
+                        Data.getCustomer().subtractPound(Data.getMoney(), 1);
+                        break;
+                    case "TransferMoneyCustomer":
+                        break;
+                    default:
+                        break;
                 }
                 rtotalbalancetlabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
                 break;
+
             case 3:
-                if (Data.getPage2().equals("DepositCustomer")) {
-                    Data.getCustomer().addTurkishLira(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-                    Data.getCustomer().subtractTurkishLira(Data.getMoney(), 1);
-                } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-                    
+                switch (Data.getPage2()) {
+                    case "DepositCustomer":
+                        Data.getCustomer().addTurkishLira(Data.getMoney(), 1);
+                        break;
+                    case "WithdrawalCustomer":
+                        Data.getCustomer().subtractTurkishLira(Data.getMoney(), 1);
+                        break;
+                    case "TransferMoneyCustomer":
+                        break;
+                    default:
+                        break;
                 }
                 rtotalbalancetlabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                 break;
+
             default:
                 break;
         }

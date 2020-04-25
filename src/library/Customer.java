@@ -99,14 +99,14 @@ public class Customer extends User {
     }
 
     public void addDollar(BigDecimal dollar, int save) {
-        this.dollar = this.dollar.add(dollar);
+        this.dollar = getDollar().add(dollar);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Dollar", this.dollar);
         }
     }
 
     public void subtractDollar(BigDecimal dollar, int save) {
-        this.dollar = this.dollar.subtract(dollar);
+        this.dollar = getDollar().subtract(dollar);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Dollar", this.dollar);
         }
@@ -126,14 +126,14 @@ public class Customer extends User {
     }
 
     public void addEuro(BigDecimal euro, int save) {
-        this.euro = this.euro.add(euro);
+        this.euro = getEuro().add(euro);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Euro", this.euro);
         }
     }
 
     public void subtractEuro(BigDecimal euro, int save) {
-        this.euro = this.euro.subtract(euro);
+        this.euro = getEuro().subtract(euro);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Euro", this.euro);
         }
@@ -153,14 +153,14 @@ public class Customer extends User {
     }
 
     public void addPound(BigDecimal pound, int save) {
-        this.pound = this.pound.add(pound);
+        this.pound = getPound().add(pound);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Pound", this.pound);
         }
     }
 
     public void subtractPound(BigDecimal pound, int save) {
-        this.pound = this.pound.subtract(pound);
+        this.pound = getPound().subtract(pound);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Pound", this.pound);
         }
@@ -180,14 +180,14 @@ public class Customer extends User {
     }
 
     public void addTurkishLira(BigDecimal turkishLira, int save) {
-        this.turkishLira = this.turkishLira.add(turkishLira);
+        this.turkishLira = getTurkishLira().add(turkishLira);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "TurkishLira", this.turkishLira);
         }
     }
 
     public void subtractTurkishLira(BigDecimal turkishLira, int save) {
-        this.turkishLira = this.turkishLira.subtract(turkishLira);
+        this.turkishLira = getTurkishLira().subtract(turkishLira);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "TurkishLira", this.turkishLira);
         }

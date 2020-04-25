@@ -39,14 +39,14 @@ public class Banker extends User {
     }
 
     public void addBankerSalary(BigDecimal bankerSalary, int save) {
-        this.bankerSalary = this.bankerSalary.add(bankerSalary);
+        this.bankerSalary = getBankerSalary().add(bankerSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
         }
     }
 
     public void subtractBankerSalary(BigDecimal bankerSalary, int save) {
-        this.bankerSalary = this.bankerSalary.subtract(bankerSalary);
+        this.bankerSalary = getBankerSalary().subtract(bankerSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
         }

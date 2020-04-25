@@ -39,14 +39,14 @@ public class Admin extends User {
     }
 
     public void addAdminSalary(BigDecimal adminSalary, int save) {
-        this.adminSalary = this.adminSalary.add(adminSalary);
+        this.adminSalary = getAdminSalary().add(adminSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
         }
     }
 
     public void subtractAdminSalary(BigDecimal adminSalary, int save) {
-        this.adminSalary = this.adminSalary.subtract(adminSalary);
+        this.adminSalary = getAdminSalary().subtract(adminSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
         }
