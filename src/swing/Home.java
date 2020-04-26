@@ -98,8 +98,8 @@ public class Home extends javax.swing.JFrame {
         created = Database.fcreate("Transactions");
         if (created == true) {
             int column = Database.columnExists("Transactions");
-            if (column != 7) {
-                Database.createColumn("Transactions", 0, 7);
+            if (column != 8) {
+                Database.createColumn("Transactions", 0, 8);
             }
 
             Database.setColumn("Transactions", 0, "ID");
@@ -107,8 +107,9 @@ public class Home extends javax.swing.JFrame {
             Database.setColumn("Transactions", 2, "Transaction");
             Database.setColumn("Transactions", 3, "Type");
             Database.setColumn("Transactions", 4, "Amount");
-            Database.setColumn("Transactions", 5, "Transfer");
-            Database.setColumn("Transactions", 6, "DateTime");
+            Database.setColumn("Transactions", 5, "TransferTo");
+            Database.setColumn("Transactions", 6, "TransferFrom");
+            Database.setColumn("Transactions", 7, "DateTime");
         }
     }
 

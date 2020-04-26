@@ -5,6 +5,7 @@
  */
 package swing.customer;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import library.*;
@@ -28,7 +29,9 @@ public class Receipt extends javax.swing.JPanel {
 
         String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
         Date date = new Date();
-        int ID = Database.create("Transactions");
+        int ID;
+
+        ID = Database.create("Transactions");
         Database.set("Transactions", "ID", ID, "Account", Data.getCustomer().getId().getID());
         switch (Data.getPage2()) {
             case "DepositCustomer":
@@ -46,9 +49,21 @@ public class Receipt extends javax.swing.JPanel {
         Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
         Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
         if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            Database.set("Transactions", "ID", ID, "Transfer", Data.getTransfer());
+            Database.set("Transactions", "ID", ID, "TransferTo", Data.getTransfer());
         }
         Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
+
+        if (Data.getPage2().equals("TransferMoneyCustomer")) {
+            ID = Database.create("Transactions");
+            Database.set("Transactions", "ID", ID, "Account", ((Data.getTransfer().length() != 16) ? (Data.getTransfer()) : (Database.getString("Accounts", "CardNumber", Data.getTransfer(), "ID"))));
+            Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+            Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
+            Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
+            if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                Database.set("Transactions", "ID", ID, "TransferFrom", Data.getCustomer().getId().getID());
+            }
+            Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
+        }
 
         switch (Data.getPage2()) {
             case "DepositCustomer":
@@ -92,6 +107,8 @@ public class Receipt extends javax.swing.JPanel {
                         Data.getCustomer().subtractDollar(Data.getMoney(), 1);
                         break;
                     case "TransferMoneyCustomer":
+                        Data.getCustomer().subtractDollar(Data.getMoney(), 1);
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Dollar", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Dollar").add(Data.getMoney())));
                         break;
                     default:
                         break;
@@ -108,6 +125,8 @@ public class Receipt extends javax.swing.JPanel {
                         Data.getCustomer().subtractEuro(Data.getMoney(), 1);
                         break;
                     case "TransferMoneyCustomer":
+                        Data.getCustomer().subtractEuro(Data.getMoney(), 1);
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Euro", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Euro").add(Data.getMoney())));
                         break;
                     default:
                         break;
@@ -124,6 +143,8 @@ public class Receipt extends javax.swing.JPanel {
                         Data.getCustomer().subtractPound(Data.getMoney(), 1);
                         break;
                     case "TransferMoneyCustomer":
+                        Data.getCustomer().subtractPound(Data.getMoney(), 1);
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Pound", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Pound").add(Data.getMoney())));
                         break;
                     default:
                         break;
@@ -140,6 +161,8 @@ public class Receipt extends javax.swing.JPanel {
                         Data.getCustomer().subtractTurkishLira(Data.getMoney(), 1);
                         break;
                     case "TransferMoneyCustomer":
+                        Data.getCustomer().subtractTurkishLira(Data.getMoney(), 1);
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "TurkishLira", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "TurkishLira").add(Data.getMoney())));
                         break;
                     default:
                         break;
@@ -446,10 +469,14 @@ public class Receipt extends javax.swing.JPanel {
 
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         Data.setCustomer(null);
+        Data.setPage1(null);
+        Data.setPage2(null);
         frame.ChangeJPanel("LoginCustomer");
     }//GEN-LAST:event_exitbtnActionPerformed
 
     private void mainmenubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenubtnActionPerformed
+        Data.setPage1(null);
+        Data.setPage2(null);
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_mainmenubtnActionPerformed
 

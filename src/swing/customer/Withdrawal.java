@@ -36,16 +36,14 @@ public class Withdrawal extends javax.swing.JPanel {
     }
 
     public void withdrawal(BigDecimal money, int moneyType) {
-        if (!moneytext.getText().isBlank()) {
-            Data.setPage1(null);
-            Data.setPage2("WithdrawalCustomer");
-            Data.setMoney(money);
-            Data.setMoneyType(moneyType);
-            if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(Database.isBigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
-                frame.ChangeJPanel("InformationCustomer");
-            } else {
-                frame.ChangeJPanel("WarningCustomer");
-            }
+        Data.setPage1(null);
+        Data.setPage2("WithdrawalCustomer");
+        Data.setMoney(money);
+        Data.setMoneyType(moneyType);
+        if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(Database.isBigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
+            frame.ChangeJPanel("InformationCustomer");
+        } else {
+            frame.ChangeJPanel("WarningCustomer");
         }
     }
 
@@ -465,6 +463,8 @@ public class Withdrawal extends javax.swing.JPanel {
     }//GEN-LAST:event_sixtybtnActionPerformed
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+        Data.setPage1(null);
+        Data.setPage2(null);
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelbtnActionPerformed
 
@@ -477,11 +477,13 @@ public class Withdrawal extends javax.swing.JPanel {
     }//GEN-LAST:event_moneytextActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
-        withdrawal(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
+        if (!moneytext.getText().isBlank()) {
+            withdrawal(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
+        }
     }//GEN-LAST:event_okbtnActionPerformed
 
     private void moneytextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneytextKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER && !moneytext.getText().isBlank()) {
             withdrawal(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
         }
     }//GEN-LAST:event_moneytextKeyPressed

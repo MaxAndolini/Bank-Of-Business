@@ -38,7 +38,7 @@ public class Transfer extends javax.swing.JPanel {
             if (uidcnumbertext.getText().length() == 16) {
                 type = 1;
             }
-            if (Database.exists("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText()) && Database.getInt("Accounts", (type == 0) ? ("ID") : ("CardNumber"), uidcnumbertext.getText(), "AccountType") == 0 && (type == 0 && !Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && !Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
+            if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText()) && Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "AccountType") == 0 && (type == 0 && !Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && !Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
                 frame.ChangeJPanel("TransferMoneyCustomer");
             } else {
                 frame.ChangeJPanel("WarningCustomer");
@@ -169,6 +169,8 @@ public class Transfer extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+        Data.setPage1(null);
+        Data.setPage2(null);
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelbtnActionPerformed
 

@@ -24,29 +24,31 @@ public class Warning extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        if (Data.getPage1() != null) {
-            if (Data.getPage1().equals("TransferCustomer")) {
-                int type = 0;
-                if (Data.getTransfer().length() == 16) {
-                    type = 1;
-                }
-                infolabel.setText("The " + ((type == 0) ? ("user ID") : ("card number")) + " entered is unacceptable.");
-                if ((type == 0 && Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
-                    infolabel2.setText("You can't transfer money to yourself.");
-                } else if (!Database.exists("Accounts", (type == 0) ? ("ID") : ("CardNumber"), Data.getTransfer())) {
-                    infolabel2.setText("The " + ((type == 0) ? ("user ID") : ("card number")) + " doesn't exist.");
-                } else {
-                    infolabel2.setText("The account type is invalid.");
-                }
+        if (Data.getPage1().equals("TransferCustomer") && Data.getPage2() == null) {
+            int type = 0;
+            if (Data.getTransfer().length() == 16) {
+                type = 1;
             }
-        } else {
-            if (Data.getPage2().equals("WithdrawalCustomer") && ((Data.getMoneyType() == 0 && Data.getCustomer().getDollar().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 1 && Data.getCustomer().getEuro().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 2 && Data.getCustomer().getPound().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 3 && Data.getCustomer().getTurkishLira().compareTo(Data.getMoney()) == -1))) {
+            infolabel.setText("The " + ((type == 0) ? ("user ID") : ("card number")) + " entered is unacceptable.");
+            if ((type == 0 && Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
+                infolabel2.setText("You can't transfer money to yourself.");
+            } else if (!Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), Data.getTransfer())) {
+                infolabel2.setText("The " + ((type == 0) ? ("user ID") : ("card number")) + " doesn't exist.");
+            } else {
+                infolabel2.setText("The account type is invalid.");
+            }
+            return;
+        }
+        if ((Data.getMoneyType() == 0 && Data.getCustomer().getDollar().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 1 && Data.getCustomer().getEuro().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 2 && Data.getCustomer().getPound().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 3 && Data.getCustomer().getTurkishLira().compareTo(Data.getMoney()) == -1)) {
+            if (Data.getPage2().equals("WithdrawalCustomer")) {
                 infolabel2.setText("You don't have enough fund to withdrawal.");
-                return;
+            } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                infolabel2.setText("You don't have enough fund to transfer.");
             }
-            if (Data.getMoney().compareTo(Database.isBigDecimal("10000")) == 1) {
-                infolabel2.setText("The amount can't be more than 10,000.");
-            }
+            return;
+        }
+        if (Data.getMoney().compareTo(Database.isBigDecimal("10000")) == 1) {
+            infolabel2.setText("The amount can't be more than 10,000.");
         }
     }
 
@@ -181,6 +183,8 @@ public class Warning extends javax.swing.JPanel {
     }//GEN-LAST:event_backbtnActionPerformed
 
     private void mainmenubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenubtnActionPerformed
+        Data.setPage1(null);
+        Data.setPage2(null);
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_mainmenubtnActionPerformed
 

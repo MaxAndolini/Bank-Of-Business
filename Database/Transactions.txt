@@ -1,9 +1,5 @@
-ID|Account|Transaction|Type|Amount|Transfer|DateTime|
-0|0|Deposit|Dollar|200|-|25/04/2020 18:22:15|
-1|0|Deposit|Turkish Lira|100|-|25/04/2020 18:50:55|
-2|0|Deposit|Euro|350|-|25/04/2020 18:52:48|
-3|0|Withdrawal|Dollar|100|-|26/04/2020 13:00:19|
-4|0|Withdrawal|Dollar|200|-|26/04/2020 13:11:04|
-5|0|Deposit|Dollar|500|-|26/04/2020 13:11:15|
-6|0|Withdrawal|Dollar|40|-|26/04/2020 13:11:23|
-7|0|Deposit|Dollar|500|-|26/04/2020 18:34:45|
+ID|Account|Transaction|Type|Amount|TransferTo|TransferFrom|DateTime|
+0|0|Transfer|Dollar|100|1|-|27/04/2020 01:42:45|
+1|1|Transfer|Dollar|100|-|0|27/04/2020 01:42:45|
+2|0|Transfer|Dollar|200|1|-|27/04/2020 01:50:50|
+3|1|Transfer|Dollar|200|-|0|27/04/2020 01:50:50|

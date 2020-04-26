@@ -35,9 +35,8 @@ public class TransferMoney extends javax.swing.JPanel {
         turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
     }
 
-    public void withdrawal(BigDecimal money, int moneyType) {
-        Data.setPage1(null);
-        Data.setPage2("WithdrawalCustomer");
+    public void transferMoney(BigDecimal money, int moneyType) {
+        Data.setPage2("TransferMoneyCustomer");
         Data.setMoney(money);
         Data.setMoneyType(moneyType);
         if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(Database.isBigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
@@ -437,35 +436,36 @@ public class TransferMoney extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onehbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onehbtnActionPerformed
-        withdrawal(Database.isBigDecimal("100"), 0);
+        transferMoney(Database.isBigDecimal("100"), 0);
     }//GEN-LAST:event_onehbtnActionPerformed
 
     private void twohbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twohbtnActionPerformed
-        withdrawal(Database.isBigDecimal("200"), 0);
+        transferMoney(Database.isBigDecimal("200"), 0);
     }//GEN-LAST:event_twohbtnActionPerformed
 
     private void fourtybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourtybtnActionPerformed
-        withdrawal(Database.isBigDecimal("40"), 0);
+        transferMoney(Database.isBigDecimal("40"), 0);
     }//GEN-LAST:event_fourtybtnActionPerformed
 
     private void twentybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twentybtnActionPerformed
-        withdrawal(Database.isBigDecimal("20"), 0);
+        transferMoney(Database.isBigDecimal("20"), 0);
     }//GEN-LAST:event_twentybtnActionPerformed
 
     private void threehbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threehbtnActionPerformed
-        withdrawal(Database.isBigDecimal("300"), 0);
+        transferMoney(Database.isBigDecimal("300"), 0);
     }//GEN-LAST:event_threehbtnActionPerformed
 
     private void sixtybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixtybtnActionPerformed
-        withdrawal(Database.isBigDecimal("60"), 0);
+        transferMoney(Database.isBigDecimal("60"), 0);
     }//GEN-LAST:event_sixtybtnActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
-        frame.ChangeJPanel("HomeCustomer");
+        Data.setPage2(null);
+        frame.ChangeJPanel("TransferCustomer");
     }//GEN-LAST:event_backbtnActionPerformed
 
     private void eightybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightybtnActionPerformed
-        withdrawal(Database.isBigDecimal("80"), 0);
+        transferMoney(Database.isBigDecimal("80"), 0);
     }//GEN-LAST:event_eightybtnActionPerformed
 
     private void moneytextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneytextActionPerformed
@@ -473,12 +473,14 @@ public class TransferMoney extends javax.swing.JPanel {
     }//GEN-LAST:event_moneytextActionPerformed
 
     private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
-        withdrawal(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
+        if (!moneytext.getText().isBlank()) {
+            transferMoney(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
+        }
     }//GEN-LAST:event_okbtnActionPerformed
 
     private void moneytextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneytextKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            withdrawal(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER && !moneytext.getText().isBlank()) {
+            transferMoney(Database.isBigDecimal(moneytext.getText()), moneytype.getSelectedIndex());
         }
     }//GEN-LAST:event_moneytextKeyPressed
 
