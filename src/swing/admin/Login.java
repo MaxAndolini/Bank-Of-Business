@@ -5,6 +5,8 @@
  */
 package swing.admin;
 
+import java.awt.event.KeyEvent;
+import javax.swing.text.AbstractDocument;
 import library.*;
 
 /**
@@ -23,6 +25,9 @@ public class Login extends javax.swing.JPanel {
     public Login(swing.Home home) {
         initComponents();
         frame = home;
+
+        ((AbstractDocument) uidtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) password.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
     /**
@@ -77,6 +82,11 @@ public class Login extends javax.swing.JPanel {
                 uidtextActionPerformed(evt);
             }
         });
+        uidtext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                uidtextKeyPressed(evt);
+            }
+        });
 
         infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,6 +116,11 @@ public class Login extends javax.swing.JPanel {
         password.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setMaximumSize(new java.awt.Dimension(7, 39));
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
+            }
+        });
 
         loginicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_enter_48px.png"))); // NOI18N
 
@@ -115,48 +130,45 @@ public class Login extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(loginicon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 538, Short.MAX_VALUE)
-                                .addComponent(exiticon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addComponent(uidtext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(300, 300, 300)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(infolabel, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                     .addComponent(infolabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(infolabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(300, 300, 300))
             .addGroup(layout.createSequentialGroup()
-                .addGap(390, 390, 390)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(loginicon)
+                                .addGap(538, 538, 538)
+                                .addComponent(exiticon)
+                                .addGap(10, 10, 10)
+                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(uidtext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(uidtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,12 +182,58 @@ public class Login extends javax.swing.JPanel {
                             .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(loginicon)))
                     .addComponent(exiticon))
-                .addContainerGap())
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void login() {
+
+        /*
+        1) ^ - start of the string
+        2) (?=.*[0-9]) - Positive look ahead expression for any number
+        3) (?=.*[a-z]) - Positive look ahead expression for lower case letter
+        4) (?=.*[A-Z]) - Positive look ahead expression for upper case letter
+        5) (?=.*[!@#$%^&*]) - Positive look ahead expression for any special character
+        6) (?=\\S+$) - Positive look ahead expression for \S (non-space character)
+        7) . – any character
+        8) {8,} - minimum 8 characters in length
+        9) $ - end of the string
+         */
+        if (!uidtext.getText().isBlank() || !String.valueOf(password.getPassword()).isBlank()) {
+            if (Database.exists("Accounts", "ID", uidtext.getText())) {
+                if (Database.getInt("Accounts", "ID", uidtext.getText(), "AccountType") == 2) {
+                    if (String.valueOf(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                        if (String.valueOf(password.getPassword()).equals(Database.getString("Accounts", "ID", uidtext.getText(), "Password"))) {
+                            String[] load = Database.getArray("Accounts", "ID", uidtext.getText());
+                            Admin admin = new Admin();
+                            admin.getId().setID(load[0]);
+                            admin.getId().setFullName(load[3], 0);
+                            admin.getId().setDateOfBirth(load[4], 0);
+                            admin.setPhoneNumber(load[6], 0);
+                            admin.setHomeAddress(load[11], 0);
+                            admin.setPassword(load[12], 0);
+                            admin.setAdminSalary(Database.isBigDecimal(load[13]), 0);
+                            Data.setAdmin(admin);
+                            frame.ChangeJPanel("HomeAdmin");
+                        } else {
+                            infolabel.setText("The password doesn't match.");
+                        }
+                    } else {
+                        infolabel.setText("The password doesn't follow the rules.");
+                    }
+                } else {
+                    infolabel.setText("The account type is invalid.");
+                }
+            } else {
+                infolabel.setText("The user ID is invalid.");
+            }
+        } else {
+            infolabel.setText("The user ID can't be left blank.");
+        }
+    }
+
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
-        frame.ChangeJPanel("HomeAdmin");
+        login();
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void uidtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidtextActionPerformed
@@ -185,6 +243,18 @@ public class Login extends javax.swing.JPanel {
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
         frame.ChangeJPanel("MainSelect");
     }//GEN-LAST:event_exitbtnActionPerformed
+
+    private void uidtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uidtextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            login();
+        }
+    }//GEN-LAST:event_uidtextKeyPressed
+
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            login();
+        }
+    }//GEN-LAST:event_passwordKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

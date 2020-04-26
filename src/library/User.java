@@ -12,16 +12,18 @@ package library;
 public class User {
 
     private ID id;
+    private String phoneNumber;
     private String homeAddress;
     private String password;
 
     public User() {
         this.id = new ID();
+        this.phoneNumber = "0";
         this.homeAddress = "----";
         this.password = "0000";
     }
 
-    public User(String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
+    public User(String ID, String fullName, String dateOfBirth, String phoneNumber, String homeAddress, String password) {
         this.id = new ID(ID, fullName, dateOfBirth);
         this.homeAddress = homeAddress;
         this.password = password;
@@ -33,6 +35,19 @@ public class User {
 
     public void setId(ID id) {
         this.id = id;
+    }
+    
+    public String getPhoneNumber() {
+        String getPhoneNumber = Database.getString("Accounts", "ID", getId().getID(), "PhoneNumber");
+        if(!getPhoneNumber.equals(this.phoneNumber)) setPhoneNumber(getPhoneNumber, 0);
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber, int save) {
+        this.phoneNumber = phoneNumber;
+        if (save == 1) {
+            Database.set("Accounts", "ID", getId().getID(), "PhoneNumber", phoneNumber);
+        }
     }
 
     public String getHomeAddress() {

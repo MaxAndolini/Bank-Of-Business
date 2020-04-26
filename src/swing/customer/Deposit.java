@@ -29,22 +29,24 @@ public class Deposit extends javax.swing.JPanel {
 
         ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 5));
 
-        dolaralabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
-        euroalabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
-        poundalabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
-        turkishliraalabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+        dolaralabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+        euroalabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+        poundalabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+        turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
     }
 
     public void deposit() {
-        String[] typename = {"Dollar", "Euro", "Pound", "TurkishLira"};
-        BigDecimal money = Database.isBigDecimal(moneytext.getText());
-        Data.setPage2("DepositCustomer");
-        if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(new BigDecimal(10)).compareTo(BigDecimal.ZERO) == 0 || money.remainder(new BigDecimal(50)).compareTo(BigDecimal.ZERO) == 0 || money.remainder(new BigDecimal(100)).compareTo(BigDecimal.ZERO) == 0)) {
+        if (!moneytext.getText().isBlank()) {
+            BigDecimal money = Database.isBigDecimal(moneytext.getText());
+            Data.setPage1(null);
+            Data.setPage2("DepositCustomer");
             Data.setMoney(money);
             Data.setMoneyType(moneytype.getSelectedIndex());
-            frame.ChangeJPanel("InformationCustomer");
-        } else {
-            frame.ChangeJPanel("WarningCustomer");
+            if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(Database.isBigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0)) {
+                frame.ChangeJPanel("InformationCustomer");
+            } else {
+                frame.ChangeJPanel("WarningCustomer");
+            }
         }
     }
 
@@ -228,7 +230,7 @@ public class Deposit extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,9 +246,9 @@ public class Deposit extends javax.swing.JPanel {
                                 .addComponent(cancelicon)
                                 .addGap(220, 220, 220)
                                 .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(319, 319, 319))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 290, Short.MAX_VALUE)
+                        .addGap(290, 290, 290)
                         .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))))
             .addGroup(layout.createSequentialGroup()
@@ -259,7 +261,7 @@ public class Deposit extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,7 +274,7 @@ public class Deposit extends javax.swing.JPanel {
                     .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelicon)
                     .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -23,6 +23,31 @@ public class Warning extends javax.swing.JPanel {
     public Warning(swing.Home home) {
         initComponents();
         frame = home;
+
+        if (Data.getPage1() != null) {
+            if (Data.getPage1().equals("TransferCustomer")) {
+                int type = 0;
+                if (Data.getTransfer().length() == 16) {
+                    type = 1;
+                }
+                infolabel.setText("The " + ((type == 0) ? ("user ID") : ("card number")) + " entered is unacceptable.");
+                if ((type == 0 && Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
+                    infolabel2.setText("You can't transfer money to yourself.");
+                } else if (!Database.exists("Accounts", (type == 0) ? ("ID") : ("CardNumber"), Data.getTransfer())) {
+                    infolabel2.setText("The " + ((type == 0) ? ("user ID") : ("card number")) + " doesn't exist.");
+                } else {
+                    infolabel2.setText("The account type is invalid.");
+                }
+            }
+        } else {
+            if (Data.getPage2().equals("WithdrawalCustomer") && ((Data.getMoneyType() == 0 && Data.getCustomer().getDollar().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 1 && Data.getCustomer().getEuro().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 2 && Data.getCustomer().getPound().compareTo(Data.getMoney()) == -1) || (Data.getMoneyType() == 3 && Data.getCustomer().getTurkishLira().compareTo(Data.getMoney()) == -1))) {
+                infolabel2.setText("You don't have enough fund to withdrawal.");
+                return;
+            }
+            if (Data.getMoney().compareTo(Database.isBigDecimal("10000")) == 1) {
+                infolabel2.setText("The amount can't be more than 10,000.");
+            }
+        }
     }
 
     /**
@@ -84,7 +109,7 @@ public class Warning extends javax.swing.JPanel {
         infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         infolabel.setForeground(new java.awt.Color(255, 255, 255));
         infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Amount entered is unacceptable.");
+        infolabel.setText("The amount entered is unacceptable.");
 
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,26 +126,26 @@ public class Warning extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(backicon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(538, 538, 538)
                         .addComponent(mainmenuicon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(0, 0, 0)))
+                .addGap(10, 10, 10))
             .addGroup(layout.createSequentialGroup()
                 .addGap(277, 277, 277)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(277, 277, 277))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(214, 214, 214)
                 .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -131,11 +156,11 @@ public class Warning extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(197, 197, 197)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,12 +168,16 @@ public class Warning extends javax.swing.JPanel {
                     .addComponent(backicon)
                     .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mainmenuicon))
-                .addContainerGap())
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
-        frame.ChangeJPanel(Data.getPage2());
+        if (Data.getPage2() == null) {
+            frame.ChangeJPanel(Data.getPage1());
+        } else if (Data.getPage1() == null) {
+            frame.ChangeJPanel(Data.getPage2());
+        }
     }//GEN-LAST:event_backbtnActionPerformed
 
     private void mainmenubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenubtnActionPerformed

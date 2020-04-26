@@ -6,6 +6,9 @@
 package library;
 
 import java.math.BigDecimal;
+import java.security.SecureRandom;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  *
@@ -84,5 +87,50 @@ public class Data {
 
     public static void setTransfer(String transfer) {
         Data.transfer = transfer;
+    }
+    
+    public static String generateCardNumber() {
+        String result = "1";
+        SecureRandom rand = new SecureRandom();
+        for (int i = 0; i < 15; i++) {
+            result += rand.nextInt(10);
+        }
+        if (!checkLuhn(result)) {
+            return generateCardNumber();
+        }
+        if (Database.exists("Users", "CardNumber", result)) {
+            return generateCardNumber();
+        }
+        return result;
+    }
+
+    public static boolean checkLuhn(String cardNumber) {
+        int nDigits = cardNumber.length();
+        int nSum = 0;
+        boolean isSecond = false;
+        for (int i = nDigits - 1; i >= 0; i--) {
+            int d = cardNumber.charAt(i) - '0';
+            if (isSecond == true) {
+                d = d * 2;
+            }
+            nSum += d / 10;
+            nSum += d % 10;
+            isSecond = !isSecond;
+        }
+        return (nSum % 10 == 0);
+    }
+
+    public static String currencyFormat(int type, BigDecimal n) {
+        switch (type) {
+            case 0:
+                return NumberFormat.getCurrencyInstance(Locale.US).format(n);
+            case 1:
+                return NumberFormat.getCurrencyInstance(Locale.GERMANY).format(n);
+            case 2:
+                return NumberFormat.getCurrencyInstance(Locale.UK).format(n);
+            case 3:
+                return NumberFormat.getCurrencyInstance(new Locale("tr", "TR")).format(n);
+        }
+        return null;
     }
 }

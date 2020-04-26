@@ -23,6 +23,9 @@ public class Home extends javax.swing.JPanel {
     public Home(swing.Home home) {
         initComponents();
         frame = home;
+        
+        mainlabel.setText("Welcome " + Data.getAdmin().getId().getFullName());
+        mainlabel2.setText("Salary: " + Data.currencyFormat(0, Data.getAdmin().getAdminSalary()));
     }
 
     /**
@@ -40,6 +43,7 @@ public class Home extends javax.swing.JPanel {
         currencyratebtn = new java.awt.Button();
         customersbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
+        mainlabel2 = new javax.swing.JLabel();
         addadminicon = new javax.swing.JLabel();
         addbankericon = new javax.swing.JLabel();
         currencyrateicon = new javax.swing.JLabel();
@@ -52,13 +56,12 @@ public class Home extends javax.swing.JPanel {
         editbankerbtn = new java.awt.Button();
         customersicon = new javax.swing.JLabel();
         editbankericon = new javax.swing.JLabel();
-        transactionsbtn = new java.awt.Button();
-        transactionsicon = new javax.swing.JLabel();
-        settingsbtn1 = new java.awt.Button();
-        settingsicon1 = new javax.swing.JLabel();
-        settingsbtn2 = new java.awt.Button();
-        settingsicon2 = new javax.swing.JLabel();
-        mainlabel2 = new javax.swing.JLabel();
+        settingsbtn = new java.awt.Button();
+        settingsicon = new javax.swing.JLabel();
+        bankersbtn = new java.awt.Button();
+        bankersicon = new javax.swing.JLabel();
+        adminsbtn = new java.awt.Button();
+        adminsicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -119,9 +122,14 @@ public class Home extends javax.swing.JPanel {
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
         mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mainlabel.setText("Welcome Admin");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+
+        mainlabel2.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainlabel2.setForeground(new java.awt.Color(133, 187, 101));
+        mainlabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        mainlabel2.setText("Salary: $500");
+        mainlabel2.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
 
         addadminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_add_property_48px.png"))); // NOI18N
 
@@ -175,180 +183,172 @@ public class Home extends javax.swing.JPanel {
 
         editbankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_edit_property_48px.png"))); // NOI18N
 
-        transactionsbtn.setBackground(new java.awt.Color(23, 35, 51));
-        transactionsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        transactionsbtn.setForeground(new java.awt.Color(255, 255, 255));
-        transactionsbtn.setLabel("Settings");
-        transactionsbtn.addActionListener(new java.awt.event.ActionListener() {
+        settingsbtn.setBackground(new java.awt.Color(23, 35, 51));
+        settingsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        settingsbtn.setForeground(new java.awt.Color(255, 255, 255));
+        settingsbtn.setLabel("Settings");
+        settingsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transactionsbtnActionPerformed(evt);
+                settingsbtnActionPerformed(evt);
             }
         });
 
-        transactionsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
+        settingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
 
-        settingsbtn1.setBackground(new java.awt.Color(23, 35, 51));
-        settingsbtn1.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        settingsbtn1.setForeground(new java.awt.Color(255, 255, 255));
-        settingsbtn1.setLabel("Bankers");
-        settingsbtn1.addActionListener(new java.awt.event.ActionListener() {
+        bankersbtn.setBackground(new java.awt.Color(23, 35, 51));
+        bankersbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        bankersbtn.setForeground(new java.awt.Color(255, 255, 255));
+        bankersbtn.setLabel("Bankers");
+        bankersbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                settingsbtn1ActionPerformed(evt);
+                bankersbtnActionPerformed(evt);
             }
         });
 
-        settingsicon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_registration_48px.png"))); // NOI18N
+        bankersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_registration_48px.png"))); // NOI18N
 
-        settingsbtn2.setBackground(new java.awt.Color(23, 35, 51));
-        settingsbtn2.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        settingsbtn2.setForeground(new java.awt.Color(255, 255, 255));
-        settingsbtn2.setLabel("Admins");
-        settingsbtn2.addActionListener(new java.awt.event.ActionListener() {
+        adminsbtn.setBackground(new java.awt.Color(23, 35, 51));
+        adminsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        adminsbtn.setForeground(new java.awt.Color(255, 255, 255));
+        adminsbtn.setLabel("Admins");
+        adminsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                settingsbtn2ActionPerformed(evt);
+                adminsbtnActionPerformed(evt);
             }
         });
 
-        settingsicon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
-
-        mainlabel2.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel2.setForeground(new java.awt.Color(133, 187, 101));
-        mainlabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        mainlabel2.setText("Salary: $500");
-        mainlabel2.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
+        adminsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(290, 290, 290)
                         .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(addadminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(addadminicon))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(addbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(addbankericon)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(245, 245, 245)
-                                        .addComponent(settingsicon1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(editmoneyicon)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(editmoneybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(settingsicon2)
-                                        .addGap(245, 245, 245)
-                                        .addComponent(currencyrateicon)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(currencyratebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(editbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(10, 10, 10)
                                 .addComponent(editbankericon)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(245, 245, 245)
-                                        .addComponent(customersicon)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(customersicon))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(settingsbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(settingsbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(170, 170, 170)))
-                                .addComponent(transactionsicon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(transactionsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(deletebankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(deletebankericon)
-                                    .addGap(170, 170, 170)
-                                    .addComponent(customersbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(170, 170, 170)
-                                    .addComponent(logouticon)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addGap(170, 170, 170)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(adminsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(bankersbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(170, 170, 170)
+                                .addComponent(settingsicon)
+                                .addGap(10, 10, 10)
+                                .addComponent(settingsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(74, 74, 74)
+                                .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(addadminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(10, 10, 10)
+                                        .addComponent(addadminicon)
+                                        .addGap(245, 245, 245)
+                                        .addComponent(adminsicon))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(addbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(10, 10, 10)
+                                        .addComponent(addbankericon)
+                                        .addGap(245, 245, 245)
+                                        .addComponent(bankersicon)))
+                                .addGap(245, 245, 245)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(currencyrateicon)
+                                        .addGap(10, 10, 10)
+                                        .addComponent(currencyratebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(editmoneyicon)
+                                        .addGap(10, 10, 10)
+                                        .addComponent(editmoneybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(deletebankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(deletebankericon)
+                                .addGap(170, 170, 170)
+                                .addComponent(customersbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(170, 170, 170)
+                                .addComponent(logouticon)
+                                .addGap(10, 10, 10)
+                                .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainlabel)
                     .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(currencyratebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(currencyrateicon))
-                            .addComponent(addadminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addadminicon, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addbankericon)
-                            .addComponent(editmoneybtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editmoneyicon))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editbankericon)
-                            .addComponent(transactionsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(transactionsicon))
-                        .addGap(50, 50, 50))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(settingsicon2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(settingsbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(settingsicon1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(settingsbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(adminsicon)
+                        .addGap(10, 10, 10)
+                        .addComponent(adminsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(bankersicon)
+                        .addGap(10, 10, 10)
+                        .addComponent(bankersbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
                         .addComponent(customersicon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(10, 10, 10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(currencyratebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addadminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addadminicon, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(50, 50, 50)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addbankericon)
+                                    .addComponent(editmoneybtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(editmoneyicon))
+                                .addGap(50, 50, 50)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(editbankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(editbankericon)
+                                    .addComponent(settingsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(settingsicon)))
+                            .addComponent(currencyrateicon))
+                        .addGap(50, 50, 50)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(customersbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deletebankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deletebankericon)
                     .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logouticon))
-                .addContainerGap())
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void addadminbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addadminbtnActionPerformed
         frame.ChangeJPanel("AddAdminAdmin");
     }//GEN-LAST:event_addadminbtnActionPerformed
+
+    private void editmoneybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editmoneybtnActionPerformed
+        frame.ChangeJPanel("EditMoneyAdmin");
+    }//GEN-LAST:event_editmoneybtnActionPerformed
 
     private void currencyratebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currencyratebtnActionPerformed
         frame.ChangeJPanel("CurrencyRateAdmin");
@@ -367,14 +367,6 @@ public class Home extends javax.swing.JPanel {
         frame.ChangeJPanel("LoginAdmin");
     }//GEN-LAST:event_logoutbtnActionPerformed
 
-    private void editmoneybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editmoneybtnActionPerformed
-        frame.ChangeJPanel("EditMoneyAdmin");
-    }//GEN-LAST:event_editmoneybtnActionPerformed
-
-    private void transactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionsbtnActionPerformed
-        frame.ChangeJPanel("SettingsAdmin");
-    }//GEN-LAST:event_transactionsbtnActionPerformed
-
     private void addbankerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbankerbtnActionPerformed
         frame.ChangeJPanel("AddBankerAdmin");
     }//GEN-LAST:event_addbankerbtnActionPerformed
@@ -383,13 +375,17 @@ public class Home extends javax.swing.JPanel {
         frame.ChangeJPanel("EditBankerAdmin");
     }//GEN-LAST:event_editbankerbtnActionPerformed
 
-    private void settingsbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtn1ActionPerformed
-        frame.ChangeJPanel("BankersAdmin");
-    }//GEN-LAST:event_settingsbtn1ActionPerformed
+    private void settingsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtnActionPerformed
+        frame.ChangeJPanel("SettingsAdmin");
+    }//GEN-LAST:event_settingsbtnActionPerformed
 
-    private void settingsbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtn2ActionPerformed
+    private void bankersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankersbtnActionPerformed
+        frame.ChangeJPanel("BankersAdmin");
+    }//GEN-LAST:event_bankersbtnActionPerformed
+
+    private void adminsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminsbtnActionPerformed
         frame.ChangeJPanel("AdminsAdmin");
-    }//GEN-LAST:event_settingsbtn2ActionPerformed
+    }//GEN-LAST:event_adminsbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -397,6 +393,10 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel addadminicon;
     private java.awt.Button addbankerbtn;
     private javax.swing.JLabel addbankericon;
+    private java.awt.Button adminsbtn;
+    private javax.swing.JLabel adminsicon;
+    private java.awt.Button bankersbtn;
+    private javax.swing.JLabel bankersicon;
     private java.awt.Button currencyratebtn;
     private javax.swing.JLabel currencyrateicon;
     private java.awt.Button customersbtn;
@@ -412,11 +412,7 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel logouticon;
     private javax.swing.JLabel mainlabel;
     private javax.swing.JLabel mainlabel2;
-    private java.awt.Button settingsbtn1;
-    private java.awt.Button settingsbtn2;
-    private javax.swing.JLabel settingsicon1;
-    private javax.swing.JLabel settingsicon2;
-    private java.awt.Button transactionsbtn;
-    private javax.swing.JLabel transactionsicon;
+    private java.awt.Button settingsbtn;
+    private javax.swing.JLabel settingsicon;
     // End of variables declaration//GEN-END:variables
 }

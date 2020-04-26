@@ -20,8 +20,8 @@ public class Banker extends User {
         this.bankerSalary = BigDecimal.ZERO;
     }
 
-    public Banker(BigDecimal bankerSalary, String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
-        super(ID, fullName, dateOfBirth, homeAddress, password);
+    public Banker(BigDecimal bankerSalary, String ID, String fullName, String dateOfBirth, String phoneNumber, String homeAddress, String password) {
+        super(ID, fullName, dateOfBirth, phoneNumber, homeAddress, password);
         this.bankerSalary = bankerSalary;
     }
 

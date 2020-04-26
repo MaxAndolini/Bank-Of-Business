@@ -49,7 +49,7 @@ public class Receipt extends javax.swing.JPanel {
             Database.set("Transactions", "ID", ID, "Transfer", Data.getTransfer());
         }
         Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
-        
+
         switch (Data.getPage2()) {
             case "DepositCustomer":
                 infolabel.setText("The money has been deposited to your account.");
@@ -96,7 +96,7 @@ public class Receipt extends javax.swing.JPanel {
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Customer.currencyFormat(0, Data.getCustomer().getDollar()));
+                rtotalbalancetlabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
                 break;
 
             case 1:
@@ -112,7 +112,7 @@ public class Receipt extends javax.swing.JPanel {
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Customer.currencyFormat(1, Data.getCustomer().getEuro()));
+                rtotalbalancetlabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
                 break;
 
             case 2:
@@ -128,7 +128,7 @@ public class Receipt extends javax.swing.JPanel {
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Customer.currencyFormat(2, Data.getCustomer().getPound()));
+                rtotalbalancetlabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
                 break;
 
             case 3:
@@ -144,7 +144,7 @@ public class Receipt extends javax.swing.JPanel {
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Customer.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+                rtotalbalancetlabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                 break;
 
             default:
@@ -402,35 +402,35 @@ public class Receipt extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(10, 10, 10)
                                 .addComponent(exiticon)
                                 .addGap(87, 87, 87)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                                .addGap(87, 87, 87)
                                 .addComponent(mainmenuicon)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(10, 10, 10)
                                 .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(562, 562, 562))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(249, 249, 249)
                         .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(239, 239, 239)))
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,7 +440,7 @@ public class Receipt extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)))
-                .addContainerGap())
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 

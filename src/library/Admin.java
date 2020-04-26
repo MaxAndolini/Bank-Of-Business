@@ -20,8 +20,8 @@ public class Admin extends User {
         this.adminSalary = BigDecimal.ZERO;
     }
 
-    public Admin(BigDecimal adminSalary, String ID, String fullName, String dateOfBirth, String homeAddress, String password) {
-        super(ID, fullName, dateOfBirth, homeAddress, password);
+    public Admin(BigDecimal adminSalary, String ID, String fullName, String dateOfBirth, String phoneNumber, String homeAddress, String password) {
+        super(ID, fullName, dateOfBirth, phoneNumber, homeAddress, password);
         this.adminSalary = adminSalary;
     }
 
