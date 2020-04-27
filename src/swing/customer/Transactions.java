@@ -8,6 +8,8 @@ package swing.customer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.table.DefaultTableModel;
 import library.*;
 
@@ -31,21 +33,34 @@ public class Transactions extends javax.swing.JPanel {
         transactionstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
         transactionstable.setAutoCreateRowSorter(true);
 
-        ArrayList<ArrayList<String>> load = Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID());
-        Collections.sort(load, new CustomComparator(7));
-        DefaultTableModel model = (DefaultTableModel) transactionstable.getModel();
-        Integer columns[] = {0, 2, 3, 4, 5, 6, 7};
-        for (int i = 0; i < load.size(); i++) {
-            int column = 0;
-            String[] row = new String[load.get(i).size()];
-            for (int j = 0; j < load.get(i).size(); j++) {
-                if (Arrays.asList(columns).contains(j)) {
-                    row[column] = load.get(i).get(j);
-                    column++;
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            ArrayList<ArrayList<String>> load = null;
+
+            @Override
+            public void run() {
+                if (load == null || !load.equals(Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID()))) {
+                    DefaultTableModel model = (DefaultTableModel) transactionstable.getModel();
+                    if (load != null) {
+                        model.setRowCount(0);
+                    }
+                    load = Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID());
+                    ArrayList<ArrayList<String>> data = (ArrayList<ArrayList<String>>) load.clone();
+                    Collections.sort(data, new CustomComparator(7));
+                    Integer columns[] = {0, 2, 3, 4, 5, 6, 7};
+                    for (int i = 0; i < data.size(); i++) {
+                        int column = 0;
+                        String[] row = new String[data.get(i).size()];
+                        for (int j = 0; j < data.get(i).size(); j++) {
+                            if (Arrays.asList(columns).contains(j)) {
+                                row[column] = data.get(i).get(j);
+                                column++;
+                            }
+                        }
+                        model.addRow(row);
+                    }
                 }
             }
-            model.addRow(row);
-        }
+        }, 0, 2000);
     }
 
     /**

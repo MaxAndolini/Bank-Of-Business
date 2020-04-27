@@ -1120,40 +1120,6 @@ public class Database {
         return getArrayPrivate(filename, column, columnvalue.toString());
     }
 
-    /*private static String[][] get2DArray(String filename, String column, String columnvalue) {
-        if (!fexists(filename)) {
-            return null;
-        }
-        if (fempty(filename)) {
-            return null;
-        }
-        int columnid = -1;
-        if (column != null && !column.isBlank()) {
-            columnid = columnNametoID(filename, column);
-        }
-        int linecount = 0;
-        ArrayList<ArrayList<String>> newlines = new ArrayList<>();
-        try {
-            for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
-                String[] tmpline = line.split("[|]");
-                if (linecount != 0) {
-                    if (columnid != -1 && columnvalue != null && !columnvalue.isBlank()) {
-                        if (tmpline[columnid].equals(columnvalue)) {
-                            newlines.add((ArrayList<String>) Arrays.asList(tmpline));
-                        }
-                    } else {
-                        newlines.add((ArrayList<String>) Arrays.asList(tmpline));
-                    }
-                } else {
-                    linecount++;
-                }
-            }
-        } catch (IOException ex) {
-            System.out.println(ex.toString());
-            return null;
-        }
-        return newlines;
-    }*/
     private static ArrayList<ArrayList<String>> getArrayListPrivate(String filename, String column, String columnvalue) {
         if (!fexists(filename)) {
             return null;
