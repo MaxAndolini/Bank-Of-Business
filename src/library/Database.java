@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class Database {
 
     public static boolean dexists(String directoryname) {
-        if (directoryname.length() == 0) {
+        if (directoryname == null || directoryname.isBlank()) {
             return false;
         }
         try {
@@ -32,7 +33,7 @@ public class Database {
     }
 
     public static boolean dremove(String directoryname) {
-        if (directoryname.length() == 0) {
+        if (directoryname == null || directoryname.isBlank()) {
             return false;
         }
         try {
@@ -61,7 +62,7 @@ public class Database {
     }
 
     public static boolean fexists(String filename) {
-        if (filename.length() == 0) {
+        if (filename == null || filename.isBlank()) {
             return false;
         }
         try {
@@ -73,7 +74,7 @@ public class Database {
     }
 
     public static boolean fempty(String filename) {
-        if (filename.length() == 0) {
+        if (filename == null || filename.isBlank()) {
             return false;
         }
         try {
@@ -88,7 +89,7 @@ public class Database {
     }
 
     public static boolean fremove(String filename) {
-        if (filename.length() == 0) {
+        if (filename == null || filename.isBlank()) {
             return false;
         }
         try {
@@ -124,6 +125,9 @@ public class Database {
             return -1;
         }
         if (fempty(filename)) {
+            return -1;
+        }
+        if (column == null || column.isBlank()) {
             return -1;
         }
         int columnid = columnNametoID(filename, column);
@@ -195,7 +199,7 @@ public class Database {
         if (!fexists(filename)) {
             return false;
         }
-        if (columnnum <= 0) {
+        if (columnpos < 0 || columnnum <= 0) {
             return false;
         }
         ArrayList<String> newlines = new ArrayList<>();
@@ -248,7 +252,7 @@ public class Database {
         if (column < 0 || column >= columnexists) {
             return false;
         }
-        if (name.length() == 0) {
+        if (name == null || name.isBlank()) {
             return false;
         }
         int count = 0;
@@ -330,6 +334,9 @@ public class Database {
         if (columnexists == 0) {
             return -1;
         }
+        if (name == null || name.isBlank()) {
+            return -1;
+        }
         int count = 0;
         try {
             String line = Files.lines(Paths.get("Database/" + filename + ".txt")).findFirst().get();
@@ -355,11 +362,14 @@ public class Database {
         if (fempty(filename)) {
             return false;
         }
+        if (column == null || column.isBlank()) {
+            return false;
+        }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
             return false;
         }
-        if (columnvalue.length() == 0) {
+        if (columnvalue == null || columnvalue.isBlank()) {
             return false;
         }
         try {
@@ -415,11 +425,14 @@ public class Database {
         if (columnexists == 0) {
             return null;
         }
+        if (column == null || column.isBlank()) {
+            return null;
+        }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
             return null;
         }
-        if (columnvalue.length() == 0) {
+        if (columnvalue == null || columnvalue.isBlank()) {
             return null;
         }
         try {
@@ -482,15 +495,24 @@ public class Database {
         if (fempty(filename)) {
             return false;
         }
+        if (column == null || column.isBlank()) {
+            return false;
+        }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
             return false;
         }
-        if (columnvalue.length() == 0) {
+        if (columnvalue == null || columnvalue.isBlank()) {
+            return false;
+        }
+        if (data == null || data.isBlank()) {
             return false;
         }
         int dataid = columnNametoID(filename, data);
         if (dataid == -1) {
+            return false;
+        }
+        if (name == null || name.isBlank()) {
             return false;
         }
         ArrayList<String> newlines = new ArrayList<>();
@@ -724,11 +746,17 @@ public class Database {
         if (fempty(filename)) {
             return null;
         }
+        if (column == null || column.isBlank()) {
+            return null;
+        }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
             return null;
         }
-        if (columnvalue.length() == 0) {
+        if (columnvalue == null || columnvalue.isBlank()) {
+            return null;
+        }
+        if (data == null || data.isBlank()) {
             return null;
         }
         int dataid = columnNametoID(filename, data);
@@ -950,7 +978,7 @@ public class Database {
     }
 
     public static double isDouble(String s) {
-        if (s == null) {
+        if (s == null || s.isBlank()) {
             return -1;
         }
         double num;
@@ -964,7 +992,7 @@ public class Database {
     }
 
     public static float isFloat(String s) {
-        if (s == null) {
+        if (s == null || s.isBlank()) {
             return -1;
         }
         float num;
@@ -978,7 +1006,7 @@ public class Database {
     }
 
     public static int isInteger(String s) {
-        if (s == null) {
+        if (s == null || s.isBlank()) {
             return -1;
         }
         int num;
@@ -992,7 +1020,7 @@ public class Database {
     }
 
     public static long isLong(String s) {
-        if (s == null) {
+        if (s == null || s.isBlank()) {
             return -1;
         }
         long num;
@@ -1006,7 +1034,7 @@ public class Database {
     }
 
     public static short isShort(String s) {
-        if (s == null) {
+        if (s == null || s.isBlank()) {
             return -1;
         }
         short num;
@@ -1020,7 +1048,7 @@ public class Database {
     }
 
     public static BigDecimal isBigDecimal(String s) {
-        if (s == null) {
+        if (s == null || s.isBlank()) {
             return new BigDecimal("-1");
         }
         BigDecimal num;
@@ -1040,11 +1068,14 @@ public class Database {
         if (fempty(filename)) {
             return null;
         }
+        if (column == null || column.isBlank()) {
+            return null;
+        }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
             return null;
         }
-        if (columnvalue.length() == 0) {
+        if (columnvalue == null || columnvalue.isBlank()) {
             return null;
         }
         try {
@@ -1089,6 +1120,110 @@ public class Database {
         return getArrayPrivate(filename, column, columnvalue.toString());
     }
 
+    /*private static String[][] get2DArray(String filename, String column, String columnvalue) {
+        if (!fexists(filename)) {
+            return null;
+        }
+        if (fempty(filename)) {
+            return null;
+        }
+        int columnid = -1;
+        if (column != null && !column.isBlank()) {
+            columnid = columnNametoID(filename, column);
+        }
+        int linecount = 0;
+        ArrayList<ArrayList<String>> newlines = new ArrayList<>();
+        try {
+            for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
+                String[] tmpline = line.split("[|]");
+                if (linecount != 0) {
+                    if (columnid != -1 && columnvalue != null && !columnvalue.isBlank()) {
+                        if (tmpline[columnid].equals(columnvalue)) {
+                            newlines.add((ArrayList<String>) Arrays.asList(tmpline));
+                        }
+                    } else {
+                        newlines.add((ArrayList<String>) Arrays.asList(tmpline));
+                    }
+                } else {
+                    linecount++;
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+            return null;
+        }
+        return newlines;
+    }*/
+    private static ArrayList<ArrayList<String>> getArrayListPrivate(String filename, String column, String columnvalue) {
+        if (!fexists(filename)) {
+            return null;
+        }
+        if (fempty(filename)) {
+            return null;
+        }
+        int columnid = -1;
+        if (column != null && !column.isBlank()) {
+            columnid = columnNametoID(filename, column);
+        }
+        int linecount = 0;
+        ArrayList<ArrayList<String>> newlines = new ArrayList<>();
+        try {
+            for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
+                String[] tmpline = line.split("[|]");
+                if (linecount != 0) {
+                    ArrayList<String> newrows = new ArrayList<>();
+                    if (columnid != -1 && columnvalue != null && !columnvalue.isBlank()) {
+                        if (tmpline[columnid].equals(columnvalue)) {
+                            newrows.addAll(Arrays.asList(line.split("[|]")));
+                            newlines.add(newrows);
+                        }
+                    } else {
+                        newrows.addAll(Arrays.asList(line.split("[|]")));
+                        newlines.add(newrows);
+                    }
+                } else {
+                    linecount++;
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+            return null;
+        }
+        return newlines;
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename) {
+        return getArrayListPrivate(filename, null, null);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue));
+    }
+
+    public static ArrayList getArrayList(String filename, String column, String columnvalue) {
+        return getArrayListPrivate(filename, column, columnvalue);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue) {
+        return getArrayListPrivate(filename, column, columnvalue.toString());
+    }
+
     private static boolean deletePrivate(String filename, String column, String columnvalue) {
         if (!fexists(filename)) {
             return false;
@@ -1096,11 +1231,14 @@ public class Database {
         if (fempty(filename)) {
             return false;
         }
+        if (column == null || column.isBlank()) {
+            return false;
+        }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
             return false;
         }
-        if (columnvalue.length() == 0) {
+        if (columnvalue == null || columnvalue.isBlank()) {
             return false;
         }
         ArrayList<String> newlines = new ArrayList<>();

@@ -3,3 +3,12 @@ ID|Account|Transaction|Type|Amount|TransferTo|TransferFrom|DateTime|
 1|1|Transfer|Dollar|100|-|0|27/04/2020 01:42:45|
 2|0|Transfer|Dollar|200|1|-|27/04/2020 01:50:50|
 3|1|Transfer|Dollar|200|-|0|27/04/2020 01:50:50|
+4|0|Withdrawal|Dollar|300|-|-|27/04/2020 19:44:11|
+5|0|Deposit|Dollar|200|-|-|27/04/2020 19:44:21|
+6|0|Withdrawal|Dollar|300|-|-|27/04/2020 19:44:25|
+7|0|Withdrawal|Dollar|40|-|-|27/04/2020 19:44:29|
+8|0|Deposit|Pound|500|-|-|27/04/2020 19:44:36|
+9|0|Withdrawal|Pound|80|-|-|27/04/2020 19:44:51|
+10|0|Withdrawal|Dollar|200|-|-|27/04/2020 19:48:35|
+11|0|Deposit|Dollar|650|-|-|27/04/2020 19:48:46|
+12|0|Withdrawal|Dollar|20|-|-|27/04/2020 19:48:54|

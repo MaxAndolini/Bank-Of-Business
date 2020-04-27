@@ -5,6 +5,10 @@
  */
 package swing.customer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import javax.swing.table.DefaultTableModel;
 import library.*;
 
 /**
@@ -23,6 +27,25 @@ public class Transactions extends javax.swing.JPanel {
     public Transactions(swing.Home home) {
         initComponents();
         frame = home;
+
+        transactionstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
+        transactionstable.setAutoCreateRowSorter(true);
+
+        ArrayList<ArrayList<String>> load = Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID());
+        Collections.sort(load, new CustomComparator(7));
+        DefaultTableModel model = (DefaultTableModel) transactionstable.getModel();
+        Integer columns[] = {0, 2, 3, 4, 5, 6, 7};
+        for (int i = 0; i < load.size(); i++) {
+            int column = 0;
+            String[] row = new String[load.get(i).size()];
+            for (int j = 0; j < load.get(i).size(); j++) {
+                if (Arrays.asList(columns).contains(j)) {
+                    row[column] = load.get(i).get(j);
+                    column++;
+                }
+            }
+            model.addRow(row);
+        }
     }
 
     /**
@@ -66,12 +89,10 @@ public class Transactions extends javax.swing.JPanel {
 
         cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
+        transactionstable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         transactionstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Transaction", "Type", "Amount", "Transfer To", "Transfer From", "Date & Time"
@@ -92,7 +113,7 @@ public class Transactions extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        transactionstable.setRowSelectionAllowed(false);
+        transactionstable.setRowHeight(30);
         transactionstable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         transactionstable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(transactionstable);

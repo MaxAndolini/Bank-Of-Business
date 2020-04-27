@@ -24,7 +24,7 @@ public class Warning extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        if (Data.getPage1().equals("TransferCustomer") && Data.getPage2() == null) {
+        if (Data.getPage1() != null && Data.getPage1().equals("TransferCustomer") && Data.getPage2() == null) {
             int type = 0;
             if (Data.getTransfer().length() == 16) {
                 type = 1;

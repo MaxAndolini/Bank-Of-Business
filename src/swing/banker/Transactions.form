@@ -222,7 +222,7 @@
                 <Column editable="false" title="Type" type="java.lang.String"/>
                 <Column editable="false" title="Amount" type="java.lang.String"/>
                 <Column editable="false" title="Transfer To" type="java.lang.String"/>
-                <Column editable="false" title="" type="java.lang.Object"/>
+                <Column editable="false" title="Transfer From" type="java.lang.String"/>
                 <Column editable="false" title="Date &amp; Time" type="java.lang.String"/>
               </Table>
             </Property>
