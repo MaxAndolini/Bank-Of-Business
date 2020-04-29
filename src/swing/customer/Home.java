@@ -25,7 +25,7 @@ public class Home extends javax.swing.JPanel {
         frame = home;
 
         mainlabel.setText("Welcome " + Data.getCustomer().getId().getFullName());
-        mainlabel2.setText("Card Num: " + Data.getCustomer().getCardNumber());
+        mainlabel2.setText("Card: " + Data.getCustomer().showCardNumber());
     }
 
     /**

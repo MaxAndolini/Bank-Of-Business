@@ -207,11 +207,11 @@ public class Login extends javax.swing.JPanel {
             type = 1;
         }
 
-        if (!uidcnumbertext.getText().isBlank() || !String.valueOf(password.getPassword()).isBlank()) {
+        if (!uidcnumbertext.getText().isBlank() && !new String(password.getPassword()).isBlank()) {
             if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText())) {
                 if (Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "AccountType") == 0) {
-                    if (String.valueOf(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
-                        if (String.valueOf(password.getPassword()).equals(Database.getString("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "Password"))) {
+                    if (new String(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                        if (new String(password.getPassword()).equals(Database.getString("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "Password"))) {
                             String[] load = Database.getArray("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText());
                             Customer customer = new Customer();
                             customer.getId().setID(load[0]);

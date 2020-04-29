@@ -6,6 +6,7 @@
 package swing.customer;
 
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.BadLocationException;
 import library.*;
@@ -44,14 +45,14 @@ public class Settings extends javax.swing.JPanel {
         8) {8,} - minimum 8 characters in length
         9) $ - end of the string
          */
-        if (!String.valueOf(newpassword.getPassword()).isBlank() || !String.valueOf(newpassword2.getPassword()).isBlank()) {
-            if (String.valueOf(newpassword.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
-                if (String.valueOf(newpassword.getPassword()).equals(String.valueOf(newpassword2.getPassword()))) {
-                    if (!String.valueOf(newpassword.getPassword()).equals(Data.getCustomer().getPassword())) {
-                        Data.getCustomer().setPassword(String.valueOf(newpassword.getPassword()), 1);
+        if (!new String(newpassword.getPassword()).isBlank() && !new String(newpassword2.getPassword()).isBlank()) {
+            if (new String(newpassword.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                if (Arrays.equals(newpassword.getPassword(), newpassword2.getPassword())) {
+                    if (!new String(newpassword.getPassword()).equals(Data.getCustomer().getPassword())) {
+                        Data.getCustomer().setPassword(new String(newpassword.getPassword()), 1);
                         try {
-                            newpassword.getDocument().remove(0, String.valueOf(newpassword.getPassword()).length());
-                            newpassword2.getDocument().remove(0, String.valueOf(newpassword2.getPassword()).length());
+                            newpassword.getDocument().remove(0, new String(newpassword.getPassword()).length());
+                            newpassword2.getDocument().remove(0, new String(newpassword2.getPassword()).length());
                         } catch (BadLocationException ex) {
                             System.out.println(ex.toString());
                         }

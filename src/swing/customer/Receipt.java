@@ -28,40 +28,52 @@ public class Receipt extends javax.swing.JPanel {
 
         String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
         Date date = new Date();
-        int ID;
+        String ID;
 
         ID = Database.create("Transactions");
-        Database.set("Transactions", "ID", ID, "Account", Data.getCustomer().getId().getID());
-        switch (Data.getPage2()) {
-            case "DepositCustomer":
-                Database.set("Transactions", "ID", ID, "Transaction", "Deposit");
-                break;
-            case "WithdrawalCustomer":
-                Database.set("Transactions", "ID", ID, "Transaction", "Withdrawal");
-                break;
-            case "TransferMoneyCustomer":
-                Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
-                break;
-            default:
-                break;
-        }
-        Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
-        Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
-        if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            Database.set("Transactions", "ID", ID, "TransferTo", Data.getTransfer());
-        }
-        Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
-
-        if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            ID = Database.create("Transactions");
-            Database.set("Transactions", "ID", ID, "Account", ((Data.getTransfer().length() != 16) ? (Data.getTransfer()) : (Database.getString("Accounts", "CardNumber", Data.getTransfer(), "ID"))));
-            Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+        if (ID != null) {
+            Database.set("Transactions", "ID", ID, "Account", Data.getCustomer().getId().getID());
+            switch (Data.getPage2()) {
+                case "DepositCustomer":
+                    Database.set("Transactions", "ID", ID, "Transaction", "Deposit");
+                    break;
+                case "WithdrawalCustomer":
+                    Database.set("Transactions", "ID", ID, "Transaction", "Withdrawal");
+                    break;
+                case "TransferMoneyCustomer":
+                    Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+                    break;
+                default:
+                    break;
+            }
             Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
             Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
             if (Data.getPage2().equals("TransferMoneyCustomer")) {
-                Database.set("Transactions", "ID", ID, "TransferFrom", Data.getCustomer().getId().getID());
+                Database.set("Transactions", "ID", ID, "TransferTo", Data.getTransfer());
             }
             Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
+        } else {
+            jPanel1.removeAll();
+            infolabel.setText("System error and the transaction couldn't be created.");
+            return;
+        }
+
+        if (Data.getPage2().equals("TransferMoneyCustomer")) {
+            ID = Database.create("Transactions");
+            if (ID != null) {
+                Database.set("Transactions", "ID", ID, "Account", ((Data.getTransfer().length() != 16) ? (Data.getTransfer()) : (Database.getString("Accounts", "CardNumber", Data.getTransfer(), "ID"))));
+                Database.set("Transactions", "ID", ID, "Transaction", "Transfer");
+                Database.set("Transactions", "ID", ID, "Type", typename[Data.getMoneyType()]);
+                Database.set("Transactions", "ID", ID, "Amount", Data.getMoney());
+                if (Data.getPage2().equals("TransferMoneyCustomer")) {
+                    Database.set("Transactions", "ID", ID, "TransferFrom", Data.getCustomer().getId().getID());
+                }
+                Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
+            } else {
+                jPanel1.removeAll();
+                infolabel.setText("System error and the transaction couldn't be created.");
+                return;
+            }
         }
 
         switch (Data.getPage2()) {
@@ -436,13 +448,10 @@ public class Receipt extends javax.swing.JPanel {
                                 .addComponent(mainmenuicon)
                                 .addGap(10, 10, 10)
                                 .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(562, 562, 562))))
+                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(249, 249, 249)
-                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(239, 239, 239)))
+                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(

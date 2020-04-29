@@ -5,11 +5,12 @@
  */
 package swing.customer;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Timer;
-import java.util.TimerTask;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import library.*;
 
@@ -20,6 +21,7 @@ import library.*;
 public class Transactions extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form Transactions
@@ -33,18 +35,19 @@ public class Transactions extends javax.swing.JPanel {
         transactionstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
         transactionstable.setAutoCreateRowSorter(true);
 
-        new Timer().scheduleAtFixedRate(new TimerTask() {
+        timer = new Timer(2000, new ActionListener() {
             ArrayList<ArrayList<String>> load = null;
+            ArrayList<ArrayList<String>> data = null;
 
             @Override
-            public void run() {
-                if (load == null || !load.equals(Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID()))) {
+            public void actionPerformed(ActionEvent e) {
+                data = Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID());
+                if (load == null || data != null || !load.equals(data)) {
                     DefaultTableModel model = (DefaultTableModel) transactionstable.getModel();
                     if (load != null) {
                         model.setRowCount(0);
                     }
-                    load = Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID());
-                    ArrayList<ArrayList<String>> data = (ArrayList<ArrayList<String>>) load.clone();
+                    load = (ArrayList<ArrayList<String>>) data.clone();
                     Collections.sort(data, new CustomComparator(7));
                     Integer columns[] = {0, 2, 3, 4, 5, 6, 7};
                     for (int i = 0; i < data.size(); i++) {
@@ -60,7 +63,9 @@ public class Transactions extends javax.swing.JPanel {
                     }
                 }
             }
-        }, 0, 2000);
+        });
+        timer.setInitialDelay(0);
+        timer.start();
     }
 
     /**
@@ -149,14 +154,14 @@ public class Transactions extends javax.swing.JPanel {
                                 .addGap(10, 10, 10)
                                 .addComponent(cancelicon)))
                         .addGap(562, 562, 562)))
-                .addContainerGap())
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,6 +172,7 @@ public class Transactions extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+        timer.stop();
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelbtnActionPerformed
 

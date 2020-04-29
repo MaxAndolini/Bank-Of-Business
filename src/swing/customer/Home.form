@@ -48,41 +48,39 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="withdrawalbtn" min="-2" pref="198" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="withdrawalicon" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="538" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                          <Component id="transactionsbtn" min="-2" pref="198" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="transfericon" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                          <Component id="transferbtn" min="-2" pref="198" max="-2" attributes="0"/>
-                                      </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="withdrawalbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="withdrawalicon" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="538" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                      <Component id="transactionsbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="transfericon" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                      <Component id="transferbtn" min="-2" pref="198" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="depositbtn" min="-2" pref="198" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="depositicon" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="balancebtn" min="-2" pref="198" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                                  <Component id="settingsbtn" min="-2" pref="198" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                                  <Component id="logouticon" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="logoutbtn" min="-2" pref="198" max="-2" attributes="0"/>
-                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="depositbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="depositicon" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="balancebtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="settingsbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="logouticon" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="logoutbtn" min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="mainlabel" min="-2" pref="488" max="-2" attributes="0"/>

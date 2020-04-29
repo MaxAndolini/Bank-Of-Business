@@ -120,19 +120,19 @@ public class Database {
         return true;
     }
 
-    public static int generateID(String filename, String column) {
+    public static String generateID(String filename, String column) {
         if (!fexists(filename)) {
-            return -1;
+            return null;
         }
         if (fempty(filename)) {
-            return -1;
+            return null;
         }
         if (column == null || column.isBlank()) {
-            return -1;
+            return null;
         }
         int columnid = columnNametoID(filename, column);
         if (columnid == -1) {
-            return -1;
+            return null;
         }
         int linecount = 0;
         ArrayList<Integer> numbers = new ArrayList<>();
@@ -152,12 +152,12 @@ public class Database {
             }
         } catch (IOException ex) {
             System.out.println(ex.toString());
-            return -1;
+            return null;
         }
         return getMissingNumber(numbers.stream().mapToInt(i -> i).toArray());
     }
 
-    public static int getMissingNumber(int[] A) {
+    public static String getMissingNumber(int[] A) {
         int n = A.length;
         boolean[] numbersUsed = new boolean[n + 1];
         for (int k = 0; k < n; k++) {
@@ -167,10 +167,10 @@ public class Database {
         }
         for (int k = 0; k <= n; k++) {
             if (numbersUsed[k] == false) {
-                return k;
+                return Integer.toString(k);
             }
         }
-        return -1;
+        return null;
     }
 
     public static int columnExists(String filename) {
@@ -452,12 +452,12 @@ public class Database {
         return columnvalue;
     }
 
-    public static int create(String filename) {
-        int gID = generateID(filename, "ID");
-        if (gID == -1) {
-            return -1;
+    public static String create(String filename) {
+        String ID = generateID(filename, "ID");
+        if (ID == null || ID.isBlank()) {
+            return null;
         }
-        return isInteger(createPrivate(filename, "ID", Integer.toString(gID)));
+        return createPrivate(filename, "ID", ID);
     }
 
     public static double create(String filename, String column, double columnvalue) {

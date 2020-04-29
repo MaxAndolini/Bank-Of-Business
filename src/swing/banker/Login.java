@@ -199,11 +199,11 @@ public class Login extends javax.swing.JPanel {
         8) {8,} - minimum 8 characters in length
         9) $ - end of the string
          */
-        if (!uidtext.getText().isBlank() || !String.valueOf(password.getPassword()).isBlank()) {
+        if (!uidtext.getText().isBlank() && !new String(password.getPassword()).isBlank()) {
             if (Database.exists("Accounts", "ID", uidtext.getText())) {
                 if (Database.getInt("Accounts", "ID", uidtext.getText(), "AccountType") == 1) {
-                    if (String.valueOf(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
-                        if (String.valueOf(password.getPassword()).equals(Database.getString("Accounts", "ID", uidtext.getText(), "Password"))) {
+                    if (new String(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                        if (new String(password.getPassword()).equals(Database.getString("Accounts", "ID", uidtext.getText(), "Password"))) {
                             String[] load = Database.getArray("Accounts", "ID", uidtext.getText());
                             Banker banker = new Banker();
                             banker.getId().setID(load[0]);

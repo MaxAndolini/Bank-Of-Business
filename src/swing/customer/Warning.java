@@ -177,7 +177,7 @@ public class Warning extends javax.swing.JPanel {
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         if (Data.getPage2() == null) {
             frame.ChangeJPanel(Data.getPage1());
-        } else if (Data.getPage1() == null) {
+        } else {
             frame.ChangeJPanel(Data.getPage2());
         }
     }//GEN-LAST:event_backbtnActionPerformed

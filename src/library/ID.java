@@ -5,10 +5,6 @@
  */
 package library;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 /**
  *
  * @author ercan
@@ -63,20 +59,5 @@ public class ID {
         if (save == 1) {
             Database.set("Accounts", "ID", getID(), "DateofBirth", this.dateOfBirth);
         }
-    }
-
-    public static boolean dateValidation(String date) {
-        if (!date.matches("(0?[1-9]|[12][0-9]|3[01])\\/(0?[1-9]|1[0-2])\\/([0-9]{4})")) {
-            return false;
-        }
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        dateFormat.setLenient(false);
-        try {
-            dateFormat.parse(date);
-        } catch (ParseException ex) {
-            System.out.println(ex.toString());
-            return false;
-        }
-        return true;
     }
 }

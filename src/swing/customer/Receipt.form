@@ -46,16 +46,12 @@
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Component id="mainmenubtn" min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="mainlabel" min="-2" pref="488" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="562" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="mainlabel" alignment="0" min="-2" pref="488" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
                       <Component id="infolabel" min="-2" pref="572" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
