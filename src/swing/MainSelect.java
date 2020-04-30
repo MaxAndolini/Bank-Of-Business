@@ -5,10 +5,11 @@
  */
 package swing;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
+import javax.swing.Timer;
 
 /**
  *
@@ -17,6 +18,7 @@ import java.util.TimerTask;
 public class MainSelect extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form MainSelect
@@ -27,12 +29,11 @@ public class MainSelect extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        new Timer().scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                mainlabel2.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
-            }
-        }, 0, 500);
+        timer = new Timer(500, (ActionEvent e) -> {
+            mainlabel2.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
+        });  
+        timer.setInitialDelay(0);
+        timer.start();
     }
 
     /**
@@ -179,14 +180,23 @@ public class MainSelect extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("LoginAdmin");
     }//GEN-LAST:event_adminbtnActionPerformed
 
     private void customerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("LoginCustomer");
     }//GEN-LAST:event_customerbtnActionPerformed
 
     private void bankerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("LoginBanker");
     }//GEN-LAST:event_bankerbtnActionPerformed
 

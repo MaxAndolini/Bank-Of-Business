@@ -75,15 +75,4 @@ public class User {
             Database.set("Accounts", "ID", getId().getID(), "Password", this.password);
         }
     }
-
-    @Override
-    public String toString() {
-        return this.getClass().getSimpleName();
-    }
-
-    public void displayInfo() {
-        System.out.println(toString() + "'s ID: " + id.getID());
-        System.out.println(toString() + "'s Name: " + id.getFullName());
-        System.out.println(toString() + "'s Birth Date: " + id.getDateOfBirth());
-    }
 }

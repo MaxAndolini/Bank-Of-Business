@@ -1120,7 +1120,7 @@ public class Database {
         return getArrayPrivate(filename, column, columnvalue.toString());
     }
 
-    private static ArrayList<ArrayList<String>> getArrayListPrivate(String filename, String column, String columnvalue) {
+    private static ArrayList<ArrayList<String>> getArrayListPrivate(String filename, String column, String columnvalue, String column2, String columnvalue2) {
         if (!fexists(filename)) {
             return null;
         }
@@ -1131,6 +1131,10 @@ public class Database {
         if (column != null && !column.isBlank()) {
             columnid = columnNametoID(filename, column);
         }
+        int columnid2 = -1;
+        if (column2 != null && !column2.isBlank()) {
+            columnid2 = columnNametoID(filename, column2);
+        }
         int linecount = 0;
         ArrayList<ArrayList<String>> newlines = new ArrayList<>();
         try {
@@ -1138,8 +1142,18 @@ public class Database {
                 String[] tmpline = line.split("[|]");
                 if (linecount != 0) {
                     ArrayList<String> newrows = new ArrayList<>();
-                    if (columnid != -1 && columnvalue != null && !columnvalue.isBlank()) {
+                    if ((columnid != -1 && columnvalue != null && !columnvalue.isBlank()) && (columnid2 == -1 || columnvalue2 == null || columnvalue2.isBlank())) {
                         if (tmpline[columnid].equals(columnvalue)) {
+                            newrows.addAll(Arrays.asList(line.split("[|]")));
+                            newlines.add(newrows);
+                        }
+                    } else if ((columnid == -1 || columnvalue == null || columnvalue.isBlank()) && (columnid2 != -1 && columnvalue2 != null && !columnvalue2.isBlank())) {
+                        if (tmpline[columnid2].equals(columnvalue2)) {
+                            newrows.addAll(Arrays.asList(line.split("[|]")));
+                            newlines.add(newrows);
+                        }
+                    } else if ((columnid != -1 && columnvalue != null && !columnvalue.isBlank() && columnid2 != -1) && (columnvalue2 != null && !columnvalue2.isBlank())) {
+                        if (tmpline[columnid].equals(columnvalue) && tmpline[columnid2].equals(columnvalue2)) {
                             newrows.addAll(Arrays.asList(line.split("[|]")));
                             newlines.add(newrows);
                         }
@@ -1159,35 +1173,231 @@ public class Database {
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename) {
-        return getArrayListPrivate(filename, null, null);
+        return getArrayListPrivate(filename, null, null, null, null);
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue) {
-        return getArrayListPrivate(filename, column, Double.toString(columnvalue));
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), null, null);
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue) {
-        return getArrayListPrivate(filename, column, Float.toString(columnvalue));
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), null, null);
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue) {
-        return getArrayListPrivate(filename, column, Integer.toString(columnvalue));
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), null, null);
     }
 
     public static ArrayList getArrayList(String filename, String column, String columnvalue) {
-        return getArrayListPrivate(filename, column, columnvalue);
+        return getArrayListPrivate(filename, column, columnvalue, null, null);
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue) {
-        return getArrayListPrivate(filename, column, Long.toString(columnvalue));
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), null, null);
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue) {
-        return getArrayListPrivate(filename, column, Short.toString(columnvalue));
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), null, null);
     }
 
     public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue) {
-        return getArrayListPrivate(filename, column, columnvalue.toString());
+        return getArrayListPrivate(filename, column, columnvalue.toString(), null, null);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, double columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, Double.toString(columnvalue), column2, columnvalue2.toString());
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, float columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, Float.toString(columnvalue), column2, columnvalue2.toString());
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, int columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, Integer.toString(columnvalue), column2, columnvalue2.toString());
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue, column2, columnvalue2.toString());
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, long columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, Long.toString(columnvalue), column2, columnvalue2.toString());
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, short columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, Short.toString(columnvalue), column2, columnvalue2.toString());
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, double columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, Double.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, float columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, Float.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, int columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, Integer.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, String columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, columnvalue2);
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, long columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, Long.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, short columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, Short.toString(columnvalue2));
+    }
+
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, BigDecimal columnvalue, String column2, BigDecimal columnvalue2) {
+        return getArrayListPrivate(filename, column, columnvalue.toString(), column2, columnvalue2.toString());
     }
 
     private static boolean deletePrivate(String filename, String column, String columnvalue) {

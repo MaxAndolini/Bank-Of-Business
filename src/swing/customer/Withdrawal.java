@@ -56,91 +56,41 @@ public class Withdrawal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        onehbtn = new java.awt.Button();
-        twohbtn = new java.awt.Button();
-        fourtybtn = new java.awt.Button();
-        twentybtn = new java.awt.Button();
-        threehbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
+        infolabel = new javax.swing.JLabel();
+        jPanel = new javax.swing.JPanel();
+        dolarlabel = new javax.swing.JLabel();
+        dolaralabel = new javax.swing.JLabel();
+        eurolabel = new javax.swing.JLabel();
+        euroalabel = new javax.swing.JLabel();
+        poundlabel = new javax.swing.JLabel();
+        poundalabel = new javax.swing.JLabel();
+        turkishliralabel = new javax.swing.JLabel();
+        turkishliraalabel = new javax.swing.JLabel();
+        moneytext = new javax.swing.JTextField();
+        moneytype = new javax.swing.JComboBox<>();
+        okbtn = new java.awt.Button();
+        onehbtn = new java.awt.Button();
         onehicon = new javax.swing.JLabel();
+        twohbtn = new java.awt.Button();
         twohicon = new javax.swing.JLabel();
-        twentyicon = new javax.swing.JLabel();
-        fourtyicon = new javax.swing.JLabel();
+        threehbtn = new java.awt.Button();
         threehicon = new javax.swing.JLabel();
-        sixtybtn = new java.awt.Button();
-        sixtyicon = new javax.swing.JLabel();
         cancelbtn = new java.awt.Button();
         cancelicon = new javax.swing.JLabel();
+        twentybtn = new java.awt.Button();
+        twentyicon = new javax.swing.JLabel();
+        fourtybtn = new java.awt.Button();
+        fourtyicon = new javax.swing.JLabel();
+        sixtybtn = new java.awt.Button();
+        sixtyicon = new javax.swing.JLabel();
         eightybtn = new java.awt.Button();
         eightyicon = new javax.swing.JLabel();
-        moneytext = new javax.swing.JTextField();
-        infolabel = new javax.swing.JLabel();
-        okbtn = new java.awt.Button();
-        jPanel1 = new javax.swing.JPanel();
-        dolarlabel = new javax.swing.JLabel();
-        eurolabel = new javax.swing.JLabel();
-        poundlabel = new javax.swing.JLabel();
-        turkishliralabel = new javax.swing.JLabel();
-        dolaralabel = new javax.swing.JLabel();
-        euroalabel = new javax.swing.JLabel();
-        poundalabel = new javax.swing.JLabel();
-        turkishliraalabel = new javax.swing.JLabel();
-        moneytype = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
-
-        onehbtn.setBackground(new java.awt.Color(23, 35, 51));
-        onehbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        onehbtn.setForeground(new java.awt.Color(133, 187, 101));
-        onehbtn.setLabel("$100");
-        onehbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onehbtnActionPerformed(evt);
-            }
-        });
-
-        twohbtn.setBackground(new java.awt.Color(23, 35, 51));
-        twohbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        twohbtn.setForeground(new java.awt.Color(133, 187, 101));
-        twohbtn.setLabel("$200");
-        twohbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                twohbtnActionPerformed(evt);
-            }
-        });
-
-        fourtybtn.setBackground(new java.awt.Color(23, 35, 51));
-        fourtybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        fourtybtn.setForeground(new java.awt.Color(133, 187, 101));
-        fourtybtn.setLabel("$40");
-        fourtybtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fourtybtnActionPerformed(evt);
-            }
-        });
-
-        twentybtn.setBackground(new java.awt.Color(23, 35, 51));
-        twentybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        twentybtn.setForeground(new java.awt.Color(133, 187, 101));
-        twentybtn.setLabel("$20");
-        twentybtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                twentybtnActionPerformed(evt);
-            }
-        });
-
-        threehbtn.setBackground(new java.awt.Color(23, 35, 51));
-        threehbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        threehbtn.setForeground(new java.awt.Color(133, 187, 101));
-        threehbtn.setLabel("$300");
-        threehbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                threehbtnActionPerformed(evt);
-            }
-        });
 
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,52 +100,97 @@ public class Withdrawal extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        onehicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel.setText("Select an amount or enter another amount and press OK.");
 
-        twohicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        jPanel.setMaximumSize(new java.awt.Dimension(296, 179));
+        jPanel.setMinimumSize(new java.awt.Dimension(296, 179));
 
-        twentyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dolarlabel.setText("Dollar:");
 
-        fourtyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
+        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        dolaralabel.setText("$500");
 
-        threehicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eurolabel.setText("Euro:");
 
-        sixtybtn.setBackground(new java.awt.Color(23, 35, 51));
-        sixtybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        sixtybtn.setForeground(new java.awt.Color(133, 187, 101));
-        sixtybtn.setLabel("$60");
-        sixtybtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sixtybtnActionPerformed(evt);
-            }
-        });
+        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
+        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        euroalabel.setText("400 €");
 
-        sixtyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        poundlabel.setText("Pound:");
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
-            }
-        });
+        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
+        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        poundalabel.setText("£200");
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        turkishliralabel.setText("Turkish Lira:");
 
-        eightybtn.setBackground(new java.awt.Color(23, 35, 51));
-        eightybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        eightybtn.setForeground(new java.awt.Color(133, 187, 101));
-        eightybtn.setLabel("$80");
-        eightybtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightybtnActionPerformed(evt);
-            }
-        });
+        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
+        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        turkishliraalabel.setText("₺500");
 
-        eightyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLayout.createSequentialGroup()
+                        .addComponent(dolarlabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(dolaralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanelLayout.createSequentialGroup()
+                            .addComponent(turkishliralabel)
+                            .addGap(6, 6, 6)
+                            .addComponent(turkishliraalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelLayout.createSequentialGroup()
+                            .addComponent(poundlabel)
+                            .addGap(6, 6, 6)
+                            .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelLayout.createSequentialGroup()
+                            .addComponent(eurolabel)
+                            .addGap(6, 6, 6)
+                            .addComponent(euroalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10))
+        );
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dolarlabel)
+                    .addComponent(dolaralabel))
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eurolabel)
+                    .addComponent(euroalabel))
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(poundlabel)
+                    .addComponent(poundalabel))
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(turkishliralabel)
+                    .addComponent(turkishliraalabel))
+                .addGap(11, 11, 11))
+        );
 
         moneytext.setBackground(new java.awt.Color(23, 35, 51));
         moneytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
@@ -213,10 +208,10 @@ public class Withdrawal extends javax.swing.JPanel {
             }
         });
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Select an amount or enter another amount and press OK.");
+        moneytype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        moneytype.setForeground(new java.awt.Color(23, 35, 51));
+        moneytype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
+        moneytype.setToolTipText("");
 
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -228,97 +223,102 @@ public class Withdrawal extends javax.swing.JPanel {
             }
         });
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(296, 179));
-        jPanel1.setMinimumSize(new java.awt.Dimension(296, 179));
+        onehbtn.setBackground(new java.awt.Color(23, 35, 51));
+        onehbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        onehbtn.setForeground(new java.awt.Color(133, 187, 101));
+        onehbtn.setLabel("$100");
+        onehbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onehbtnActionPerformed(evt);
+            }
+        });
 
-        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dolarlabel.setText("Dollar:");
+        onehicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
-        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eurolabel.setText("Euro:");
+        twohbtn.setBackground(new java.awt.Color(23, 35, 51));
+        twohbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        twohbtn.setForeground(new java.awt.Color(133, 187, 101));
+        twohbtn.setLabel("$200");
+        twohbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twohbtnActionPerformed(evt);
+            }
+        });
 
-        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        poundlabel.setText("Pound:");
+        twohicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
-        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turkishliralabel.setText("Turkish Lira:");
+        threehbtn.setBackground(new java.awt.Color(23, 35, 51));
+        threehbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        threehbtn.setForeground(new java.awt.Color(133, 187, 101));
+        threehbtn.setLabel("$300");
+        threehbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                threehbtnActionPerformed(evt);
+            }
+        });
 
-        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
-        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        dolaralabel.setText("$500");
+        threehicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
-        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
-        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("400 €");
+        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
+        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelbtn.setLabel("Cancel");
+        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelbtnActionPerformed(evt);
+            }
+        });
 
-        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
-        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poundalabel.setText("£200");
+        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
-        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
-        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        turkishliraalabel.setText("₺500");
+        twentybtn.setBackground(new java.awt.Color(23, 35, 51));
+        twentybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        twentybtn.setForeground(new java.awt.Color(133, 187, 101));
+        twentybtn.setLabel("$20");
+        twentybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twentybtnActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(dolarlabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dolaralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(turkishliralabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(turkishliraalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(poundlabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(eurolabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(euroalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dolarlabel)
-                    .addComponent(dolaralabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eurolabel)
-                    .addComponent(euroalabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(poundlabel)
-                    .addComponent(poundalabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(turkishliralabel)
-                    .addComponent(turkishliraalabel))
-                .addContainerGap())
-        );
+        twentyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
-        moneytype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        moneytype.setForeground(new java.awt.Color(23, 35, 51));
-        moneytype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
-        moneytype.setToolTipText("");
+        fourtybtn.setBackground(new java.awt.Color(23, 35, 51));
+        fourtybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        fourtybtn.setForeground(new java.awt.Color(133, 187, 101));
+        fourtybtn.setLabel("$40");
+        fourtybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fourtybtnActionPerformed(evt);
+            }
+        });
+
+        fourtyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+
+        sixtybtn.setBackground(new java.awt.Color(23, 35, 51));
+        sixtybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        sixtybtn.setForeground(new java.awt.Color(133, 187, 101));
+        sixtybtn.setLabel("$60");
+        sixtybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sixtybtnActionPerformed(evt);
+            }
+        });
+
+        sixtyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
+
+        eightybtn.setBackground(new java.awt.Color(23, 35, 51));
+        eightybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        eightybtn.setForeground(new java.awt.Color(133, 187, 101));
+        eightybtn.setLabel("$80");
+        eightybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightybtnActionPerformed(evt);
+            }
+        });
+
+        eightyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_money_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -365,16 +365,14 @@ public class Withdrawal extends javax.swing.JPanel {
                                 .addGap(10, 10, 10)
                                 .addComponent(sixtybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(121, 121, 121)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(121, 121, 121)
                                         .addComponent(fourtyicon)
                                         .addGap(10, 10, 10)
                                         .addComponent(fourtybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(121, 121, 121)
                                         .addComponent(twentyicon)
                                         .addGap(10, 10, 10)
                                         .addComponent(twentybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
@@ -413,7 +411,7 @@ public class Withdrawal extends javax.swing.JPanel {
                                     .addComponent(twohicon)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -501,7 +499,7 @@ public class Withdrawal extends javax.swing.JPanel {
     private java.awt.Button fourtybtn;
     private javax.swing.JLabel fourtyicon;
     private javax.swing.JLabel infolabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JLabel mainlabel;
     private javax.swing.JTextField moneytext;
     private javax.swing.JComboBox<String> moneytype;

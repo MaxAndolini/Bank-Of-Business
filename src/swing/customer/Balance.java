@@ -11,7 +11,6 @@ import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import javax.swing.Timer;
 import javax.swing.text.AbstractDocument;
-import javax.swing.text.BadLocationException;
 import library.*;
 
 /**
@@ -21,7 +20,7 @@ import library.*;
 public class Balance extends javax.swing.JPanel {
 
     final private swing.Home frame;
-    Timer timer;
+    Timer timer, timer2;
 
     /**
      * Creates new form Balance
@@ -95,10 +94,15 @@ public class Balance extends javax.swing.JPanel {
         });
         timer.setInitialDelay(0);
         timer.start();
-        dolaralabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
-        euroalabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
-        poundalabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
-        turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+
+        timer2 = new Timer(2000, (ActionEvent e) -> {
+            dolaralabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+            euroalabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+            poundalabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+            turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+        });
+        timer2.setInitialDelay(0);
+        timer2.start();
     }
 
     public void balance() {
@@ -128,11 +132,7 @@ public class Balance extends javax.swing.JPanel {
                             default:
                                 break;
                         }
-                        try {
-                            moneytext.getDocument().remove(0, moneytext.getText().length());
-                        } catch (BadLocationException ex) {
-                            System.out.println(ex.toString());
-                        }
+                        moneytext.setText(null);
                         infolabel3.setText("The money was successfully converted.");
                     } else if (moneytype.getSelectedIndex() == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) {
                         Data.getCustomer().subtractEuro(money, 1);
@@ -153,11 +153,7 @@ public class Balance extends javax.swing.JPanel {
                             default:
                                 break;
                         }
-                        try {
-                            moneytext.getDocument().remove(0, moneytext.getText().length());
-                        } catch (BadLocationException ex) {
-                            System.out.println(ex.toString());
-                        }
+                        moneytext.setText(null);
                         infolabel3.setText("The money was successfully converted.");
                     } else if (moneytype.getSelectedIndex() == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) {
                         Data.getCustomer().subtractPound(money, 1);
@@ -178,11 +174,7 @@ public class Balance extends javax.swing.JPanel {
                             default:
                                 break;
                         }
-                        try {
-                            moneytext.getDocument().remove(0, moneytext.getText().length());
-                        } catch (BadLocationException ex) {
-                            System.out.println(ex.toString());
-                        }
+                        moneytext.setText(null);
                         infolabel3.setText("The money was successfully converted.");
                     } else if (moneytype.getSelectedIndex() == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0) {
                         Data.getCustomer().subtractTurkishLira(money, 1);
@@ -203,11 +195,7 @@ public class Balance extends javax.swing.JPanel {
                             default:
                                 break;
                         }
-                        try {
-                            moneytext.getDocument().remove(0, moneytext.getText().length());
-                        } catch (BadLocationException ex) {
-                            System.out.println(ex.toString());
-                        }
+                        moneytext.setText(null);
                         infolabel3.setText("The money was successfully converted.");
                     } else {
                         infolabel3.setText("You don't have the amount you write down.");
@@ -253,32 +241,32 @@ public class Balance extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
         moneytext = new javax.swing.JTextField();
-        okbtn = new java.awt.Button();
         moneytype = new javax.swing.JComboBox<>();
         moneyctype = new javax.swing.JComboBox<>();
         infolabel2 = new javax.swing.JLabel();
         infolabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        dolarlabel = new javax.swing.JLabel();
-        eurolabel = new javax.swing.JLabel();
-        poundlabel = new javax.swing.JLabel();
-        turkishliralabel = new javax.swing.JLabel();
-        dolaralabel = new javax.swing.JLabel();
-        euroalabel = new javax.swing.JLabel();
-        poundalabel = new javax.swing.JLabel();
-        turkishliraalabel = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        okbtn = new java.awt.Button();
+        jPanel = new javax.swing.JPanel();
         typelabel = new javax.swing.JLabel();
         firstlabel = new javax.swing.JLabel();
-        secondlabel = new javax.swing.JLabel();
-        thirdlabel = new javax.swing.JLabel();
         firstalabel = new javax.swing.JLabel();
+        secondlabel = new javax.swing.JLabel();
         secondalabel = new javax.swing.JLabel();
+        thirdlabel = new javax.swing.JLabel();
         thirdalabel = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        dolarlabel = new javax.swing.JLabel();
+        dolaralabel = new javax.swing.JLabel();
+        eurolabel = new javax.swing.JLabel();
+        euroalabel = new javax.swing.JLabel();
+        poundlabel = new javax.swing.JLabel();
+        poundalabel = new javax.swing.JLabel();
+        turkishliralabel = new javax.swing.JLabel();
+        turkishliraalabel = new javax.swing.JLabel();
+        cancelbtn = new java.awt.Button();
+        cancelicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -292,19 +280,6 @@ public class Balance extends javax.swing.JPanel {
         mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
-
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
-            }
-        });
-
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,16 +302,6 @@ public class Balance extends javax.swing.JPanel {
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 moneytextKeyReleased(evt);
-            }
-        });
-
-        okbtn.setBackground(new java.awt.Color(23, 35, 51));
-        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        okbtn.setForeground(new java.awt.Color(255, 255, 255));
-        okbtn.setLabel("OK");
-        okbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okbtnActionPerformed(evt);
             }
         });
 
@@ -370,96 +335,18 @@ public class Balance extends javax.swing.JPanel {
         infolabel3.setForeground(new java.awt.Color(255, 255, 255));
         infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(296, 179));
-        jPanel1.setMinimumSize(new java.awt.Dimension(296, 179));
-        jPanel1.setPreferredSize(new java.awt.Dimension(296, 179));
+        okbtn.setBackground(new java.awt.Color(23, 35, 51));
+        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okbtn.setForeground(new java.awt.Color(255, 255, 255));
+        okbtn.setLabel("OK");
+        okbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okbtnActionPerformed(evt);
+            }
+        });
 
-        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dolarlabel.setText("Dollar:");
-
-        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eurolabel.setText("Euro:");
-
-        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        poundlabel.setText("Pound:");
-
-        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turkishliralabel.setText("Turkish Lira:");
-
-        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
-        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        dolaralabel.setText("$500");
-
-        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
-        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("400 €");
-
-        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
-        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poundalabel.setText("£200");
-
-        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
-        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        turkishliraalabel.setText("₺500");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(dolarlabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dolaralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(turkishliralabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(turkishliraalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(poundlabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(eurolabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(euroalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dolarlabel)
-                    .addComponent(dolaralabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eurolabel)
-                    .addComponent(euroalabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(poundlabel)
-                    .addComponent(poundalabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(turkishliralabel)
-                    .addComponent(turkishliraalabel))
-                .addContainerGap())
-        );
-
-        jPanel2.setMaximumSize(new java.awt.Dimension(296, 179));
-        jPanel2.setMinimumSize(new java.awt.Dimension(296, 179));
+        jPanel.setMaximumSize(new java.awt.Dimension(296, 179));
+        jPanel.setMinimumSize(new java.awt.Dimension(296, 179));
 
         typelabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         typelabel.setForeground(new java.awt.Color(133, 187, 101));
@@ -470,71 +357,169 @@ public class Balance extends javax.swing.JPanel {
         firstlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         firstlabel.setText("Euro:");
 
-        secondlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        secondlabel.setText("Pound:");
-
-        thirdlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        thirdlabel.setText("Turkish Lira:");
-
         firstalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         firstalabel.setForeground(new java.awt.Color(133, 187, 101));
         firstalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         firstalabel.setText("1.21 €");
+
+        secondlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        secondlabel.setText("Pound:");
 
         secondalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         secondalabel.setForeground(new java.awt.Color(133, 187, 101));
         secondalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         secondalabel.setText("£1.14");
 
+        thirdlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        thirdlabel.setText("Turkish Lira:");
+
         thirdalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         thirdalabel.setForeground(new java.awt.Color(133, 187, 101));
         thirdalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         thirdalabel.setText("₺5.42");
+
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelLayout.createSequentialGroup()
+                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(secondlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(thirdlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(secondalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(thirdalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10))
+        );
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(typelabel)
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstlabel)
+                    .addComponent(firstalabel))
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(secondlabel)
+                    .addComponent(secondalabel))
+                .addGap(11, 11, 11)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(thirdlabel)
+                    .addComponent(thirdalabel))
+                .addGap(11, 11, 11))
+        );
+
+        jPanel2.setMaximumSize(new java.awt.Dimension(296, 179));
+        jPanel2.setMinimumSize(new java.awt.Dimension(296, 179));
+        jPanel2.setPreferredSize(new java.awt.Dimension(296, 179));
+
+        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dolarlabel.setText("Dollar:");
+
+        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
+        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        dolaralabel.setText("$500");
+
+        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eurolabel.setText("Euro:");
+
+        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
+        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        euroalabel.setText("400 €");
+
+        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        poundlabel.setText("Pound:");
+
+        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
+        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        poundalabel.setText("£200");
+
+        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        turkishliralabel.setText("Turkish Lira:");
+
+        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
+        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        turkishliraalabel.setText("₺500");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(secondlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(thirdlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(secondalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(thirdalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+                        .addComponent(dolarlabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(dolaralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(turkishliralabel)
+                            .addGap(6, 6, 6)
+                            .addComponent(turkishliraalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(poundlabel)
+                            .addGap(6, 6, 6)
+                            .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(eurolabel)
+                            .addGap(6, 6, 6)
+                            .addComponent(euroalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(typelabel)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dolarlabel)
+                    .addComponent(dolaralabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstlabel)
-                    .addComponent(firstalabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(eurolabel)
+                    .addComponent(euroalabel))
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(secondlabel)
-                    .addComponent(secondalabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(poundlabel)
+                    .addComponent(poundalabel))
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(thirdlabel)
-                    .addComponent(thirdalabel))
-                .addContainerGap())
+                    .addComponent(turkishliralabel)
+                    .addComponent(turkishliraalabel))
+                .addGap(11, 11, 11))
         );
+
+        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
+        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelbtn.setLabel("Cancel");
+        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelbtnActionPerformed(evt);
+            }
+        });
+
+        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -546,7 +531,7 @@ public class Balance extends javax.swing.JPanel {
                     .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(13, 13, 13)
@@ -563,7 +548,7 @@ public class Balance extends javax.swing.JPanel {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(77, 77, 77)))))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(10, 10, 10)
@@ -588,17 +573,16 @@ public class Balance extends javax.swing.JPanel {
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(moneyctype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(moneyctype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
@@ -613,7 +597,12 @@ public class Balance extends javax.swing.JPanel {
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
-        timer.stop();
+        if (timer != null) {
+            timer.stop();
+        }
+        if (timer2 != null) {
+            timer2.stop();
+        }
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelbtnActionPerformed
 
@@ -656,7 +645,7 @@ public class Balance extends javax.swing.JPanel {
     private javax.swing.JLabel infolabel;
     private javax.swing.JLabel infolabel2;
     private javax.swing.JLabel infolabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel mainlabel;
     private javax.swing.JComboBox<String> moneyctype;

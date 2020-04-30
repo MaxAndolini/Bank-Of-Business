@@ -42,22 +42,40 @@ public class Information extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        yesbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
-        yesicon = new javax.swing.JLabel();
-        nobtn = new java.awt.Button();
-        noicon = new javax.swing.JLabel();
-        backbtn = new java.awt.Button();
-        backicon = new javax.swing.JLabel();
-        mainmenubtn = new java.awt.Button();
-        mainmenuicon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
         infolabel2 = new javax.swing.JLabel();
+        yesbtn = new java.awt.Button();
+        yesicon = new javax.swing.JLabel();
+        backbtn = new java.awt.Button();
+        backicon = new javax.swing.JLabel();
+        nobtn = new java.awt.Button();
+        noicon = new javax.swing.JLabel();
+        mainmenubtn = new java.awt.Button();
+        mainmenuicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
+
+        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainlabel.setText("Information");
+        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel.setText("The amount you want to deposit is $10,000");
+
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel2.setText("Do you wish to continue?");
 
         yesbtn.setBackground(new java.awt.Color(23, 35, 51));
         yesbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -69,27 +87,7 @@ public class Information extends javax.swing.JPanel {
             }
         });
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Information");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
-
         yesicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_ok_48px.png"))); // NOI18N
-
-        nobtn.setBackground(new java.awt.Color(23, 35, 51));
-        nobtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        nobtn.setForeground(new java.awt.Color(133, 187, 101));
-        nobtn.setLabel("No");
-        nobtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nobtnActionPerformed(evt);
-            }
-        });
-
-        noicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_delete_48px.png"))); // NOI18N
 
         backbtn.setBackground(new java.awt.Color(23, 35, 51));
         backbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -104,6 +102,18 @@ public class Information extends javax.swing.JPanel {
 
         backicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
+        nobtn.setBackground(new java.awt.Color(23, 35, 51));
+        nobtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        nobtn.setForeground(new java.awt.Color(133, 187, 101));
+        nobtn.setLabel("No");
+        nobtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nobtnActionPerformed(evt);
+            }
+        });
+
+        noicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_delete_48px.png"))); // NOI18N
+
         mainmenubtn.setBackground(new java.awt.Color(23, 35, 51));
         mainmenubtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         mainmenubtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,16 +125,6 @@ public class Information extends javax.swing.JPanel {
         });
 
         mainmenuicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
-
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("The amount you want to deposit is $10,000");
-
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Do you wish to continue?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

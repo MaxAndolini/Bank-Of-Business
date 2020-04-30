@@ -56,11 +56,11 @@ public class Transfer extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
+        infolabel = new javax.swing.JLabel();
+        uidcnumbertext = new javax.swing.JTextField();
+        okbtn = new java.awt.Button();
         cancelbtn = new java.awt.Button();
         cancelicon = new javax.swing.JLabel();
-        uidcnumbertext = new javax.swing.JTextField();
-        infolabel = new javax.swing.JLabel();
-        okbtn = new java.awt.Button();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -75,18 +75,10 @@ public class Transfer extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
-            }
-        });
-
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel.setText("Enter user ID or card number and press OK.");
 
         uidcnumbertext.setBackground(new java.awt.Color(23, 35, 51));
         uidcnumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
@@ -104,11 +96,6 @@ public class Transfer extends javax.swing.JPanel {
             }
         });
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Enter user ID or card number and press OK.");
-
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         okbtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,6 +105,19 @@ public class Transfer extends javax.swing.JPanel {
                 okbtnActionPerformed(evt);
             }
         });
+
+        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
+        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelbtn.setLabel("Cancel");
+        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelbtnActionPerformed(evt);
+            }
+        });
+
+        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

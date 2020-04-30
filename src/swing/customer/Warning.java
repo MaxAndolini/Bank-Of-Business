@@ -62,13 +62,13 @@ public class Warning extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
+        infolabel = new javax.swing.JLabel();
+        infolabel2 = new javax.swing.JLabel();
+        infolabel3 = new javax.swing.JLabel();
         backbtn = new java.awt.Button();
         backicon = new javax.swing.JLabel();
         mainmenubtn = new java.awt.Button();
         mainmenuicon = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        infolabel2 = new javax.swing.JLabel();
-        infolabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -82,6 +82,21 @@ public class Warning extends javax.swing.JPanel {
         mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel.setText("The amount entered is unacceptable.");
+
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel2.setText("Please enter amount in multiple of 10/50/100 only.");
+
+        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel3.setText("Do you wish to go back?");
 
         backbtn.setBackground(new java.awt.Color(23, 35, 51));
         backbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -108,50 +123,34 @@ public class Warning extends javax.swing.JPanel {
 
         mainmenuicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("The amount entered is unacceptable.");
-
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Please enter amount in multiple of 10/50/100 only.");
-
-        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel3.setText("Do you wish to go back?");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(backicon)
-                        .addGap(538, 538, 538)
-                        .addComponent(mainmenuicon)
-                        .addGap(10, 10, 10)
-                        .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)))
-                .addGap(10, 10, 10))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(277, 277, 277)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(277, 277, 277))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(214, 214, 214)
                 .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(214, 214, 214))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(backicon)
+                                .addGap(538, 538, 538)
+                                .addComponent(mainmenuicon)
+                                .addGap(10, 10, 10)
+                                .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

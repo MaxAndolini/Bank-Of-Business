@@ -51,22 +51,4 @@ public class Admin extends User {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.adminSalary);
         }
     }
-
-    @Override
-    public void displayInfo() {
-        super.displayInfo();
-        System.out.println(toString() + "'s salary: " + getAdminSalary());
-    }
-
-    /*public void increaseSalary(String ID, int number) {
-    }
-    
-    public void giveCredence(Banker banker, int amount) {
-        banker.setBankerSalary(banker.getBankerSalary() + amount);
-    }*/
-    public void addBanker(Banker banker) {
-    }
-
-    public void deleteBanker() {
-    }
 }

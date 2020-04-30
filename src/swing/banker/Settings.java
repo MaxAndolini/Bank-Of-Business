@@ -8,7 +8,6 @@ package swing.banker;
 import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import javax.swing.text.AbstractDocument;
-import javax.swing.text.BadLocationException;
 import library.*;
 
 /**
@@ -48,14 +47,10 @@ public class Settings extends javax.swing.JPanel {
         if (!new String(newpassword.getPassword()).isBlank() && !new String(newpassword2.getPassword()).isBlank()) {
             if (new String(newpassword.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
                 if (Arrays.equals(newpassword.getPassword(), newpassword2.getPassword())) {
-                    if (!new String(newpassword.getPassword()).equals(Data.getCustomer().getPassword())) {
+                    if (!new String(newpassword.getPassword()).equals(Data.getBanker().getPassword())) {
                         Data.getCustomer().setPassword(new String(newpassword.getPassword()), 1);
-                        try {
-                            newpassword.getDocument().remove(0, new String(newpassword.getPassword()).length());
-                            newpassword2.getDocument().remove(0, new String(newpassword2.getPassword()).length());
-                        } catch (BadLocationException ex) {
-                            System.out.println(ex.toString());
-                        }
+                        newpassword.setText(null);
+                        newpassword2.setText(null);
                         infolabel.setText("The password was successfully changed.");
                     } else {
                         infolabel.setText("You can't set the same password.");
@@ -81,14 +76,14 @@ public class Settings extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
         infolabel = new javax.swing.JLabel();
-        okbtn = new java.awt.Button();
         infolabel2 = new javax.swing.JLabel();
         newpassword = new javax.swing.JPasswordField();
         infolabel3 = new javax.swing.JLabel();
         newpassword2 = new javax.swing.JPasswordField();
+        okbtn = new java.awt.Button();
+        cancelbtn = new java.awt.Button();
+        cancelicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -103,32 +98,9 @@ public class Settings extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
-            }
-        });
-
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
-
         infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel.setForeground(new java.awt.Color(255, 255, 255));
         infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        okbtn.setBackground(new java.awt.Color(23, 35, 51));
-        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        okbtn.setForeground(new java.awt.Color(255, 255, 255));
-        okbtn.setLabel("OK");
-        okbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okbtnActionPerformed(evt);
-            }
-        });
 
         infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         infolabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -162,6 +134,29 @@ public class Settings extends javax.swing.JPanel {
             }
         });
 
+        okbtn.setBackground(new java.awt.Color(23, 35, 51));
+        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okbtn.setForeground(new java.awt.Color(255, 255, 255));
+        okbtn.setLabel("OK");
+        okbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okbtnActionPerformed(evt);
+            }
+        });
+
+        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
+        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelbtn.setLabel("Cancel");
+        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelbtnActionPerformed(evt);
+            }
+        });
+
+        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -187,12 +182,13 @@ public class Settings extends javax.swing.JPanel {
                             .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(300, 300, 300))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(390, 390, 390)
-                .addComponent(newpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(390, 390, 390))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(390, 390, 390)
-                .addComponent(newpassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(newpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(newpassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(390, 390, 390))
         );
         layout.setVerticalGroup(

@@ -47,14 +47,19 @@ public class Filter extends DocumentFilter {
 
     @Override
     public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
-        if (this.length > 0 && fb.getDocument().getLength() + text.length() > this.length) {
+        if (text == null || text.equals("")) {
+            super.replace(fb, offset, length, text, attrs);
+            return;
+        }
+
+        if (this.length > 0 && fb.getDocument().getLength() + text.length() - length > this.length) {
             return;
         }
 
         if (type == 0) {
-            super.insertString(fb, offset, text, attrs);
+            super.replace(fb, offset, length, text, attrs);
         } else if (type == 1 && isNumeric(text)) {
-            super.insertString(fb, offset, text, attrs);
+            super.replace(fb, offset, length, text, attrs);
         }
     }
 

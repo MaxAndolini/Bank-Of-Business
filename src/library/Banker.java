@@ -51,20 +51,4 @@ public class Banker extends User {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
         }
     }
-
-    @Override
-    public void displayInfo() {
-        super.displayInfo();
-        System.out.println(toString() + "'s salary: " + getBankerSalary());
-    }
-
-    public void changePassword(String newPassword) {
-        setPassword(newPassword, 1);
-    }
-
-    public void addCustomer() {
-    }
-
-    public void deleteCustomer(Customer customer) {
-    }
 }
