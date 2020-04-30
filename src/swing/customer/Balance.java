@@ -106,12 +106,13 @@ public class Balance extends javax.swing.JPanel {
     }
 
     public void balance() {
-        String[] typename = {"Dollar", "Euro", "Pound", "TurkishLira"};
+        String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
+        String[] typename2 = {"Dollar", "Euro", "Pound", "TurkishLira"};
         if (!moneytext.getText().isBlank()) {
             if (moneytype.getSelectedIndex() != moneyctype.getSelectedIndex()) {
                 BigDecimal money = Database.isBigDecimal(moneytext.getText());
                 if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0) {
-                    BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename[moneyctype.getSelectedIndex()]);
+                    BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename2[moneyctype.getSelectedIndex()]);
                     BigDecimal result = money.multiply(rate);
                     if (moneytype.getSelectedIndex() == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) {
                         Data.getCustomer().subtractDollar(money, 1);
@@ -212,12 +213,13 @@ public class Balance extends javax.swing.JPanel {
     }
 
     public void result() {
-        String[] typename = {"Dollar", "Euro", "Pound", "TurkishLira"};
+        String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
+        String[] typename2 = {"Dollar", "Euro", "Pound", "TurkishLira"};
         if (!moneytext.getText().isBlank()) {
             if (moneytype.getSelectedIndex() != moneyctype.getSelectedIndex()) {
                 BigDecimal money = Database.isBigDecimal(moneytext.getText());
                 if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0) {
-                    BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename[moneyctype.getSelectedIndex()]);
+                    BigDecimal rate = Database.getBigDecimal("Currencies", "Rate", typename[moneytype.getSelectedIndex()], typename2[moneyctype.getSelectedIndex()]);
                     BigDecimal result = money.multiply(rate);
                     infolabel3.setText("Result: " + money.toString() + " * " + rate.toString() + " = " + result);
                 } else {

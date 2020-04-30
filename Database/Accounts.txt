@@ -1,4 +1,4 @@
 ID|AccountType|CardNumber|FullName|DateofBirth|Job|PhoneNumber|Dollar|Euro|Pound|TurkishLira|HomeAddress|Password|Salary|
 0|2|1569786381879100|Ercan Acar|04/05/1995|Meslek|9156255|0|0|0|0|Burhaniye|Ercan129@|500|
-1|0|1526946661834180|Deneme Hesap|12/03/1994|Kasap|6851648|325.065245|54654|5.809800|10.838456|Burhaniye|Ercan123@|-|
+1|0|1526946661834180|Deneme Hesap|12/03/1994|Kasap|6851648|325.065245|54654|3.809800|28.092052|Burhaniye|Ercan123@|-|
 2|1|1901337009676069|Kasap Necmi|29/02/2020|Kasap|05384952415|0|0|0|0|Namık|Deneme32@|5040|
