@@ -101,7 +101,7 @@ public class Data {
         if (!checkLuhn(result)) {
             return generateCardNumber();
         }
-        if (Database.exists("Users", "CardNumber", result)) {
+        if (Database.exists("Accounts", "CardNumber", result)) {
             return generateCardNumber();
         }
         return result;
