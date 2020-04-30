@@ -40,14 +40,14 @@ public class Login extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
-        loginbtn = new java.awt.Button();
-        uidtext = new javax.swing.JTextField();
         infolabel = new javax.swing.JLabel();
-        exitbtn = new java.awt.Button();
         infolabel2 = new javax.swing.JLabel();
+        uidtext = new javax.swing.JTextField();
         infolabel3 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
+        loginbtn = new java.awt.Button();
         loginicon = new javax.swing.JLabel();
+        exitbtn = new java.awt.Button();
         exiticon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
@@ -63,16 +63,14 @@ public class Login extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        loginbtn.setBackground(new java.awt.Color(23, 35, 51));
-        loginbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        loginbtn.setForeground(new java.awt.Color(255, 255, 255));
-        loginbtn.setLabel("Login");
-        loginbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        loginbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginbtnActionPerformed(evt);
-            }
-        });
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel2.setText("Enter User ID");
 
         uidtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         uidtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -88,26 +86,6 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        exitbtn.setBackground(new java.awt.Color(23, 35, 51));
-        exitbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setLabel("Exit");
-        exitbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
-            }
-        });
-
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Enter User ID");
-
         infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         infolabel3.setForeground(new java.awt.Color(255, 255, 255));
         infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -122,7 +100,29 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
+        loginbtn.setBackground(new java.awt.Color(23, 35, 51));
+        loginbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        loginbtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginbtn.setLabel("Login");
+        loginbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        loginbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginbtnActionPerformed(evt);
+            }
+        });
+
         loginicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_enter_48px.png"))); // NOI18N
+
+        exitbtn.setBackground(new java.awt.Color(23, 35, 51));
+        exitbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        exitbtn.setForeground(new java.awt.Color(255, 255, 255));
+        exitbtn.setLabel("Exit");
+        exitbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitbtnActionPerformed(evt);
+            }
+        });
 
         exiticon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 

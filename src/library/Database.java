@@ -1144,21 +1144,21 @@ public class Database {
                     ArrayList<String> newrows = new ArrayList<>();
                     if ((columnid != -1 && columnvalue != null && !columnvalue.isBlank()) && (columnid2 == -1 || columnvalue2 == null || columnvalue2.isBlank())) {
                         if (tmpline[columnid].equals(columnvalue)) {
-                            newrows.addAll(Arrays.asList(line.split("[|]")));
+                            newrows.addAll(Arrays.asList(tmpline));
                             newlines.add(newrows);
                         }
                     } else if ((columnid == -1 || columnvalue == null || columnvalue.isBlank()) && (columnid2 != -1 && columnvalue2 != null && !columnvalue2.isBlank())) {
                         if (tmpline[columnid2].equals(columnvalue2)) {
-                            newrows.addAll(Arrays.asList(line.split("[|]")));
+                            newrows.addAll(Arrays.asList(tmpline));
                             newlines.add(newrows);
                         }
                     } else if ((columnid != -1 && columnvalue != null && !columnvalue.isBlank() && columnid2 != -1) && (columnvalue2 != null && !columnvalue2.isBlank())) {
                         if (tmpline[columnid].equals(columnvalue) && tmpline[columnid2].equals(columnvalue2)) {
-                            newrows.addAll(Arrays.asList(line.split("[|]")));
+                            newrows.addAll(Arrays.asList(tmpline));
                             newlines.add(newrows);
                         }
                     } else {
-                        newrows.addAll(Arrays.asList(line.split("[|]")));
+                        newrows.addAll(Arrays.asList(tmpline));
                         newlines.add(newrows);
                     }
                 } else {

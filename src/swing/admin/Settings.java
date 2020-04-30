@@ -5,6 +5,13 @@
  */
 package swing.admin;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.math.BigDecimal;
+import java.util.Arrays;
+import javax.swing.Timer;
+import javax.swing.text.AbstractDocument;
 import library.*;
 
 /**
@@ -14,6 +21,7 @@ import library.*;
 public class Settings extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form Settings
@@ -23,6 +31,61 @@ public class Settings extends javax.swing.JPanel {
     public Settings(swing.Home home) {
         initComponents();
         frame = home;
+
+        ((AbstractDocument) fullnametext.getDocument()).setDocumentFilter(new Filter(0, 32));
+        ((AbstractDocument) dateofbirthtext.getDocument()).setDocumentFilter(new Filter(0, 10));
+        ((AbstractDocument) phonenumbertext.getDocument()).setDocumentFilter(new Filter(1, 11));
+        ((AbstractDocument) homeaddresstext.getDocument()).setDocumentFilter(new Filter(0, 32));
+        ((AbstractDocument) passwordtext.getDocument()).setDocumentFilter(new Filter(0, 15));
+        ((AbstractDocument) salarytext.getDocument()).setDocumentFilter(new Filter(0, 15));
+
+        timer = new Timer(2000, new ActionListener() {
+            String[] load = null;
+            String[] data = null;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                data = Database.getArray("Accounts", "ID", Data.getAdmin().getId().getID());
+                if (load == null || (data != null && !Arrays.equals(load, data))) {
+                    load = data.clone();
+                    fullnametext.setText(data[3]);
+                    dateofbirthtext.setText(data[4]);
+                    phonenumbertext.setText(data[6]);
+                    homeaddresstext.setText(data[11]);
+                    passwordtext.setText(data[12]);
+                    salarytext.setText(data[13]);
+                }
+            }
+        });
+        timer.setInitialDelay(0);
+        timer.start();
+    }
+
+    public void settings() {
+        if (!fullnametext.getText().isBlank() && !dateofbirthtext.getText().isBlank() && !phonenumbertext.getText().isBlank() && !homeaddresstext.getText().isBlank() && !passwordtext.getText().isBlank() && !salarytext.getText().isBlank()) {
+            if (Data.dateValidation(dateofbirthtext.getText())) {
+                if (passwordtext.getText().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                    BigDecimal salary = Database.isBigDecimal(salarytext.getText());
+                    if (salary.compareTo(BigDecimal.ZERO) > 0 && salary.compareTo(new BigDecimal("-1")) != 0) {
+                        Data.getAdmin().getId().setFullName(fullnametext.getText(), 1);
+                        Data.getAdmin().getId().setDateOfBirth(dateofbirthtext.getText(), 1);
+                        Data.getAdmin().setPhoneNumber(phonenumbertext.getText(), 1);
+                        Data.getAdmin().setHomeAddress(homeaddresstext.getText(), 1);
+                        Data.getAdmin().setPassword(passwordtext.getText(), 1);
+                        Data.getAdmin().setAdminSalary(salary, 1);
+                        infolabel.setText("The setting was successfully changed.");
+                    } else {
+                        infolabel.setText("The salary doesn't follow the rules.");
+                    }
+                } else {
+                    infolabel.setText("The password doesn't follow the rules.");
+                }
+            } else {
+                infolabel.setText("The date of birth doesn't follow the rules.");
+            }
+        } else {
+            infolabel.setText("The field can't be left blank.");
+        }
     }
 
     /**
@@ -35,23 +98,23 @@ public class Settings extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
-        addbtn = new java.awt.Button();
-        fullnametext = new javax.swing.JTextField();
         infolabel = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
         infolabel2 = new javax.swing.JLabel();
+        fullnametext = new javax.swing.JTextField();
         infolabel3 = new javax.swing.JLabel();
-        addicon = new javax.swing.JLabel();
-        cancelicon = new javax.swing.JLabel();
-        phonenumbertext = new javax.swing.JTextField();
-        infolabel4 = new javax.swing.JLabel();
-        infolabel5 = new javax.swing.JLabel();
         dateofbirthtext = new javax.swing.JTextField();
+        infolabel4 = new javax.swing.JLabel();
+        phonenumbertext = new javax.swing.JTextField();
+        infolabel5 = new javax.swing.JLabel();
         homeaddresstext = new javax.swing.JTextField();
-        salarytext = new javax.swing.JTextField();
-        passwordtext = new javax.swing.JTextField();
         infolabel6 = new javax.swing.JLabel();
+        passwordtext = new javax.swing.JTextField();
         infolabel7 = new javax.swing.JLabel();
+        salarytext = new javax.swing.JTextField();
+        okbtn = new java.awt.Button();
+        okicon = new javax.swing.JLabel();
+        cancelbtn = new java.awt.Button();
+        cancelicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -66,16 +129,14 @@ public class Settings extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        addbtn.setBackground(new java.awt.Color(23, 35, 51));
-        addbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        addbtn.setForeground(new java.awt.Color(255, 255, 255));
-        addbtn.setLabel("OK");
-        addbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        addbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addbtnActionPerformed(evt);
-            }
-        });
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel2.setText("Full Name");
 
         fullnametext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         fullnametext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -85,10 +146,119 @@ public class Settings extends javax.swing.JPanel {
                 fullnametextActionPerformed(evt);
             }
         });
+        fullnametext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fullnametextKeyPressed(evt);
+            }
+        });
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel3.setText("Date of Birth");
+
+        dateofbirthtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        dateofbirthtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dateofbirthtext.setMaximumSize(new java.awt.Dimension(7, 39));
+        dateofbirthtext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateofbirthtextActionPerformed(evt);
+            }
+        });
+        dateofbirthtext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                dateofbirthtextKeyPressed(evt);
+            }
+        });
+
+        infolabel4.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel4.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel4.setText("Phone Number");
+
+        phonenumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        phonenumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        phonenumbertext.setMaximumSize(new java.awt.Dimension(7, 39));
+        phonenumbertext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phonenumbertextActionPerformed(evt);
+            }
+        });
+        phonenumbertext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                phonenumbertextKeyPressed(evt);
+            }
+        });
+
+        infolabel5.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel5.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel5.setText("Home Address");
+
+        homeaddresstext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        homeaddresstext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        homeaddresstext.setMaximumSize(new java.awt.Dimension(7, 39));
+        homeaddresstext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeaddresstextActionPerformed(evt);
+            }
+        });
+        homeaddresstext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                homeaddresstextKeyPressed(evt);
+            }
+        });
+
+        infolabel6.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel6.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel6.setText("Password");
+
+        passwordtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        passwordtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordtext.setMaximumSize(new java.awt.Dimension(7, 39));
+        passwordtext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordtextActionPerformed(evt);
+            }
+        });
+        passwordtext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordtextKeyPressed(evt);
+            }
+        });
+
+        infolabel7.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infolabel7.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel7.setText("Salary");
+
+        salarytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        salarytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        salarytext.setMaximumSize(new java.awt.Dimension(7, 39));
+        salarytext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salarytextActionPerformed(evt);
+            }
+        });
+        salarytext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                salarytextKeyPressed(evt);
+            }
+        });
+
+        okbtn.setBackground(new java.awt.Color(23, 35, 51));
+        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okbtn.setForeground(new java.awt.Color(255, 255, 255));
+        okbtn.setLabel("OK");
+        okbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        okbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okbtnActionPerformed(evt);
+            }
+        });
+
+        okicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
 
         cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
         cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -101,104 +271,12 @@ public class Settings extends javax.swing.JPanel {
             }
         });
 
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Full Name");
-
-        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel3.setText("Phone Number");
-
-        addicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
-
         cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
-
-        phonenumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        phonenumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        phonenumbertext.setMaximumSize(new java.awt.Dimension(7, 39));
-        phonenumbertext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phonenumbertextActionPerformed(evt);
-            }
-        });
-
-        infolabel4.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel4.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel4.setText("Date of Birth");
-
-        infolabel5.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel5.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel5.setText("Salary");
-
-        dateofbirthtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        dateofbirthtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        dateofbirthtext.setMaximumSize(new java.awt.Dimension(7, 39));
-        dateofbirthtext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dateofbirthtextActionPerformed(evt);
-            }
-        });
-
-        homeaddresstext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        homeaddresstext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        homeaddresstext.setMaximumSize(new java.awt.Dimension(7, 39));
-        homeaddresstext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeaddresstextActionPerformed(evt);
-            }
-        });
-
-        salarytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        salarytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        salarytext.setMaximumSize(new java.awt.Dimension(7, 39));
-        salarytext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salarytextActionPerformed(evt);
-            }
-        });
-
-        passwordtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        passwordtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        passwordtext.setMaximumSize(new java.awt.Dimension(7, 39));
-        passwordtext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordtextActionPerformed(evt);
-            }
-        });
-
-        infolabel6.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel6.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel6.setText("Home Address");
-
-        infolabel7.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel7.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel7.setText("Password");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(562, 562, 562))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(addicon)
-                        .addGap(538, 538, 538)
-                        .addComponent(cancelicon)
-                        .addGap(10, 10, 10)
-                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(300, 300, 300)
                 .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,7 +288,7 @@ public class Settings extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(fullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -218,24 +296,37 @@ public class Settings extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(infolabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dateofbirthtext, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(homeaddresstext, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(passwordtext, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(salarytext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)))
+                            .addComponent(phonenumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(salarytext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10))
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(phonenumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(750, 750, 750))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(okicon)
+                                .addGap(538, 538, 538)
+                                .addComponent(cancelicon)
+                                .addGap(10, 10, 10)
+                                .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(homeaddresstext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,71 +338,108 @@ public class Settings extends javax.swing.JPanel {
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infolabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fullnametext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dateofbirthtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(salarytext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(phonenumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infolabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(infolabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(infolabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phonenumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(homeaddresstext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(salarytext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addicon)))
+                            .addComponent(okicon)))
                     .addComponent(cancelicon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
-        frame.ChangeJPanel("HomeAdmin");
-    }//GEN-LAST:event_addbtnActionPerformed
+    private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
+        settings();
+    }//GEN-LAST:event_okbtnActionPerformed
 
     private void fullnametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullnametextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fullnametextActionPerformed
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("HomeAdmin");
     }//GEN-LAST:event_cancelbtnActionPerformed
-
-    private void phonenumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenumbertextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phonenumbertextActionPerformed
-
-    private void dateofbirthtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateofbirthtextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dateofbirthtextActionPerformed
 
     private void homeaddresstextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeaddresstextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_homeaddresstextActionPerformed
 
-    private void salarytextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salarytextActionPerformed
+    private void dateofbirthtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateofbirthtextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_salarytextActionPerformed
+    }//GEN-LAST:event_dateofbirthtextActionPerformed
 
     private void passwordtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordtextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordtextActionPerformed
 
+    private void phonenumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenumbertextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonenumbertextActionPerformed
+
+    private void salarytextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salarytextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salarytextActionPerformed
+
+    private void fullnametextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fullnametextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            settings();
+        }
+    }//GEN-LAST:event_fullnametextKeyPressed
+
+    private void homeaddresstextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeaddresstextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            settings();
+        }
+    }//GEN-LAST:event_homeaddresstextKeyPressed
+
+    private void dateofbirthtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dateofbirthtextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            settings();
+        }
+    }//GEN-LAST:event_dateofbirthtextKeyPressed
+
+    private void passwordtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordtextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            settings();
+        }
+    }//GEN-LAST:event_passwordtextKeyPressed
+
+    private void phonenumbertextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phonenumbertextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            settings();
+        }
+    }//GEN-LAST:event_phonenumbertextKeyPressed
+
+    private void salarytextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_salarytextKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            settings();
+        }
+    }//GEN-LAST:event_salarytextKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button addbtn;
-    private javax.swing.JLabel addicon;
     private java.awt.Button cancelbtn;
     private javax.swing.JLabel cancelicon;
     private javax.swing.JTextField dateofbirthtext;
@@ -325,6 +453,8 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JLabel infolabel6;
     private javax.swing.JLabel infolabel7;
     private javax.swing.JLabel mainlabel;
+    private java.awt.Button okbtn;
+    private javax.swing.JLabel okicon;
     private javax.swing.JTextField passwordtext;
     private javax.swing.JTextField phonenumbertext;
     private javax.swing.JTextField salarytext;

@@ -38,7 +38,6 @@ public class Customers extends javax.swing.JPanel {
 
         ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
         customerstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
-        customerstable.setAutoCreateRowSorter(true);
 
         String[] typename = {"ID", "CardNumber", "FullName"};
         timer = new Timer(2000, new ActionListener() {
@@ -191,6 +190,7 @@ public class Customers extends javax.swing.JPanel {
             }
         });
 
+        customerstable.setAutoCreateRowSorter(true);
         customerstable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         customerstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -266,7 +266,7 @@ public class Customers extends javax.swing.JPanel {
                                         .addComponent(cancelicon)))))
                         .addGap(290, 290, 290))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(10, 10, 10)
                         .addComponent(jScrollPane)))
                 .addGap(10, 10, 10))
         );

@@ -5,6 +5,7 @@
  */
 package swing.customer;
 
+import java.math.BigDecimal;
 import library.*;
 
 /**
@@ -47,7 +48,7 @@ public class Warning extends javax.swing.JPanel {
             }
             return;
         }
-        if (Data.getMoney().compareTo(Database.isBigDecimal("10000")) == 1) {
+        if (Data.getMoney().compareTo(new BigDecimal("10000")) == 1) {
             infolabel2.setText("The amount can't be more than 10,000.");
         }
     }

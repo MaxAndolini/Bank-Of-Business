@@ -33,7 +33,6 @@ public class Transactions extends javax.swing.JPanel {
         frame = home;
 
         transactionstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
-        transactionstable.setAutoCreateRowSorter(true);
 
         timer = new Timer(2000, new ActionListener() {
             ArrayList<ArrayList<String>> load = null;
@@ -96,6 +95,7 @@ public class Transactions extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
+        transactionstable.setAutoCreateRowSorter(true);
         transactionstable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         transactionstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -42,7 +42,7 @@ public class Deposit extends javax.swing.JPanel {
             Data.setPage2("DepositCustomer");
             Data.setMoney(money);
             Data.setMoneyType(moneytype.getSelectedIndex());
-            if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(Database.isBigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0)) {
+            if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0)) {
                 frame.ChangeJPanel("InformationCustomer");
             } else {
                 frame.ChangeJPanel("WarningCustomer");

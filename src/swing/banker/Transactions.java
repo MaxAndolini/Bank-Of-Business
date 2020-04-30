@@ -38,7 +38,6 @@ public class Transactions extends javax.swing.JPanel {
 
         ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
         transactionstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
-        transactionstable.setAutoCreateRowSorter(true);
 
         String[] typename = {"ID", "CardNumber", "FullName"};
         timer = new Timer(2000, new ActionListener() {
@@ -197,6 +196,7 @@ public class Transactions extends javax.swing.JPanel {
             }
         });
 
+        transactionstable.setAutoCreateRowSorter(true);
         transactionstable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         transactionstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -272,7 +272,7 @@ public class Transactions extends javax.swing.JPanel {
                                         .addComponent(cancelicon)))))
                         .addGap(290, 290, 290))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(10, 10, 10)
                         .addComponent(jScrollPane)))
                 .addGap(10, 10, 10))
         );

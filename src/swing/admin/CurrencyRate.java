@@ -5,6 +5,15 @@
  */
 package swing.admin;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.Timer;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
 import library.*;
 
 /**
@@ -14,6 +23,7 @@ import library.*;
 public class CurrencyRate extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form CurrencyRate
@@ -25,6 +35,55 @@ public class CurrencyRate extends javax.swing.JPanel {
         frame = home;
 
         currencyratetable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 32));
+        String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
+        DefaultTableModel model = (DefaultTableModel) currencyratetable.getModel();
+        timer = new Timer(2000, new ActionListener() {
+            ArrayList<ArrayList<String>> load = null;
+            ArrayList<ArrayList<String>> data = null;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                data = Database.getArrayList("Currencies");
+                if (load == null || (data != null && !load.equals(data))) {
+                    if (load != null) {
+                        model.setRowCount(0);
+                    }
+                    load = (ArrayList<ArrayList<String>>) data.clone();
+                    Integer columns[] = {0, 1, 2, 3, 4};
+                    for (int i = 0; i < data.size(); i++) {
+                        int column = 0;
+                        String[] row = new String[data.get(i).size()];
+                        for (int j = 0; j < data.get(i).size(); j++) {
+                            if (Arrays.asList(columns).contains(j)) {
+                                row[column] = data.get(i).get(j);
+                                column++;
+                            }
+                        }
+                        model.addRow(row);
+                    }
+                }
+            }
+        });
+        timer.setInitialDelay(0);
+        timer.start();
+
+        model.addTableModelListener((TableModelEvent e) -> {
+            if (e.getType() == TableModelEvent.UPDATE) {
+                if (e.getFirstRow() == (e.getColumn() - 1) && !model.getValueAt(e.getFirstRow(), e.getColumn()).equals("1.0")) {
+                    model.setValueAt("1.0", e.getFirstRow(), e.getColumn());
+                } else {
+                    BigDecimal rate = Database.isBigDecimal((String) model.getValueAt(e.getFirstRow(), e.getColumn()));
+                    if (rate.compareTo(BigDecimal.ZERO) > 0 && rate.compareTo(new BigDecimal("-1")) != 0) {
+                        boolean change = Database.set("Currencies", "Rate", typename[e.getFirstRow()], typename[e.getColumn() - 1], rate);
+                        if (change == false) {
+                            model.setValueAt(Database.getString("Currencies", "Rate", typename[e.getFirstRow()], typename[e.getColumn() - 1]), e.getFirstRow(), e.getColumn());
+                        }
+                    } else {
+                        model.setValueAt(Database.getString("Currencies", "Rate", typename[e.getFirstRow()], typename[e.getColumn() - 1]), e.getFirstRow(), e.getColumn());
+                    }
+                }
+            }
+        });
     }
 
     /**
@@ -37,10 +96,10 @@ public class CurrencyRate extends javax.swing.JPanel {
     private void initComponents() {
 
         mainlabel = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         currencyratetable = new javax.swing.JTable();
+        cancelbtn = new java.awt.Button();
+        cancelicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
@@ -55,27 +114,11 @@ public class CurrencyRate extends javax.swing.JPanel {
         mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
-            }
-        });
-
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
-
         currencyratetable.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         currencyratetable.setForeground(new java.awt.Color(23, 35, 51));
         currencyratetable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dollar", "", null, null, null},
-                {"Euro", "", null, null, null},
-                {"Pound", null, null, null, null},
-                {"Turkish Lira", null, null, null, null}
+
             },
             new String [] {
                 "", "Dollar", "Euro", "Pound", "Turkish Lira"
@@ -107,6 +150,19 @@ public class CurrencyRate extends javax.swing.JPanel {
             currencyratetable.getColumnModel().getColumn(3).setResizable(false);
             currencyratetable.getColumnModel().getColumn(4).setResizable(false);
         }
+
+        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
+        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelbtn.setLabel("Cancel");
+        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelbtnActionPerformed(evt);
+            }
+        });
+
+        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -142,6 +198,9 @@ public class CurrencyRate extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("HomeAdmin");
     }//GEN-LAST:event_cancelbtnActionPerformed
 

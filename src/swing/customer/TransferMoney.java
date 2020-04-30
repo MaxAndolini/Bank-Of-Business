@@ -39,7 +39,7 @@ public class TransferMoney extends javax.swing.JPanel {
         Data.setPage2("TransferMoneyCustomer");
         Data.setMoney(money);
         Data.setMoneyType(moneyType);
-        if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(Database.isBigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
+        if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
             frame.ChangeJPanel("InformationCustomer");
         } else {
             frame.ChangeJPanel("WarningCustomer");
