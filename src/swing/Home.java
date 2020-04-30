@@ -45,7 +45,7 @@ public class Home extends javax.swing.JFrame {
             Database.create("Currencies", "Rate", "Dollar");
             Database.create("Currencies", "Rate", "Euro");
             Database.create("Currencies", "Rate", "Pound");
-            Database.create("Currencies", "Rate", "TurkishLira");
+            Database.create("Currencies", "Rate", "Turkish Lira");
 
             // Dollar
             Database.set("Currencies", "Rate", "Dollar", "Dollar", 1.0);
@@ -66,10 +66,10 @@ public class Home extends javax.swing.JFrame {
             Database.set("Currencies", "Rate", "Pound", "TurkishLira", 1.0);
 
             // Turkish Lira
-            Database.set("Currencies", "Rate", "TurkishLira", "Dollar", 1.0);
-            Database.set("Currencies", "Rate", "TurkishLira", "Euro", 1.0);
-            Database.set("Currencies", "Rate", "TurkishLira", "Pound", 1.0);
-            Database.set("Currencies", "Rate", "TurkishLira", "TurkishLira", 1.0);
+            Database.set("Currencies", "Rate", "Turkish Lira", "Dollar", 1.0);
+            Database.set("Currencies", "Rate", "Turkish Lira", "Euro", 1.0);
+            Database.set("Currencies", "Rate", "Turkish Lira", "Pound", 1.0);
+            Database.set("Currencies", "Rate", "Turkish Lira", "TurkishLira", 1.0);
         }
         
         created = Database.fcreate("Accounts");

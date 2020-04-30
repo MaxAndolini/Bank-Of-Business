@@ -77,7 +77,7 @@ public class Balance extends javax.swing.JPanel {
                         break;
                     }
                     case 3: {
-                        String[] load = Database.getArray("Currencies", "Rate", "TurkishLira");
+                        String[] load = Database.getArray("Currencies", "Rate", "Turkish Lira");
                         typelabel.setText("Turkish Lira");
                         firstlabel.setText("Dollar:");
                         secondlabel.setText("Euro:");

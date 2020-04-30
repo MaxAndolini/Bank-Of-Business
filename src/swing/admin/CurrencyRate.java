@@ -36,6 +36,7 @@ public class CurrencyRate extends javax.swing.JPanel {
 
         currencyratetable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 32));
         String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
+        String[] typename2 = {"Dollar", "Euro", "Pound", "TurkishLira"};
         DefaultTableModel model = (DefaultTableModel) currencyratetable.getModel();
         timer = new Timer(2000, new ActionListener() {
             ArrayList<ArrayList<String>> load = null;
@@ -74,12 +75,12 @@ public class CurrencyRate extends javax.swing.JPanel {
                 } else {
                     BigDecimal rate = Database.isBigDecimal((String) model.getValueAt(e.getFirstRow(), e.getColumn()));
                     if (rate.compareTo(BigDecimal.ZERO) > 0 && rate.compareTo(new BigDecimal("-1")) != 0) {
-                        boolean change = Database.set("Currencies", "Rate", typename[e.getFirstRow()], typename[e.getColumn() - 1], rate);
+                        boolean change = Database.set("Currencies", "Rate", typename[e.getFirstRow()], typename2[e.getColumn() - 1], rate);
                         if (change == false) {
-                            model.setValueAt(Database.getString("Currencies", "Rate", typename[e.getFirstRow()], typename[e.getColumn() - 1]), e.getFirstRow(), e.getColumn());
+                            model.setValueAt(Database.getString("Currencies", "Rate", typename[e.getFirstRow()], typename2[e.getColumn() - 1]), e.getFirstRow(), e.getColumn());
                         }
                     } else {
-                        model.setValueAt(Database.getString("Currencies", "Rate", typename[e.getFirstRow()], typename[e.getColumn() - 1]), e.getFirstRow(), e.getColumn());
+                        model.setValueAt(Database.getString("Currencies", "Rate", typename[e.getFirstRow()], typename2[e.getColumn() - 1]), e.getFirstRow(), e.getColumn());
                     }
                 }
             }
