@@ -7,6 +7,8 @@ package swing;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JFrame;
 import library.*;
 
@@ -29,6 +31,38 @@ public class Home extends javax.swing.JFrame {
         Home.this.setVisible(true);
 
         boolean created;
+        created = Database.fcreate("Accounts");
+        if (created == true) {
+            int column = Database.columnExists("Accounts");
+            if (column != 14) {
+                Database.createColumn("Accounts", 0, 14);
+            }
+
+            Database.setColumn("Accounts", 0, "ID");
+            Database.setColumn("Accounts", 1, "AccountType");
+            Database.setColumn("Accounts", 2, "CardNumber");
+            Database.setColumn("Accounts", 3, "FullName");
+            Database.setColumn("Accounts", 4, "DateofBirth");
+            Database.setColumn("Accounts", 5, "Job");
+            Database.setColumn("Accounts", 6, "PhoneNumber");
+            Database.setColumn("Accounts", 7, "Dollar");
+            Database.setColumn("Accounts", 8, "Euro");
+            Database.setColumn("Accounts", 9, "Pound");
+            Database.setColumn("Accounts", 10, "TurkishLira");
+            Database.setColumn("Accounts", 11, "HomeAddress");
+            Database.setColumn("Accounts", 12, "Password");
+            Database.setColumn("Accounts", 13, "Salary");
+
+            String ID = Database.create("Accounts");
+            if (ID != null) {
+                Database.set("Accounts", "ID", ID, "AccountType", 2);
+                Database.set("Accounts", "ID", ID, "FullName", "Admin");
+                Database.set("Accounts", "ID", ID, "DateofBirth", new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
+                Database.set("Accounts", "ID", ID, "Password", "Admin123@");
+                Database.set("Accounts", "ID", ID, "Salary", "1");
+            }
+        }
+
         created = Database.fcreate("Currencies");
         if (created == true) {
             int column = Database.columnExists("Currencies");
@@ -71,30 +105,7 @@ public class Home extends javax.swing.JFrame {
             Database.set("Currencies", "Rate", "Turkish Lira", "Pound", 1.0);
             Database.set("Currencies", "Rate", "Turkish Lira", "TurkishLira", 1.0);
         }
-        
-        created = Database.fcreate("Accounts");
-        if (created == true) {
-            int column = Database.columnExists("Accounts");
-            if (column != 14) {
-                Database.createColumn("Accounts", 0, 14);
-            }
 
-            Database.setColumn("Accounts", 0, "ID");
-            Database.setColumn("Accounts", 1, "AccountType");
-            Database.setColumn("Accounts", 2, "CardNumber");
-            Database.setColumn("Accounts", 3, "FullName");
-            Database.setColumn("Accounts", 4, "DateofBirth");
-            Database.setColumn("Accounts", 5, "Job");
-            Database.setColumn("Accounts", 6, "PhoneNumber");
-            Database.setColumn("Accounts", 7, "Dollar");
-            Database.setColumn("Accounts", 8, "Euro");
-            Database.setColumn("Accounts", 9, "Pound");
-            Database.setColumn("Accounts", 10, "TurkishLira");
-            Database.setColumn("Accounts", 11, "HomeAddress");
-            Database.setColumn("Accounts", 12, "Password");
-            Database.setColumn("Accounts", 13, "Salary");
-        }
-        
         created = Database.fcreate("Transactions");
         if (created == true) {
             int column = Database.columnExists("Transactions");
@@ -117,80 +128,118 @@ public class Home extends javax.swing.JFrame {
 
         DynamicPanel.removeAll();
 
-        // Main
-        if (cName.equals("MainSelect")) {
-            DynamicPanel.add(new MainSelect(this), "MainSelect");
-        } // Admin
-        else if (cName.equals("AddAdminAdmin")) {
-            DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
-        } else if (cName.equals("AddBankerAdmin")) {
-            DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
-        } else if (cName.equals("AdminsAdmin")) {
-            DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
-        } else if (cName.equals("BankersAdmin")) {
-            DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
-        } else if (cName.equals("CurrencyRateAdmin")) {
-            DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
-        } else if (cName.equals("CustomersAdmin")) {
-            DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
-        } else if (cName.equals("DeleteBankerAdmin")) {
-            DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
-        } else if (cName.equals("EditBankerAdmin")) {
-            DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
-        } else if (cName.equals("EditMoneyAdmin")) {
-            DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
-        } else if (cName.equals("HomeAdmin")) {
-            DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
-        } else if (cName.equals("LoginAdmin")) {
-            DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
-        } else if (cName.equals("SettingsAdmin")) {
-            DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
-        } // Banker
-        else if (cName.equals("AddCustomerBanker")) {
-            DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
-        } else if (cName.equals("BalanceBanker")) {
-            DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
-        } else if (cName.equals("BankersBanker")) {
-            DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
-        } else if (cName.equals("CustomersBanker")) {
-            DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
-        } else if (cName.equals("DeleteCustomerBanker")) {
-            DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
-        } else if (cName.equals("EditCustomerBanker")) {
-            DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
-        } else if (cName.equals("HomeBanker")) {
-            DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
-        } else if (cName.equals("LoginBanker")) {
-            DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
-        } else if (cName.equals("SettingsBanker")) {
-            DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
-        } else if (cName.equals("TransactionsBanker")) {
-            DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
-        } // Customer
-        else if (cName.equals("BalanceCustomer")) {
-            DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
-        } else if (cName.equals("DepositCustomer")) {
-            DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
-        } else if (cName.equals("HomeCustomer")) {
-            DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
-        } else if (cName.equals("InformationCustomer")) {
-            DynamicPanel.add(new swing.customer.Information(this), "InformationCustomer");
-        } else if (cName.equals("LoginCustomer")) {
-            DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
-        } else if (cName.equals("ReceiptCustomer")) {
-            DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
-        } else if (cName.equals("SettingsCustomer")) {
-            DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
-        } else if (cName.equals("TransactionsCustomer")) {
-            DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
-        } else if (cName.equals("TransferCustomer")) {
-            DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
-        } else if (cName.equals("TransferMoneyCustomer")) {
-            DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
-        } else if (cName.equals("WarningCustomer")) {
-            DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
-        } else if (cName.equals("WithdrawalCustomer")) {
-            DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
+        switch (cName) {
+            // Main
+            case "MainSelect":
+                DynamicPanel.add(new MainSelect(this), "MainSelect");
+                break;
+            // Admin
+            case "AddAdminAdmin":
+                DynamicPanel.add(new swing.admin.AddAdmin(this), "AddAdminAdmin");
+                break;
+            case "AddBankerAdmin":
+                DynamicPanel.add(new swing.admin.AddBanker(this), "AddBankerAdmin");
+                break;
+            case "AdminsAdmin":
+                DynamicPanel.add(new swing.admin.Admins(this), "AdminsAdmin");
+                break;
+            case "BankersAdmin":
+                DynamicPanel.add(new swing.admin.Bankers(this), "BankersAdmin");
+                break;
+            case "CurrencyRateAdmin":
+                DynamicPanel.add(new swing.admin.CurrencyRate(this), "CurrencyRateAdmin");
+                break;
+            case "CustomersAdmin":
+                DynamicPanel.add(new swing.admin.Customers(this), "CustomersAdmin");
+                break;
+            case "DeleteBankerAdmin":
+                DynamicPanel.add(new swing.admin.DeleteBanker(this), "DeleteBankerAdmin");
+                break;
+            case "EditBankerAdmin":
+                DynamicPanel.add(new swing.admin.EditBanker(this), "EditBankerAdmin");
+                break;
+            case "EditMoneyAdmin":
+                DynamicPanel.add(new swing.admin.EditMoney(this), "EditMoneyAdmin");
+                break;
+            case "HomeAdmin":
+                DynamicPanel.add(new swing.admin.Home(this), "HomeAdmin");
+                break;
+            case "LoginAdmin":
+                DynamicPanel.add(new swing.admin.Login(this), "LoginAdmin");
+                break;
+            case "SettingsAdmin":
+                DynamicPanel.add(new swing.admin.Settings(this), "SettingsAdmin");
+                break;
+            // Banker
+            case "AddCustomerBanker":
+                DynamicPanel.add(new swing.banker.AddCustomer(this), "AddCustomerBanker");
+                break;
+            case "BalanceBanker":
+                DynamicPanel.add(new swing.banker.Balance(this), "BalanceBanker");
+                break;
+            case "BankersBanker":
+                DynamicPanel.add(new swing.banker.Bankers(this), "BankersBanker");
+                break;
+            case "CustomersBanker":
+                DynamicPanel.add(new swing.banker.Customers(this), "CustomersBanker");
+                break;
+            case "DeleteCustomerBanker":
+                DynamicPanel.add(new swing.banker.DeleteCustomer(this), "DeleteCustomerBanker");
+                break;
+            case "EditCustomerBanker":
+                DynamicPanel.add(new swing.banker.EditCustomer(this), "EditCustomerBanker");
+                break;
+            case "HomeBanker":
+                DynamicPanel.add(new swing.banker.Home(this), "HomeBanker");
+                break;
+            case "LoginBanker":
+                DynamicPanel.add(new swing.banker.Login(this), "LoginBanker");
+                break;
+            case "SettingsBanker":
+                DynamicPanel.add(new swing.banker.Settings(this), "SettingsBanker");
+                break;
+            case "TransactionsBanker":
+                DynamicPanel.add(new swing.banker.Transactions(this), "TransactionsBanker");
+                break;
+            // Customer
+            case "BalanceCustomer":
+                DynamicPanel.add(new swing.customer.Balance(this), "BalanceCustomer");
+                break;
+            case "DepositCustomer":
+                DynamicPanel.add(new swing.customer.Deposit(this), "DepositCustomer");
+                break;
+            case "HomeCustomer":
+                DynamicPanel.add(new swing.customer.Home(this), "HomeCustomer");
+                break;
+            case "InformationCustomer":
+                DynamicPanel.add(new swing.customer.Information(this), "InformationCustomer");
+                break;
+            case "LoginCustomer":
+                DynamicPanel.add(new swing.customer.Login(this), "LoginCustomer");
+                break;
+            case "ReceiptCustomer":
+                DynamicPanel.add(new swing.customer.Receipt(this), "ReceiptCustomer");
+                break;
+            case "SettingsCustomer":
+                DynamicPanel.add(new swing.customer.Settings(this), "SettingsCustomer");
+                break;
+            case "TransactionsCustomer":
+                DynamicPanel.add(new swing.customer.Transactions(this), "TransactionsCustomer");
+                break;
+            case "TransferCustomer":
+                DynamicPanel.add(new swing.customer.Transfer(this), "TransferCustomer");
+                break;
+            case "TransferMoneyCustomer":
+                DynamicPanel.add(new swing.customer.TransferMoney(this), "TransferMoneyCustomer");
+                break;
+            case "WarningCustomer":
+                DynamicPanel.add(new swing.customer.Warning(this), "WarningCustomer");
+                break;
+            case "WithdrawalCustomer":
+                DynamicPanel.add(new swing.customer.Withdrawal(this), "WithdrawalCustomer");
+                break;
+            default:
+                break;
         }
 
         CardLayout cl = (CardLayout) DynamicPanel.getLayout();
