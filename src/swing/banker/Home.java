@@ -5,6 +5,8 @@
  */
 package swing.banker;
 
+import java.awt.event.ActionEvent;
+import javax.swing.Timer;
 import library.*;
 
 /**
@@ -14,6 +16,7 @@ import library.*;
 public class Home extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form Home
@@ -24,8 +27,12 @@ public class Home extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        mainlabel.setText("Welcome " + Data.getBanker().getId().getFullName());
-        mainlabel2.setText("Salary: " + Data.currencyFormat(0, Data.getBanker().getBankerSalary()));
+        timer = new Timer(2000, (ActionEvent e) -> {
+            mainlabel.setText("Welcome " + Data.getBanker().getId().getFullName());
+            mainlabel2.setText("Salary: " + Data.currencyFormat(0, Data.getBanker().getBankerSalary()));
+        });
+        timer.setInitialDelay(0);
+        timer.start();
     }
 
     /**
@@ -299,39 +306,66 @@ public class Home extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void customersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customersbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("CustomersBanker");
     }//GEN-LAST:event_customersbtnActionPerformed
 
     private void balancebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balancebtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("BalanceBanker");
     }//GEN-LAST:event_balancebtnActionPerformed
 
     private void bankersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankersbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("BankersBanker");
     }//GEN-LAST:event_bankersbtnActionPerformed
 
     private void settingsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("SettingsBanker");
     }//GEN-LAST:event_settingsbtnActionPerformed
 
     private void deletecustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletecustomerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("DeleteCustomerBanker");
     }//GEN-LAST:event_deletecustomerbtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
         Data.setBanker(null);
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("LoginBanker");
     }//GEN-LAST:event_logoutbtnActionPerformed
 
     private void addcustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcustomerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("AddCustomerBanker");
     }//GEN-LAST:event_addcustomerbtnActionPerformed
 
     private void editcustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editcustomerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("EditCustomerBanker");
     }//GEN-LAST:event_editcustomerbtnActionPerformed
 
     private void transactionsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionsbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("TransactionsBanker");
     }//GEN-LAST:event_transactionsbtnActionPerformed
 

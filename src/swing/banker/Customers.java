@@ -57,8 +57,8 @@ public class Customers extends javax.swing.JPanel {
                         model.setRowCount(0);
                     }
                     load = (ArrayList<ArrayList<String>>) data.clone();
-                    Collections.sort(data, new CustomComparator(0));
-                    Integer columns[] = {0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+                    Collections.sort(data, new CustomComparator(15));
+                    Integer columns[] = {0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15};
                     for (int i = 0; i < data.size(); i++) {
                         int column = 0;
                         String[] row = new String[data.get(i).size()];
@@ -197,14 +197,14 @@ public class Customers extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Card Number", "Full Name", "Date of Birth", "Job", "Phone Number", "Dollar", "Euro", "Pound", "Turkish Lira", "Home Address", "Password"
+                "ID", "Card Number", "Full Name", "Date of Birth", "Job", "Phone Number", "Dollar", "Euro", "Pound", "Turkish Lira", "Home Address", "Password", "Created At", "Updated At"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

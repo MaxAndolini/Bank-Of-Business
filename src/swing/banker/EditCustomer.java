@@ -8,7 +8,9 @@ package swing.banker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import javax.swing.Timer;
 import javax.swing.text.AbstractDocument;
 import library.*;
@@ -152,6 +154,7 @@ public class EditCustomer extends javax.swing.JPanel {
                                 Database.set("Accounts", "ID", ID, "PhoneNumber", phonenumbertext.getText());
                                 Database.set("Accounts", "ID", ID, "HomeAddress", homeaddresstext.getText());
                                 Database.set("Accounts", "ID", ID, "Password", passwordtext.getText());
+                                Database.set("Accounts", "ID", ID, "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
                                 fullnametext.setText(null);
                                 dateofbirthtext.setText(null);
                                 jobtext.setText(null);

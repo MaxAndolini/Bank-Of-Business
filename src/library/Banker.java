@@ -6,6 +6,8 @@
 package library;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -35,6 +37,7 @@ public class Banker extends User {
         this.bankerSalary = bankerSalary;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -42,6 +45,7 @@ public class Banker extends User {
         this.bankerSalary = getBankerSalary().add(bankerSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -49,6 +53,7 @@ public class Banker extends User {
         this.bankerSalary = getBankerSalary().subtract(bankerSalary);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Salary", this.bankerSalary);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 }

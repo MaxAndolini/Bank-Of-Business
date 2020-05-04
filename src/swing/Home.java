@@ -19,7 +19,7 @@ import library.*;
 public class Home extends javax.swing.JFrame {
 
     /**
-     * Creates new form Homee
+     * Creates new form Home
      */
     public Home() {
         initComponents();
@@ -34,8 +34,8 @@ public class Home extends javax.swing.JFrame {
         created = Database.fcreate("Accounts");
         if (created == true) {
             int column = Database.columnExists("Accounts");
-            if (column != 14) {
-                Database.createColumn("Accounts", 0, 14);
+            if (column != 16) {
+                Database.createColumn("Accounts", 0, 16);
             }
 
             Database.setColumn("Accounts", 0, "ID");
@@ -52,14 +52,18 @@ public class Home extends javax.swing.JFrame {
             Database.setColumn("Accounts", 11, "HomeAddress");
             Database.setColumn("Accounts", 12, "Password");
             Database.setColumn("Accounts", 13, "Salary");
+            Database.setColumn("Accounts", 14, "CreatedAt");
+            Database.setColumn("Accounts", 15, "UpdatedAt");
 
             String ID = Database.create("Accounts");
             if (ID != null) {
+                Date date = new Date();
                 Database.set("Accounts", "ID", ID, "AccountType", 2);
                 Database.set("Accounts", "ID", ID, "FullName", "Admin");
-                Database.set("Accounts", "ID", ID, "DateofBirth", new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
+                Database.set("Accounts", "ID", ID, "DateofBirth", new SimpleDateFormat("dd/MM/yyyy").format(date));
                 Database.set("Accounts", "ID", ID, "Password", "Admin123@");
                 Database.set("Accounts", "ID", ID, "Salary", "1");
+                Database.set("Accounts", "ID", ID, "CreatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
             }
         }
 

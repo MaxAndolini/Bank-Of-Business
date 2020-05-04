@@ -9,7 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import javax.swing.Timer;
 import javax.swing.text.AbstractDocument;
 import library.*;
@@ -137,6 +139,7 @@ public class EditMoney extends javax.swing.JPanel {
                                         Database.set("Accounts", "ID", ID, "Euro", euro);
                                         Database.set("Accounts", "ID", ID, "Pound", pound);
                                         Database.set("Accounts", "ID", ID, "TurkishLira", turkishlira);
+                                        Database.set("Accounts", "ID", ID, "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
                                         dollartext.setText(null);
                                         eurotext.setText(null);
                                         poundtext.setText(null);

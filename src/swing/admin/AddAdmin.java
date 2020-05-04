@@ -7,6 +7,8 @@ package swing.admin;
 
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.text.AbstractDocument;
 import library.*;
 
@@ -62,6 +64,7 @@ public class AddAdmin extends javax.swing.JPanel {
                             Database.set("Accounts", "ID", ID, "HomeAddress", homeaddresstext.getText());
                             Database.set("Accounts", "ID", ID, "Password", passwordtext.getText());
                             Database.set("Accounts", "ID", ID, "Salary", salary);
+                            Database.set("Accounts", "ID", ID, "CreatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
                             fullnametext.setText(null);
                             dateofbirthtext.setText(null);
                             phonenumbertext.setText(null);

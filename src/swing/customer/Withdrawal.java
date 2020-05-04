@@ -5,8 +5,10 @@
  */
 package swing.customer;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
+import javax.swing.Timer;
 import javax.swing.text.AbstractDocument;
 import library.*;
 
@@ -17,6 +19,7 @@ import library.*;
 public class Withdrawal extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form Withdrawal
@@ -29,10 +32,14 @@ public class Withdrawal extends javax.swing.JPanel {
 
         ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 5));
 
-        dolaralabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
-        euroalabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
-        poundalabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
-        turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+        timer = new Timer(2000, (ActionEvent e) -> {
+            dolaralabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+            euroalabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+            poundalabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+            turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+        });
+        timer.setInitialDelay(0);
+        timer.start();
     }
 
     public void withdrawal(BigDecimal money, int moneyType) {
@@ -40,6 +47,9 @@ public class Withdrawal extends javax.swing.JPanel {
         Data.setPage2("WithdrawalCustomer");
         Data.setMoney(money);
         Data.setMoneyType(moneyType);
+        if (timer != null) {
+            timer.stop();
+        }
         if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
             frame.ChangeJPanel("InformationCustomer");
         } else {
@@ -463,6 +473,9 @@ public class Withdrawal extends javax.swing.JPanel {
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelbtnActionPerformed
 

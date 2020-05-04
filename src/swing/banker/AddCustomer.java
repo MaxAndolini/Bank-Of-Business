@@ -6,6 +6,8 @@
 package swing.banker;
 
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.text.AbstractDocument;
 import library.*;
 
@@ -64,6 +66,7 @@ public class AddCustomer extends javax.swing.JPanel {
                         Database.set("Accounts", "ID", ID, "TurkishLira", 0);
                         Database.set("Accounts", "ID", ID, "HomeAddress", homeaddresstext.getText());
                         Database.set("Accounts", "ID", ID, "Password", passwordtext.getText());
+                        Database.set("Accounts", "ID", ID, "CreatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
                         fullnametext.setText(null);
                         dateofbirthtext.setText(null);
                         jobtext.setText(null);

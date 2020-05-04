@@ -6,6 +6,8 @@
 package library;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -50,6 +52,7 @@ public class Customer extends User {
         this.cardNumber = cardNumber;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "CardNumber", cardNumber);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -63,6 +66,7 @@ public class Customer extends User {
         this.job = job;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Job", job);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -76,6 +80,7 @@ public class Customer extends User {
         this.dollar = dollar;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Dollar", this.dollar);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -83,6 +88,7 @@ public class Customer extends User {
         this.dollar = getDollar().add(dollar);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Dollar", this.dollar);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -90,6 +96,7 @@ public class Customer extends User {
         this.dollar = getDollar().subtract(dollar);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Dollar", this.dollar);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -103,6 +110,7 @@ public class Customer extends User {
         this.euro = euro;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Euro", this.euro);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -110,6 +118,7 @@ public class Customer extends User {
         this.euro = getEuro().add(euro);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Euro", this.euro);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -117,6 +126,7 @@ public class Customer extends User {
         this.euro = getEuro().subtract(euro);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Euro", this.euro);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -130,6 +140,7 @@ public class Customer extends User {
         this.pound = pound;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Pound", this.pound);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -137,6 +148,7 @@ public class Customer extends User {
         this.pound = getPound().add(pound);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Pound", this.pound);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -144,6 +156,7 @@ public class Customer extends User {
         this.pound = getPound().subtract(pound);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "Pound", this.pound);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -157,6 +170,7 @@ public class Customer extends User {
         this.turkishLira = turkishLira;
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "TurkishLira", this.turkishLira);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -164,6 +178,7 @@ public class Customer extends User {
         this.turkishLira = getTurkishLira().add(turkishLira);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "TurkishLira", this.turkishLira);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -171,6 +186,7 @@ public class Customer extends User {
         this.turkishLira = getTurkishLira().subtract(turkishLira);
         if (save == 1) {
             Database.set("Accounts", "ID", getId().getID(), "TurkishLira", this.turkishLira);
+            Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 

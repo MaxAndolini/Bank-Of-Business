@@ -5,8 +5,10 @@
  */
 package swing.customer;
 
+import java.awt.event.ActionEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.Timer;
 import library.*;
 
 /**
@@ -16,6 +18,7 @@ import library.*;
 public class Receipt extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form Receipt
@@ -120,11 +123,16 @@ public class Receipt extends javax.swing.JPanel {
                     case "TransferMoneyCustomer":
                         Data.getCustomer().subtractDollar(Data.getMoney(), 1);
                         Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Dollar", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Dollar").add(Data.getMoney())));
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
                         break;
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+                timer = new Timer(2000, (ActionEvent e) -> {
+                    rtotalbalancetlabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+                });
+                timer.setInitialDelay(0);
+                timer.start();
                 break;
 
             case 1:
@@ -138,11 +146,16 @@ public class Receipt extends javax.swing.JPanel {
                     case "TransferMoneyCustomer":
                         Data.getCustomer().subtractEuro(Data.getMoney(), 1);
                         Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Euro", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Euro").add(Data.getMoney())));
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
                         break;
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+                timer = new Timer(2000, (ActionEvent e) -> {
+                    rtotalbalancetlabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+                });
+                timer.setInitialDelay(0);
+                timer.start();
                 break;
 
             case 2:
@@ -156,11 +169,16 @@ public class Receipt extends javax.swing.JPanel {
                     case "TransferMoneyCustomer":
                         Data.getCustomer().subtractPound(Data.getMoney(), 1);
                         Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Pound", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "Pound").add(Data.getMoney())));
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
                         break;
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+                timer = new Timer(2000, (ActionEvent e) -> {
+                    rtotalbalancetlabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+                });
+                timer.setInitialDelay(0);
+                timer.start();
                 break;
 
             case 3:
@@ -174,11 +192,16 @@ public class Receipt extends javax.swing.JPanel {
                     case "TransferMoneyCustomer":
                         Data.getCustomer().subtractTurkishLira(Data.getMoney(), 1);
                         Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "TurkishLira", (Database.getBigDecimal("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "TurkishLira").add(Data.getMoney())));
+                        Database.set("Accounts", ((Data.getTransfer().length() != 16) ? ("ID") : ("CardNumber")), Data.getTransfer(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
                         break;
                     default:
                         break;
                 }
-                rtotalbalancetlabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+                timer = new Timer(2000, (ActionEvent e) -> {
+                    rtotalbalancetlabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+                });
+                timer.setInitialDelay(0);
+                timer.start();
                 break;
 
             default:
@@ -481,12 +504,18 @@ public class Receipt extends javax.swing.JPanel {
         Data.setCustomer(null);
         Data.setPage1(null);
         Data.setPage2(null);
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("LoginCustomer");
     }//GEN-LAST:event_exitbtnActionPerformed
 
     private void mainmenubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenubtnActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("HomeCustomer");
     }//GEN-LAST:event_mainmenubtnActionPerformed
 

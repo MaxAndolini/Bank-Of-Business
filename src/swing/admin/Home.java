@@ -5,6 +5,8 @@
  */
 package swing.admin;
 
+import java.awt.event.ActionEvent;
+import javax.swing.Timer;
 import library.*;
 
 /**
@@ -14,6 +16,7 @@ import library.*;
 public class Home extends javax.swing.JPanel {
 
     final private swing.Home frame;
+    Timer timer;
 
     /**
      * Creates new form Home
@@ -24,8 +27,12 @@ public class Home extends javax.swing.JPanel {
         initComponents();
         frame = home;
         
-        mainlabel.setText("Welcome " + Data.getAdmin().getId().getFullName());
-        mainlabel2.setText("Salary: " + Data.currencyFormat(0, Data.getAdmin().getAdminSalary()));
+        timer = new Timer(2000, (ActionEvent e) -> {
+            mainlabel.setText("Welcome " + Data.getAdmin().getId().getFullName());
+            mainlabel2.setText("Salary: " + Data.currencyFormat(0, Data.getAdmin().getAdminSalary()));
+        });
+        timer.setInitialDelay(0);
+        timer.start();
     }
 
     /**
@@ -343,47 +350,80 @@ public class Home extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addadminbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addadminbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("AddAdminAdmin");
     }//GEN-LAST:event_addadminbtnActionPerformed
 
     private void editmoneybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editmoneybtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("EditMoneyAdmin");
     }//GEN-LAST:event_editmoneybtnActionPerformed
 
     private void currencyratebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currencyratebtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("CurrencyRateAdmin");
     }//GEN-LAST:event_currencyratebtnActionPerformed
 
     private void customersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customersbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("CustomersAdmin");
     }//GEN-LAST:event_customersbtnActionPerformed
 
     private void deletebankerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebankerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("DeleteBankerAdmin");
     }//GEN-LAST:event_deletebankerbtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
         Data.setAdmin(null);
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("LoginAdmin");
     }//GEN-LAST:event_logoutbtnActionPerformed
 
     private void addbankerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbankerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("AddBankerAdmin");
     }//GEN-LAST:event_addbankerbtnActionPerformed
 
     private void editbankerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbankerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("EditBankerAdmin");
     }//GEN-LAST:event_editbankerbtnActionPerformed
 
     private void settingsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("SettingsAdmin");
     }//GEN-LAST:event_settingsbtnActionPerformed
 
     private void bankersbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankersbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("BankersAdmin");
     }//GEN-LAST:event_bankersbtnActionPerformed
 
     private void adminsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminsbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
         frame.ChangeJPanel("AdminsAdmin");
     }//GEN-LAST:event_adminsbtnActionPerformed
 

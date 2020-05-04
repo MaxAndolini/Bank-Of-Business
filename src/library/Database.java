@@ -75,7 +75,7 @@ public class Database {
 
     public static boolean fempty(String filename) {
         if (filename == null || filename.isBlank()) {
-            return false;
+            return true;
         }
         try {
             if (Files.size(Paths.get("Database/" + filename + ".txt")) > 0) {
@@ -83,7 +83,7 @@ public class Database {
             }
         } catch (IOException ex) {
             System.out.println(ex.toString());
-            return false;
+            return true;
         }
         return true;
     }
@@ -212,17 +212,13 @@ public class Database {
         } else {
             try {
                 for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
-                    String newline = "";
                     String[] tmpline = line.split("[|]");
                     tmpline[columnpos] += "|";
                     for (int i = 0; i < columnnum - 1; i++) {
                         tmpline[columnpos] += "-|";
                     }
                     tmpline[columnpos] += "-";
-                    for (String tmpline2 : tmpline) {
-                        newline += (!tmpline2.equals("") ? (tmpline2 + "|") : "");
-                    }
-                    newlines.add(newline);
+                    newlines.add(String.join("|", tmpline) + "|");
                 }
             } catch (IOException ex) {
                 System.out.println(ex.toString());
@@ -259,15 +255,11 @@ public class Database {
         ArrayList<String> newlines = new ArrayList<>();
         try {
             for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
-                String newline = "";
                 String[] tmpline = line.split("[|]");
                 if (count == 0) {
                     tmpline[column] = name;
-                    for (String tmpline2 : tmpline) {
-                        newline += (!tmpline2.equals("") ? (tmpline2 + "|") : "-|");
-                    }
+                    newlines.add(String.join("|", tmpline) + "|");
                     count++;
-                    newlines.add(newline);
                 } else {
                     newlines.add(line);
                 }
@@ -302,13 +294,9 @@ public class Database {
         ArrayList<String> newlines = new ArrayList<>();
         try {
             for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
-                String newline = "";
                 String[] tmpline = line.split("[|]");
                 tmpline[column] = "";
-                for (String tmpline2 : tmpline) {
-                    newline += (!tmpline2.equals("") ? (tmpline2 + "|") : "");
-                }
-                newlines.add(newline);
+                newlines.add(String.join("|", tmpline) + "|");
             }
         } catch (IOException ex) {
             System.out.println(ex.toString());
@@ -350,7 +338,7 @@ public class Database {
             }
         } catch (IOException ex) {
             System.out.println(ex.toString());
-            return 0;
+            return -1;
         }
         return -1;
     }
@@ -518,14 +506,10 @@ public class Database {
         ArrayList<String> newlines = new ArrayList<>();
         try {
             for (String line : Files.readAllLines(Paths.get("Database/" + filename + ".txt"), StandardCharsets.UTF_8)) {
-                String newline = "";
                 String[] tmpline = line.split("[|]");
                 if (tmpline[columnid].equals(columnvalue)) {
                     tmpline[dataid] = name;
-                    for (String tmpline2 : tmpline) {
-                        newline += (!tmpline2.equals("") ? (tmpline2 + "|") : "-|");
-                    }
-                    newlines.add(newline);
+                    newlines.add(String.join("|", tmpline) + "|");
                 } else {
                     newlines.add(line);
                 }

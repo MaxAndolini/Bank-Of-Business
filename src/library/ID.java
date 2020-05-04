@@ -5,6 +5,9 @@
  */
 package library;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author ercan
@@ -45,6 +48,7 @@ public class ID {
         this.fullName = fullName;
         if (save == 1) {
             Database.set("Accounts", "ID", getID(), "FullName", this.fullName);
+            Database.set("Accounts", "ID", getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 
@@ -58,6 +62,7 @@ public class ID {
         this.dateOfBirth = dateOfBirth;
         if (save == 1) {
             Database.set("Accounts", "ID", getID(), "DateofBirth", this.dateOfBirth);
+            Database.set("Accounts", "ID", getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
 }
