@@ -49,7 +49,7 @@ public class CurrencyRate extends javax.swing.JPanel {
                     if (load != null) {
                         model.setRowCount(0);
                     }
-                    load = (ArrayList<ArrayList<String>>) data.clone();
+                    load = new ArrayList<>(data);
                     Integer columns[] = {0, 1, 2, 3, 4};
                     for (int i = 0; i < data.size(); i++) {
                         int column = 0;

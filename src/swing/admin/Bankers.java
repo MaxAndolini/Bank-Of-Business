@@ -56,7 +56,7 @@ public class Bankers extends javax.swing.JPanel {
                     if (load != null) {
                         model.setRowCount(0);
                     }
-                    load = (ArrayList<ArrayList<String>>) data.clone();
+                    load = new ArrayList<>(data);
                     Collections.sort(data, new CustomComparator(15));
                     Integer columns[] = {0, 3, 4, 6, 11, 13, 14, 15};
                     for (int i = 0; i < data.size(); i++) {

@@ -1172,7 +1172,7 @@ public class Database {
         return getArrayListPrivate(filename, column, Integer.toString(columnvalue), null, null);
     }
 
-    public static ArrayList getArrayList(String filename, String column, String columnvalue) {
+    public static ArrayList<ArrayList<String>> getArrayList(String filename, String column, String columnvalue) {
         return getArrayListPrivate(filename, column, columnvalue, null, null);
     }
 

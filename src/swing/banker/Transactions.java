@@ -62,7 +62,7 @@ public class Transactions extends javax.swing.JPanel {
                     if (load != null) {
                         model.setRowCount(0);
                     }
-                    load = (ArrayList<ArrayList<String>>) data.clone();
+                    load = new ArrayList<>(data);
                     Collections.sort(data, new CustomComparator(7));
                     Integer columns[] = {0, 1, 2, 3, 4, 5, 6, 7};
                     for (int i = 0; i < data.size(); i++) {
