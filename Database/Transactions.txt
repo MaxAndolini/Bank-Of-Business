@@ -6,3 +6,7 @@ ID|Account|Transaction|Type|Amount|TransferTo|TransferFrom|DateTime|
 4|3|Withdrawal|Dollar|300|-|-|04/05/2020 11:56:45|
 5|3|Transfer|Dollar|100|2|-|04/05/2020 11:57:05|
 6|2|Transfer|Dollar|100|-|3|04/05/2020 11:57:05|
+7|1|Deposit|Dollar|500|-|-|07/05/2020 01:47:29|
+8|1|Withdrawal|Dollar|40|-|-|07/05/2020 01:48:21|
+9|1|Transfer|Dollar|200|3|-|07/05/2020 01:49:25|
+10|3|Transfer|Dollar|200|-|1|07/05/2020 01:49:25|
