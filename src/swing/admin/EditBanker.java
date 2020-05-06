@@ -641,10 +641,6 @@ public class EditBanker extends javax.swing.JPanel {
                 searchtext.setText(null);
                 break;
             case 1:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
-                searchtext.setText(null);
-                break;
-            case 2:
                 ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
                 searchtext.setText(null);
                 break;
