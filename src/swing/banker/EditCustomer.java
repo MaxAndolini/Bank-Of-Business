@@ -35,7 +35,7 @@ public class EditCustomer extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
+        ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
         ((AbstractDocument) fullnametext.getDocument()).setDocumentFilter(new Filter(0, 32));
         ((AbstractDocument) dateofbirthtext.getDocument()).setDocumentFilter(new Filter(0, 10));
         ((AbstractDocument) jobtext.getDocument()).setDocumentFilter(new Filter(0, 32));
@@ -265,6 +265,11 @@ public class EditCustomer extends javax.swing.JPanel {
         searchtype.setForeground(new java.awt.Color(23, 35, 51));
         searchtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Card Number", "Full Name" }));
         searchtype.setToolTipText("");
+        searchtype.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                searchtypeİtemStateChanged(evt);
+            }
+        });
 
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -622,6 +627,25 @@ public class EditCustomer extends javax.swing.JPanel {
             editCustomer();
         }
     }//GEN-LAST:event_passwordtextKeyPressed
+
+    private void searchtypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchtypeİtemStateChanged
+        switch (evt.getStateChange()) {
+            case 0:
+                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchtext.setText(null);
+                break;
+            case 1:
+                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchtext.setText(null);
+                break;
+            case 2:
+                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
+                searchtext.setText(null);
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_searchtypeİtemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

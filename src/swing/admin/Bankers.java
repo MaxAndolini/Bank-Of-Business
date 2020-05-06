@@ -36,7 +36,7 @@ public class Bankers extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
+        ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
         bankerstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
 
         String[] typename = {"ID", "FullName"};
@@ -169,6 +169,11 @@ public class Bankers extends javax.swing.JPanel {
         searchtype.setForeground(new java.awt.Color(23, 35, 51));
         searchtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Full Name" }));
         searchtype.setToolTipText("");
+        searchtype.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                searchtypeİtemStateChanged(evt);
+            }
+        });
 
         okbtn.setBackground(new java.awt.Color(23, 35, 51));
         okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -320,6 +325,25 @@ public class Bankers extends javax.swing.JPanel {
             bankers();
         }
     }//GEN-LAST:event_searchtextKeyPressed
+
+    private void searchtypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchtypeİtemStateChanged
+        switch (evt.getStateChange()) {
+            case 0:
+                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchtext.setText(null);
+                break;
+            case 1:
+                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchtext.setText(null);
+                break;
+            case 2:
+                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
+                searchtext.setText(null);
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_searchtypeİtemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
