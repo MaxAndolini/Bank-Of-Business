@@ -44,20 +44,43 @@ public class MainSelect extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        adminbtn = new java.awt.Button();
-        bankerbtn = new java.awt.Button();
-        customerbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
-        adminicon = new javax.swing.JLabel();
-        bankericon = new javax.swing.JLabel();
-        customericon = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
         mainlabel2 = new javax.swing.JLabel();
+        infolabel = new javax.swing.JLabel();
+        adminbtn = new java.awt.Button();
+        adminicon = new javax.swing.JLabel();
+        bankerbtn = new java.awt.Button();
+        bankericon = new javax.swing.JLabel();
+        customerbtn = new java.awt.Button();
+        customericon = new javax.swing.JLabel();
+        creditsbtn = new java.awt.Button();
+        creditsicon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
+
+        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainlabel.setText("Welcome to Bank of Business");
+        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+
+        mainlabel2.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainlabel2.setForeground(new java.awt.Color(255, 255, 255));
+        mainlabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        mainlabel2.setText("28 March 2020");
+        mainlabel2.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
+
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel.setText("You can select the actions to do from below.");
 
         adminbtn.setBackground(new java.awt.Color(23, 35, 51));
         adminbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -69,6 +92,8 @@ public class MainSelect extends javax.swing.JPanel {
             }
         });
 
+        adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
+
         bankerbtn.setBackground(new java.awt.Color(23, 35, 51));
         bankerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         bankerbtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,6 +103,8 @@ public class MainSelect extends javax.swing.JPanel {
                 bankerbtnActionPerformed(evt);
             }
         });
+
+        bankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_registration_48px.png"))); // NOI18N
 
         customerbtn.setBackground(new java.awt.Color(23, 35, 51));
         customerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -89,68 +116,59 @@ public class MainSelect extends javax.swing.JPanel {
             }
         });
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Welcome to Bank of Business");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
-
-        adminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
-
-        bankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_registration_48px.png"))); // NOI18N
-
         customericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_user_male_48px.png"))); // NOI18N
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("You can select the actions to do from below.");
+        creditsbtn.setBackground(new java.awt.Color(23, 35, 51));
+        creditsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        creditsbtn.setForeground(new java.awt.Color(255, 255, 255));
+        creditsbtn.setLabel("Credits");
+        creditsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditsbtnActionPerformed(evt);
+            }
+        });
 
-        mainlabel2.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel2.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        mainlabel2.setText("28 March 2020");
-        mainlabel2.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
+        creditsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_manager_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(300, 300, 300))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(426, 426, 426)
-                        .addComponent(bankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(228, 228, 228)
-                        .addComponent(customerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(852, 852, 852))
+                            .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(74, 74, 74)
-                                .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(adminicon)
-                .addGap(378, 378, 378)
-                .addComponent(bankericon)
-                .addGap(378, 378, 378)
-                .addComponent(customericon)
-                .addGap(85, 85, 85))
+                                .addComponent(mainlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(426, 426, 426)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(creditsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bankerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(228, 228, 228)
+                                        .addComponent(customerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(adminicon)
+                        .addGap(378, 378, 378)
+                        .addComponent(bankericon)
+                        .addGap(378, 378, 378)
+                        .addComponent(customericon)))
+                .addGap(10, 10, 10))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(300, 300, 300))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(creditsicon)
+                        .addGap(511, 511, 511))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +184,7 @@ public class MainSelect extends javax.swing.JPanel {
                     .addComponent(bankericon)
                     .addComponent(adminicon)
                     .addComponent(customericon))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(adminbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,7 +192,11 @@ public class MainSelect extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(customerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)))
-                .addGap(207, 207, 207))
+                .addGap(41, 41, 41)
+                .addComponent(creditsicon)
+                .addGap(10, 10, 10)
+                .addComponent(creditsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -185,13 +207,6 @@ public class MainSelect extends javax.swing.JPanel {
         frame.ChangeJPanel("LoginAdmin");
     }//GEN-LAST:event_adminbtnActionPerformed
 
-    private void customerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerbtnActionPerformed
-        if (timer != null) {
-            timer.stop();
-        }
-        frame.ChangeJPanel("LoginCustomer");
-    }//GEN-LAST:event_customerbtnActionPerformed
-
     private void bankerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankerbtnActionPerformed
         if (timer != null) {
             timer.stop();
@@ -199,12 +214,28 @@ public class MainSelect extends javax.swing.JPanel {
         frame.ChangeJPanel("LoginBanker");
     }//GEN-LAST:event_bankerbtnActionPerformed
 
+    private void customerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
+        frame.ChangeJPanel("LoginCustomer");
+    }//GEN-LAST:event_customerbtnActionPerformed
+
+    private void creditsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsbtnActionPerformed
+        if (timer != null) {
+            timer.stop();
+        }
+        frame.ChangeJPanel("Credits");
+    }//GEN-LAST:event_creditsbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button adminbtn;
     private javax.swing.JLabel adminicon;
     private java.awt.Button bankerbtn;
     private javax.swing.JLabel bankericon;
+    private java.awt.Button creditsbtn;
+    private javax.swing.JLabel creditsicon;
     private java.awt.Button customerbtn;
     private javax.swing.JLabel customericon;
     private javax.swing.JLabel infolabel;

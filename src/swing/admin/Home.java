@@ -44,86 +44,36 @@ public class Home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addadminbtn = new java.awt.Button();
-        addbankerbtn = new java.awt.Button();
-        editmoneybtn = new java.awt.Button();
-        currencyratebtn = new java.awt.Button();
-        customersbtn = new java.awt.Button();
         mainlabel = new javax.swing.JLabel();
         mainlabel2 = new javax.swing.JLabel();
+        infolabel = new javax.swing.JLabel();
+        addadminbtn = new java.awt.Button();
         addadminicon = new javax.swing.JLabel();
+        addbankerbtn = new java.awt.Button();
         addbankericon = new javax.swing.JLabel();
-        currencyrateicon = new javax.swing.JLabel();
-        editmoneyicon = new javax.swing.JLabel();
+        editbankerbtn = new java.awt.Button();
+        editbankericon = new javax.swing.JLabel();
         deletebankerbtn = new java.awt.Button();
         deletebankericon = new javax.swing.JLabel();
-        logoutbtn = new java.awt.Button();
-        logouticon = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        editbankerbtn = new java.awt.Button();
-        customersicon = new javax.swing.JLabel();
-        editbankericon = new javax.swing.JLabel();
-        settingsbtn = new java.awt.Button();
-        settingsicon = new javax.swing.JLabel();
-        bankersbtn = new java.awt.Button();
-        bankersicon = new javax.swing.JLabel();
         adminsbtn = new java.awt.Button();
         adminsicon = new javax.swing.JLabel();
+        bankersbtn = new java.awt.Button();
+        bankersicon = new javax.swing.JLabel();
+        customersbtn = new java.awt.Button();
+        customersicon = new javax.swing.JLabel();
+        currencyratebtn = new java.awt.Button();
+        currencyrateicon = new javax.swing.JLabel();
+        editmoneybtn = new java.awt.Button();
+        editmoneyicon = new javax.swing.JLabel();
+        settingsbtn = new java.awt.Button();
+        settingsicon = new javax.swing.JLabel();
+        logoutbtn = new java.awt.Button();
+        logouticon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
-
-        addadminbtn.setBackground(new java.awt.Color(23, 35, 51));
-        addadminbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        addadminbtn.setForeground(new java.awt.Color(255, 255, 255));
-        addadminbtn.setLabel("Add Admin");
-        addadminbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addadminbtnActionPerformed(evt);
-            }
-        });
-
-        addbankerbtn.setBackground(new java.awt.Color(23, 35, 51));
-        addbankerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        addbankerbtn.setForeground(new java.awt.Color(255, 255, 255));
-        addbankerbtn.setLabel("Add Banker");
-        addbankerbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addbankerbtnActionPerformed(evt);
-            }
-        });
-
-        editmoneybtn.setBackground(new java.awt.Color(23, 35, 51));
-        editmoneybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        editmoneybtn.setForeground(new java.awt.Color(255, 255, 255));
-        editmoneybtn.setLabel("Edit Money");
-        editmoneybtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editmoneybtnActionPerformed(evt);
-            }
-        });
-
-        currencyratebtn.setBackground(new java.awt.Color(23, 35, 51));
-        currencyratebtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        currencyratebtn.setForeground(new java.awt.Color(255, 255, 255));
-        currencyratebtn.setLabel("Currency Rate");
-        currencyratebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                currencyratebtnActionPerformed(evt);
-            }
-        });
-
-        customersbtn.setBackground(new java.awt.Color(23, 35, 51));
-        customersbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        customersbtn.setForeground(new java.awt.Color(255, 255, 255));
-        customersbtn.setLabel("Customers");
-        customersbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customersbtnActionPerformed(evt);
-            }
-        });
 
         mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
         mainlabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,13 +88,46 @@ public class Home extends javax.swing.JPanel {
         mainlabel2.setMinimumSize(new java.awt.Dimension(223, 47));
         mainlabel2.setPreferredSize(new java.awt.Dimension(223, 47));
 
+        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infolabel.setForeground(new java.awt.Color(255, 255, 255));
+        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infolabel.setText("You can select the actions to do from below.");
+
+        addadminbtn.setBackground(new java.awt.Color(23, 35, 51));
+        addadminbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        addadminbtn.setForeground(new java.awt.Color(255, 255, 255));
+        addadminbtn.setLabel("Add Admin");
+        addadminbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addadminbtnActionPerformed(evt);
+            }
+        });
+
         addadminicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_add_property_48px.png"))); // NOI18N
+
+        addbankerbtn.setBackground(new java.awt.Color(23, 35, 51));
+        addbankerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        addbankerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        addbankerbtn.setLabel("Add Banker");
+        addbankerbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addbankerbtnActionPerformed(evt);
+            }
+        });
 
         addbankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_add_property_48px.png"))); // NOI18N
 
-        currencyrateicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_cash_48px.png"))); // NOI18N
+        editbankerbtn.setBackground(new java.awt.Color(23, 35, 51));
+        editbankerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        editbankerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        editbankerbtn.setLabel("Edit Banker");
+        editbankerbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editbankerbtnActionPerformed(evt);
+            }
+        });
 
-        editmoneyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_change_48px_1.png"))); // NOI18N
+        editbankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_edit_property_48px.png"))); // NOI18N
 
         deletebankerbtn.setBackground(new java.awt.Color(23, 35, 51));
         deletebankerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -157,50 +140,19 @@ public class Home extends javax.swing.JPanel {
             }
         });
 
-        deletebankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px_1.png"))); // NOI18N
+        deletebankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px.png"))); // NOI18N
 
-        logoutbtn.setBackground(new java.awt.Color(23, 35, 51));
-        logoutbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        logoutbtn.setForeground(new java.awt.Color(255, 255, 255));
-        logoutbtn.setLabel("Logout");
-        logoutbtn.addActionListener(new java.awt.event.ActionListener() {
+        adminsbtn.setBackground(new java.awt.Color(23, 35, 51));
+        adminsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        adminsbtn.setForeground(new java.awt.Color(255, 255, 255));
+        adminsbtn.setLabel("Admins");
+        adminsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutbtnActionPerformed(evt);
+                adminsbtnActionPerformed(evt);
             }
         });
 
-        logouticon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
-
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("You can select the actions to do from below.");
-
-        editbankerbtn.setBackground(new java.awt.Color(23, 35, 51));
-        editbankerbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        editbankerbtn.setForeground(new java.awt.Color(255, 255, 255));
-        editbankerbtn.setLabel("Edit Banker");
-        editbankerbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editbankerbtnActionPerformed(evt);
-            }
-        });
-
-        customersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_user_male_48px.png"))); // NOI18N
-
-        editbankericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_edit_property_48px.png"))); // NOI18N
-
-        settingsbtn.setBackground(new java.awt.Color(23, 35, 51));
-        settingsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        settingsbtn.setForeground(new java.awt.Color(255, 255, 255));
-        settingsbtn.setLabel("Settings");
-        settingsbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                settingsbtnActionPerformed(evt);
-            }
-        });
-
-        settingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
+        adminsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
 
         bankersbtn.setBackground(new java.awt.Color(23, 35, 51));
         bankersbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
@@ -214,17 +166,65 @@ public class Home extends javax.swing.JPanel {
 
         bankersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_registration_48px.png"))); // NOI18N
 
-        adminsbtn.setBackground(new java.awt.Color(23, 35, 51));
-        adminsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        adminsbtn.setForeground(new java.awt.Color(255, 255, 255));
-        adminsbtn.setLabel("Admins");
-        adminsbtn.addActionListener(new java.awt.event.ActionListener() {
+        customersbtn.setBackground(new java.awt.Color(23, 35, 51));
+        customersbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        customersbtn.setForeground(new java.awt.Color(255, 255, 255));
+        customersbtn.setLabel("Customers");
+        customersbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminsbtnActionPerformed(evt);
+                customersbtnActionPerformed(evt);
             }
         });
 
-        adminsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_admin_settings_male_48px.png"))); // NOI18N
+        customersicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_user_male_48px.png"))); // NOI18N
+
+        currencyratebtn.setBackground(new java.awt.Color(23, 35, 51));
+        currencyratebtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        currencyratebtn.setForeground(new java.awt.Color(255, 255, 255));
+        currencyratebtn.setLabel("Currency Rate");
+        currencyratebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                currencyratebtnActionPerformed(evt);
+            }
+        });
+
+        currencyrateicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_cash_48px.png"))); // NOI18N
+
+        editmoneybtn.setBackground(new java.awt.Color(23, 35, 51));
+        editmoneybtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        editmoneybtn.setForeground(new java.awt.Color(255, 255, 255));
+        editmoneybtn.setLabel("Edit Money");
+        editmoneybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editmoneybtnActionPerformed(evt);
+            }
+        });
+
+        editmoneyicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_change_48px.png"))); // NOI18N
+
+        settingsbtn.setBackground(new java.awt.Color(23, 35, 51));
+        settingsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        settingsbtn.setForeground(new java.awt.Color(255, 255, 255));
+        settingsbtn.setLabel("Settings");
+        settingsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsbtnActionPerformed(evt);
+            }
+        });
+
+        settingsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_automatic_48px.png"))); // NOI18N
+
+        logoutbtn.setBackground(new java.awt.Color(23, 35, 51));
+        logoutbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        logoutbtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutbtn.setLabel("Logout");
+        logoutbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutbtnActionPerformed(evt);
+            }
+        });
+
+        logouticon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -302,7 +302,7 @@
     <Component class="javax.swing.JLabel" name="deletecustomericon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/swing/images/icons8_remove_property_48px_1.png"/>
+          <Image iconType="3" name="/swing/images/icons8_remove_property_48px.png"/>
         </Property>
       </Properties>
     </Component>

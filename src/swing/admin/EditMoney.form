@@ -403,7 +403,7 @@
     <Component class="javax.swing.JLabel" name="editicon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/swing/images/icons8_change_48px_1.png"/>
+          <Image iconType="3" name="/swing/images/icons8_change_48px.png"/>
         </Property>
       </Properties>
     </Component>

@@ -363,7 +363,7 @@ public class EditMoney extends javax.swing.JPanel {
             }
         });
 
-        editicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_change_48px_1.png"))); // NOI18N
+        editicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_change_48px.png"))); // NOI18N
 
         cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
         cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N

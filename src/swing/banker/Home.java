@@ -136,7 +136,7 @@ public class Home extends javax.swing.JPanel {
             }
         });
 
-        deletecustomericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px_1.png"))); // NOI18N
+        deletecustomericon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px.png"))); // NOI18N
 
         settingsbtn.setBackground(new java.awt.Color(23, 35, 51));
         settingsbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
