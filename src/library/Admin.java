@@ -56,4 +56,9 @@ public class Admin extends User {
             Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
+    
+    @Override
+    public String leavingMessage() {
+        return "Have a good day (admin) " + getId().getFullName() + "!";
+    }
 }

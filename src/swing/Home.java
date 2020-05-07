@@ -5,10 +5,17 @@
  */
 package swing;
 
+import java.awt.AWTException;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import library.*;
 
@@ -276,6 +283,11 @@ public class Home extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(23, 35, 51));
         jPanel2.setAlignmentX(0.0F);
@@ -390,12 +402,38 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
-        System.exit(0);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }//GEN-LAST:event_closebtnActionPerformed
 
     private void minimizebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizebtnActionPerformed
         setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_minimizebtnActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        if (SystemTray.isSupported()) {
+            String message;
+            if (Data.getAdmin() != null) {
+                message = Data.getAdmin().leavingMessage();
+            } else if (Data.getBanker() != null) {
+                message = Data.getBanker().leavingMessage();
+            } else if (Data.getCustomer() != null) {
+                message = Data.getCustomer().leavingMessage();
+            } else {
+                message = "See you later!";
+            }
+
+            TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/swing/images/icons8_bank_48px.png")), "Good Bye");
+            trayIcon.setImageAutoSize(true);
+
+            try {
+                SystemTray.getSystemTray().add(trayIcon);
+            } catch (AWTException ex) {
+                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            trayIcon.displayMessage("Bank of Business", message, TrayIcon.MessageType.INFO);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     int xx, xy;
 

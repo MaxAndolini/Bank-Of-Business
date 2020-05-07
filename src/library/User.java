@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author ercan
  */
-public class User {
+public abstract class User {
 
     private ID id;
     private String phoneNumber;
@@ -81,4 +81,6 @@ public class User {
             Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
+    
+    public abstract String leavingMessage();
 }

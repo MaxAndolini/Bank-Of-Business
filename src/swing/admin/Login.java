@@ -13,7 +13,7 @@ import library.*;
  *
  * @author ercan
  */
-public class Login extends javax.swing.JPanel {
+public class Login extends javax.swing.JPanel implements InterfaceLogin {
 
     final private swing.Home frame;
 
@@ -186,7 +186,8 @@ public class Login extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void login() {
+    @Override
+    public void login() {
 
         /*
         1) ^ - start of the string

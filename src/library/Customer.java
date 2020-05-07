@@ -193,4 +193,9 @@ public class Customer extends User {
     public String showCardNumber() {
         return this.cardNumber.replaceAll(".{4}(?!$)", "$0-");
     }
+    
+    @Override
+    public String leavingMessage() {
+        return "Thank you for choosing us!";
+    }
 }
