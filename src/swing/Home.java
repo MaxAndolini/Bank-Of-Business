@@ -422,13 +422,14 @@ public class Home extends javax.swing.JFrame {
                 message = "See you later!";
             }
 
-            TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/swing/images/icons8_bank_48px.png")), "Good Bye");
+            TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().createImage(getClass().getResource("/swing/images/icons8_bank_48px.png")), "Good Bye");
+            trayIcon.setToolTip("Bank of Business");
             trayIcon.setImageAutoSize(true);
 
             try {
                 SystemTray.getSystemTray().add(trayIcon);
             } catch (AWTException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.toString());
             }
 
             trayIcon.displayMessage("Bank of Business", message, TrayIcon.MessageType.INFO);
