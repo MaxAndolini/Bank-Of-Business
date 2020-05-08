@@ -29,7 +29,9 @@ public class Admin extends User {
 
     public BigDecimal getAdminSalary() {
         BigDecimal getAdminSalary = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Salary");
-        if(getAdminSalary.compareTo(this.adminSalary) != 0) setAdminSalary(getAdminSalary, 0);
+        if (getAdminSalary.compareTo(this.adminSalary) != 0) {
+            setAdminSalary(getAdminSalary, 0);
+        }
         return adminSalary;
     }
 
@@ -56,7 +58,7 @@ public class Admin extends User {
             Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
-    
+
     @Override
     public String leavingMessage() {
         return "Have a good day (admin) " + getId().getFullName() + "!";

@@ -29,7 +29,9 @@ public class Banker extends User {
 
     public BigDecimal getBankerSalary() {
         BigDecimal getBankerSalary = Database.getBigDecimal("Accounts", "ID", getId().getID(), "Salary");
-        if(getBankerSalary.compareTo(this.bankerSalary) != 0) setBankerSalary(getBankerSalary, 0);
+        if (getBankerSalary.compareTo(this.bankerSalary) != 0) {
+            setBankerSalary(getBankerSalary, 0);
+        }
         return bankerSalary;
     }
 
@@ -56,7 +58,7 @@ public class Banker extends User {
             Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
-    
+
     @Override
     public String leavingMessage() {
         return "Have a good day (banker) " + getId().getFullName() + "!";

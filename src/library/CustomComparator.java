@@ -13,7 +13,7 @@ import java.util.Comparator;
  * @author ercan
  */
 public class CustomComparator implements Comparator<ArrayList<String>> {
-    
+
     private final int index;
 
     public CustomComparator(int index) {

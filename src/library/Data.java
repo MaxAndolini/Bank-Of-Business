@@ -91,7 +91,7 @@ public class Data {
     public static void setTransfer(String transfer) {
         Data.transfer = transfer;
     }
-    
+
     public static String generateCardNumber() {
         String result = "1";
         SecureRandom rand = new SecureRandom();
@@ -122,7 +122,7 @@ public class Data {
         }
         return (nSum % 10 == 0);
     }
-    
+
     public static boolean dateValidation(String date) {
         if (!date.matches("(0?[1-9]|[12][0-9]|3[01])\\/(0?[1-9]|1[0-2])\\/([0-9]{4})")) {
             return false;

@@ -30,7 +30,7 @@ public class MainSelect extends javax.swing.JPanel {
 
         timer = new Timer(500, (ActionEvent e) -> {
             mainlabel2.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
-        });  
+        });
         timer.setInitialDelay(0);
         timer.start();
     }

@@ -10,5 +10,6 @@ package library;
  * @author ercan
  */
 public interface InterfaceLogin {
+
     void login();
 }

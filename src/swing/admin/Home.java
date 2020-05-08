@@ -26,7 +26,7 @@ public class Home extends javax.swing.JPanel {
     public Home(swing.Home home) {
         initComponents();
         frame = home;
-        
+
         timer = new Timer(2000, (ActionEvent e) -> {
             mainlabel.setText("Welcome " + Data.getAdmin().getId().getFullName());
             mainlabel2.setText("Salary: " + Data.currencyFormat(0, Data.getAdmin().getAdminSalary()));

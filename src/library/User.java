@@ -39,10 +39,12 @@ public abstract class User {
     public void setId(ID id) {
         this.id = id;
     }
-    
+
     public String getPhoneNumber() {
         String getPhoneNumber = Database.getString("Accounts", "ID", getId().getID(), "PhoneNumber");
-        if(!getPhoneNumber.equals(this.phoneNumber)) setPhoneNumber(getPhoneNumber, 0);
+        if (!getPhoneNumber.equals(this.phoneNumber)) {
+            setPhoneNumber(getPhoneNumber, 0);
+        }
         return phoneNumber;
     }
 
@@ -56,7 +58,9 @@ public abstract class User {
 
     public String getHomeAddress() {
         String getHomeAddress = Database.getString("Accounts", "ID", getId().getID(), "HomeAddress");
-        if(!getHomeAddress.equals(this.homeAddress)) setHomeAddress(getHomeAddress, 0);
+        if (!getHomeAddress.equals(this.homeAddress)) {
+            setHomeAddress(getHomeAddress, 0);
+        }
         return homeAddress;
     }
 
@@ -70,7 +74,9 @@ public abstract class User {
 
     public String getPassword() {
         String getPassword = Database.getString("Accounts", "ID", getId().getID(), "Password");
-        if(!getPassword.equals(this.password)) setPassword(getPassword, 0);
+        if (!getPassword.equals(this.password)) {
+            setPassword(getPassword, 0);
+        }
         return password;
     }
 
@@ -81,6 +87,6 @@ public abstract class User {
             Database.set("Accounts", "ID", getId().getID(), "UpdatedAt", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
         }
     }
-    
+
     public abstract String leavingMessage();
 }
