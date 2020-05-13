@@ -32,9 +32,9 @@ public class Credits extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
         jPanel = new javax.swing.JPanel();
         credits = new javax.swing.JLabel();
         credits2 = new javax.swing.JLabel();
@@ -45,26 +45,26 @@ public class Credits extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Credits");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Credits");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         jPanel.setMaximumSize(new java.awt.Dimension(296, 179));
         jPanel.setMinimumSize(new java.awt.Dimension(296, 179));
@@ -87,15 +87,10 @@ public class Credits extends javax.swing.JPanel {
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(credits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
-            .addGroup(jPanelLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(credits2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(credits3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(credits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(credits2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(credits3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(10, 10, 10))
         );
         jPanelLayout.setVerticalGroup(
@@ -117,11 +112,11 @@ public class Credits extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(cancelicon)))
+                        .addComponent(cancelIcon)))
                 .addGap(572, 572, 572))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(387, 387, 387)
@@ -132,29 +127,29 @@ public class Credits extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(214, 214, 214)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         frame.ChangeJPanel("MainSelect");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
     private javax.swing.JLabel credits;
     private javax.swing.JLabel credits2;
     private javax.swing.JLabel credits3;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JLabel mainlabel;
+    private javax.swing.JLabel mainLabel;
     // End of variables declaration//GEN-END:variables
 }

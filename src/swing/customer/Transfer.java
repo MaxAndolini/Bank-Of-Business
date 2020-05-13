@@ -26,19 +26,19 @@ public class Transfer extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) uidcnumbertext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) userIDCardNumberText.getDocument()).setDocumentFilter(new Filter(1, 16));
     }
 
     public void transfer() {
-        if (!uidcnumbertext.getText().isBlank()) {
+        if (!userIDCardNumberText.getText().isBlank()) {
             Data.setPage1("TransferCustomer");
             Data.setPage2(null);
-            Data.setTransfer(uidcnumbertext.getText());
+            Data.setTransfer(userIDCardNumberText.getText());
             int type = 0;
-            if (uidcnumbertext.getText().length() == 16) {
+            if (userIDCardNumberText.getText().length() == 16) {
                 type = 1;
             }
-            if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText()) && Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "AccountType") == 0 && (type == 0 && !Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && !Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
+            if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText()) && Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText(), "AccountType") == 0 && (type == 0 && !Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && !Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
                 frame.ChangeJPanel("TransferMoneyCustomer");
             } else {
                 frame.ChangeJPanel("WarningCustomer");
@@ -55,69 +55,69 @@ public class Transfer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        uidcnumbertext = new javax.swing.JTextField();
-        okbtn = new java.awt.Button();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        userIDCardNumberText = new javax.swing.JTextField();
+        okButton = new java.awt.Button();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Transfer");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Transfer");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Enter user ID or card number and press OK.");
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setText("Enter user ID or card number and press OK.");
 
-        uidcnumbertext.setBackground(new java.awt.Color(23, 35, 51));
-        uidcnumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        uidcnumbertext.setForeground(new java.awt.Color(255, 255, 255));
-        uidcnumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        uidcnumbertext.setMaximumSize(new java.awt.Dimension(7, 39));
-        uidcnumbertext.addActionListener(new java.awt.event.ActionListener() {
+        userIDCardNumberText.setBackground(new java.awt.Color(23, 35, 51));
+        userIDCardNumberText.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        userIDCardNumberText.setForeground(new java.awt.Color(255, 255, 255));
+        userIDCardNumberText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userIDCardNumberText.setMaximumSize(new java.awt.Dimension(7, 39));
+        userIDCardNumberText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                uidcnumbertextActionPerformed(evt);
+                userIDCardNumberTextActionPerformed(evt);
             }
         });
-        uidcnumbertext.addKeyListener(new java.awt.event.KeyAdapter() {
+        userIDCardNumberText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                uidcnumbertextKeyPressed(evt);
+                userIDCardNumberTextKeyPressed(evt);
             }
         });
 
-        okbtn.setBackground(new java.awt.Color(23, 35, 51));
-        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        okbtn.setForeground(new java.awt.Color(255, 255, 255));
-        okbtn.setLabel("OK");
-        okbtn.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setBackground(new java.awt.Color(23, 35, 51));
+        okButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okButton.setForeground(new java.awt.Color(255, 255, 255));
+        okButton.setLabel("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okbtnActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -128,73 +128,73 @@ public class Transfer extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(572, 572, 572))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(cancelicon)
+                        .addComponent(cancelIcon)
                         .addGap(804, 804, 804))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(390, 390, 390)
-                .addComponent(uidcnumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userIDCardNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(390, 390, 390))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(300, 300, 300)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(485, 485, 485))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(uidcnumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userIDCardNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(187, 187, 187)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
         frame.ChangeJPanel("HomeCustomer");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed
+    private void userIDCardNumberTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDCardNumberTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_uidcnumbertextActionPerformed
+    }//GEN-LAST:event_userIDCardNumberTextActionPerformed
 
-    private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         transfer();
-    }//GEN-LAST:event_okbtnActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void uidcnumbertextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uidcnumbertextKeyPressed
+    private void userIDCardNumberTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userIDCardNumberTextKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             transfer();
         }
-    }//GEN-LAST:event_uidcnumbertextKeyPressed
+    }//GEN-LAST:event_userIDCardNumberTextKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel mainlabel;
-    private java.awt.Button okbtn;
-    private javax.swing.JTextField uidcnumbertext;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel mainLabel;
+    private java.awt.Button okButton;
+    private javax.swing.JTextField userIDCardNumberText;
     // End of variables declaration//GEN-END:variables
 }

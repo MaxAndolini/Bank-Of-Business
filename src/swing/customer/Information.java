@@ -25,11 +25,11 @@ public class Information extends javax.swing.JPanel {
         frame = home;
 
         if (Data.getPage2().equals("DepositCustomer")) {
-            infolabel.setText("The amount you want to deposit is " + Data.currencyFormat(Data.getMoneyType(), Data.getMoney()));
+            infoLabel.setText("The amount you want to deposit is " + Data.currencyFormat(Data.getMoneyType(), Data.getMoney()));
         } else if (Data.getPage2().equals("WithdrawalCustomer")) {
-            infolabel.setText("The amount you want to withdrawal is " + Data.currencyFormat(Data.getMoneyType(), Data.getMoney()));
+            infoLabel.setText("The amount you want to withdrawal is " + Data.currencyFormat(Data.getMoneyType(), Data.getMoney()));
         } else if (Data.getPage2().equals("TransferMoneyCustomer")) {
-            infolabel.setText("The amount you want to transfer is " + Data.currencyFormat(Data.getMoneyType(), Data.getMoney()));
+            infoLabel.setText("The amount you want to transfer is " + Data.currencyFormat(Data.getMoneyType(), Data.getMoney()));
         }
     }
 
@@ -42,89 +42,89 @@ public class Information extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        infolabel2 = new javax.swing.JLabel();
-        yesbtn = new java.awt.Button();
-        yesicon = new javax.swing.JLabel();
-        backbtn = new java.awt.Button();
-        backicon = new javax.swing.JLabel();
-        nobtn = new java.awt.Button();
-        noicon = new javax.swing.JLabel();
-        mainmenubtn = new java.awt.Button();
-        mainmenuicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        infoLabel2 = new javax.swing.JLabel();
+        yesButton = new java.awt.Button();
+        yesIcon = new javax.swing.JLabel();
+        backButton = new java.awt.Button();
+        backIcon = new javax.swing.JLabel();
+        noButton = new java.awt.Button();
+        noIcon = new javax.swing.JLabel();
+        mainMenuButton = new java.awt.Button();
+        mainMenuIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Information");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Information");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("The amount you want to deposit is $10,000");
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setText("The amount you want to deposit is $10,000");
 
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Do you wish to continue?");
+        infoLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infoLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel2.setText("Do you wish to continue?");
 
-        yesbtn.setBackground(new java.awt.Color(23, 35, 51));
-        yesbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        yesbtn.setForeground(new java.awt.Color(133, 187, 101));
-        yesbtn.setLabel("Yes");
-        yesbtn.addActionListener(new java.awt.event.ActionListener() {
+        yesButton.setBackground(new java.awt.Color(23, 35, 51));
+        yesButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        yesButton.setForeground(new java.awt.Color(133, 187, 101));
+        yesButton.setLabel("Yes");
+        yesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                yesbtnActionPerformed(evt);
+                yesButtonActionPerformed(evt);
             }
         });
 
-        yesicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_ok_48px.png"))); // NOI18N
+        yesIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_ok_48px.png"))); // NOI18N
 
-        backbtn.setBackground(new java.awt.Color(23, 35, 51));
-        backbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        backbtn.setForeground(new java.awt.Color(255, 255, 255));
-        backbtn.setLabel("Back");
-        backbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        backbtn.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setBackground(new java.awt.Color(23, 35, 51));
+        backButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.setLabel("Back");
+        backButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backbtnActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
-        backicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        backIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
-        nobtn.setBackground(new java.awt.Color(23, 35, 51));
-        nobtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        nobtn.setForeground(new java.awt.Color(133, 187, 101));
-        nobtn.setLabel("No");
-        nobtn.addActionListener(new java.awt.event.ActionListener() {
+        noButton.setBackground(new java.awt.Color(23, 35, 51));
+        noButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        noButton.setForeground(new java.awt.Color(133, 187, 101));
+        noButton.setLabel("No");
+        noButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nobtnActionPerformed(evt);
+                noButtonActionPerformed(evt);
             }
         });
 
-        noicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_delete_48px.png"))); // NOI18N
+        noIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_delete_48px.png"))); // NOI18N
 
-        mainmenubtn.setBackground(new java.awt.Color(23, 35, 51));
-        mainmenubtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        mainmenubtn.setForeground(new java.awt.Color(255, 255, 255));
-        mainmenubtn.setLabel("Main Menu");
-        mainmenubtn.addActionListener(new java.awt.event.ActionListener() {
+        mainMenuButton.setBackground(new java.awt.Color(23, 35, 51));
+        mainMenuButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        mainMenuButton.setForeground(new java.awt.Color(255, 255, 255));
+        mainMenuButton.setLabel("Main Menu");
+        mainMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainmenubtnActionPerformed(evt);
+                mainMenuButtonActionPerformed(evt);
             }
         });
 
-        mainmenuicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        mainMenuIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -132,7 +132,7 @@ public class Information extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(214, 214, 214)
-                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(214, 214, 214))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,82 +140,82 @@ public class Information extends javax.swing.JPanel {
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(yesbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(yesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(yesicon)
+                                .addComponent(yesIcon)
                                 .addGap(538, 538, 538)
-                                .addComponent(noicon)
+                                .addComponent(noIcon)
                                 .addGap(10, 10, 10)
-                                .addComponent(nobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(noButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(backicon)
+                                .addComponent(backIcon)
                                 .addGap(538, 538, 538)
-                                .addComponent(mainmenuicon)
+                                .addComponent(mainMenuIcon)
                                 .addGap(10, 10, 10)
-                                .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(277, 277, 277)
-                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(153, 153, 153)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(yesbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nobtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(noicon)
-                    .addComponent(yesicon, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(yesButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noIcon)
+                    .addComponent(yesIcon, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backicon)
-                    .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mainmenuicon))
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backIcon)
+                    .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainMenuIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void yesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesbtnActionPerformed
+    private void yesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesButtonActionPerformed
         frame.ChangeJPanel("ReceiptCustomer");
-    }//GEN-LAST:event_yesbtnActionPerformed
+    }//GEN-LAST:event_yesButtonActionPerformed
 
-    private void nobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nobtnActionPerformed
+    private void noButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noButtonActionPerformed
         frame.ChangeJPanel(Data.getPage2());
-    }//GEN-LAST:event_nobtnActionPerformed
+    }//GEN-LAST:event_noButtonActionPerformed
 
-    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         frame.ChangeJPanel(Data.getPage2());
-    }//GEN-LAST:event_backbtnActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
-    private void mainmenubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenubtnActionPerformed
+    private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
         frame.ChangeJPanel("HomeCustomer");
-    }//GEN-LAST:event_mainmenubtnActionPerformed
+    }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button backbtn;
-    private javax.swing.JLabel backicon;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel2;
-    private javax.swing.JLabel mainlabel;
-    private java.awt.Button mainmenubtn;
-    private javax.swing.JLabel mainmenuicon;
-    private java.awt.Button nobtn;
-    private javax.swing.JLabel noicon;
-    private java.awt.Button yesbtn;
-    private javax.swing.JLabel yesicon;
+    private java.awt.Button backButton;
+    private javax.swing.JLabel backIcon;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel infoLabel2;
+    private javax.swing.JLabel mainLabel;
+    private java.awt.Button mainMenuButton;
+    private javax.swing.JLabel mainMenuIcon;
+    private java.awt.Button noButton;
+    private javax.swing.JLabel noIcon;
+    private java.awt.Button yesButton;
+    private javax.swing.JLabel yesIcon;
     // End of variables declaration//GEN-END:variables
 }

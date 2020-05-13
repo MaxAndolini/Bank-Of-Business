@@ -26,39 +26,39 @@ public class DeleteCustomer extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
     }
 
     public void deleteCustomer() {
         String[] typename = {"ID", "CardNumber", "FullName"};
-        if (!searchtext.getText().isBlank()) {
-            if (Database.exists("Accounts", typename[searchtype.getSelectedIndex()], searchtext.getText())) {
-                if (Database.getInt("Accounts", typename[searchtype.getSelectedIndex()], searchtext.getText(), "AccountType") == 0) {
+        if (!searchText.getText().isBlank()) {
+            if (Database.exists("Accounts", typename[searchType.getSelectedIndex()], searchText.getText())) {
+                if (Database.getInt("Accounts", typename[searchType.getSelectedIndex()], searchText.getText(), "AccountType") == 0) {
                     String ID;
-                    if (searchtype.getSelectedIndex() == 0) {
-                        ID = searchtext.getText();
+                    if (searchType.getSelectedIndex() == 0) {
+                        ID = searchText.getText();
                     } else {
-                        ID = Database.getString("Accounts", typename[searchtype.getSelectedIndex()], searchtext.getText(), "ID");
+                        ID = Database.getString("Accounts", typename[searchType.getSelectedIndex()], searchText.getText(), "ID");
                     }
                     Database.delete("Transactions", "Account", ID);
                     Database.delete("Transactions", "TransferTo", ID);
                     Database.delete("Transactions", "TransferFrom", ID);
-                    boolean delete = Database.delete("Accounts", typename[searchtype.getSelectedIndex()], searchtext.getText());
+                    boolean delete = Database.delete("Accounts", typename[searchType.getSelectedIndex()], searchText.getText());
                     if (delete == true) {
-                        searchtext.setText(null);
-                        searchtype.setSelectedIndex(0);
-                        infolabel.setText("The customer was successfully deleted.");
+                        searchText.setText(null);
+                        searchType.setSelectedIndex(0);
+                        infoLabel.setText("The customer was successfully deleted.");
                     } else {
-                        infolabel.setText("System error and the customer couldn't be deleted.");
+                        infoLabel.setText("System error and the customer couldn't be deleted.");
                     }
                 } else {
-                    infolabel.setText("The account type is invalid.");
+                    infoLabel.setText("The account type is invalid.");
                 }
             } else {
-                infolabel.setText("The customer is invalid.");
+                infoLabel.setText("The customer is invalid.");
             }
         } else {
-            infolabel.setText("The field can't be left blank.");
+            infoLabel.setText("The field can't be left blank.");
         }
     }
 
@@ -71,89 +71,89 @@ public class DeleteCustomer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        infolabel2 = new javax.swing.JLabel();
-        searchtext = new javax.swing.JTextField();
-        searchtype = new javax.swing.JComboBox<>();
-        deletebtn = new java.awt.Button();
-        deleteicon = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        infoLabel2 = new javax.swing.JLabel();
+        searchText = new javax.swing.JTextField();
+        searchType = new javax.swing.JComboBox<>();
+        deleteButton = new java.awt.Button();
+        deleteIcon = new javax.swing.JLabel();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Delete Customer");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Delete Customer");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Search");
+        infoLabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infoLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel2.setText("Search");
 
-        searchtext.setBackground(new java.awt.Color(23, 35, 51));
-        searchtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        searchtext.setForeground(new java.awt.Color(255, 255, 255));
-        searchtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        searchtext.setMaximumSize(new java.awt.Dimension(7, 39));
-        searchtext.addActionListener(new java.awt.event.ActionListener() {
+        searchText.setBackground(new java.awt.Color(23, 35, 51));
+        searchText.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        searchText.setForeground(new java.awt.Color(255, 255, 255));
+        searchText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        searchText.setMaximumSize(new java.awt.Dimension(7, 39));
+        searchText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchtextActionPerformed(evt);
+                searchTextActionPerformed(evt);
             }
         });
-        searchtext.addKeyListener(new java.awt.event.KeyAdapter() {
+        searchText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                searchtextKeyPressed(evt);
+                searchTextKeyPressed(evt);
             }
         });
 
-        searchtype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        searchtype.setForeground(new java.awt.Color(23, 35, 51));
-        searchtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Card Number", "Full Name" }));
-        searchtype.setToolTipText("");
-        searchtype.addItemListener(new java.awt.event.ItemListener() {
+        searchType.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        searchType.setForeground(new java.awt.Color(23, 35, 51));
+        searchType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Card Number", "Full Name" }));
+        searchType.setToolTipText("");
+        searchType.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                searchtypeİtemStateChanged(evt);
+                searchTypeİtemStateChanged(evt);
             }
         });
 
-        deletebtn.setBackground(new java.awt.Color(23, 35, 51));
-        deletebtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        deletebtn.setForeground(new java.awt.Color(255, 255, 255));
-        deletebtn.setLabel("Delete");
-        deletebtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        deletebtn.addActionListener(new java.awt.event.ActionListener() {
+        deleteButton.setBackground(new java.awt.Color(23, 35, 51));
+        deleteButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setLabel("Delete");
+        deleteButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletebtnActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
             }
         });
 
-        deleteicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px.png"))); // NOI18N
+        deleteIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_remove_property_48px.png"))); // NOI18N
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -162,99 +162,99 @@ public class DeleteCustomer extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(360, 360, 360)
-                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(309, 309, 309)
-                        .addComponent(searchtext, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(searchtype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(searchType, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(deletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(deleteicon)
+                        .addComponent(deleteIcon)
                         .addGap(538, 538, 538)
-                        .addComponent(cancelicon)
+                        .addComponent(cancelIcon)
                         .addGap(10, 10, 10)
-                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(300, 300, 300)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(300, 300, 300))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchtype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchType, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(191, 191, 191)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(deletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteicon)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteIcon)
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         deleteCustomer();
-    }//GEN-LAST:event_deletebtnActionPerformed
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         frame.ChangeJPanel("HomeBanker");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void searchtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchtextActionPerformed
+    private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchtextActionPerformed
+    }//GEN-LAST:event_searchTextActionPerformed
 
-    private void searchtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchtextKeyPressed
+    private void searchTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             deleteCustomer();
         }
-    }//GEN-LAST:event_searchtextKeyPressed
+    }//GEN-LAST:event_searchTextKeyPressed
 
-    private void searchtypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchtypeİtemStateChanged
+    private void searchTypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchTypeİtemStateChanged
         switch (evt.getStateChange()) {
             case 0:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
-                searchtext.setText(null);
+                ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchText.setText(null);
                 break;
             case 1:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
-                searchtext.setText(null);
+                ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchText.setText(null);
                 break;
             case 2:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
-                searchtext.setText(null);
+                ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(0, 32));
+                searchText.setText(null);
                 break;
             default:
                 break;
         }
-    }//GEN-LAST:event_searchtypeİtemStateChanged
+    }//GEN-LAST:event_searchTypeİtemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
-    private java.awt.Button deletebtn;
-    private javax.swing.JLabel deleteicon;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel2;
-    private javax.swing.JLabel mainlabel;
-    private javax.swing.JTextField searchtext;
-    private javax.swing.JComboBox<String> searchtype;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
+    private java.awt.Button deleteButton;
+    private javax.swing.JLabel deleteIcon;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel infoLabel2;
+    private javax.swing.JLabel mainLabel;
+    private javax.swing.JTextField searchText;
+    private javax.swing.JComboBox<String> searchType;
     // End of variables declaration//GEN-END:variables
 }

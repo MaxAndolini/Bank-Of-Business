@@ -27,8 +27,8 @@ public class Settings extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) newpassword.getDocument()).setDocumentFilter(new Filter(0, 15));
-        ((AbstractDocument) newpassword2.getDocument()).setDocumentFilter(new Filter(0, 15));
+        ((AbstractDocument) newPassword.getDocument()).setDocumentFilter(new Filter(0, 15));
+        ((AbstractDocument) newPassword2.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
     private void settings() {
@@ -44,25 +44,25 @@ public class Settings extends javax.swing.JPanel {
         8) {8,} - minimum 8 characters in length
         9) $ - end of the string
          */
-        if (!new String(newpassword.getPassword()).isBlank() && !new String(newpassword2.getPassword()).isBlank()) {
-            if (new String(newpassword.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
-                if (Arrays.equals(newpassword.getPassword(), newpassword2.getPassword())) {
-                    if (!new String(newpassword.getPassword()).equals(Data.getBanker().getPassword())) {
-                        Data.getCustomer().setPassword(new String(newpassword.getPassword()), 1);
-                        newpassword.setText(null);
-                        newpassword2.setText(null);
-                        infolabel.setText("The password was successfully changed.");
+        if (!new String(newPassword.getPassword()).isBlank() && !new String(newPassword2.getPassword()).isBlank()) {
+            if (new String(newPassword.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
+                if (Arrays.equals(newPassword.getPassword(), newPassword2.getPassword())) {
+                    if (!new String(newPassword.getPassword()).equals(Data.getBanker().getPassword())) {
+                        Data.getCustomer().setPassword(new String(newPassword.getPassword()), 1);
+                        newPassword.setText(null);
+                        newPassword2.setText(null);
+                        infoLabel.setText("The password was successfully changed.");
                     } else {
-                        infolabel.setText("You can't set the same password.");
+                        infoLabel.setText("You can't set the same password.");
                     }
                 } else {
-                    infolabel.setText("The password doesn't match.");
+                    infoLabel.setText("The password doesn't match.");
                 }
             } else {
-                infolabel.setText("The password doesn't follow the rules.");
+                infoLabel.setText("The password doesn't follow the rules.");
             }
         } else {
-            infolabel.setText("The field can't be left blank.");
+            infoLabel.setText("The field can't be left blank.");
         }
     }
 
@@ -75,87 +75,87 @@ public class Settings extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        infolabel2 = new javax.swing.JLabel();
-        newpassword = new javax.swing.JPasswordField();
-        infolabel3 = new javax.swing.JLabel();
-        newpassword2 = new javax.swing.JPasswordField();
-        okbtn = new java.awt.Button();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        infoLabel2 = new javax.swing.JLabel();
+        newPassword = new javax.swing.JPasswordField();
+        infoLabel3 = new javax.swing.JLabel();
+        newPassword2 = new javax.swing.JPasswordField();
+        okButton = new java.awt.Button();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Settings");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Settings");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Enter new password.");
+        infoLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel2.setText("Enter new password.");
 
-        newpassword.setBackground(new java.awt.Color(23, 35, 51));
-        newpassword.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        newpassword.setForeground(new java.awt.Color(255, 255, 255));
-        newpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        newpassword.setMaximumSize(new java.awt.Dimension(7, 39));
-        newpassword.addKeyListener(new java.awt.event.KeyAdapter() {
+        newPassword.setBackground(new java.awt.Color(23, 35, 51));
+        newPassword.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        newPassword.setForeground(new java.awt.Color(255, 255, 255));
+        newPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        newPassword.setMaximumSize(new java.awt.Dimension(7, 39));
+        newPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                newpasswordKeyPressed(evt);
+                newPasswordKeyPressed(evt);
             }
         });
 
-        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel3.setText("Enter new password again.");
+        infoLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel3.setText("Enter new password again.");
 
-        newpassword2.setBackground(new java.awt.Color(23, 35, 51));
-        newpassword2.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        newpassword2.setForeground(new java.awt.Color(255, 255, 255));
-        newpassword2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        newpassword2.setMaximumSize(new java.awt.Dimension(7, 39));
-        newpassword2.addKeyListener(new java.awt.event.KeyAdapter() {
+        newPassword2.setBackground(new java.awt.Color(23, 35, 51));
+        newPassword2.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        newPassword2.setForeground(new java.awt.Color(255, 255, 255));
+        newPassword2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        newPassword2.setMaximumSize(new java.awt.Dimension(7, 39));
+        newPassword2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                newpassword2KeyPressed(evt);
+                newPassword2KeyPressed(evt);
             }
         });
 
-        okbtn.setBackground(new java.awt.Color(23, 35, 51));
-        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        okbtn.setForeground(new java.awt.Color(255, 255, 255));
-        okbtn.setLabel("OK");
-        okbtn.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setBackground(new java.awt.Color(23, 35, 51));
+        okButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okButton.setForeground(new java.awt.Color(255, 255, 255));
+        okButton.setLabel("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okbtnActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -166,85 +166,82 @@ public class Settings extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(cancelicon)
+                                .addComponent(cancelIcon)
                                 .addGap(220, 220, 220)
-                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(486, 486, 486))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(290, 290, 290)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infoLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(300, 300, 300))))
             .addGroup(layout.createSequentialGroup()
+                .addGap(390, 390, 390)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addComponent(newpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addComponent(newpassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newPassword2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(390, 390, 390))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(newpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(newpassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(newPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         frame.ChangeJPanel("HomeBanker");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         settings();
-    }//GEN-LAST:event_okbtnActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void newpasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_newpasswordKeyPressed
+    private void newPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_newPasswordKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             settings();
         }
-    }//GEN-LAST:event_newpasswordKeyPressed
+    }//GEN-LAST:event_newPasswordKeyPressed
 
-    private void newpassword2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_newpassword2KeyPressed
+    private void newPassword2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_newPassword2KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             settings();
         }
-    }//GEN-LAST:event_newpassword2KeyPressed
+    }//GEN-LAST:event_newPassword2KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel2;
-    private javax.swing.JLabel infolabel3;
-    private javax.swing.JLabel mainlabel;
-    private javax.swing.JPasswordField newpassword;
-    private javax.swing.JPasswordField newpassword2;
-    private java.awt.Button okbtn;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel infoLabel2;
+    private javax.swing.JLabel infoLabel3;
+    private javax.swing.JLabel mainLabel;
+    private javax.swing.JPasswordField newPassword;
+    private javax.swing.JPasswordField newPassword2;
+    private java.awt.Button okButton;
     // End of variables declaration//GEN-END:variables
 }

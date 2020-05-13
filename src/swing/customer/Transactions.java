@@ -32,7 +32,7 @@ public class Transactions extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        transactionstable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
+        transactionsTable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 18));
 
         timer = new Timer(2000, new ActionListener() {
             ArrayList<ArrayList<String>> load = null;
@@ -42,7 +42,7 @@ public class Transactions extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                 data = Database.getArrayList("Transactions", "Account", Data.getCustomer().getId().getID());
                 if (load == null || (data != null && !load.equals(data))) {
-                    DefaultTableModel model = (DefaultTableModel) transactionstable.getModel();
+                    DefaultTableModel model = (DefaultTableModel) transactionsTable.getModel();
                     if (load != null) {
                         model.setRowCount(0);
                     }
@@ -76,28 +76,28 @@ public class Transactions extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
         jScrollPane = new javax.swing.JScrollPane();
-        transactionstable = new javax.swing.JTable();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        transactionsTable = new javax.swing.JTable();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Transactions");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Transactions");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        transactionstable.setAutoCreateRowSorter(true);
-        transactionstable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        transactionstable.setModel(new javax.swing.table.DefaultTableModel(
+        transactionsTable.setAutoCreateRowSorter(true);
+        transactionsTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        transactionsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -120,23 +120,23 @@ public class Transactions extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        transactionstable.setRowHeight(30);
-        transactionstable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        transactionstable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane.setViewportView(transactionstable);
+        transactionsTable.setRowHeight(30);
+        transactionsTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        transactionsTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane.setViewportView(transactionsTable);
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -148,11 +148,11 @@ public class Transactions extends javax.swing.JPanel {
                     .addComponent(jScrollPane)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(cancelicon)))
+                                .addComponent(cancelIcon)))
                         .addGap(562, 562, 562)))
                 .addGap(10, 10, 10))
         );
@@ -160,30 +160,30 @@ public class Transactions extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
         frame.ChangeJPanel("HomeCustomer");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
     private javax.swing.JScrollPane jScrollPane;
-    private javax.swing.JLabel mainlabel;
-    private javax.swing.JTable transactionstable;
+    private javax.swing.JLabel mainLabel;
+    private javax.swing.JTable transactionsTable;
     // End of variables declaration//GEN-END:variables
 }

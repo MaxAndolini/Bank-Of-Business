@@ -26,7 +26,7 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) uidcnumbertext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) userIDCardNumberText.getDocument()).setDocumentFilter(new Filter(1, 16));
         ((AbstractDocument) password.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
@@ -39,57 +39,57 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        infolabel2 = new javax.swing.JLabel();
-        uidcnumbertext = new javax.swing.JTextField();
-        infolabel3 = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        infoLabel2 = new javax.swing.JLabel();
+        userIDCardNumberText = new javax.swing.JTextField();
+        infoLabel3 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
-        loginbtn = new java.awt.Button();
-        loginicon = new javax.swing.JLabel();
-        exitbtn = new java.awt.Button();
-        exiticon = new javax.swing.JLabel();
+        loginButton = new java.awt.Button();
+        loginIcon = new javax.swing.JLabel();
+        exitButton = new java.awt.Button();
+        exitIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Customer - Login");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Customer - Login");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Enter User ID or Card Number");
+        infoLabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infoLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel2.setText("Enter User ID or Card Number");
 
-        uidcnumbertext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        uidcnumbertext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        uidcnumbertext.setMaximumSize(new java.awt.Dimension(7, 39));
-        uidcnumbertext.addActionListener(new java.awt.event.ActionListener() {
+        userIDCardNumberText.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        userIDCardNumberText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userIDCardNumberText.setMaximumSize(new java.awt.Dimension(7, 39));
+        userIDCardNumberText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                uidcnumbertextActionPerformed(evt);
+                userIDCardNumberTextActionPerformed(evt);
             }
         });
-        uidcnumbertext.addKeyListener(new java.awt.event.KeyAdapter() {
+        userIDCardNumberText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                uidcnumbertextKeyPressed(evt);
+                userIDCardNumberTextKeyPressed(evt);
             }
         });
 
-        infolabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel3.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel3.setText("Password");
+        infoLabel3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infoLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel3.setText("Password");
 
         password.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -100,31 +100,31 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
             }
         });
 
-        loginbtn.setBackground(new java.awt.Color(23, 35, 51));
-        loginbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        loginbtn.setForeground(new java.awt.Color(255, 255, 255));
-        loginbtn.setLabel("Login");
-        loginbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        loginbtn.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setBackground(new java.awt.Color(23, 35, 51));
+        loginButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setLabel("Login");
+        loginButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginbtnActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
 
-        loginicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_enter_48px.png"))); // NOI18N
+        loginIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_enter_48px.png"))); // NOI18N
 
-        exitbtn.setBackground(new java.awt.Color(23, 35, 51));
-        exitbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setLabel("Exit");
-        exitbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+        exitButton.setBackground(new java.awt.Color(23, 35, 51));
+        exitButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        exitButton.setForeground(new java.awt.Color(255, 255, 255));
+        exitButton.setLabel("Exit");
+        exitButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
+                exitButtonActionPerformed(evt);
             }
         });
 
-        exiticon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        exitIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -133,27 +133,27 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(300, 300, 300)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(infolabel, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                    .addComponent(infolabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(infolabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(infoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                    .addComponent(infoLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(300, 300, 300))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(loginicon)
+                                .addComponent(loginIcon)
                                 .addGap(538, 538, 538)
-                                .addComponent(exiticon)
+                                .addComponent(exitIcon)
                                 .addGap(10, 10, 10)
-                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(390, 390, 390)
-                        .addComponent(uidcnumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(userIDCardNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(390, 390, 390)
                         .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -163,25 +163,25 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(uidcnumbertext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userIDCardNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(infolabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loginicon)))
-                    .addComponent(exiticon))
+                            .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(loginIcon)))
+                    .addComponent(exitIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -201,16 +201,16 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
         9) $ - end of the string
          */
         int type = 0;
-        if (uidcnumbertext.getText().length() == 16) {
+        if (userIDCardNumberText.getText().length() == 16) {
             type = 1;
         }
 
-        if (!uidcnumbertext.getText().isBlank() && !new String(password.getPassword()).isBlank()) {
-            if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText())) {
-                if (Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "AccountType") == 0) {
+        if (!userIDCardNumberText.getText().isBlank() && !new String(password.getPassword()).isBlank()) {
+            if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText())) {
+                if (Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText(), "AccountType") == 0) {
                     if (new String(password.getPassword()).matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
-                        if (new String(password.getPassword()).equals(Database.getString("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText(), "Password"))) {
-                            String[] load = Database.getArray("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), uidcnumbertext.getText());
+                        if (new String(password.getPassword()).equals(Database.getString("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText(), "Password"))) {
+                            String[] load = Database.getArray("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText());
                             Customer customer = new Customer();
                             customer.getId().setID(load[0]);
                             customer.setCardNumber(load[2], 0);
@@ -227,39 +227,39 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
                             Data.setCustomer(customer);
                             frame.ChangeJPanel("HomeCustomer");
                         } else {
-                            infolabel.setText("The password doesn't match.");
+                            infoLabel.setText("The password doesn't match.");
                         }
                     } else {
-                        infolabel.setText("The password doesn't follow the rules.");
+                        infoLabel.setText("The password doesn't follow the rules.");
                     }
                 } else {
-                    infolabel.setText("The account type is invalid.");
+                    infoLabel.setText("The account type is invalid.");
                 }
             } else {
-                infolabel.setText("The user ID or card number is invalid.");
+                infoLabel.setText("The user ID or card number is invalid.");
             }
         } else {
-            infolabel.setText("The user ID or card number can't be left blank.");
+            infoLabel.setText("The user ID or card number can't be left blank.");
         }
     }
 
-    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         login();
-    }//GEN-LAST:event_loginbtnActionPerformed
+    }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void uidcnumbertextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uidcnumbertextActionPerformed
+    private void userIDCardNumberTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDCardNumberTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_uidcnumbertextActionPerformed
+    }//GEN-LAST:event_userIDCardNumberTextActionPerformed
 
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         frame.ChangeJPanel("MainSelect");
-    }//GEN-LAST:event_exitbtnActionPerformed
+    }//GEN-LAST:event_exitButtonActionPerformed
 
-    private void uidcnumbertextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uidcnumbertextKeyPressed
+    private void userIDCardNumberTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userIDCardNumberTextKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             login();
         }
-    }//GEN-LAST:event_uidcnumbertextKeyPressed
+    }//GEN-LAST:event_userIDCardNumberTextKeyPressed
 
     private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -269,15 +269,15 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button exitbtn;
-    private javax.swing.JLabel exiticon;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel2;
-    private javax.swing.JLabel infolabel3;
-    private java.awt.Button loginbtn;
-    private javax.swing.JLabel loginicon;
-    private javax.swing.JLabel mainlabel;
+    private java.awt.Button exitButton;
+    private javax.swing.JLabel exitIcon;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel infoLabel2;
+    private javax.swing.JLabel infoLabel3;
+    private java.awt.Button loginButton;
+    private javax.swing.JLabel loginIcon;
+    private javax.swing.JLabel mainLabel;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField uidcnumbertext;
+    private javax.swing.JTextField userIDCardNumberText;
     // End of variables declaration//GEN-END:variables
 }

@@ -56,8 +56,8 @@ public class Receipt extends javax.swing.JPanel {
             }
             Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
         } else {
-            jPanel1.removeAll();
-            infolabel.setText("System error and the transaction couldn't be created.");
+            jPanel.removeAll();
+            infoLabel.setText("System error and the transaction couldn't be created.");
             return;
         }
 
@@ -73,44 +73,44 @@ public class Receipt extends javax.swing.JPanel {
                 }
                 Database.set("Transactions", "ID", ID, "DateTime", new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date));
             } else {
-                jPanel1.removeAll();
-                infolabel.setText("System error and the transaction couldn't be created.");
+                jPanel.removeAll();
+                infoLabel.setText("System error and the transaction couldn't be created.");
                 return;
             }
         }
 
         switch (Data.getPage2()) {
             case "DepositCustomer":
-                infolabel.setText("The money has been deposited to your account.");
+                infoLabel.setText("The money has been deposited to your account.");
                 break;
             case "WithdrawalCustomer":
-                infolabel.setText("The money has been withdrawn from your account.");
+                infoLabel.setText("The money has been withdrawn from your account.");
                 break;
             case "TransferMoneyCustomer":
-                infolabel.setText("The money has been transferred to the account.");
+                infoLabel.setText("The money has been transferred to the account.");
                 break;
             default:
                 break;
         }
-        rdatetlabel.setText(new SimpleDateFormat("dd/MM/yyyy").format(date));
-        rtimetlabel.setText(new SimpleDateFormat("HH:mm:ss").format(date));
-        rcnumbertlabel.setText(Data.getCustomer().getCardNumber());
+        dateAmountLabel.setText(new SimpleDateFormat("dd/MM/yyyy").format(date));
+        timeAmountLabel.setText(new SimpleDateFormat("HH:mm:ss").format(date));
+        cardNumberAmountLabel.setText(Data.getCustomer().getCardNumber());
         switch (Data.getPage2()) {
             case "DepositCustomer":
-                rtransactiontlabel.setText("Deposit");
+                transactionAmountLabel.setText("Deposit");
                 break;
             case "WithdrawalCustomer":
-                rtransactiontlabel.setText("Withdrawal");
+                transactionAmountLabel.setText("Withdrawal");
                 break;
             case "TransferMoneyCustomer":
-                rtransactiontlabel.setText("Transfer - " + Data.getTransfer());
+                transactionAmountLabel.setText("Transfer - " + Data.getTransfer());
                 break;
             default:
                 break;
         }
-        rtypetlabel.setText(typename[Data.getMoneyType()]);
-        ramounttlabel.setText(Data.getMoney().toString());
-        rtotalbalancelabel.setText("Total " + typename[Data.getMoneyType()] + " Balance:");
+        typeAmountLabel.setText(typename[Data.getMoneyType()]);
+        amountAmountLabel.setText(Data.getMoney().toString());
+        totalBalanceLabel.setText("Total " + typename[Data.getMoneyType()] + " Balance:");
         switch (Data.getMoneyType()) {
             case 0:
                 switch (Data.getPage2()) {
@@ -129,7 +129,7 @@ public class Receipt extends javax.swing.JPanel {
                         break;
                 }
                 timer = new Timer(2000, (ActionEvent e) -> {
-                    rtotalbalancetlabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+                    totalBalanceAmountLabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
                 });
                 timer.setInitialDelay(0);
                 timer.start();
@@ -152,7 +152,7 @@ public class Receipt extends javax.swing.JPanel {
                         break;
                 }
                 timer = new Timer(2000, (ActionEvent e) -> {
-                    rtotalbalancetlabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+                    totalBalanceAmountLabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
                 });
                 timer.setInitialDelay(0);
                 timer.start();
@@ -175,7 +175,7 @@ public class Receipt extends javax.swing.JPanel {
                         break;
                 }
                 timer = new Timer(2000, (ActionEvent e) -> {
-                    rtotalbalancetlabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+                    totalBalanceAmountLabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
                 });
                 timer.setInitialDelay(0);
                 timer.start();
@@ -198,7 +198,7 @@ public class Receipt extends javax.swing.JPanel {
                         break;
                 }
                 timer = new Timer(2000, (ActionEvent e) -> {
-                    rtotalbalancetlabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+                    totalBalanceAmountLabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
                 });
                 timer.setInitialDelay(0);
                 timer.start();
@@ -218,241 +218,241 @@ public class Receipt extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        rbankicon = new javax.swing.JLabel();
-        rboblabel = new javax.swing.JLabel();
-        rdatelabel = new javax.swing.JLabel();
-        rdatetlabel = new javax.swing.JLabel();
-        rtimelabel = new javax.swing.JLabel();
-        rtimetlabel = new javax.swing.JLabel();
-        rcnumberlabel = new javax.swing.JLabel();
-        rcnumbertlabel = new javax.swing.JLabel();
-        rtransactionlabel = new javax.swing.JLabel();
-        rtransactiontlabel = new javax.swing.JLabel();
-        rtypelabel = new javax.swing.JLabel();
-        rtypetlabel = new javax.swing.JLabel();
-        ramountlabel = new javax.swing.JLabel();
-        ramounttlabel = new javax.swing.JLabel();
-        rboblabel2 = new javax.swing.JLabel();
-        rtotalbalancelabel = new javax.swing.JLabel();
-        rtotalbalancetlabel = new javax.swing.JLabel();
-        rhaveanicedaylabel = new javax.swing.JLabel();
-        exitbtn = new java.awt.Button();
-        exiticon = new javax.swing.JLabel();
-        mainmenubtn = new java.awt.Button();
-        mainmenuicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        jPanel = new javax.swing.JPanel();
+        bankIcon = new javax.swing.JLabel();
+        bobLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
+        dateAmountLabel = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
+        timeAmountLabel = new javax.swing.JLabel();
+        cardNumberLabel = new javax.swing.JLabel();
+        cardNumberAmountLabel = new javax.swing.JLabel();
+        transactionLabel = new javax.swing.JLabel();
+        transactionAmountLabel = new javax.swing.JLabel();
+        typeLabel = new javax.swing.JLabel();
+        typeAmountLabel = new javax.swing.JLabel();
+        amountLabel = new javax.swing.JLabel();
+        amountAmountLabel = new javax.swing.JLabel();
+        bobLabel2 = new javax.swing.JLabel();
+        totalBalanceLabel = new javax.swing.JLabel();
+        totalBalanceAmountLabel = new javax.swing.JLabel();
+        haveANiceDayLabel = new javax.swing.JLabel();
+        exitButton = new java.awt.Button();
+        exitIcon = new javax.swing.JLabel();
+        mainMenuButton = new java.awt.Button();
+        mainMenuIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Information");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Information");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("The money has been withdrawn from your account.");
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setText("The money has been withdrawn from your account.");
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(364, 349));
-        jPanel1.setMinimumSize(new java.awt.Dimension(364, 349));
-        jPanel1.setRequestFocusEnabled(false);
+        jPanel.setMaximumSize(new java.awt.Dimension(364, 349));
+        jPanel.setMinimumSize(new java.awt.Dimension(364, 349));
+        jPanel.setRequestFocusEnabled(false);
 
-        rbankicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_bank_48px.png"))); // NOI18N
+        bankIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_bank_48px.png"))); // NOI18N
 
-        rboblabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        rboblabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rboblabel.setText("Bank of Business");
+        bobLabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        bobLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bobLabel.setText("Bank of Business");
 
-        rdatelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rdatelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rdatelabel.setText("Date:");
+        dateLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        dateLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dateLabel.setText("Date:");
 
-        rdatetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rdatetlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rdatetlabel.setText("02/04/2020");
+        dateAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        dateAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        dateAmountLabel.setText("02/04/2020");
 
-        rtimelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtimelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rtimelabel.setText("Time:");
+        timeLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        timeLabel.setText("Time:");
 
-        rtimetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtimetlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rtimetlabel.setText("10:10:10");
+        timeAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        timeAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        timeAmountLabel.setText("10:10:10");
 
-        rcnumberlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rcnumberlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rcnumberlabel.setText("Card Number:");
+        cardNumberLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        cardNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cardNumberLabel.setText("Card Number:");
 
-        rcnumbertlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rcnumbertlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rcnumbertlabel.setText("1111222233334444");
+        cardNumberAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        cardNumberAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        cardNumberAmountLabel.setText("1111222233334444");
 
-        rtransactionlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtransactionlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rtransactionlabel.setText("Transaction:");
+        transactionLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        transactionLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        transactionLabel.setText("Transaction:");
 
-        rtransactiontlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtransactiontlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rtransactiontlabel.setText("Withdrawal");
+        transactionAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        transactionAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        transactionAmountLabel.setText("Withdrawal");
 
-        rtypelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtypelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rtypelabel.setText("Type:");
+        typeLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        typeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        typeLabel.setText("Type:");
 
-        rtypetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtypetlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rtypetlabel.setText("Dollar");
+        typeAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        typeAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        typeAmountLabel.setText("Dollar");
 
-        ramountlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        ramountlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ramountlabel.setText("Amount:");
+        amountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        amountLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        amountLabel.setText("Amount:");
 
-        ramounttlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        ramounttlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        ramounttlabel.setText("94");
+        amountAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        amountAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        amountAmountLabel.setText("94");
 
-        rboblabel2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rboblabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rboblabel2.setText("Bank of Business");
+        bobLabel2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        bobLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        bobLabel2.setText("Bank of Business");
 
-        rtotalbalancelabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtotalbalancelabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rtotalbalancelabel.setText("Total Balance:");
+        totalBalanceLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        totalBalanceLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        totalBalanceLabel.setText("Total Balance:");
 
-        rtotalbalancetlabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rtotalbalancetlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        rtotalbalancetlabel.setText("$945.456");
+        totalBalanceAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        totalBalanceAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        totalBalanceAmountLabel.setText("$945.456");
 
-        rhaveanicedaylabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        rhaveanicedaylabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rhaveanicedaylabel.setText("HAVE A NICE DAY!");
+        haveANiceDayLabel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        haveANiceDayLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        haveANiceDayLabel.setText("HAVE A NICE DAY!");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLayout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addComponent(rbankicon)
+                        .addComponent(bankIcon)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rboblabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(bobLabel))
+                    .addGroup(jPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rhaveanicedaylabel)
-                            .addComponent(rboblabel2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rtotalbalancelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(haveANiceDayLabel)
+                            .addComponent(bobLabel2)
+                            .addGroup(jPanelLayout.createSequentialGroup()
+                                .addComponent(totalBalanceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(6, 6, 6)
-                                .addComponent(rtotalbalancetlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rtimelabel)
+                                .addComponent(totalBalanceAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelLayout.createSequentialGroup()
+                                .addComponent(timeLabel)
                                 .addGap(225, 225, 225)
-                                .addComponent(rtimetlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rdatelabel)
+                                .addComponent(timeAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelLayout.createSequentialGroup()
+                                .addComponent(dateLabel)
                                 .addGap(208, 208, 208)
-                                .addComponent(rdatetlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rcnumberlabel)
+                                .addComponent(dateAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelLayout.createSequentialGroup()
+                                .addComponent(cardNumberLabel)
                                 .addGap(95, 95, 95)
-                                .addComponent(rcnumbertlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(rtransactionlabel)
-                                    .addComponent(ramountlabel, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rtypelabel, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cardNumberAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelLayout.createSequentialGroup()
+                                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(transactionLabel)
+                                    .addComponent(amountLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(typeLabel, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelLayout.createSequentialGroup()
                                         .addGap(28, 28, 28)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rtransactiontlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(rtypetlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(transactionAmountLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(typeAmountLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(ramounttlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(amountAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addGap(10, 10, 10))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(rbankicon))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(bankIcon))
+                    .addGroup(jPanelLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(rboblabel)))
+                        .addComponent(bobLabel)))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdatelabel)
-                    .addComponent(rdatetlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dateLabel)
+                    .addComponent(dateAmountLabel))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rtimelabel)
-                    .addComponent(rtimetlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(timeLabel)
+                    .addComponent(timeAmountLabel))
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rcnumberlabel)
-                    .addComponent(rcnumbertlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardNumberLabel)
+                    .addComponent(cardNumberAmountLabel))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rtransactiontlabel)
-                    .addComponent(rtransactionlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(transactionAmountLabel)
+                    .addComponent(transactionLabel))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rtypelabel)
-                    .addComponent(rtypetlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(typeLabel)
+                    .addComponent(typeAmountLabel))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ramountlabel)
-                    .addComponent(ramounttlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountLabel)
+                    .addComponent(amountAmountLabel))
                 .addGap(14, 14, 14)
-                .addComponent(rboblabel2)
+                .addComponent(bobLabel2)
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rtotalbalancelabel)
-                    .addComponent(rtotalbalancetlabel))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(totalBalanceLabel)
+                    .addComponent(totalBalanceAmountLabel))
                 .addGap(6, 6, 6)
-                .addComponent(rhaveanicedaylabel)
+                .addComponent(haveANiceDayLabel)
                 .addGap(11, 11, 11))
         );
 
-        exitbtn.setBackground(new java.awt.Color(23, 35, 51));
-        exitbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        exitbtn.setForeground(new java.awt.Color(255, 255, 255));
-        exitbtn.setLabel("Exit");
-        exitbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        exitbtn.addActionListener(new java.awt.event.ActionListener() {
+        exitButton.setBackground(new java.awt.Color(23, 35, 51));
+        exitButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        exitButton.setForeground(new java.awt.Color(255, 255, 255));
+        exitButton.setLabel("Exit");
+        exitButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitbtnActionPerformed(evt);
+                exitButtonActionPerformed(evt);
             }
         });
 
-        exiticon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        exitIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
-        mainmenubtn.setBackground(new java.awt.Color(23, 35, 51));
-        mainmenubtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        mainmenubtn.setForeground(new java.awt.Color(255, 255, 255));
-        mainmenubtn.setLabel("Main Menu");
-        mainmenubtn.addActionListener(new java.awt.event.ActionListener() {
+        mainMenuButton.setBackground(new java.awt.Color(23, 35, 51));
+        mainMenuButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        mainMenuButton.setForeground(new java.awt.Color(255, 255, 255));
+        mainMenuButton.setLabel("Main Menu");
+        mainMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainmenubtnActionPerformed(evt);
+                mainMenuButtonActionPerformed(evt);
             }
         });
 
-        mainmenuicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        mainMenuIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -464,43 +464,43 @@ public class Receipt extends javax.swing.JPanel {
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(exiticon)
+                                .addComponent(exitIcon)
                                 .addGap(87, 87, 87)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(87, 87, 87)
-                                .addComponent(mainmenuicon)
+                                .addComponent(mainMenuIcon)
                                 .addGap(10, 10, 10)
-                                .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(249, 249, 249)
-                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(exiticon)
-                        .addComponent(mainmenubtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(mainmenuicon))
+                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(exitIcon)
+                        .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mainMenuIcon))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         Data.setCustomer(null);
         Data.setPage1(null);
         Data.setPage2(null);
@@ -508,43 +508,43 @@ public class Receipt extends javax.swing.JPanel {
             timer.stop();
         }
         frame.ChangeJPanel("LoginCustomer");
-    }//GEN-LAST:event_exitbtnActionPerformed
+    }//GEN-LAST:event_exitButtonActionPerformed
 
-    private void mainmenubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenubtnActionPerformed
+    private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
         if (timer != null) {
             timer.stop();
         }
         frame.ChangeJPanel("HomeCustomer");
-    }//GEN-LAST:event_mainmenubtnActionPerformed
+    }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button exitbtn;
-    private javax.swing.JLabel exiticon;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel mainlabel;
-    private java.awt.Button mainmenubtn;
-    private javax.swing.JLabel mainmenuicon;
-    private javax.swing.JLabel ramountlabel;
-    private javax.swing.JLabel ramounttlabel;
-    private javax.swing.JLabel rbankicon;
-    private javax.swing.JLabel rboblabel;
-    private javax.swing.JLabel rboblabel2;
-    private javax.swing.JLabel rcnumberlabel;
-    private javax.swing.JLabel rcnumbertlabel;
-    private javax.swing.JLabel rdatelabel;
-    private javax.swing.JLabel rdatetlabel;
-    private javax.swing.JLabel rhaveanicedaylabel;
-    private javax.swing.JLabel rtimelabel;
-    private javax.swing.JLabel rtimetlabel;
-    private javax.swing.JLabel rtotalbalancelabel;
-    private javax.swing.JLabel rtotalbalancetlabel;
-    private javax.swing.JLabel rtransactionlabel;
-    private javax.swing.JLabel rtransactiontlabel;
-    private javax.swing.JLabel rtypelabel;
-    private javax.swing.JLabel rtypetlabel;
+    private javax.swing.JLabel amountAmountLabel;
+    private javax.swing.JLabel amountLabel;
+    private javax.swing.JLabel bankIcon;
+    private javax.swing.JLabel bobLabel;
+    private javax.swing.JLabel bobLabel2;
+    private javax.swing.JLabel cardNumberAmountLabel;
+    private javax.swing.JLabel cardNumberLabel;
+    private javax.swing.JLabel dateAmountLabel;
+    private javax.swing.JLabel dateLabel;
+    private java.awt.Button exitButton;
+    private javax.swing.JLabel exitIcon;
+    private javax.swing.JLabel haveANiceDayLabel;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JPanel jPanel;
+    private javax.swing.JLabel mainLabel;
+    private java.awt.Button mainMenuButton;
+    private javax.swing.JLabel mainMenuIcon;
+    private javax.swing.JLabel timeAmountLabel;
+    private javax.swing.JLabel timeLabel;
+    private javax.swing.JLabel totalBalanceAmountLabel;
+    private javax.swing.JLabel totalBalanceLabel;
+    private javax.swing.JLabel transactionAmountLabel;
+    private javax.swing.JLabel transactionLabel;
+    private javax.swing.JLabel typeAmountLabel;
+    private javax.swing.JLabel typeLabel;
     // End of variables declaration//GEN-END:variables
 }

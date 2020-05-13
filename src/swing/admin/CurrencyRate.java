@@ -33,10 +33,10 @@ public class CurrencyRate extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        currencyratetable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 32));
+        currencyRateTable.getTableHeader().setFont(new java.awt.Font("Segoe UI", 0, 32));
         String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
         String[] typename2 = {"Dollar", "Euro", "Pound", "TurkishLira"};
-        DefaultTableModel model = (DefaultTableModel) currencyratetable.getModel();
+        DefaultTableModel model = (DefaultTableModel) currencyRateTable.getModel();
         timer = new Timer(2000, new ActionListener() {
             ArrayList<ArrayList<String>> load = null;
             ArrayList<ArrayList<String>> data = null;
@@ -95,28 +95,28 @@ public class CurrencyRate extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        currencyratetable = new javax.swing.JTable();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        jScrollPane = new javax.swing.JScrollPane();
+        currencyRateTable = new javax.swing.JTable();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Currency Rate");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Currency Rate");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        currencyratetable.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
-        currencyratetable.setForeground(new java.awt.Color(23, 35, 51));
-        currencyratetable.setModel(new javax.swing.table.DefaultTableModel(
+        currencyRateTable.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
+        currencyRateTable.setForeground(new java.awt.Color(23, 35, 51));
+        currencyRateTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -139,30 +139,30 @@ public class CurrencyRate extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        currencyratetable.setRowHeight(71);
-        currencyratetable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        currencyratetable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(currencyratetable);
-        if (currencyratetable.getColumnModel().getColumnCount() > 0) {
-            currencyratetable.getColumnModel().getColumn(0).setResizable(false);
-            currencyratetable.getColumnModel().getColumn(1).setResizable(false);
-            currencyratetable.getColumnModel().getColumn(2).setResizable(false);
-            currencyratetable.getColumnModel().getColumn(3).setResizable(false);
-            currencyratetable.getColumnModel().getColumn(4).setResizable(false);
+        currencyRateTable.setRowHeight(71);
+        currencyRateTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        currencyRateTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane.setViewportView(currencyRateTable);
+        if (currencyRateTable.getColumnModel().getColumnCount() > 0) {
+            currencyRateTable.getColumnModel().getColumn(0).setResizable(false);
+            currencyRateTable.getColumnModel().getColumn(1).setResizable(false);
+            currencyRateTable.getColumnModel().getColumn(2).setResizable(false);
+            currencyRateTable.getColumnModel().getColumn(3).setResizable(false);
+            currencyRateTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -171,14 +171,14 @@ public class CurrencyRate extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(cancelicon)))
+                                .addComponent(cancelIcon)))
                         .addGap(562, 562, 562)))
                 .addGap(10, 10, 10))
         );
@@ -186,30 +186,30 @@ public class CurrencyRate extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
         frame.ChangeJPanel("HomeAdmin");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
-    private javax.swing.JTable currencyratetable;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel mainlabel;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
+    private javax.swing.JTable currencyRateTable;
+    private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JLabel mainLabel;
     // End of variables declaration//GEN-END:variables
 }

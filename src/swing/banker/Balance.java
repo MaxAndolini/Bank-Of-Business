@@ -32,7 +32,7 @@ public class Balance extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
+        ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
 
         timer = new Timer(2000, new ActionListener() {
             int type = 0;
@@ -42,49 +42,49 @@ public class Balance extends javax.swing.JPanel {
                 switch (type) {
                     case 0: {
                         String[] load = Database.getArray("Currencies", "Rate", "Dollar");
-                        typelabel.setText("Dollar");
-                        firstlabel.setText("Euro:");
-                        secondlabel.setText("Pound:");
-                        thirdlabel.setText("Turkish Lira:");
-                        firstalabel.setText(Data.currencyFormat(1, Database.isBigDecimal(load[2])));
-                        secondalabel.setText(Data.currencyFormat(2, Database.isBigDecimal(load[3])));
-                        thirdalabel.setText(Data.currencyFormat(3, Database.isBigDecimal(load[4])));
+                        typeLabel.setText("Dollar");
+                        firstLabel.setText("Euro:");
+                        secondLabel.setText("Pound:");
+                        thirdLabel.setText("Turkish Lira:");
+                        firstAmountLabel.setText(Data.currencyFormat(1, Database.isBigDecimal(load[2])));
+                        secondAmountLabel.setText(Data.currencyFormat(2, Database.isBigDecimal(load[3])));
+                        thirdAmountLabel.setText(Data.currencyFormat(3, Database.isBigDecimal(load[4])));
                         type++;
                         break;
                     }
                     case 1: {
                         String[] load = Database.getArray("Currencies", "Rate", "Euro");
-                        typelabel.setText("Euro");
-                        firstlabel.setText("Dollar:");
-                        secondlabel.setText("Pound:");
-                        thirdlabel.setText("Turkish Lira:");
-                        firstalabel.setText(Data.currencyFormat(0, Database.isBigDecimal(load[1])));
-                        secondalabel.setText(Data.currencyFormat(2, Database.isBigDecimal(load[3])));
-                        thirdalabel.setText(Data.currencyFormat(3, Database.isBigDecimal(load[4])));
+                        typeLabel.setText("Euro");
+                        firstLabel.setText("Dollar:");
+                        secondLabel.setText("Pound:");
+                        thirdLabel.setText("Turkish Lira:");
+                        firstAmountLabel.setText(Data.currencyFormat(0, Database.isBigDecimal(load[1])));
+                        secondAmountLabel.setText(Data.currencyFormat(2, Database.isBigDecimal(load[3])));
+                        thirdAmountLabel.setText(Data.currencyFormat(3, Database.isBigDecimal(load[4])));
                         type++;
                         break;
                     }
                     case 2: {
                         String[] load = Database.getArray("Currencies", "Rate", "Pound");
-                        typelabel.setText("Pound");
-                        firstlabel.setText("Dollar:");
-                        secondlabel.setText("Euro:");
-                        thirdlabel.setText("Turkish Lira:");
-                        firstalabel.setText(Data.currencyFormat(0, Database.isBigDecimal(load[1])));
-                        secondalabel.setText(Data.currencyFormat(1, Database.isBigDecimal(load[2])));
-                        thirdalabel.setText(Data.currencyFormat(3, Database.isBigDecimal(load[4])));
+                        typeLabel.setText("Pound");
+                        firstLabel.setText("Dollar:");
+                        secondLabel.setText("Euro:");
+                        thirdLabel.setText("Turkish Lira:");
+                        firstAmountLabel.setText(Data.currencyFormat(0, Database.isBigDecimal(load[1])));
+                        secondAmountLabel.setText(Data.currencyFormat(1, Database.isBigDecimal(load[2])));
+                        thirdAmountLabel.setText(Data.currencyFormat(3, Database.isBigDecimal(load[4])));
                         type++;
                         break;
                     }
                     case 3: {
                         String[] load = Database.getArray("Currencies", "Rate", "Turkish Lira");
-                        typelabel.setText("Turkish Lira");
-                        firstlabel.setText("Dollar:");
-                        secondlabel.setText("Euro:");
-                        thirdlabel.setText("Pound:");
-                        firstalabel.setText(Data.currencyFormat(0, Database.isBigDecimal(load[1])));
-                        secondalabel.setText(Data.currencyFormat(1, Database.isBigDecimal(load[2])));
-                        thirdalabel.setText(Data.currencyFormat(2, Database.isBigDecimal(load[3])));
+                        typeLabel.setText("Turkish Lira");
+                        firstLabel.setText("Dollar:");
+                        secondLabel.setText("Euro:");
+                        thirdLabel.setText("Pound:");
+                        firstAmountLabel.setText(Data.currencyFormat(0, Database.isBigDecimal(load[1])));
+                        secondAmountLabel.setText(Data.currencyFormat(1, Database.isBigDecimal(load[2])));
+                        thirdAmountLabel.setText(Data.currencyFormat(2, Database.isBigDecimal(load[3])));
                         type = 0;
                         break;
                     }
@@ -100,44 +100,44 @@ public class Balance extends javax.swing.JPanel {
 
     public void balance() {
         String[] typename = {"ID", "CardNumber", "FullName"};
-        if (!searchtext.getText().isBlank()) {
-            if (Database.exists("Accounts", typename[searchtype.getSelectedIndex()], searchtext.getText())) {
-                if (Database.getInt("Accounts", typename[searchtype.getSelectedIndex()], searchtext.getText(), "AccountType") == 0) {
-                    text = searchtext.getText();
-                    type = searchtype.getSelectedIndex();
+        if (!searchText.getText().isBlank()) {
+            if (Database.exists("Accounts", typename[searchType.getSelectedIndex()], searchText.getText())) {
+                if (Database.getInt("Accounts", typename[searchType.getSelectedIndex()], searchText.getText(), "AccountType") == 0) {
+                    text = searchText.getText();
+                    type = searchType.getSelectedIndex();
                     timer2 = new Timer(2000, (ActionEvent e) -> {
-                        dolaralabel.setText(Data.currencyFormat(0, Database.getBigDecimal("Accounts", typename[type], text, "Dollar")));
-                        euroalabel.setText(Data.currencyFormat(1, Database.getBigDecimal("Accounts", typename[type], text, "Euro")));
-                        poundalabel.setText(Data.currencyFormat(2, Database.getBigDecimal("Accounts", typename[type], text, "Pound")));
-                        turkishliraalabel.setText(Data.currencyFormat(3, Database.getBigDecimal("Accounts", typename[type], text, "TurkishLira")));
+                        dolarAmountLabel.setText(Data.currencyFormat(0, Database.getBigDecimal("Accounts", typename[type], text, "Dollar")));
+                        euroAmountLabel.setText(Data.currencyFormat(1, Database.getBigDecimal("Accounts", typename[type], text, "Euro")));
+                        poundAmountLabel.setText(Data.currencyFormat(2, Database.getBigDecimal("Accounts", typename[type], text, "Pound")));
+                        turkishLiraAmountLabel.setText(Data.currencyFormat(3, Database.getBigDecimal("Accounts", typename[type], text, "TurkishLira")));
                     });
                     timer2.setInitialDelay(0);
                     timer2.start();
                     jPanel2.setVisible(true);
-                    searchtext.setText(null);
-                    searchtype.setSelectedIndex(0);
-                    infolabel.setText("The customer was successfully found.");
+                    searchText.setText(null);
+                    searchType.setSelectedIndex(0);
+                    infoLabel.setText("The customer was successfully found.");
                 } else {
-                    infolabel.setText("The account type is invalid.");
+                    infoLabel.setText("The account type is invalid.");
                 }
             } else {
-                infolabel.setText("The customer is invalid.");
+                infoLabel.setText("The customer is invalid.");
             }
         } else {
-            infolabel.setText("The field can't be left blank.");
+            infoLabel.setText("The field can't be left blank.");
         }
     }
 
     public void clear() {
-        searchtext.setText(null);
-        searchtype.setSelectedIndex(0);
+        searchText.setText(null);
+        searchType.setSelectedIndex(0);
         text = null;
         type = 0;
         if (timer2 != null) {
             timer2.stop();
         }
         jPanel2.setVisible(false);
-        infolabel.setText("The search was successfully cleared.");
+        infoLabel.setText("The search was successfully cleared.");
     }
 
     /**
@@ -149,135 +149,135 @@ public class Balance extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
-        infolabel2 = new javax.swing.JLabel();
-        searchtext = new javax.swing.JTextField();
-        searchtype = new javax.swing.JComboBox<>();
-        okbtn = new java.awt.Button();
-        clearbtn = new java.awt.Button();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        infoLabel2 = new javax.swing.JLabel();
+        searchText = new javax.swing.JTextField();
+        searchType = new javax.swing.JComboBox<>();
+        okButton = new java.awt.Button();
+        clearButton = new java.awt.Button();
         jPanel = new javax.swing.JPanel();
-        typelabel = new javax.swing.JLabel();
-        firstlabel = new javax.swing.JLabel();
-        firstalabel = new javax.swing.JLabel();
-        secondlabel = new javax.swing.JLabel();
-        secondalabel = new javax.swing.JLabel();
-        thirdlabel = new javax.swing.JLabel();
-        thirdalabel = new javax.swing.JLabel();
+        typeLabel = new javax.swing.JLabel();
+        firstLabel = new javax.swing.JLabel();
+        firstAmountLabel = new javax.swing.JLabel();
+        secondLabel = new javax.swing.JLabel();
+        secondAmountLabel = new javax.swing.JLabel();
+        thirdLabel = new javax.swing.JLabel();
+        thirdAmountLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        dolarlabel = new javax.swing.JLabel();
-        dolaralabel = new javax.swing.JLabel();
-        eurolabel = new javax.swing.JLabel();
-        euroalabel = new javax.swing.JLabel();
-        poundlabel = new javax.swing.JLabel();
-        poundalabel = new javax.swing.JLabel();
-        turkishliralabel = new javax.swing.JLabel();
-        turkishliraalabel = new javax.swing.JLabel();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        dolarLabel = new javax.swing.JLabel();
+        dolarAmountLabel = new javax.swing.JLabel();
+        euroLabel = new javax.swing.JLabel();
+        euroAmountLabel = new javax.swing.JLabel();
+        poundLabel = new javax.swing.JLabel();
+        poundAmountLabel = new javax.swing.JLabel();
+        turkishLiraLabel = new javax.swing.JLabel();
+        turkishLiraAmountLabel = new javax.swing.JLabel();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Balance");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Balance");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        infolabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        infolabel2.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel2.setText("Search");
+        infoLabel2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        infoLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel2.setText("Search");
 
-        searchtext.setBackground(new java.awt.Color(23, 35, 51));
-        searchtext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        searchtext.setForeground(new java.awt.Color(255, 255, 255));
-        searchtext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        searchtext.setMaximumSize(new java.awt.Dimension(7, 39));
-        searchtext.addActionListener(new java.awt.event.ActionListener() {
+        searchText.setBackground(new java.awt.Color(23, 35, 51));
+        searchText.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        searchText.setForeground(new java.awt.Color(255, 255, 255));
+        searchText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        searchText.setMaximumSize(new java.awt.Dimension(7, 39));
+        searchText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchtextActionPerformed(evt);
+                searchTextActionPerformed(evt);
             }
         });
-        searchtext.addKeyListener(new java.awt.event.KeyAdapter() {
+        searchText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                searchtextKeyPressed(evt);
+                searchTextKeyPressed(evt);
             }
         });
 
-        searchtype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        searchtype.setForeground(new java.awt.Color(23, 35, 51));
-        searchtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Card Number", "Full Name" }));
-        searchtype.setToolTipText("");
-        searchtype.addItemListener(new java.awt.event.ItemListener() {
+        searchType.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        searchType.setForeground(new java.awt.Color(23, 35, 51));
+        searchType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Card Number", "Full Name" }));
+        searchType.setToolTipText("");
+        searchType.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                searchtypeİtemStateChanged(evt);
+                searchTypeİtemStateChanged(evt);
             }
         });
 
-        okbtn.setBackground(new java.awt.Color(23, 35, 51));
-        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        okbtn.setForeground(new java.awt.Color(255, 255, 255));
-        okbtn.setLabel("OK");
-        okbtn.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setBackground(new java.awt.Color(23, 35, 51));
+        okButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okButton.setForeground(new java.awt.Color(255, 255, 255));
+        okButton.setLabel("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okbtnActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
 
-        clearbtn.setBackground(new java.awt.Color(23, 35, 51));
-        clearbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        clearbtn.setForeground(new java.awt.Color(255, 255, 255));
-        clearbtn.setLabel("Clear");
-        clearbtn.addActionListener(new java.awt.event.ActionListener() {
+        clearButton.setBackground(new java.awt.Color(23, 35, 51));
+        clearButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        clearButton.setForeground(new java.awt.Color(255, 255, 255));
+        clearButton.setLabel("Clear");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearbtnActionPerformed(evt);
+                clearButtonActionPerformed(evt);
             }
         });
 
         jPanel.setMaximumSize(new java.awt.Dimension(296, 179));
         jPanel.setMinimumSize(new java.awt.Dimension(296, 179));
 
-        typelabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        typelabel.setForeground(new java.awt.Color(133, 187, 101));
-        typelabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        typelabel.setText("Dollar");
+        typeLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        typeLabel.setForeground(new java.awt.Color(133, 187, 101));
+        typeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        typeLabel.setText("Dollar");
 
-        firstlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        firstlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        firstlabel.setText("Euro:");
+        firstLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        firstLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        firstLabel.setText("Euro:");
 
-        firstalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        firstalabel.setForeground(new java.awt.Color(133, 187, 101));
-        firstalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        firstalabel.setText("1.21 €");
+        firstAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        firstAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        firstAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        firstAmountLabel.setText("1.21 €");
 
-        secondlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        secondlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        secondlabel.setText("Pound:");
+        secondLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        secondLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        secondLabel.setText("Pound:");
 
-        secondalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        secondalabel.setForeground(new java.awt.Color(133, 187, 101));
-        secondalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        secondalabel.setText("£1.14");
+        secondAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        secondAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        secondAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        secondAmountLabel.setText("£1.14");
 
-        thirdlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        thirdlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        thirdlabel.setText("Turkish Lira:");
+        thirdLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        thirdLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        thirdLabel.setText("Turkish Lira:");
 
-        thirdalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        thirdalabel.setForeground(new java.awt.Color(133, 187, 101));
-        thirdalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        thirdalabel.setText("₺5.42");
+        thirdAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        thirdAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        thirdAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        thirdAmountLabel.setText("₺5.42");
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
@@ -286,77 +286,77 @@ public class Balance extends javax.swing.JPanel {
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(typelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(typeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelLayout.createSequentialGroup()
                         .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(secondlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(thirdlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                            .addComponent(firstLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(secondLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(thirdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
                         .addGap(6, 6, 6)
                         .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(secondalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(thirdalabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(firstAmountLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(secondAmountLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(thirdAmountLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(typelabel)
+                .addComponent(typeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstlabel)
-                    .addComponent(firstalabel))
+                    .addComponent(firstLabel)
+                    .addComponent(firstAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(secondlabel)
-                    .addComponent(secondalabel))
+                    .addComponent(secondLabel)
+                    .addComponent(secondAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(thirdlabel)
-                    .addComponent(thirdalabel))
+                    .addComponent(thirdLabel)
+                    .addComponent(thirdAmountLabel))
                 .addGap(11, 11, 11))
         );
 
         jPanel2.setMaximumSize(new java.awt.Dimension(296, 179));
         jPanel2.setMinimumSize(new java.awt.Dimension(296, 179));
 
-        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dolarlabel.setText("Dollar:");
+        dolarLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dolarLabel.setText("Dollar:");
 
-        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
-        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        dolaralabel.setText("$500");
+        dolarAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        dolarAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        dolarAmountLabel.setText("$500");
 
-        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eurolabel.setText("Euro:");
+        euroLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        euroLabel.setText("Euro:");
 
-        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
-        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("400 €");
+        euroAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        euroAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        euroAmountLabel.setText("400 €");
 
-        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        poundlabel.setText("Pound:");
+        poundLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        poundLabel.setText("Pound:");
 
-        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
-        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poundalabel.setText("£200");
+        poundAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        poundAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        poundAmountLabel.setText("£200");
 
-        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turkishliralabel.setText("Turkish Lira:");
+        turkishLiraLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishLiraLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        turkishLiraLabel.setText("Turkish Lira:");
 
-        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
-        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        turkishliraalabel.setText("₺500");
+        turkishLiraAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishLiraAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        turkishLiraAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        turkishLiraAmountLabel.setText("₺500");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -366,22 +366,22 @@ public class Balance extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(dolarlabel)
+                        .addComponent(dolarLabel)
                         .addGap(6, 6, 6)
-                        .addComponent(dolaralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dolarAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(turkishliralabel)
+                            .addComponent(turkishLiraLabel)
                             .addGap(6, 6, 6)
-                            .addComponent(turkishliraalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(turkishLiraAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(poundlabel)
+                            .addComponent(poundLabel)
                             .addGap(6, 6, 6)
-                            .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(poundAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(eurolabel)
+                            .addComponent(euroLabel)
                             .addGap(6, 6, 6)
-                            .addComponent(euroalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(euroAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10))
         );
         jPanel2Layout.setVerticalGroup(
@@ -389,35 +389,35 @@ public class Balance extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dolarlabel)
-                    .addComponent(dolaralabel))
+                    .addComponent(dolarLabel)
+                    .addComponent(dolarAmountLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eurolabel)
-                    .addComponent(euroalabel))
+                    .addComponent(euroLabel)
+                    .addComponent(euroAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(poundlabel)
-                    .addComponent(poundalabel))
+                    .addComponent(poundLabel)
+                    .addComponent(poundAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(turkishliralabel)
-                    .addComponent(turkishliraalabel))
+                    .addComponent(turkishLiraLabel)
+                    .addComponent(turkishLiraAmountLabel))
                 .addGap(11, 11, 11))
         );
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -426,65 +426,65 @@ public class Balance extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(cancelicon))
+                        .addComponent(cancelIcon))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(64, 64, 64)
-                                .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(126, 126, 126)
-                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
-                                .addComponent(searchtext, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(searchtype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(searchType, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(13, 13, 13)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(300, 300, 300)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(300, 300, 300))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(infolabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(searchtext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(searchtype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchType, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(117, 117, 117)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
@@ -492,72 +492,72 @@ public class Balance extends javax.swing.JPanel {
             timer2.stop();
         }
         frame.ChangeJPanel("HomeBanker");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         balance();
-    }//GEN-LAST:event_okbtnActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void clearbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearbtnActionPerformed
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         clear();
-    }//GEN-LAST:event_clearbtnActionPerformed
+    }//GEN-LAST:event_clearButtonActionPerformed
 
-    private void searchtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchtextActionPerformed
+    private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchtextActionPerformed
+    }//GEN-LAST:event_searchTextActionPerformed
 
-    private void searchtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchtextKeyPressed
+    private void searchTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             balance();
         }
-    }//GEN-LAST:event_searchtextKeyPressed
+    }//GEN-LAST:event_searchTextKeyPressed
 
-    private void searchtypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchtypeİtemStateChanged
+    private void searchTypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchTypeİtemStateChanged
         switch (evt.getStateChange()) {
             case 0:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
-                searchtext.setText(null);
+                ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchText.setText(null);
                 break;
             case 1:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(1, 16));
-                searchtext.setText(null);
+                ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
+                searchText.setText(null);
                 break;
             case 2:
-                ((AbstractDocument) searchtext.getDocument()).setDocumentFilter(new Filter(0, 32));
-                searchtext.setText(null);
+                ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(0, 32));
+                searchText.setText(null);
                 break;
             default:
                 break;
         }
-    }//GEN-LAST:event_searchtypeİtemStateChanged
+    }//GEN-LAST:event_searchTypeİtemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
-    private java.awt.Button clearbtn;
-    private javax.swing.JLabel dolaralabel;
-    private javax.swing.JLabel dolarlabel;
-    private javax.swing.JLabel euroalabel;
-    private javax.swing.JLabel eurolabel;
-    private javax.swing.JLabel firstalabel;
-    private javax.swing.JLabel firstlabel;
-    private javax.swing.JLabel infolabel;
-    private javax.swing.JLabel infolabel2;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
+    private java.awt.Button clearButton;
+    private javax.swing.JLabel dolarAmountLabel;
+    private javax.swing.JLabel dolarLabel;
+    private javax.swing.JLabel euroAmountLabel;
+    private javax.swing.JLabel euroLabel;
+    private javax.swing.JLabel firstAmountLabel;
+    private javax.swing.JLabel firstLabel;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel infoLabel2;
     private javax.swing.JPanel jPanel;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel mainlabel;
-    private java.awt.Button okbtn;
-    private javax.swing.JLabel poundalabel;
-    private javax.swing.JLabel poundlabel;
-    private javax.swing.JTextField searchtext;
-    private javax.swing.JComboBox<String> searchtype;
-    private javax.swing.JLabel secondalabel;
-    private javax.swing.JLabel secondlabel;
-    private javax.swing.JLabel thirdalabel;
-    private javax.swing.JLabel thirdlabel;
-    private javax.swing.JLabel turkishliraalabel;
-    private javax.swing.JLabel turkishliralabel;
-    private javax.swing.JLabel typelabel;
+    private javax.swing.JLabel mainLabel;
+    private java.awt.Button okButton;
+    private javax.swing.JLabel poundAmountLabel;
+    private javax.swing.JLabel poundLabel;
+    private javax.swing.JTextField searchText;
+    private javax.swing.JComboBox<String> searchType;
+    private javax.swing.JLabel secondAmountLabel;
+    private javax.swing.JLabel secondLabel;
+    private javax.swing.JLabel thirdAmountLabel;
+    private javax.swing.JLabel thirdLabel;
+    private javax.swing.JLabel turkishLiraAmountLabel;
+    private javax.swing.JLabel turkishLiraLabel;
+    private javax.swing.JLabel typeLabel;
     // End of variables declaration//GEN-END:variables
 }

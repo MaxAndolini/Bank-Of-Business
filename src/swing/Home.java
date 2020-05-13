@@ -268,11 +268,11 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        bankicon = new javax.swing.JLabel();
-        boblabel = new javax.swing.JLabel();
-        closebtn = new javax.swing.JButton();
-        minimizebtn = new javax.swing.JButton();
+        jPanel = new javax.swing.JPanel();
+        bankIcon = new javax.swing.JLabel();
+        bobLabel = new javax.swing.JLabel();
+        closeButton = new javax.swing.JButton();
+        minimizeButton = new javax.swing.JButton();
         DynamicPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -287,79 +287,79 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(23, 35, 51));
-        jPanel2.setAlignmentX(0.0F);
-        jPanel2.setAlignmentY(0.0F);
-        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        jPanel.setBackground(new java.awt.Color(23, 35, 51));
+        jPanel.setAlignmentX(0.0F);
+        jPanel.setAlignmentY(0.0F);
+        jPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel2MouseDragged(evt);
+                jPanelMouseDragged(evt);
             }
         });
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel2MousePressed(evt);
+                jPanelMousePressed(evt);
             }
         });
 
-        bankicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_bank_48px.png"))); // NOI18N
+        bankIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_bank_48px.png"))); // NOI18N
 
-        boblabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        boblabel.setForeground(new java.awt.Color(255, 255, 255));
-        boblabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        boblabel.setText("Bank of Business");
+        bobLabel.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        bobLabel.setForeground(new java.awt.Color(255, 255, 255));
+        bobLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bobLabel.setText("Bank of Business");
 
-        closebtn.setForeground(new java.awt.Color(255, 255, 255));
-        closebtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_close_window_50px.png"))); // NOI18N
-        closebtn.setContentAreaFilled(false);
-        closebtn.setMaximumSize(new java.awt.Dimension(50, 50));
-        closebtn.setMinimumSize(new java.awt.Dimension(50, 50));
-        closebtn.setPreferredSize(new java.awt.Dimension(50, 50));
-        closebtn.addActionListener(new java.awt.event.ActionListener() {
+        closeButton.setForeground(new java.awt.Color(255, 255, 255));
+        closeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_close_window_50px.png"))); // NOI18N
+        closeButton.setContentAreaFilled(false);
+        closeButton.setMaximumSize(new java.awt.Dimension(50, 50));
+        closeButton.setMinimumSize(new java.awt.Dimension(50, 50));
+        closeButton.setPreferredSize(new java.awt.Dimension(50, 50));
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                closebtnActionPerformed(evt);
+                closeButtonActionPerformed(evt);
             }
         });
 
-        minimizebtn.setForeground(new java.awt.Color(255, 255, 255));
-        minimizebtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_minimize_window_50px.png"))); // NOI18N
-        minimizebtn.setContentAreaFilled(false);
-        minimizebtn.setMaximumSize(new java.awt.Dimension(50, 50));
-        minimizebtn.setMinimumSize(new java.awt.Dimension(50, 50));
-        minimizebtn.setPreferredSize(new java.awt.Dimension(50, 50));
-        minimizebtn.addActionListener(new java.awt.event.ActionListener() {
+        minimizeButton.setForeground(new java.awt.Color(255, 255, 255));
+        minimizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_minimize_window_50px.png"))); // NOI18N
+        minimizeButton.setContentAreaFilled(false);
+        minimizeButton.setMaximumSize(new java.awt.Dimension(50, 50));
+        minimizeButton.setMinimumSize(new java.awt.Dimension(50, 50));
+        minimizeButton.setPreferredSize(new java.awt.Dimension(50, 50));
+        minimizeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimizebtnActionPerformed(evt);
+                minimizeButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(bankicon)
+                .addComponent(bankIcon)
                 .addGap(6, 6, 6)
-                .addComponent(boblabel)
+                .addComponent(bobLabel)
                 .addGap(744, 744, 744)
-                .addComponent(minimizebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minimizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(closeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(bankicon)
+                .addComponent(bankIcon)
                 .addGap(2, 2, 2))
-            .addComponent(closebtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(minimizebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(closeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                .addComponent(minimizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(boblabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bobLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(11, 11, 11))
         );
 
@@ -371,41 +371,41 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(DynamicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(DynamicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+    private void jPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMousePressed
         // TODO add your handling code here:
         //drag this pane
         xx = evt.getX();
         xy = evt.getY();
-    }//GEN-LAST:event_jPanel2MousePressed
+    }//GEN-LAST:event_jPanelMousePressed
 
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+    private void jPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMouseDragged
         // TODO add your handling code here:
 
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);
-    }//GEN-LAST:event_jPanel2MouseDragged
+    }//GEN-LAST:event_jPanelMouseDragged
 
-    private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
-    }//GEN-LAST:event_closebtnActionPerformed
+    }//GEN-LAST:event_closeButtonActionPerformed
 
-    private void minimizebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizebtnActionPerformed
+    private void minimizeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizeButtonActionPerformed
         setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_minimizebtnActionPerformed
+    }//GEN-LAST:event_minimizeButtonActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if (SystemTray.isSupported()) {
@@ -470,10 +470,10 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DynamicPanel;
-    private javax.swing.JLabel bankicon;
-    private javax.swing.JLabel boblabel;
-    private javax.swing.JButton closebtn;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton minimizebtn;
+    private javax.swing.JLabel bankIcon;
+    private javax.swing.JLabel bobLabel;
+    private javax.swing.JButton closeButton;
+    private javax.swing.JPanel jPanel;
+    private javax.swing.JButton minimizeButton;
     // End of variables declaration//GEN-END:variables
 }

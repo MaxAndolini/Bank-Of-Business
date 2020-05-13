@@ -33,27 +33,27 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="mainlabel" min="-2" pref="488" max="-2" attributes="0"/>
+                  <Component id="mainLabel" min="-2" pref="488" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jPanel" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                  <Component id="moneytext" min="-2" pref="256" max="-2" attributes="0"/>
+                                  <Component id="moneyText" min="-2" pref="256" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="moneytype" min="-2" pref="166" max="-2" attributes="0"/>
+                                  <Component id="moneyType" min="-2" pref="166" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="moneyctype" min="-2" pref="166" max="-2" attributes="0"/>
+                                          <Component id="moneyConvertType" min="-2" pref="166" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="infolabel2" min="-2" pref="304" max="-2" attributes="0"/>
+                                          <Component id="infoLabel2" min="-2" pref="304" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -62,11 +62,11 @@
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="cancelbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                          <Component id="cancelButton" min="-2" pref="198" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="cancelicon" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancelIcon" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="okbtn" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="okButton" min="-2" pref="98" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="476" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -76,8 +76,8 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="infolabel" alignment="1" min="-2" pref="470" max="-2" attributes="0"/>
-                  <Component id="infolabel3" alignment="1" min="-2" pref="470" max="-2" attributes="0"/>
+                  <Component id="infoLabel" alignment="1" min="-2" pref="470" max="-2" attributes="0"/>
+                  <Component id="infoLabel3" alignment="1" min="-2" pref="470" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="300" pref="300" max="-2" attributes="0"/>
           </Group>
@@ -87,31 +87,31 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              <Component id="mainlabel" min="-2" max="-2" attributes="0"/>
+              <Component id="mainLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-              <Component id="infolabel" min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="infoLabel" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="moneytext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="moneytype" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="moneyText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="moneyType" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="infolabel2" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="infoLabel2" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="moneyctype" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="moneyConvertType" min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="infolabel3" min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="infoLabel3" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="cancelbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="cancelicon" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="okbtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelIcon" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="okButton" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
@@ -119,7 +119,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="mainlabel">
+    <Component class="javax.swing.JLabel" name="mainLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="35" style="0"/>
@@ -140,7 +140,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel">
+    <Component class="javax.swing.JLabel" name="infoLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -152,7 +152,7 @@
         <Property name="text" type="java.lang.String" value="Enter amount you want to convert and press OK."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="moneytext">
+    <Component class="javax.swing.JTextField" name="moneyText">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -169,12 +169,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moneytextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="moneytextKeyPressed"/>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="moneytextKeyReleased"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moneyTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="moneyTextKeyPressed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="moneyTextKeyReleased"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="moneytype">
+    <Component class="javax.swing.JComboBox" name="moneyType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
@@ -193,13 +193,13 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="moneytype&#x130;temStateChanged"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="moneyType&#x130;temStateChanged"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="moneyctype">
+    <Component class="javax.swing.JComboBox" name="moneyConvertType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
@@ -219,13 +219,13 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="moneyctype&#x130;temStateChanged"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="moneyConvertType&#x130;temStateChanged"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel2">
+    <Component class="javax.swing.JLabel" name="infoLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -237,7 +237,7 @@
         <Property name="text" type="java.lang.String" value="Currency you want to convert."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel3">
+    <Component class="javax.swing.JLabel" name="infoLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -248,7 +248,7 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="okbtn">
+    <Component class="java.awt.Button" name="okButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -262,7 +262,7 @@
         <Property name="label" type="java.lang.String" value="OK"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel">
@@ -281,18 +281,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="typelabel" max="32767" attributes="0"/>
+                      <Component id="typeLabel" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="firstlabel" max="32767" attributes="0"/>
-                              <Component id="secondlabel" alignment="1" max="32767" attributes="0"/>
-                              <Component id="thirdlabel" alignment="0" pref="135" max="32767" attributes="0"/>
+                              <Component id="firstLabel" max="32767" attributes="0"/>
+                              <Component id="secondLabel" alignment="1" max="32767" attributes="0"/>
+                              <Component id="thirdLabel" alignment="0" pref="135" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="firstalabel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="secondalabel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="thirdalabel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="firstAmountLabel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="secondAmountLabel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
+                              <Component id="thirdAmountLabel" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -304,21 +304,21 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                  <Component id="typelabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="typeLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="firstlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="firstalabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="firstLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="firstAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="secondlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="secondalabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="secondLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="secondAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="thirdlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="thirdalabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="thirdLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="thirdAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               </Group>
@@ -326,7 +326,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="typelabel">
+        <Component class="javax.swing.JLabel" name="typeLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -338,7 +338,7 @@
             <Property name="text" type="java.lang.String" value="Dollar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="firstlabel">
+        <Component class="javax.swing.JLabel" name="firstLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -347,7 +347,7 @@
             <Property name="text" type="java.lang.String" value="Euro:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="firstalabel">
+        <Component class="javax.swing.JLabel" name="firstAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -359,7 +359,7 @@
             <Property name="text" type="java.lang.String" value="1.21 &#x20ac;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="secondlabel">
+        <Component class="javax.swing.JLabel" name="secondLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -368,7 +368,7 @@
             <Property name="text" type="java.lang.String" value="Pound:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="secondalabel">
+        <Component class="javax.swing.JLabel" name="secondAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -380,7 +380,7 @@
             <Property name="text" type="java.lang.String" value="&#xa3;1.14"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="thirdlabel">
+        <Component class="javax.swing.JLabel" name="thirdLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -389,7 +389,7 @@
             <Property name="text" type="java.lang.String" value="Turkish Lira:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="thirdalabel">
+        <Component class="javax.swing.JLabel" name="thirdAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -423,25 +423,25 @@
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="dolarlabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="dolarLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="dolaralabel" min="-2" pref="204" max="-2" attributes="0"/>
+                          <Component id="dolarAmountLabel" min="-2" pref="204" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="turkishliralabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="turkishLiraLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="turkishliraalabel" min="-2" pref="149" max="-2" attributes="0"/>
+                              <Component id="turkishLiraAmountLabel" min="-2" pref="149" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="poundlabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="poundLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="poundalabel" min="-2" pref="199" max="-2" attributes="0"/>
+                              <Component id="poundAmountLabel" min="-2" pref="199" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="eurolabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="euroLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="euroalabel" min="-2" pref="219" max="-2" attributes="0"/>
+                              <Component id="euroAmountLabel" min="-2" pref="219" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -454,23 +454,23 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="dolarlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="dolaralabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dolarLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dolarAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="11" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="eurolabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="euroalabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="euroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="euroAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="poundlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="poundalabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poundLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poundAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="turkishliralabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="turkishliraalabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="turkishLiraLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="turkishLiraAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               </Group>
@@ -478,7 +478,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="dolarlabel">
+        <Component class="javax.swing.JLabel" name="dolarLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -487,7 +487,7 @@
             <Property name="text" type="java.lang.String" value="Dollar:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="dolaralabel">
+        <Component class="javax.swing.JLabel" name="dolarAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -499,7 +499,7 @@
             <Property name="text" type="java.lang.String" value="$500"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="eurolabel">
+        <Component class="javax.swing.JLabel" name="euroLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -508,7 +508,7 @@
             <Property name="text" type="java.lang.String" value="Euro:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="euroalabel">
+        <Component class="javax.swing.JLabel" name="euroAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -520,7 +520,7 @@
             <Property name="text" type="java.lang.String" value="400 &#x20ac;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="poundlabel">
+        <Component class="javax.swing.JLabel" name="poundLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -529,7 +529,7 @@
             <Property name="text" type="java.lang.String" value="Pound:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="poundalabel">
+        <Component class="javax.swing.JLabel" name="poundAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -541,7 +541,7 @@
             <Property name="text" type="java.lang.String" value="&#xa3;200"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="turkishliralabel">
+        <Component class="javax.swing.JLabel" name="turkishLiraLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -550,7 +550,7 @@
             <Property name="text" type="java.lang.String" value="Turkish Lira:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="turkishliraalabel">
+        <Component class="javax.swing.JLabel" name="turkishLiraAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="23" style="0"/>
@@ -564,7 +564,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="java.awt.Button" name="cancelbtn">
+    <Component class="java.awt.Button" name="cancelButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -581,10 +581,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="cancelicon">
+    <Component class="javax.swing.JLabel" name="cancelIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_exit_48px.png"/>

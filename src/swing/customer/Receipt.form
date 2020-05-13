@@ -36,22 +36,22 @@
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="exitbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="exitButton" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="exiticon" min="-2" max="-2" attributes="0"/>
+                              <Component id="exitIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                              <Component id="mainmenuicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="mainMenuIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="mainmenubtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="mainMenuButton" min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="mainlabel" alignment="0" min="-2" pref="488" max="-2" attributes="0"/>
+                          <Component id="mainLabel" alignment="0" min="-2" pref="488" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
-                      <Component id="infolabel" min="-2" pref="572" max="-2" attributes="0"/>
+                      <Component id="infoLabel" min="-2" pref="572" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -62,19 +62,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              <Component id="mainlabel" min="-2" max="-2" attributes="0"/>
+              <Component id="mainLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-              <Component id="infolabel" min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="infoLabel" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="exitbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="exiticon" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="mainmenubtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="mainmenuicon" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="exitButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="exitIcon" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="mainMenuButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="mainMenuIcon" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -84,7 +84,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="mainlabel">
+    <Component class="javax.swing.JLabel" name="mainLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="35" style="0"/>
@@ -105,7 +105,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel">
+    <Component class="javax.swing.JLabel" name="infoLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="0"/>
@@ -117,7 +117,7 @@
         <Property name="text" type="java.lang.String" value="The money has been withdrawn from your account."/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanel">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[364, 349]"/>
@@ -135,52 +135,52 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="rbankicon" min="-2" max="-2" attributes="0"/>
+                          <Component id="bankIcon" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rboblabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="bobLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rhaveanicedaylabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="rboblabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="haveANiceDayLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="bobLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rtotalbalancelabel" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="totalBalanceLabel" min="-2" pref="175" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rtotalbalancetlabel" min="-2" pref="163" max="-2" attributes="0"/>
+                                  <Component id="totalBalanceAmountLabel" min="-2" pref="163" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rtimelabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="timeLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                                  <Component id="rtimetlabel" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="timeAmountLabel" min="-2" pref="83" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rdatelabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                                  <Component id="rdatetlabel" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="dateAmountLabel" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rcnumberlabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cardNumberLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                                  <Component id="rcnumbertlabel" min="-2" pref="157" max="-2" attributes="0"/>
+                                  <Component id="cardNumberAmountLabel" min="-2" pref="157" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="rtransactionlabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ramountlabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rtypelabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="transactionLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="amountLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="typeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="rtransactiontlabel" alignment="1" min="-2" pref="237" max="-2" attributes="0"/>
-                                              <Component id="rtypetlabel" alignment="1" min="-2" pref="163" max="-2" attributes="0"/>
+                                              <Component id="transactionAmountLabel" alignment="1" min="-2" pref="237" max="-2" attributes="0"/>
+                                              <Component id="typeAmountLabel" alignment="1" min="-2" pref="163" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Component id="ramounttlabel" min="-2" pref="197" max="-2" attributes="0"/>
+                                          <Component id="amountAmountLabel" min="-2" pref="197" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -197,66 +197,66 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Component id="rbankicon" min="-2" max="-2" attributes="0"/>
+                          <Component id="bankIcon" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="rboblabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="bobLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rdatelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rdatetlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rtimelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rtimetlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="timeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="timeAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rcnumberlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rcnumbertlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cardNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cardNumberAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rtransactiontlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rtransactionlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="transactionAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="transactionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rtypelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rtypetlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="typeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="typeAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ramountlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ramounttlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="amountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="amountAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="rboblabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="bobLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rtotalbalancelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rtotalbalancetlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="totalBalanceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="totalBalanceAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                  <Component id="rhaveanicedaylabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="haveANiceDayLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="rbankicon">
+        <Component class="javax.swing.JLabel" name="bankIcon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/swing/images/icons8_bank_48px.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rboblabel">
+        <Component class="javax.swing.JLabel" name="bobLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="20" style="0"/>
@@ -265,7 +265,7 @@
             <Property name="text" type="java.lang.String" value="Bank of Business"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rdatelabel">
+        <Component class="javax.swing.JLabel" name="dateLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -274,7 +274,7 @@
             <Property name="text" type="java.lang.String" value="Date:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rdatetlabel">
+        <Component class="javax.swing.JLabel" name="dateAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -283,7 +283,7 @@
             <Property name="text" type="java.lang.String" value="02/04/2020"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtimelabel">
+        <Component class="javax.swing.JLabel" name="timeLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -292,7 +292,7 @@
             <Property name="text" type="java.lang.String" value="Time:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtimetlabel">
+        <Component class="javax.swing.JLabel" name="timeAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -301,7 +301,7 @@
             <Property name="text" type="java.lang.String" value="10:10:10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rcnumberlabel">
+        <Component class="javax.swing.JLabel" name="cardNumberLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -310,7 +310,7 @@
             <Property name="text" type="java.lang.String" value="Card Number:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rcnumbertlabel">
+        <Component class="javax.swing.JLabel" name="cardNumberAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -319,7 +319,7 @@
             <Property name="text" type="java.lang.String" value="1111222233334444"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtransactionlabel">
+        <Component class="javax.swing.JLabel" name="transactionLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -328,7 +328,7 @@
             <Property name="text" type="java.lang.String" value="Transaction:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtransactiontlabel">
+        <Component class="javax.swing.JLabel" name="transactionAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -337,7 +337,7 @@
             <Property name="text" type="java.lang.String" value="Withdrawal"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtypelabel">
+        <Component class="javax.swing.JLabel" name="typeLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -346,7 +346,7 @@
             <Property name="text" type="java.lang.String" value="Type:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtypetlabel">
+        <Component class="javax.swing.JLabel" name="typeAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -355,7 +355,7 @@
             <Property name="text" type="java.lang.String" value="Dollar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="ramountlabel">
+        <Component class="javax.swing.JLabel" name="amountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -364,7 +364,7 @@
             <Property name="text" type="java.lang.String" value="Amount:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="ramounttlabel">
+        <Component class="javax.swing.JLabel" name="amountAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -373,7 +373,7 @@
             <Property name="text" type="java.lang.String" value="94"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rboblabel2">
+        <Component class="javax.swing.JLabel" name="bobLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -382,7 +382,7 @@
             <Property name="text" type="java.lang.String" value="Bank of Business"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtotalbalancelabel">
+        <Component class="javax.swing.JLabel" name="totalBalanceLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -391,7 +391,7 @@
             <Property name="text" type="java.lang.String" value="Total Balance:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rtotalbalancetlabel">
+        <Component class="javax.swing.JLabel" name="totalBalanceAmountLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -400,7 +400,7 @@
             <Property name="text" type="java.lang.String" value="$945.456"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="rhaveanicedaylabel">
+        <Component class="javax.swing.JLabel" name="haveANiceDayLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="15" style="0"/>
@@ -411,7 +411,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="java.awt.Button" name="exitbtn">
+    <Component class="java.awt.Button" name="exitButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -428,17 +428,17 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="exiticon">
+    <Component class="javax.swing.JLabel" name="exitIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_exit_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="mainmenubtn">
+    <Component class="java.awt.Button" name="mainMenuButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -452,10 +452,10 @@
         <Property name="label" type="java.lang.String" value="Main Menu"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mainmenubtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mainMenuButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="mainmenuicon">
+    <Component class="javax.swing.JLabel" name="mainMenuIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_exit_48px.png"/>

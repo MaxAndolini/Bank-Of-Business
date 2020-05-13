@@ -35,64 +35,64 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
-                      <Component id="infolabel" min="-2" pref="470" max="-2" attributes="0"/>
+                      <Component id="infoLabel" min="-2" pref="470" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="editcustomerbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="editCustomerButton" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="editcustomericon" min="-2" max="-2" attributes="0"/>
+                              <Component id="editCustomerIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
-                              <Component id="settingsicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="settingsIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
-                              <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="transactionsIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="transactionsbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="transactionsButton" min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="mainlabel" min="-2" pref="488" max="-2" attributes="0"/>
+                              <Component id="mainLabel" min="-2" pref="488" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="mainlabel2" min="-2" pref="488" max="-2" attributes="0"/>
+                              <Component id="mainLabel2" min="-2" pref="488" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="customersbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="customersButton" min="-2" pref="198" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="customersicon" min="-2" max="-2" attributes="0"/>
+                                      <Component id="customersIcon" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="addcustomerbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="addCustomerButton" min="-2" pref="198" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="addcustomericon" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addCustomerIcon" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="538" pref="538" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="bankersicon" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bankersIcon" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="bankersbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="bankersButton" min="-2" pref="198" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
+                                      <Component id="balanceIcon" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="balancebtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="balanceButton" min="-2" pref="198" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="deletecustomerbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="deleteCustomerButton" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="deletecustomericon" min="-2" max="-2" attributes="0"/>
+                              <Component id="deleteCustomerIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                              <Component id="settingsbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="settingsButton" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                              <Component id="logouticon" min="-2" max="-2" attributes="0"/>
+                              <Component id="logoutIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="logoutbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="logoutButton" min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -106,55 +106,55 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="mainlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="mainlabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mainLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mainLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-              <Component id="infolabel" min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="infoLabel" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="bankersbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="customersbtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="customersicon" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bankersButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="customersButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="customersIcon" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addcustomerbtn" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addcustomericon" min="-2" max="-2" attributes="0"/>
-                                  <Component id="balancebtn" min="-2" max="-2" attributes="0"/>
-                                  <Component id="balanceicon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addCustomerButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addCustomerIcon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="balanceButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="balanceIcon" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="editcustomerbtn" min="-2" max="-2" attributes="0"/>
-                                  <Component id="editcustomericon" min="-2" max="-2" attributes="0"/>
-                                  <Component id="transactionsbtn" min="-2" max="-2" attributes="0"/>
-                                  <Component id="transactionsicon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editCustomerButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editCustomerIcon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="transactionsButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="transactionsIcon" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
-                              <Component id="settingsicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="settingsIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="bankersicon" min="-2" max="-2" attributes="0"/>
+                      <Component id="bankersIcon" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="settingsbtn" min="-2" max="-2" attributes="0"/>
-                  <Component id="deletecustomerbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="deletecustomericon" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="logoutbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="logouticon" min="-2" max="-2" attributes="0"/>
+                  <Component id="settingsButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="deleteCustomerButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="deleteCustomerIcon" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="logoutButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="logoutIcon" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
@@ -162,7 +162,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="mainlabel">
+    <Component class="javax.swing.JLabel" name="mainLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="35" style="0"/>
@@ -174,7 +174,7 @@
         <Property name="text" type="java.lang.String" value="Welcome Banker"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="mainlabel2">
+    <Component class="javax.swing.JLabel" name="mainLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="35" style="0"/>
@@ -195,7 +195,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel">
+    <Component class="javax.swing.JLabel" name="infoLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -207,7 +207,7 @@
         <Property name="text" type="java.lang.String" value="You can select the actions to do from below."/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="customersbtn">
+    <Component class="java.awt.Button" name="customersButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -221,17 +221,17 @@
         <Property name="label" type="java.lang.String" value="Customers"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customersbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customersButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="customersicon">
+    <Component class="javax.swing.JLabel" name="customersIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_user_male_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="addcustomerbtn">
+    <Component class="java.awt.Button" name="addCustomerButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -245,17 +245,17 @@
         <Property name="label" type="java.lang.String" value="Add Customer"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addcustomerbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCustomerButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="addcustomericon">
+    <Component class="javax.swing.JLabel" name="addCustomerIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_add_property_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="editcustomerbtn">
+    <Component class="java.awt.Button" name="editCustomerButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -269,17 +269,17 @@
         <Property name="label" type="java.lang.String" value="Edit Customer"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editcustomerbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editCustomerButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="editcustomericon">
+    <Component class="javax.swing.JLabel" name="editCustomerIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_edit_property_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="deletecustomerbtn">
+    <Component class="java.awt.Button" name="deleteCustomerButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -296,17 +296,17 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletecustomerbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteCustomerButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="deletecustomericon">
+    <Component class="javax.swing.JLabel" name="deleteCustomerIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_remove_property_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="settingsbtn">
+    <Component class="java.awt.Button" name="settingsButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -320,17 +320,17 @@
         <Property name="label" type="java.lang.String" value="Settings"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="settingsbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="settingsButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="settingsicon">
+    <Component class="javax.swing.JLabel" name="settingsIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_automatic_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="bankersbtn">
+    <Component class="java.awt.Button" name="bankersButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -344,17 +344,17 @@
         <Property name="label" type="java.lang.String" value="Bankers"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bankersbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bankersButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="bankersicon">
+    <Component class="javax.swing.JLabel" name="bankersIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_registration_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="balancebtn">
+    <Component class="java.awt.Button" name="balanceButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -368,17 +368,17 @@
         <Property name="label" type="java.lang.String" value="Balance"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="balancebtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="balanceButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="balanceicon">
+    <Component class="javax.swing.JLabel" name="balanceIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_refund_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="transactionsbtn">
+    <Component class="java.awt.Button" name="transactionsButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -392,17 +392,17 @@
         <Property name="label" type="java.lang.String" value="Transactions"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transactionsbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transactionsButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="transactionsicon">
+    <Component class="javax.swing.JLabel" name="transactionsIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_transaction_list_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="logoutbtn">
+    <Component class="java.awt.Button" name="logoutButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -416,10 +416,10 @@
         <Property name="label" type="java.lang.String" value="Logout"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="logouticon">
+    <Component class="javax.swing.JLabel" name="logoutIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_exit_48px.png"/>

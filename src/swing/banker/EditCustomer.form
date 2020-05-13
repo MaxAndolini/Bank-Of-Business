@@ -35,43 +35,43 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="mainlabel" alignment="0" min="-2" pref="488" max="-2" attributes="0"/>
+                          <Component id="mainLabel" alignment="0" min="-2" pref="488" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="editbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="editButton" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="editicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="editIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="538" max="-2" attributes="0"/>
-                              <Component id="cancelicon" min="-2" max="-2" attributes="0"/>
+                              <Component id="cancelIcon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="cancelbtn" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="cancelButton" min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="phonenumbertext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="phoneNumberText" min="-2" pref="290" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="homeaddresstext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="homeAddressText" min="-2" pref="290" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="passwordtext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="passwordText" min="-2" pref="290" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="infolabel6" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
-                          <Component id="infolabel3" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
+                          <Component id="infoLabel6" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
+                          <Component id="infoLabel3" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="infolabel4" min="-2" pref="330" max="-2" attributes="0"/>
+                              <Component id="infoLabel4" min="-2" pref="330" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="infolabel5" min="-2" pref="330" max="-2" attributes="0"/>
+                              <Component id="infoLabel5" min="-2" pref="330" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="infolabel7" min="-2" pref="330" max="-2" attributes="0"/>
+                              <Component id="infoLabel7" min="-2" pref="330" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="infolabel8" min="-2" pref="330" max="-2" attributes="0"/>
+                              <Component id="infoLabel8" min="-2" pref="330" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -82,27 +82,27 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="infolabel" min="-2" pref="470" max="-2" attributes="0"/>
+                      <Component id="infoLabel" min="-2" pref="470" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="fullnametext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="fullNameText" min="-2" pref="290" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="dateofbirthtext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="dateOfBirthText" min="-2" pref="290" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="jobtext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="jobText" min="-2" pref="290" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="infolabel2" min="-2" pref="84" max="-2" attributes="0"/>
+                      <Component id="infoLabel2" min="-2" pref="84" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="searchtext" min="-2" pref="290" max="-2" attributes="0"/>
+                      <Component id="searchText" min="-2" pref="290" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="searchtype" min="-2" pref="166" max="-2" attributes="0"/>
+                      <Component id="searchType" min="-2" pref="166" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="okbtn" min="-2" pref="98" max="-2" attributes="0"/>
+                      <Component id="okButton" min="-2" pref="98" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="clearbtn" min="-2" pref="98" max="-2" attributes="0"/>
+                      <Component id="clearButton" min="-2" pref="98" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -113,55 +113,55 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              <Component id="mainlabel" min="-2" max="-2" attributes="0"/>
+              <Component id="mainLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="infolabel" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="infoLabel" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="searchtext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="infolabel2" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="searchtype" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="searchText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="infoLabel2" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="searchType" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="okbtn" min="-2" max="-2" attributes="0"/>
-                  <Component id="clearbtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="okButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="clearButton" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="infolabel3" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="infolabel4" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="infolabel5" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="infoLabel3" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="infoLabel4" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="infoLabel5" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jobtext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="dateofbirthtext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="fullnametext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="jobText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="dateOfBirthText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="fullNameText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="infolabel6" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="infolabel7" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="infolabel8" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="infoLabel6" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="infoLabel7" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="infoLabel8" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="phonenumbertext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="homeaddresstext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="passwordtext" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="phoneNumberText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="homeAddressText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="passwordText" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="editbtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="editButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="cancelbtn" min="-2" max="-2" attributes="0"/>
-                          <Component id="editicon" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="editIcon" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="cancelicon" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelIcon" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
@@ -169,7 +169,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="mainlabel">
+    <Component class="javax.swing.JLabel" name="mainLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="35" style="0"/>
@@ -190,7 +190,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel">
+    <Component class="javax.swing.JLabel" name="infoLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -201,7 +201,7 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel2">
+    <Component class="javax.swing.JLabel" name="infoLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -213,7 +213,7 @@
         <Property name="text" type="java.lang.String" value="Search:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="searchtext">
+    <Component class="javax.swing.JTextField" name="searchText">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -230,10 +230,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchtextActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchTextActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="searchtype">
+    <Component class="javax.swing.JComboBox" name="searchType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
@@ -251,13 +251,13 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="searchtype&#x130;temStateChanged"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="searchType&#x130;temStateChanged"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="java.awt.Button" name="okbtn">
+    <Component class="java.awt.Button" name="okButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -271,10 +271,10 @@
         <Property name="label" type="java.lang.String" value="OK"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.Button" name="clearbtn">
+    <Component class="java.awt.Button" name="clearButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -288,10 +288,10 @@
         <Property name="label" type="java.lang.String" value="Clear"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel3">
+    <Component class="javax.swing.JLabel" name="infoLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -303,7 +303,7 @@
         <Property name="text" type="java.lang.String" value="Full Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="fullnametext">
+    <Component class="javax.swing.JTextField" name="fullNameText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="27" style="1"/>
@@ -314,11 +314,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullnametextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fullnametextKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullNameTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fullNameTextKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel4">
+    <Component class="javax.swing.JLabel" name="infoLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -330,7 +330,7 @@
         <Property name="text" type="java.lang.String" value="Date of Birth"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="dateofbirthtext">
+    <Component class="javax.swing.JTextField" name="dateOfBirthText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="27" style="1"/>
@@ -341,11 +341,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateofbirthtextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="dateofbirthtextKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateOfBirthTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="dateOfBirthTextKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel5">
+    <Component class="javax.swing.JLabel" name="infoLabel5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -357,7 +357,7 @@
         <Property name="text" type="java.lang.String" value="Job"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jobtext">
+    <Component class="javax.swing.JTextField" name="jobText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="27" style="1"/>
@@ -368,11 +368,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jobtextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jobtextKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jobTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jobTextKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel6">
+    <Component class="javax.swing.JLabel" name="infoLabel6">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -384,7 +384,7 @@
         <Property name="text" type="java.lang.String" value="Phone Number"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="phonenumbertext">
+    <Component class="javax.swing.JTextField" name="phoneNumberText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="27" style="1"/>
@@ -395,11 +395,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="phonenumbertextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="phonenumbertextKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="phoneNumberTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="phoneNumberTextKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel7">
+    <Component class="javax.swing.JLabel" name="infoLabel7">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -411,7 +411,7 @@
         <Property name="text" type="java.lang.String" value="Home Address"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="homeaddresstext">
+    <Component class="javax.swing.JTextField" name="homeAddressText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="27" style="1"/>
@@ -422,11 +422,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeaddresstextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homeaddresstextKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeAddressTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="homeAddressTextKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="infolabel8">
+    <Component class="javax.swing.JLabel" name="infoLabel8">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="26" style="0"/>
@@ -438,7 +438,7 @@
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="passwordtext">
+    <Component class="javax.swing.JTextField" name="passwordText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="27" style="1"/>
@@ -449,11 +449,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordtextActionPerformed"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="passwordtextKeyPressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordTextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="passwordTextKeyPressed"/>
       </Events>
     </Component>
-    <Component class="java.awt.Button" name="editbtn">
+    <Component class="java.awt.Button" name="editButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -470,17 +470,17 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="editicon">
+    <Component class="javax.swing.JLabel" name="editIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_edit_property_48px.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="cancelbtn">
+    <Component class="java.awt.Button" name="cancelButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="23" red="17" type="rgb"/>
@@ -497,10 +497,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="cancelicon">
+    <Component class="javax.swing.JLabel" name="cancelIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/swing/images/icons8_exit_48px.png"/>

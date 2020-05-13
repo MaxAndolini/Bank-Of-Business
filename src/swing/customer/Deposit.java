@@ -30,25 +30,25 @@ public class Deposit extends javax.swing.JPanel {
         initComponents();
         frame = home;
 
-        ((AbstractDocument) moneytext.getDocument()).setDocumentFilter(new Filter(1, 5));
+        ((AbstractDocument) moneyText.getDocument()).setDocumentFilter(new Filter(1, 5));
 
         timer = new Timer(2000, (ActionEvent e) -> {
-            dolaralabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
-            euroalabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
-            poundalabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
-            turkishliraalabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
+            dolarAmountLabel.setText(Data.currencyFormat(0, Data.getCustomer().getDollar()));
+            euroAmountLabel.setText(Data.currencyFormat(1, Data.getCustomer().getEuro()));
+            poundAmountLabel.setText(Data.currencyFormat(2, Data.getCustomer().getPound()));
+            turkishLiraAmountLabel.setText(Data.currencyFormat(3, Data.getCustomer().getTurkishLira()));
         });
         timer.setInitialDelay(0);
         timer.start();
     }
 
     public void deposit() {
-        if (!moneytext.getText().isBlank()) {
-            BigDecimal money = Database.isBigDecimal(moneytext.getText());
+        if (!moneyText.getText().isBlank()) {
+            BigDecimal money = Database.isBigDecimal(moneyText.getText());
             Data.setPage1(null);
             Data.setPage2("DepositCustomer");
             Data.setMoney(money);
-            Data.setMoneyType(moneytype.getSelectedIndex());
+            Data.setMoneyType(moneyType.getSelectedIndex());
             if (timer != null) {
                 timer.stop();
             }
@@ -69,79 +69,79 @@ public class Deposit extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainlabel = new javax.swing.JLabel();
-        infolabel = new javax.swing.JLabel();
+        mainLabel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
         jPanel = new javax.swing.JPanel();
-        dolarlabel = new javax.swing.JLabel();
-        dolaralabel = new javax.swing.JLabel();
-        eurolabel = new javax.swing.JLabel();
-        euroalabel = new javax.swing.JLabel();
-        poundlabel = new javax.swing.JLabel();
-        poundalabel = new javax.swing.JLabel();
-        turkishliralabel = new javax.swing.JLabel();
-        turkishliraalabel = new javax.swing.JLabel();
-        moneytext = new javax.swing.JTextField();
-        moneytype = new javax.swing.JComboBox<>();
-        okbtn = new java.awt.Button();
-        cancelbtn = new java.awt.Button();
-        cancelicon = new javax.swing.JLabel();
+        dolarLabel = new javax.swing.JLabel();
+        dolarAmountLabel = new javax.swing.JLabel();
+        euroLabel = new javax.swing.JLabel();
+        euroAmountLabel = new javax.swing.JLabel();
+        poundLabel = new javax.swing.JLabel();
+        poundAmountLabel = new javax.swing.JLabel();
+        turkishLiraLabel = new javax.swing.JLabel();
+        turkishLiraAmountLabel = new javax.swing.JLabel();
+        moneyText = new javax.swing.JTextField();
+        moneyType = new javax.swing.JComboBox<>();
+        okButton = new java.awt.Button();
+        cancelButton = new java.awt.Button();
+        cancelIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 120, 197));
         setMaximumSize(new java.awt.Dimension(1070, 590));
         setMinimumSize(new java.awt.Dimension(1070, 590));
         setPreferredSize(new java.awt.Dimension(1070, 590));
 
-        mainlabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
-        mainlabel.setForeground(new java.awt.Color(255, 255, 255));
-        mainlabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainlabel.setText("Deposit");
-        mainlabel.setMaximumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setMinimumSize(new java.awt.Dimension(223, 47));
-        mainlabel.setPreferredSize(new java.awt.Dimension(223, 47));
+        mainLabel.setFont(new java.awt.Font("Segoe UI", 0, 35)); // NOI18N
+        mainLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mainLabel.setText("Deposit");
+        mainLabel.setMaximumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setMinimumSize(new java.awt.Dimension(223, 47));
+        mainLabel.setPreferredSize(new java.awt.Dimension(223, 47));
 
-        infolabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        infolabel.setForeground(new java.awt.Color(255, 255, 255));
-        infolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        infolabel.setText("Enter amount and press OK.");
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoLabel.setText("Enter amount and press OK.");
 
         jPanel.setMaximumSize(new java.awt.Dimension(296, 179));
         jPanel.setMinimumSize(new java.awt.Dimension(296, 179));
 
-        dolarlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dolarlabel.setText("Dollar:");
+        dolarLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dolarLabel.setText("Dollar:");
 
-        dolaralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        dolaralabel.setForeground(new java.awt.Color(133, 187, 101));
-        dolaralabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        dolaralabel.setText("$500");
+        dolarAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        dolarAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        dolarAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        dolarAmountLabel.setText("$500");
 
-        eurolabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        eurolabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eurolabel.setText("Euro:");
+        euroLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        euroLabel.setText("Euro:");
 
-        euroalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        euroalabel.setForeground(new java.awt.Color(133, 187, 101));
-        euroalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        euroalabel.setText("400 €");
+        euroAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        euroAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        euroAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        euroAmountLabel.setText("400 €");
 
-        poundlabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        poundlabel.setText("Pound:");
+        poundLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        poundLabel.setText("Pound:");
 
-        poundalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        poundalabel.setForeground(new java.awt.Color(133, 187, 101));
-        poundalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poundalabel.setText("£200");
+        poundAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        poundAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        poundAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        poundAmountLabel.setText("£200");
 
-        turkishliralabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliralabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turkishliralabel.setText("Turkish Lira:");
+        turkishLiraLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishLiraLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        turkishLiraLabel.setText("Turkish Lira:");
 
-        turkishliraalabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        turkishliraalabel.setForeground(new java.awt.Color(133, 187, 101));
-        turkishliraalabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        turkishliraalabel.setText("₺500");
+        turkishLiraAmountLabel.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        turkishLiraAmountLabel.setForeground(new java.awt.Color(133, 187, 101));
+        turkishLiraAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        turkishLiraAmountLabel.setText("₺500");
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
@@ -151,22 +151,22 @@ public class Deposit extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLayout.createSequentialGroup()
-                        .addComponent(dolarlabel)
+                        .addComponent(dolarLabel)
                         .addGap(6, 6, 6)
-                        .addComponent(dolaralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dolarAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanelLayout.createSequentialGroup()
-                            .addComponent(turkishliralabel)
+                            .addComponent(turkishLiraLabel)
                             .addGap(6, 6, 6)
-                            .addComponent(turkishliraalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(turkishLiraAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanelLayout.createSequentialGroup()
-                            .addComponent(poundlabel)
+                            .addComponent(poundLabel)
                             .addGap(6, 6, 6)
-                            .addComponent(poundalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(poundAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelLayout.createSequentialGroup()
-                            .addComponent(eurolabel)
+                            .addComponent(euroLabel)
                             .addGap(6, 6, 6)
-                            .addComponent(euroalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(euroAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10))
         );
         jPanelLayout.setVerticalGroup(
@@ -174,66 +174,66 @@ public class Deposit extends javax.swing.JPanel {
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dolarlabel)
-                    .addComponent(dolaralabel))
+                    .addComponent(dolarLabel)
+                    .addComponent(dolarAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eurolabel)
-                    .addComponent(euroalabel))
+                    .addComponent(euroLabel)
+                    .addComponent(euroAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(poundlabel)
-                    .addComponent(poundalabel))
+                    .addComponent(poundLabel)
+                    .addComponent(poundAmountLabel))
                 .addGap(11, 11, 11)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(turkishliralabel)
-                    .addComponent(turkishliraalabel))
+                    .addComponent(turkishLiraLabel)
+                    .addComponent(turkishLiraAmountLabel))
                 .addGap(11, 11, 11))
         );
 
-        moneytext.setBackground(new java.awt.Color(23, 35, 51));
-        moneytext.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        moneytext.setForeground(new java.awt.Color(255, 255, 255));
-        moneytext.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        moneytext.setMaximumSize(new java.awt.Dimension(7, 39));
-        moneytext.addActionListener(new java.awt.event.ActionListener() {
+        moneyText.setBackground(new java.awt.Color(23, 35, 51));
+        moneyText.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        moneyText.setForeground(new java.awt.Color(255, 255, 255));
+        moneyText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        moneyText.setMaximumSize(new java.awt.Dimension(7, 39));
+        moneyText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moneytextActionPerformed(evt);
+                moneyTextActionPerformed(evt);
             }
         });
-        moneytext.addKeyListener(new java.awt.event.KeyAdapter() {
+        moneyText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                moneytextKeyPressed(evt);
+                moneyTextKeyPressed(evt);
             }
         });
 
-        moneytype.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        moneytype.setForeground(new java.awt.Color(23, 35, 51));
-        moneytype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
-        moneytype.setToolTipText("");
+        moneyType.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        moneyType.setForeground(new java.awt.Color(23, 35, 51));
+        moneyType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dollar", "Euro", "Pound", "Turkish Lira" }));
+        moneyType.setToolTipText("");
 
-        okbtn.setBackground(new java.awt.Color(23, 35, 51));
-        okbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        okbtn.setForeground(new java.awt.Color(255, 255, 255));
-        okbtn.setLabel("OK");
-        okbtn.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setBackground(new java.awt.Color(23, 35, 51));
+        okButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        okButton.setForeground(new java.awt.Color(255, 255, 255));
+        okButton.setLabel("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okbtnActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
 
-        cancelbtn.setBackground(new java.awt.Color(23, 35, 51));
-        cancelbtn.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        cancelbtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelbtn.setLabel("Cancel");
-        cancelbtn.setMinimumSize(new java.awt.Dimension(80, 49));
-        cancelbtn.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(23, 35, 51));
+        cancelButton.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setLabel("Cancel");
+        cancelButton.setMinimumSize(new java.awt.Dimension(80, 49));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelbtnActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        cancelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
+        cancelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/swing/images/icons8_exit_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -246,20 +246,20 @@ public class Deposit extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(309, 309, 309)
-                                .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(moneyText, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(moneyType, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(cancelicon)
+                                .addComponent(cancelIcon)
                                 .addGap(220, 220, 220)
-                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(319, 319, 319))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(290, 290, 290)
-                        .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(387, 387, 387)
@@ -270,64 +270,64 @@ public class Deposit extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(mainlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(infolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(moneytext, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(moneytype, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(moneyText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(moneyType, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelicon)
-                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelIcon)
+                    .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
         if (timer != null) {
             timer.stop();
         }
         frame.ChangeJPanel("HomeCustomer");
-    }//GEN-LAST:event_cancelbtnActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void moneytextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneytextActionPerformed
+    private void moneyTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneyTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_moneytextActionPerformed
+    }//GEN-LAST:event_moneyTextActionPerformed
 
-    private void okbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okbtnActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         deposit();
-    }//GEN-LAST:event_okbtnActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void moneytextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneytextKeyPressed
+    private void moneyTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneyTextKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             deposit();
         }
-    }//GEN-LAST:event_moneytextKeyPressed
+    }//GEN-LAST:event_moneyTextKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button cancelbtn;
-    private javax.swing.JLabel cancelicon;
-    private javax.swing.JLabel dolaralabel;
-    private javax.swing.JLabel dolarlabel;
-    private javax.swing.JLabel euroalabel;
-    private javax.swing.JLabel eurolabel;
-    private javax.swing.JLabel infolabel;
+    private java.awt.Button cancelButton;
+    private javax.swing.JLabel cancelIcon;
+    private javax.swing.JLabel dolarAmountLabel;
+    private javax.swing.JLabel dolarLabel;
+    private javax.swing.JLabel euroAmountLabel;
+    private javax.swing.JLabel euroLabel;
+    private javax.swing.JLabel infoLabel;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JLabel mainlabel;
-    private javax.swing.JTextField moneytext;
-    private javax.swing.JComboBox<String> moneytype;
-    private java.awt.Button okbtn;
-    private javax.swing.JLabel poundalabel;
-    private javax.swing.JLabel poundlabel;
-    private javax.swing.JLabel turkishliraalabel;
-    private javax.swing.JLabel turkishliralabel;
+    private javax.swing.JLabel mainLabel;
+    private javax.swing.JTextField moneyText;
+    private javax.swing.JComboBox<String> moneyType;
+    private java.awt.Button okButton;
+    private javax.swing.JLabel poundAmountLabel;
+    private javax.swing.JLabel poundLabel;
+    private javax.swing.JLabel turkishLiraAmountLabel;
+    private javax.swing.JLabel turkishLiraLabel;
     // End of variables declaration//GEN-END:variables
 }
