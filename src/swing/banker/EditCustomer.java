@@ -46,7 +46,7 @@ public class EditCustomer extends javax.swing.JPanel {
         visible(false);
     }
 
-    public final void visible(boolean option) {
+    private final void visible(boolean option) {
         infoLabel3.setVisible(option);
         fullNameText.setVisible(option);
         infoLabel4.setVisible(option);
@@ -61,7 +61,7 @@ public class EditCustomer extends javax.swing.JPanel {
         passwordText.setVisible(option);
     }
 
-    public void search() {
+    private void search() {
         String[] typename = {"ID", "CardNumber", "FullName"};
         if (timer != null) {
             timer.stop();
@@ -109,7 +109,7 @@ public class EditCustomer extends javax.swing.JPanel {
         }
     }
 
-    public void clear() {
+    private void clear() {
         searchText.setText(null);
         searchType.setSelectedIndex(0);
         if (timer != null) {
@@ -119,7 +119,7 @@ public class EditCustomer extends javax.swing.JPanel {
         infoLabel.setText("The search was successfully cleared.");
     }
 
-    public void editCustomer() {
+    private void editCustomer() {
 
         /*
         1) ^ - start of the string

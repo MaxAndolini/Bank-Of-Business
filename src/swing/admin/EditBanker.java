@@ -47,7 +47,7 @@ public class EditBanker extends javax.swing.JPanel {
         visible(false);
     }
 
-    public final void visible(boolean option) {
+    private final void visible(boolean option) {
         infoLabel3.setVisible(option);
         fullNameText.setVisible(option);
         infoLabel4.setVisible(option);
@@ -62,7 +62,7 @@ public class EditBanker extends javax.swing.JPanel {
         salaryText.setVisible(option);
     }
 
-    public void search() {
+    private void search() {
         String[] typename = {"ID", "FullName"};
         if (timer != null) {
             timer.stop();
@@ -110,7 +110,7 @@ public class EditBanker extends javax.swing.JPanel {
         }
     }
 
-    public void clear() {
+    private void clear() {
         searchText.setText(null);
         searchType.setSelectedIndex(0);
         if (timer != null) {
@@ -120,7 +120,7 @@ public class EditBanker extends javax.swing.JPanel {
         infoLabel.setText("The search was successfully cleared.");
     }
 
-    public void editBanker() {
+    private void editBanker() {
 
         /*
         1) ^ - start of the string

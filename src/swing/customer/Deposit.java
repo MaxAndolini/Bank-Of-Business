@@ -42,7 +42,7 @@ public class Deposit extends javax.swing.JPanel {
         timer.start();
     }
 
-    public void deposit() {
+    private void deposit() {
         if (!moneyText.getText().isBlank()) {
             BigDecimal money = Database.isBigDecimal(moneyText.getText());
             Data.setPage1(null);

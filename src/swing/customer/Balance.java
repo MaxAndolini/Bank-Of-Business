@@ -105,7 +105,7 @@ public class Balance extends javax.swing.JPanel {
         timer2.start();
     }
 
-    public void balance() {
+    private void balance() {
         String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
         String[] typename2 = {"Dollar", "Euro", "Pound", "TurkishLira"};
         if (!moneyText.getText().isBlank()) {
@@ -212,7 +212,7 @@ public class Balance extends javax.swing.JPanel {
         }
     }
 
-    public void result() {
+    private void result() {
         String[] typename = {"Dollar", "Euro", "Pound", "Turkish Lira"};
         String[] typename2 = {"Dollar", "Euro", "Pound", "TurkishLira"};
         if (!moneyText.getText().isBlank()) {

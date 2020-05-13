@@ -29,7 +29,7 @@ public class Transfer extends javax.swing.JPanel {
         ((AbstractDocument) userIDCardNumberText.getDocument()).setDocumentFilter(new Filter(1, 16));
     }
 
-    public void transfer() {
+    private void transfer() {
         if (!userIDCardNumberText.getText().isBlank()) {
             Data.setPage1("TransferCustomer");
             Data.setPage2(null);

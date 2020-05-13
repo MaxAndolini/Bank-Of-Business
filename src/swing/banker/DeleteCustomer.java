@@ -29,7 +29,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
         ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
     }
 
-    public void deleteCustomer() {
+    private void deleteCustomer() {
         String[] typename = {"ID", "CardNumber", "FullName"};
         if (!searchText.getText().isBlank()) {
             if (Database.exists("Accounts", typename[searchType.getSelectedIndex()], searchText.getText())) {

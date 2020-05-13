@@ -37,7 +37,7 @@ public class AddBanker extends javax.swing.JPanel {
         ((AbstractDocument) salaryText.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
-    public void addBanker() {
+    private void addBanker() {
 
         /*
         1) ^ - start of the string

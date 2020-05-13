@@ -45,7 +45,7 @@ public class EditMoney extends javax.swing.JPanel {
         visible(false);
     }
 
-    public final void visible(boolean option) {
+    private final void visible(boolean option) {
         infoLabel3.setVisible(option);
         dollarText.setVisible(option);
         infoLabel4.setVisible(option);
@@ -56,7 +56,7 @@ public class EditMoney extends javax.swing.JPanel {
         turkishLiraText.setVisible(option);
     }
 
-    public void search() {
+    private void search() {
         String[] typename = {"ID", "CardNumber", "FullName"};
         if (timer != null) {
             timer.stop();
@@ -102,7 +102,7 @@ public class EditMoney extends javax.swing.JPanel {
         }
     }
 
-    public void clear() {
+    private void clear() {
         searchText.setText(null);
         searchType.setSelectedIndex(0);
         if (timer != null) {
@@ -112,7 +112,7 @@ public class EditMoney extends javax.swing.JPanel {
         infoLabel.setText("The search was successfully cleared.");
     }
 
-    public void editMoney() {
+    private void editMoney() {
         String[] typename = {"ID", "CardNumber", "FullName"};
         if (!dollarText.getText().isBlank() && !euroText.getText().isBlank() && !poundText.getText().isBlank() && !turkishLiraText.getText().isBlank()) {
             BigDecimal dollar = Database.isBigDecimal(dollarText.getText());

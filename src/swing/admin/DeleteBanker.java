@@ -29,7 +29,7 @@ public class DeleteBanker extends javax.swing.JPanel {
         ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
     }
 
-    public void deleteBanker() {
+    private void deleteBanker() {
         String[] typename = {"ID", "FullName"};
         if (!searchText.getText().isBlank()) {
             if (Database.exists("Accounts", typename[searchType.getSelectedIndex()], searchText.getText())) {

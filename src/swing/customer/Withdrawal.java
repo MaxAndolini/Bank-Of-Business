@@ -42,7 +42,7 @@ public class Withdrawal extends javax.swing.JPanel {
         timer.start();
     }
 
-    public void withdrawal(BigDecimal money, int moneyType) {
+    private void withdrawal(BigDecimal money, int moneyType) {
         Data.setPage1(null);
         Data.setPage2("WithdrawalCustomer");
         Data.setMoney(money);

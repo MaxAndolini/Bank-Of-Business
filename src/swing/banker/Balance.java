@@ -98,7 +98,7 @@ public class Balance extends javax.swing.JPanel {
         jPanel2.setVisible(false);
     }
 
-    public void balance() {
+    private void balance() {
         String[] typename = {"ID", "CardNumber", "FullName"};
         if (!searchText.getText().isBlank()) {
             if (Database.exists("Accounts", typename[searchType.getSelectedIndex()], searchText.getText())) {
@@ -128,7 +128,7 @@ public class Balance extends javax.swing.JPanel {
         }
     }
 
-    public void clear() {
+    private void clear() {
         searchText.setText(null);
         searchType.setSelectedIndex(0);
         text = null;

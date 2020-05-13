@@ -42,7 +42,7 @@ public class TransferMoney extends javax.swing.JPanel {
         timer.start();
     }
 
-    public void transferMoney(BigDecimal money, int moneyType) {
+    private void transferMoney(BigDecimal money, int moneyType) {
         Data.setPage2("TransferMoneyCustomer");
         Data.setMoney(money);
         Data.setMoneyType(moneyType);

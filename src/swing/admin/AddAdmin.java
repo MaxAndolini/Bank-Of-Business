@@ -37,7 +37,7 @@ public class AddAdmin extends javax.swing.JPanel {
         ((AbstractDocument) salaryText.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
-    public void addAdmin() {
+    private void addAdmin() {
 
         /*
         1) ^ - start of the string

@@ -77,7 +77,7 @@ public class Admins extends javax.swing.JPanel {
         timer.start();
     }
 
-    public void admins() {
+    private void admins() {
         String[] typename = {"ID", "FullName"};
         if (!searchText.getText().isBlank()) {
             if (Database.exists("Accounts", typename[searchType.getSelectedIndex()], searchText.getText())) {
@@ -98,7 +98,7 @@ public class Admins extends javax.swing.JPanel {
         }
     }
 
-    public void clear() {
+    private void clear() {
         searchText.setText(null);
         searchType.setSelectedIndex(0);
         text = null;

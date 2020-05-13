@@ -36,7 +36,7 @@ public class AddCustomer extends javax.swing.JPanel {
         ((AbstractDocument) passwordText.getDocument()).setDocumentFilter(new Filter(0, 15));
     }
 
-    public void addCustomer() {
+    private void addCustomer() {
 
         /*
         1) ^ - start of the string

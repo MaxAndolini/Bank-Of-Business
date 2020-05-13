@@ -61,7 +61,7 @@ public class Settings extends javax.swing.JPanel {
         timer.start();
     }
 
-    public void settings() {
+    private void settings() {
         if (!fullNameText.getText().isBlank() && !dateOfBirthText.getText().isBlank() && !phoneNumberText.getText().isBlank() && !homeAddressText.getText().isBlank() && !passwordText.getText().isBlank() && !salaryText.getText().isBlank()) {
             if (Data.dateValidation(dateOfBirthText.getText())) {
                 if (passwordText.getText().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$")) {
