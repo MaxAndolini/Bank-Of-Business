@@ -635,7 +635,7 @@ public class EditBanker extends javax.swing.JPanel {
     }//GEN-LAST:event_salaryTextKeyPressed
 
     private void searchTypeİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_searchTypeİtemStateChanged
-        switch (evt.getStateChange()) {
+        switch (searchType.getSelectedIndex()) {
             case 0:
                 ((AbstractDocument) searchText.getDocument()).setDocumentFilter(new Filter(1, 16));
                 searchText.setText(null);
