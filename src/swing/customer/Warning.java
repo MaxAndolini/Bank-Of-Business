@@ -176,16 +176,16 @@ public class Warning extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         if (Data.getPage2() == null) {
-            frame.ChangeJPanel(Data.getPage1());
+            frame.changeJPanel(Data.getPage1());
         } else {
-            frame.ChangeJPanel(Data.getPage2());
+            frame.changeJPanel(Data.getPage2());
         }
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 

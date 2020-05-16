@@ -39,9 +39,9 @@ public class Transfer extends javax.swing.JPanel {
                 type = 1;
             }
             if (Database.exists("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText()) && Database.getInt("Accounts", ((type == 0) ? ("ID") : ("CardNumber")), userIDCardNumberText.getText(), "AccountType") == 0 && (type == 0 && !Data.getTransfer().equals(Data.getCustomer().getId().getID())) || (type == 1 && !Data.getTransfer().equals(Data.getCustomer().getCardNumber()))) {
-                frame.ChangeJPanel("TransferMoneyCustomer");
+                frame.changeJPanel("TransferMoneyCustomer");
             } else {
-                frame.ChangeJPanel("WarningCustomer");
+                frame.changeJPanel("WarningCustomer");
             }
         }
     }
@@ -171,7 +171,7 @@ public class Transfer extends javax.swing.JPanel {
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void userIDCardNumberTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDCardNumberTextActionPerformed

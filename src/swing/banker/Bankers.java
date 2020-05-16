@@ -305,7 +305,7 @@ public class Bankers extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("HomeBanker");
+        frame.changeJPanel("HomeBanker");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed

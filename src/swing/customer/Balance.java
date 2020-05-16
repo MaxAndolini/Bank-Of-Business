@@ -603,7 +603,7 @@ public class Balance extends javax.swing.JPanel {
         if (timer2 != null) {
             timer2.stop();
         }
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void moneyTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneyTextActionPerformed

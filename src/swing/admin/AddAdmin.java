@@ -377,7 +377,7 @@ public class AddAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_fullNameTextActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        frame.ChangeJPanel("HomeAdmin");
+        frame.changeJPanel("HomeAdmin");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void homeAddressTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeAddressTextActionPerformed

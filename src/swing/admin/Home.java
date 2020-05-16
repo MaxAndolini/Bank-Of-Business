@@ -353,35 +353,35 @@ public class Home extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("AddAdminAdmin");
+        frame.changeJPanel("AddAdminAdmin");
     }//GEN-LAST:event_addAdminButtonActionPerformed
 
     private void editMoneyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMoneyButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("EditMoneyAdmin");
+        frame.changeJPanel("EditMoneyAdmin");
     }//GEN-LAST:event_editMoneyButtonActionPerformed
 
     private void currencyRateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currencyRateButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("CurrencyRateAdmin");
+        frame.changeJPanel("CurrencyRateAdmin");
     }//GEN-LAST:event_currencyRateButtonActionPerformed
 
     private void customersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customersButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("CustomersAdmin");
+        frame.changeJPanel("CustomersAdmin");
     }//GEN-LAST:event_customersButtonActionPerformed
 
     private void deleteBankerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBankerButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("DeleteBankerAdmin");
+        frame.changeJPanel("DeleteBankerAdmin");
     }//GEN-LAST:event_deleteBankerButtonActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
@@ -389,42 +389,42 @@ public class Home extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("LoginAdmin");
+        frame.changeJPanel("LoginAdmin");
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void addBankerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBankerButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("AddBankerAdmin");
+        frame.changeJPanel("AddBankerAdmin");
     }//GEN-LAST:event_addBankerButtonActionPerformed
 
     private void editBankerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBankerButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("EditBankerAdmin");
+        frame.changeJPanel("EditBankerAdmin");
     }//GEN-LAST:event_editBankerButtonActionPerformed
 
     private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("SettingsAdmin");
+        frame.changeJPanel("SettingsAdmin");
     }//GEN-LAST:event_settingsButtonActionPerformed
 
     private void bankersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankersButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("BankersAdmin");
+        frame.changeJPanel("BankersAdmin");
     }//GEN-LAST:event_bankersButtonActionPerformed
 
     private void adminsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminsButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("AdminsAdmin");
+        frame.changeJPanel("AdminsAdmin");
     }//GEN-LAST:event_adminsButtonActionPerformed
 
 

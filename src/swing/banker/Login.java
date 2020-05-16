@@ -215,7 +215,7 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
                             banker.setPassword(load[12], 0);
                             banker.setBankerSalary(Database.isBigDecimal(load[13]), 0);
                             Data.setBanker(banker);
-                            frame.ChangeJPanel("HomeBanker");
+                            frame.changeJPanel("HomeBanker");
                         } else {
                             infoLabel.setText("The password doesn't match.");
                         }
@@ -242,7 +242,7 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
     }//GEN-LAST:event_userIDTextActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        frame.ChangeJPanel("MainSelect");
+        frame.changeJPanel("MainSelect");
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void userIDTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userIDTextKeyPressed

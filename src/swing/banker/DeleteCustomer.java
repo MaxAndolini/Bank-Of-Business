@@ -213,7 +213,7 @@ public class DeleteCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        frame.ChangeJPanel("HomeBanker");
+        frame.changeJPanel("HomeBanker");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed

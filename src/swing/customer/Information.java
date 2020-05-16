@@ -187,21 +187,21 @@ public class Information extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void yesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesButtonActionPerformed
-        frame.ChangeJPanel("ReceiptCustomer");
+        frame.changeJPanel("ReceiptCustomer");
     }//GEN-LAST:event_yesButtonActionPerformed
 
     private void noButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noButtonActionPerformed
-        frame.ChangeJPanel(Data.getPage2());
+        frame.changeJPanel(Data.getPage2());
     }//GEN-LAST:event_noButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        frame.ChangeJPanel(Data.getPage2());
+        frame.changeJPanel(Data.getPage2());
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
         Data.setPage1(null);
         Data.setPage2(null);
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 

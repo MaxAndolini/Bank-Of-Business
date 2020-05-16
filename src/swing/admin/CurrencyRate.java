@@ -201,7 +201,7 @@ public class CurrencyRate extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("HomeAdmin");
+        frame.changeJPanel("HomeAdmin");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
 

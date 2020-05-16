@@ -50,9 +50,9 @@ public class TransferMoney extends javax.swing.JPanel {
             timer.stop();
         }
         if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0) && ((moneyType == 0 && Data.getCustomer().getDollar().compareTo(money) >= 0) || (moneyType == 1 && Data.getCustomer().getEuro().compareTo(money) >= 0) || (moneyType == 2 && Data.getCustomer().getPound().compareTo(money) >= 0) || (moneyType == 3 && Data.getCustomer().getTurkishLira().compareTo(money) >= 0))) {
-            frame.ChangeJPanel("InformationCustomer");
+            frame.changeJPanel("InformationCustomer");
         } else {
-            frame.ChangeJPanel("WarningCustomer");
+            frame.changeJPanel("WarningCustomer");
         }
     }
 
@@ -474,7 +474,7 @@ public class TransferMoney extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("TransferCustomer");
+        frame.changeJPanel("TransferCustomer");
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void eightyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightyButtonActionPerformed

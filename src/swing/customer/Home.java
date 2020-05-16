@@ -266,42 +266,42 @@ public class Home extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("WithdrawalCustomer");
+        frame.changeJPanel("WithdrawalCustomer");
     }//GEN-LAST:event_withdrawalButtonActionPerformed
 
     private void depositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("DepositCustomer");
+        frame.changeJPanel("DepositCustomer");
     }//GEN-LAST:event_depositButtonActionPerformed
 
     private void transactionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionsButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("TransactionsCustomer");
+        frame.changeJPanel("TransactionsCustomer");
     }//GEN-LAST:event_transactionsButtonActionPerformed
 
     private void transferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transferButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("TransferCustomer");
+        frame.changeJPanel("TransferCustomer");
     }//GEN-LAST:event_transferButtonActionPerformed
 
     private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("SettingsCustomer");
+        frame.changeJPanel("SettingsCustomer");
     }//GEN-LAST:event_settingsButtonActionPerformed
 
     private void balanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balanceButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("BalanceCustomer");
+        frame.changeJPanel("BalanceCustomer");
     }//GEN-LAST:event_balanceButtonActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
@@ -309,7 +309,7 @@ public class Home extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("LoginCustomer");
+        frame.changeJPanel("LoginCustomer");
     }//GEN-LAST:event_logoutButtonActionPerformed
 
 

@@ -507,7 +507,7 @@ public class Receipt extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("LoginCustomer");
+        frame.changeJPanel("LoginCustomer");
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
@@ -516,7 +516,7 @@ public class Receipt extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 

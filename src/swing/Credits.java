@@ -139,7 +139,7 @@ public class Credits extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        frame.ChangeJPanel("MainSelect");
+        frame.changeJPanel("MainSelect");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
 

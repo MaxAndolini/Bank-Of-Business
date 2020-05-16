@@ -31,12 +31,12 @@ public class Home extends javax.swing.JFrame {
 
         Home.this.setLayout(new BorderLayout());
         Home.this.add(DynamicPanel);
-        ChangeJPanel("MainSelect");
+        changeJPanel("MainSelect");
         Home.this.setLocationRelativeTo(null);
         Home.this.setVisible(true);
 
         boolean created;
-        created = Database.fcreate("Accounts");
+        created = Database.fCreate("Accounts");
         if (created == true) {
             int column = Database.columnExists("Accounts");
             if (column != 16) {
@@ -72,7 +72,7 @@ public class Home extends javax.swing.JFrame {
             }
         }
 
-        created = Database.fcreate("Currencies");
+        created = Database.fCreate("Currencies");
         if (created == true) {
             int column = Database.columnExists("Currencies");
             if (column != 5) {
@@ -115,7 +115,7 @@ public class Home extends javax.swing.JFrame {
             Database.set("Currencies", "Rate", "Turkish Lira", "TurkishLira", 1.0);
         }
 
-        created = Database.fcreate("Transactions");
+        created = Database.fCreate("Transactions");
         if (created == true) {
             int column = Database.columnExists("Transactions");
             if (column != 8) {
@@ -133,7 +133,7 @@ public class Home extends javax.swing.JFrame {
         }
     }
 
-    public final void ChangeJPanel(String cName) {
+    public final void changeJPanel(String cName) {
 
         DynamicPanel.removeAll();
 

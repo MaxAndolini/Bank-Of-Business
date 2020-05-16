@@ -491,7 +491,7 @@ public class Balance extends javax.swing.JPanel {
         if (timer2 != null) {
             timer2.stop();
         }
-        frame.ChangeJPanel("HomeBanker");
+        frame.changeJPanel("HomeBanker");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed

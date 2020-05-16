@@ -489,7 +489,7 @@ public class EditMoney extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("HomeAdmin");
+        frame.changeJPanel("HomeAdmin");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void euroTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_euroTextActionPerformed

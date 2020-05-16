@@ -204,28 +204,28 @@ public class MainSelect extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("LoginAdmin");
+        frame.changeJPanel("LoginAdmin");
     }//GEN-LAST:event_adminButtonActionPerformed
 
     private void bankerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankerButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("LoginBanker");
+        frame.changeJPanel("LoginBanker");
     }//GEN-LAST:event_bankerButtonActionPerformed
 
     private void customerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("LoginCustomer");
+        frame.changeJPanel("LoginCustomer");
     }//GEN-LAST:event_customerButtonActionPerformed
 
     private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("Credits");
+        frame.changeJPanel("Credits");
     }//GEN-LAST:event_creditsButtonActionPerformed
 
 

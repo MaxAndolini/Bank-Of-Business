@@ -376,7 +376,7 @@ public class AddCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_fullNameTextActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        frame.ChangeJPanel("HomeBanker");
+        frame.changeJPanel("HomeBanker");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void phoneNumberTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberTextActionPerformed

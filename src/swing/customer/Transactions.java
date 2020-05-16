@@ -175,7 +175,7 @@ public class Transactions extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
 

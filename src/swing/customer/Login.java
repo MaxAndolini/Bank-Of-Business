@@ -225,7 +225,7 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
                             customer.setHomeAddress(load[11], 0);
                             customer.setPassword(load[12], 0);
                             Data.setCustomer(customer);
-                            frame.ChangeJPanel("HomeCustomer");
+                            frame.changeJPanel("HomeCustomer");
                         } else {
                             infoLabel.setText("The password doesn't match.");
                         }
@@ -252,7 +252,7 @@ public class Login extends javax.swing.JPanel implements InterfaceLogin {
     }//GEN-LAST:event_userIDCardNumberTextActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        frame.ChangeJPanel("MainSelect");
+        frame.changeJPanel("MainSelect");
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void userIDCardNumberTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userIDCardNumberTextKeyPressed

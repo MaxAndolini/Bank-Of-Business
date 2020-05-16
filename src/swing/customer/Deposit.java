@@ -53,9 +53,9 @@ public class Deposit extends javax.swing.JPanel {
                 timer.stop();
             }
             if (money.compareTo(BigDecimal.ZERO) > 0 && money.compareTo(new BigDecimal("10000")) <= 0 && (money.remainder(Database.isBigDecimal("10")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("50")).compareTo(BigDecimal.ZERO) == 0 || money.remainder(Database.isBigDecimal("100")).compareTo(BigDecimal.ZERO) == 0)) {
-                frame.ChangeJPanel("InformationCustomer");
+                frame.changeJPanel("InformationCustomer");
             } else {
-                frame.ChangeJPanel("WarningCustomer");
+                frame.changeJPanel("WarningCustomer");
             }
         }
     }
@@ -294,7 +294,7 @@ public class Deposit extends javax.swing.JPanel {
         if (timer != null) {
             timer.stop();
         }
-        frame.ChangeJPanel("HomeCustomer");
+        frame.changeJPanel("HomeCustomer");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void moneyTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneyTextActionPerformed
