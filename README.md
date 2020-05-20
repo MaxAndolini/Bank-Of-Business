@@ -49,3 +49,49 @@
 ![Login](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/login.png)
 
 ![Home](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/home.png)
+
+![Customers](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/customers.png)
+
+![Add Customer](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/addcustomer.png)
+
+![Edit Customer](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/editcustomer.png)
+
+![Delete Customer](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/deletecustomer.png)
+
+![Settings](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/settings.png)
+
+![Bankers](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/bankers.png)
+
+![Balance](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/balance.png)
+
+![Transactions](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/transactions.png)
+
+![Exit](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/banker/exit.png)
+
+## ADMIN
+
+![Login](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/login.png)
+
+![Home](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/home.png)
+
+![Add Admin](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/addadmin.png)
+
+![Add Banker](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/addbanker.png)
+
+![Edit Banker](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/editbanker.png)
+
+![Delete Banker](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/deletebanker.png)
+
+![Admins](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/admins.png)
+
+![Bankers](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/bankers.png)
+
+![Customers](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/customers.png)
+
+![Currency Rate](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/currencyrate.png)
+
+![Edit Money](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/editmoney.png)
+
+![Settings](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/settings.png)
+
+![Exit](https://raw.githubusercontent.com/MaxAndolini/Bank-of-Business/master/screenshots/admin/exit.png)
